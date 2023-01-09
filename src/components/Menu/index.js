@@ -42,11 +42,7 @@ const Menu = ({ activeRoute, courses }) => {
               links={ACADEMY_COURSES}
             />
             <MenuItem
-              url={ROUTES.BLANK}
-              text={intl.formatMessage({ id: "menu-item.label.magasine" })}
-            />
-            <MenuItem
-              url={ROUTES.BLANK}
+              url={"#about"}
               text={intl.formatMessage({ id: "menu-item.label.about" })}
             />
             <MenuItem

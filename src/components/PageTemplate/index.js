@@ -16,6 +16,7 @@ const Page = ({ children, activeRoute }) => {
               description
               shortDescription
               outcomes
+              price
               slug
               image {
                 childImageSharp {

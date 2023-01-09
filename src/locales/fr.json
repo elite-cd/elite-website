@@ -7,7 +7,7 @@
   "menu-item.label.magasine": "Magazine Elie",
   "menu-item.label.partners": "Nos partenaires",
 
-  "carousel.home.one.title": "Commencez votre carrière dans la technologie!",
+  "carousel.home.one.title": "Choisi d'être le meilleur!",
   "carousel.home.two.title": "Académie des élites",
   "carousel.home.three.title": "Découvrez Arsitote Diasonama",
 
@@ -15,7 +15,7 @@
   "carousel.home.two.subtitle": "Une académie destinée à dépasser les limites et vous amener au standard internationaux",
   "carousel.home.three.subtitle": "Lauréats de la république EXETAT 2010",
 
-  "carousel.home.one.desc": "Développez vos compétences professionnelles en Technologies avec elite. Suivez une formation constituée de pratiques innovantes et de séances individuelles avec un mentor dédié. Obtenez une certification pésante dans le milieu professionnel.",
+  "carousel.home.one.desc": "Obtenez de nouvelles compétences avec Elite en suivant une formations constituée de pratiques et de séances individuelles avec un mentor dédié",
   "carousel.home.two.desc": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum",
   "carousel.home.three.desc": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
 
@@ -23,6 +23,7 @@
   "carousel.home.two.button-text": "En savoir plus",
   "carousel.home.three.button-text": "En savoir plus",
 
-  "content.homepage.elite.title": "Choisissez d'être le meilleur",
+  "content.homepage.elite.title": "Choisissez",
+  "content.homepage.elite.suffix": "un programme elite",
   "content.homepage.elite.decription": "Dans l'Académie des Elites nous formons des créateurs, leaders et des génies qui sauront se distinguer dans divers domaines et capables d’impacter le monde et les autres!"
 }

@@ -57,6 +57,9 @@ const Home = ({ carouselItems }) => {
         <div className={style.row__center}>
           <h3 className={style.typography3}>
             {intl.formatMessage({ id: "content.homepage.elite.title" })}
+            <span className={style.sitename}>
+              {intl.formatMessage({ id: "content.homepage.elite.suffix" })}
+            </span>
           </h3>
           <p className={style.typography6}>
             {intl.formatMessage({ id: "content.homepage.elite.decription" })}
@@ -72,6 +75,7 @@ const Home = ({ carouselItems }) => {
                 description={course.description}
                 outlined={i % 2 === 0}
                 timeline={course.timeline}
+                price={course.price}
                 descTitle={course.shortDescription}
                 outcomes={[]}
                 image={course.image}
@@ -79,7 +83,7 @@ const Home = ({ carouselItems }) => {
             ))}
           </div>
         </section>
-        <h3 className={style.about__header}>
+        <h3 id="about" className={style.about__header}>
           Pourquoi choisir l'académie des élites ?
         </h3>
         <section className={style.about__container}>

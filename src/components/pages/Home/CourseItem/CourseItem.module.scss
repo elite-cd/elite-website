@@ -10,9 +10,7 @@
   &_bold {
     @extend .text;
     font-family: "GothamMedium";
-    @media only screen and (max-width: 768px) {
-      text-align: center;
-    }
+    text-align: center;
   }
   &_regular {
     @extend .text;
@@ -23,6 +21,10 @@
 .btn_container {
   position: absolute;
   bottom: 1rem;
+  @media only screen and (max-width: 768px) {
+    bottom: 0;
+    margin-bottom: 0.6rem;
+  }
 }
 
 .outcomes {
@@ -43,9 +45,10 @@
   align-items: center;
   margin: 0 2rem;
   @media only screen and (max-width: 768px) {
-    margin: 0;
+    padding-bottom: 3rem;
     box-shadow: 0;
     width: 20rem;
+    height: fit-content;
   }
 }
 
@@ -106,6 +109,7 @@
   @media only screen and (max-width: 768px) {
     box-shadow: none;
     border: 0;
+    background-color: #f1f1f1;
   }
 }
 

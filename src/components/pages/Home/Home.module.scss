@@ -12,16 +12,18 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   padding: 0 2rem;
   @media only screen and (max-width: 768px) {
-    padding: 0;
+    margin: 2rem 0;
     .typography3 {
       text-align: center;
+      margin: 1rem;
     }
 
     .typography6 {
-      font-size: 18px;
+      font-size: 16px;
+      margin: 0;
+      width: 100%;
       line-height: 1.5rem !important;
     }
   }
@@ -29,23 +31,23 @@
 
 .typography3 {
   font-family: "GothamMedium";
-  font-size: 30px;
-  line-height: 2rem !important;
+  font-size: 50px;
+  line-height: 3rem !important;
 }
 
 .typography6 {
   font-family: "GothamRegular";
   font-weight: 500;
   text-align: center;
-  width: 50%;
-  font-size: 0.85rem;
+  width: 60%;
+  font-size: 18px;
+  line-height: 1.6rem !important;
 }
 
 .sitename {
-  margin-left: 0.2rem;
+  margin-left: 0.3rem;
   font-weight: 800;
   color: #e9ab3e;
-  text-transform: uppercase;
 }
 
 /* COURSE SECTION */
@@ -91,7 +93,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      row-gap: 2rem;
+      row-gap: 0rem;
+      width: 100%;
       column-gap: 0;
       padding: 0;
     }
@@ -174,7 +177,10 @@
     overflow: hidden;
     background-color: #f1f1f1;
     @media only screen and (max-width: 768px) {
-      width: 16rem;
+      width: 100%;
+      border-radius: 0;
+      border: 0;
+      border-bottom: 1px solid #4f4f4f !important;
       height: 16rem;
     }
   }
@@ -186,6 +192,9 @@
     font-family: "GothamMedium";
     font-size: 12px;
     text-align: center;
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
+    }
   }
   &__header {
     font-family: "GothamMedium";
