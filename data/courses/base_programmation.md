@@ -1,6 +1,7 @@
 ---
 
 draft: false
+id: 2
 slug: "base-programmation"
 title: "Les bases de la programmation"
 timeline: "3mois"

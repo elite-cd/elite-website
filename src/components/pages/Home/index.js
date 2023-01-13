@@ -1,16 +1,18 @@
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { StaticImage } from "gatsby-plugin-image";
 import { useIntl } from "gatsby-plugin-intl";
-
+import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
 import T from "prop-types";
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
 import ButtonOutlined from "../../Button/button-outlined";
 import ButtonPrimary from "../../Button/button-primary";
+import ButtonRounded from "../../Button/button-rounded";
 import Carousel from "../../Carousel";
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
+import GoogleMapFrame from "../../GooglMap";
 
 const OverlayContents = [
   "Les programmes offerts sont soigneusement préparés par des mentors congolais qui ont bénéficié d’une éducation internationale au Canada et aux USA et évoluent dans des entreprises de renom dans le domaine de la technologie telles que Microsoft (USA) et Rhetorik (Canada)",
@@ -21,7 +23,7 @@ const OverlayContents = [
   "A la fin de votre formation, vous aurez un certificat reconnu oú que vous alliez qui atteste vos compétences et connaissances.",
 ];
 
-const Home = ({ carouselItems }) => {
+const Home = ({ carouselItems, map }) => {
   const intl = useIntl();
   const [overlayOpen, setOverlayOpen] = React.useState(false);
   const [overlayIndex, setOverlayIndex] = React.useState(1);
@@ -153,33 +155,36 @@ const Home = ({ carouselItems }) => {
             <p className={style.about__title}>Certificat</p>
           </button>
         </section>
-        <section className={style["help__section"]}>
-          <h3 className={style["help__main__title"]}>Besoin d&apos;une aide</h3>
-          <p className={style["help__main__desc"]}>
-            Vous avez une question ? Notre équipe est là pour vous répondre du
-            lundi au vendredi de 9h00 à 19h00, heure en France métropolitaine.
+        <section className={style.signup__container}>
+          <p className={style.signup__title}>
+            <span className={style.signup__text}>
+              Nous serons plus que ravis de vous compter parmis nous et
+              contribuer à votre croissance numérique!
+            </span>
+            <br />
+            Inscrivez-vous à l'un des nos programmes offerts et devenez le
+            meilleur !
           </p>
-          <div className={style["help__main__button"]}>
-            <ButtonOutlined leftIcon={faEnvelope} text={"Nous ecrire"} />
-            <span className={style["help__main__space"]}></span>
-            <ButtonOutlined leftIcon={faPhone} text={"Nous appeler"} />
+          <ButtonRounded
+            url={ROUTES.SIGNUP}
+            text={"Démarrez votre formation aujourd'hui!"}
+          />
+        </section>
+        <section className={style.contact__container}>
+          <div className={style.contact__map}>
+            <GoogleMapFrame mapUrl={map} />
           </div>
-          <h3 className={style["help__main__title"]}>
-            Restez informé de nos nouveautés
-          </h3>
-          <p className={style["help__main__desc"]}>
-            Inscrivez-vous à notre newsletter pour recevoir en avant-première
-            les dernières tendances du digital, ainsi que toutes nos actus.
-          </p>
-          <div className={style["help__main__button"]}>
-            <input
-              type={"text"}
-              name={"email"}
-              placeholder={"Entrer votre email"}
-              className={style["help__main__input"]}
-            />
-            <span className={style["help__main__space"]}></span>
-            <ButtonPrimary text={"S'insrire"} />
+          <div className={style.contact__information}>
+            <h1>Contact</h1>
+            <p>
+              Adresse: 6, Tabora, Gombe, Kinshasa, RDC
+              <br />
+              <br />
+              Email: academie@elite.cd
+              <br />
+              <br />
+              Whatsapp: +243 999 084 177
+            </p>
           </div>
         </section>
       </React.Fragment>

@@ -71,5 +71,12 @@ module.exports = {
         path: `${__dirname}/data/courses`,
       },
     },
+    {
+      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
+      options: {
+        key: `AIzaSyBXk4ZG2ByHCH8p6-QXT4rIkRfXYevUUc4`,
+        center: `-4.345037,15.289549`,
+      },
+    },
   ],
 };

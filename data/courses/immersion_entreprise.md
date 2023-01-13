@@ -1,6 +1,7 @@
 ---
 
 draft: false
+id: 3
 slug: "immersion-en-entreprise"
 title: "Programme d’immersion en entreprise"
 timeline: "3 mois"

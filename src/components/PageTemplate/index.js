@@ -7,10 +7,14 @@ import * as style from "./style.module.scss";
 const Page = ({ children, activeRoute }) => {
   const data = useStaticQuery(graphql`
     query {
-      courses: allMarkdownRemark(limit: 10) {
+      courses: allMarkdownRemark(
+        limit: 10
+        sort: { frontmatter: { id: ASC } }
+      ) {
         edges {
           node {
             frontmatter {
+              id
               title
               timeline
               description
