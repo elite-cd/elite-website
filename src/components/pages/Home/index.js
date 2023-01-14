@@ -1,18 +1,20 @@
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { StaticImage } from "gatsby-plugin-image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useIntl } from "gatsby-plugin-intl";
-import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
 import T from "prop-types";
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
-import ButtonOutlined from "../../Button/button-outlined";
-import ButtonPrimary from "../../Button/button-primary";
 import ButtonRounded from "../../Button/button-rounded";
 import Carousel from "../../Carousel";
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
 import GoogleMapFrame from "../../GooglMap";
+import {
+  faEnvelope,
+  faLocationPin,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 
 const OverlayContents = [
   "Les programmes offerts sont soigneusement préparés par des mentors congolais qui ont bénéficié d’une éducation internationale au Canada et aux USA et évoluent dans des entreprises de renom dans le domaine de la technologie telles que Microsoft (USA) et Rhetorik (Canada)",
@@ -177,13 +179,60 @@ const Home = ({ carouselItems, map }) => {
           <div className={style.contact__information}>
             <h1>Contact</h1>
             <p>
-              Adresse: 6, Tabora, Gombe, Kinshasa, RDC
-              <br />
-              <br />
-              Email: academie@elite.cd
-              <br />
-              <br />
-              Whatsapp: +243 999 084 177
+              {" "}
+              <span className={style.contact__icon}>
+                {" "}
+                <FontAwesomeIcon icon={faLocationPin} />{" "}
+              </span>{" "}
+              6, Tabora, Gombe, Kinshasa, RDC
+            </p>
+            <p>
+              {" "}
+              <span className={style.contact__icon}>
+                {" "}
+                <FontAwesomeIcon icon={faEnvelope} />{" "}
+              </span>
+              academie@elite.cd
+            </p>
+            <p>
+              {" "}
+              <span className={style.contact__icon}>
+                {" "}
+                <FontAwesomeIcon icon={faPhone} />{" "}
+              </span>
+              +243 999 084 177
+            </p>
+
+            <p>
+              <StaticImage
+                objectFit={"contain"}
+                className={style.contact__image}
+                src={"../../../assets/images/linkedin.png"}
+              />
+              <a href="https://www.linkedin.com/company/academie-des-elites/">
+                LinkedIn
+              </a>{" "}
+            </p>
+            <p>
+              <StaticImage
+                objectFit={"contain"}
+                className={style.contact__image}
+                src={"../../../assets/images/instagram.png"}
+              />
+              <a href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h">
+                Instagram
+              </a>{" "}
+            </p>
+            <p>
+              <StaticImage
+                objectFit={"contain"}
+                className={style.contact__image}
+                src={"../../../assets/images/facebook.png"}
+              />
+              <a href="https://www.facebook.com/elitescd/">Facebook</a>
+            </p>
+            <p>
+              <a href="https://twitter.com/AcademieElites?s=09">Twitter</a>
             </p>
           </div>
         </section>
