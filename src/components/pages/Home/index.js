@@ -178,62 +178,65 @@ const Home = ({ carouselItems, map }) => {
           </div>
           <div className={style.contact__information}>
             <h1>Contact</h1>
-            <p>
-              {" "}
+            <div>
               <span className={style.contact__icon}>
-                {" "}
-                <FontAwesomeIcon icon={faLocationPin} />{" "}
-              </span>{" "}
+                <FontAwesomeIcon icon={faLocationPin} />
+              </span>
               6, Tabora, Gombe, Kinshasa, RDC
-            </p>
-            <p>
-              {" "}
+            </div>
+            <div>
               <span className={style.contact__icon}>
-                {" "}
-                <FontAwesomeIcon icon={faEnvelope} />{" "}
+                <FontAwesomeIcon icon={faEnvelope} />
               </span>
               academie@elite.cd
-            </p>
-            <p>
-              {" "}
+            </div>
+            <div>
               <span className={style.contact__icon}>
-                {" "}
-                <FontAwesomeIcon icon={faPhone} />{" "}
+                <FontAwesomeIcon icon={faPhone} />
               </span>
               +243 999 084 177
-            </p>
+            </div>
 
-            <p>
+            <div>
               <StaticImage
+                alt={"brands"}
                 objectFit={"contain"}
                 className={style.contact__image}
                 src={"../../../assets/images/linkedin.png"}
               />
-              <a href="https://www.linkedin.com/company/academie-des-elites/">
+              <p href="https://www.linkedin.com/company/academie-des-elites/">
                 LinkedIn
-              </a>{" "}
-            </p>
-            <p>
+              </p>
+            </div>
+            <div>
               <StaticImage
+                alt={"brands"}
                 objectFit={"contain"}
                 className={style.contact__image}
                 src={"../../../assets/images/instagram.png"}
               />
-              <a href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h">
+              <p href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h">
                 Instagram
-              </a>{" "}
-            </p>
-            <p>
+              </p>
+            </div>
+            <div>
               <StaticImage
+                alt={"brands"}
                 objectFit={"contain"}
                 className={style.contact__image}
                 src={"../../../assets/images/facebook.png"}
               />
-              <a href="https://www.facebook.com/elitescd/">Facebook</a>
-            </p>
-            <p>
-              <a href="https://twitter.com/AcademieElites?s=09">Twitter</a>
-            </p>
+              <p href="https://www.facebook.com/elitescd/">Facebook</p>
+            </div>
+            <div>
+              <StaticImage
+                alt={"brands"}
+                objectFit={"contain"}
+                className={style.contact__image}
+                src={"../../../assets/images/twitter_icon.png"}
+              />
+              <p href="https://twitter.com/AcademieElites?s=09">Twitter</p>
+            </div>
           </div>
         </section>
       </React.Fragment>
