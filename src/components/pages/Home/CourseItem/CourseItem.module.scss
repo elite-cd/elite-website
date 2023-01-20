@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  overflow: hidden;
 }
 
 .text {
@@ -33,6 +34,10 @@
   font-size: 14px;
   text-align: center;
   line-height: 1.3rem !important;
+  @media only screen and (max-width: 768px) {
+    text-align: justify;
+    padding: 0 1rem;
+  }
 }
 
 .item,
@@ -46,9 +51,10 @@
   align-items: center;
   margin: 0 2rem;
   @media only screen and (max-width: 768px) {
+    padding: 0;
     padding-bottom: 3rem;
     box-shadow: 0;
-    width: 20rem;
+    width: 100%;
     height: fit-content;
     margin: 0;
   }
@@ -101,6 +107,9 @@
   font-family: "GothamMedium";
   font-size: small;
   text-align: center;
+  @media only screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 }
 
 .item__outlined {
@@ -136,6 +145,9 @@
   font-weight: bold;
   margin: 1rem 0;
   height: 2rem;
+  @media only screen and (max-width: 768px) {
+    height: auto;
+  }
 }
 
 .headertitle {
