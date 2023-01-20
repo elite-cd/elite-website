@@ -19,7 +19,6 @@
       text-align: center;
       margin: 1rem;
       font-size: 26px;
-      line-height: 2rem !important;
     }
 
     .typography6 {
@@ -161,6 +160,9 @@
 
   &__box:hover {
     transform: scale(1.2);
+    @media only screen and (max-width: 768px) {
+      transform: none;
+    }
     border: 1px solid #046059;
     .about__title {
       color: #046059;

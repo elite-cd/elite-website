@@ -122,8 +122,7 @@
 
 .hamburger {
   display: none;
-  font-size: 1.7rem;
-  padding-top: 0.5rem;
+  font-size: 2rem;
   user-select: none;
 }
 
@@ -195,9 +194,9 @@
     padding: 0.5rem;
   }
   .navlinks {
-    margin: 0;
+    padding-left: 0.6rem;
     margin-bottom: 0.2rem;
-    padding: 0;
+    margin-top: 1.2rem !important;
   }
 
   .menu__logo {
