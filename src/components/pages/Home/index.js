@@ -204,8 +204,10 @@ const Home = ({ carouselItems, map }) => {
                 className={style.contact__image}
                 src={"../../../assets/images/linkedin.png"}
               />
-              <p href="https://www.linkedin.com/company/academie-des-elites/">
-                LinkedIn
+              <p>
+                <a href="https://www.linkedin.com/company/academie-des-elites/">
+                  LinkedIn
+                </a>
               </p>
             </div>
             <div>
@@ -215,8 +217,10 @@ const Home = ({ carouselItems, map }) => {
                 className={style.contact__image}
                 src={"../../../assets/images/instagram.png"}
               />
-              <p href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h">
-                Instagram
+              <p>
+                <a href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h">
+                  Instagram
+                </a>
               </p>
             </div>
             <div>
@@ -226,7 +230,10 @@ const Home = ({ carouselItems, map }) => {
                 className={style.contact__image}
                 src={"../../../assets/images/facebook.png"}
               />
-              <p href="https://www.facebook.com/elitescd/">Facebook</p>
+              <p>
+                {" "}
+                <a href="https://www.facebook.com/elitescd/">Facebook</a>{" "}
+              </p>
             </div>
             <div>
               <StaticImage
@@ -235,7 +242,9 @@ const Home = ({ carouselItems, map }) => {
                 className={style.contact__image}
                 src={"../../../assets/images/twitter_icon.png"}
               />
-              <p href="https://twitter.com/AcademieElites?s=09">Twitter</p>
+              <p>
+                <a href="https://twitter.com/AcademieElites?s=09">Twitter</a>
+              </p>
             </div>
           </div>
         </section>
