@@ -18,10 +18,7 @@ const CoursePage = ({ course, otherCourses }) => {
     <React.Fragment>
       <div className={style.container}>
         <div className={style.header}>
-          <p>
-            {`Accueil >> Académie des élites >>`}
-            <span className={style.header__nav}>{course.title}</span>
-          </p>
+
         </div>
         <section className={style.hero}>
           <StaticImage
