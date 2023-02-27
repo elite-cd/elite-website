@@ -35,18 +35,9 @@ const Menu = ({ activeRoute, courses }) => {
               url={ROUTES.INDEX}
               text={intl.formatMessage({ id: "menu-item.label.home" })}
             />
-            <DropdownItem
-              isActive={ROUTES.ACADEMY === activeRoute}
-              url={"#"}
-              text={intl.formatMessage({ id: "menu-item.label.academy" })}
-              links={ACADEMY_COURSES}
-            />
+
             <MenuItem
-              url={ROUTES.BLANK}
-              text={intl.formatMessage({ id: "menu-item.label.magasine" })}
-            />
-            <MenuItem
-              url={ROUTES.BLANK}
+              url={ROUTES.ABOUT}
               text={intl.formatMessage({ id: "menu-item.label.about" })}
             />
             <MenuItem

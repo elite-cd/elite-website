@@ -12,16 +12,19 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   padding: 0 2rem;
   @media only screen and (max-width: 768px) {
-    padding: 0;
+    margin: 2rem 0;
     .typography3 {
       text-align: center;
+      margin: 1rem;
+      font-size: 26px;
     }
 
     .typography6 {
-      font-size: 18px;
+      font-size: 16px;
+      margin: 0;
+      width: 100%;
       line-height: 1.5rem !important;
     }
   }
@@ -29,20 +32,21 @@
 
 .typography3 {
   font-family: "GothamMedium";
-  font-size: 30px;
-  line-height: 2rem !important;
+  font-size: 50px;
+  line-height: 3rem !important;
 }
 
 .typography6 {
   font-family: "GothamRegular";
   font-weight: 500;
   text-align: center;
-  width: 50%;
-  font-size: 0.85rem;
+  width: 60%;
+  font-size: 18px;
+  line-height: 1.6rem !important;
 }
 
 .sitename {
-  margin-left: 0.2rem;
+  margin-left: 0.3rem;
   font-weight: 800;
   color: #e9ab3e;
   text-transform: uppercase;
@@ -51,10 +55,9 @@
 /* COURSE SECTION */
 
 .course__section {
-  background-color: #fbf9ff;
+  background-color: #fafafa;
   padding: 4rem 0;
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   @media only screen and (max-width: 768px) {
     padding: 0;
     width: 100%;
@@ -62,7 +65,6 @@
 }
 
 .courselist {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -91,7 +93,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      row-gap: 2rem;
+      row-gap: 0rem;
+      width: 100%;
       column-gap: 0;
       padding: 0;
     }
@@ -157,6 +160,9 @@
 
   &__box:hover {
     transform: scale(1.2);
+    @media only screen and (max-width: 768px) {
+      transform: none;
+    }
     border: 1px solid #046059;
     .about__title {
       color: #046059;
@@ -174,7 +180,10 @@
     overflow: hidden;
     background-color: #f1f1f1;
     @media only screen and (max-width: 768px) {
-      width: 16rem;
+      width: 100%;
+      border-radius: 0;
+      border: 0;
+      border-bottom: 1px solid #4f4f4f !important;
       height: 16rem;
     }
   }
@@ -186,6 +195,9 @@
     font-family: "GothamMedium";
     font-size: 12px;
     text-align: center;
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
+    }
   }
   &__header {
     font-family: "GothamMedium";
@@ -251,4 +263,78 @@
   border: 0;
   box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
   padding: 0 0 0 0.5rem;
+}
+
+.signup {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+    background-color: #f1f1f1;
+    @media only screen and (max-width: 768px) {
+      background-color: #fff;
+    }
+  }
+  &__title {
+    text-align: center;
+    font-size: 20px;
+    width: 90%;
+    line-height: 1.6rem !important;
+    font-family: "GothamRegular";
+  }
+  &__text {
+    color: #046059;
+    font-family: "GothamMedium";
+    font-size: 24px;
+  }
+}
+
+.contact {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    justify-content: center;
+    padding: 2rem;
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  &__map,
+  &__information {
+    width: 100%;
+  }
+
+  &__information {
+    padding: 2rem;
+    @media only screen and (max-width: 768px) {
+      padding: 0;
+    }
+    h1 {
+      font-family: "GothamMedium";
+    }
+    p {
+      margin: 0;
+    }
+    div {
+      font-family: "GothamRegular";
+      font-size: 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0.6rem 0;
+      gap: 10px;
+    }
+  }
+  &__icon {
+    color: #046059;
+  }
+  &__image {
+    height: 15px;
+    width: 15px;
+    margin: 0;
+    margin-right: 0.6rem;
+  }
 }

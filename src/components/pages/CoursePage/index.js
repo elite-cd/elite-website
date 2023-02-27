@@ -18,10 +18,7 @@ const CoursePage = ({ course, otherCourses }) => {
     <React.Fragment>
       <div className={style.container}>
         <div className={style.header}>
-          <p>
-            {`Accueil >> Académie des élites >>`}
-            <span className={style.header__nav}>{course.title}</span>
-          </p>
+
         </div>
         <section className={style.hero}>
           <StaticImage
@@ -31,9 +28,7 @@ const CoursePage = ({ course, otherCourses }) => {
           />
           <div className={style.hero__overlay}>
             <div className={style.overlay_left}>
-              <p
-                className={style.course__title}
-              >{`Cours de ${course.title}`}</p>
+              <p className={style.course__title}>{`${course.title}`}</p>
               <p className={style.course__desc}>{course.shortDescription}</p>
               <ButtonRounded
                 url={ROUTES.SIGNUP}
