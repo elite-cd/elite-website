@@ -29,6 +29,8 @@
   display: inline-block;
   line-height: 1;
   box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
+  margin: 0 auto;
+  vertical-align: middle;
 }
 
 .button__rounded:hover {
@@ -50,7 +52,8 @@
 }
 
 .text {
-  margin: 0 0.3rem;
+  //margin: 0 0.3rem;
+  margin: 5px;
 }
 
 .button__outlined:hover {
