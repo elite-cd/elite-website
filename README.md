@@ -8,7 +8,7 @@ git clone
 cd elite-cd
 npm install --legacy-peer-deps
 
-## exécuter
+## execute
 
 Développement:
 npm run develop
