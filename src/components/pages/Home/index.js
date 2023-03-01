@@ -71,7 +71,9 @@ const Home = ({ carouselItems, map }) => {
         </div>
         <section className={style.course__section}>
           <div className={style.courselist}>
+
             {courses.map((course, i) => (
+              
               <CourseItem
                 key={"course-" + i}
                 title={course.title}
