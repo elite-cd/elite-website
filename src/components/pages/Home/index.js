@@ -10,6 +10,18 @@ import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
 import GoogleMapFrame from "../../GooglMap";
+import { useState } from "react";
+
+import styled from "styled-components";
+import "./styles.css";
+import Modal from "./Modal";
+import img1 from "../../../assets/images/mentor.png"
+import img2 from "../../../assets/images/qualify.png"
+import img3 from "../../../assets/images/computer.png"
+import img4 from "../../../assets/images/pedagogie.png"
+import img5 from "../../../assets/images/professional.png"
+import img6 from "../../../assets/images/certificat.png"
+
 import {
   faEnvelope,
   faLocationPin,
@@ -26,6 +38,10 @@ const OverlayContents = [
 ];
 
 const Home = ({ carouselItems, map }) => {
+
+  const [modalContentId, setModalContentId] = useState(0);
+  const [img, setImg] = useState("")
+
   const intl = useIntl();
   const [overlayOpen, setOverlayOpen] = React.useState(false);
   const [overlayIndex, setOverlayIndex] = React.useState(1);
@@ -54,7 +70,41 @@ const Home = ({ carouselItems, map }) => {
       </div>
     );
   };
+
+  const ModalContent = styled.div`
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          h1 {
+            color: #5c3aff;
+          }
+        `;
+
+        const images = [img1, img2, img3, img4, img5, img6]
+
+        const body = document.querySelector("body");
+        
+        const [isOpen, toggle] = useState(false);
+
+        function handlOpenModal(open, id) {
+          console.log("close modal");
+          
+          setModalContentId(id)
+
+          if(open === true) {
+            body.style.overflow = "hidden";
+          }
+          else {
+            body.style.overflow = "auto";
+          }
+          
+          toggle(open);
+        }
+
   const InternalPage = ({ courses }) => {
+  
     return (
       <React.Fragment>
         <Carousel items={carouselItems} />
@@ -69,9 +119,30 @@ const Home = ({ carouselItems, map }) => {
             {intl.formatMessage({ id: "content.homepage.elite.decription" })}
           </p>
         </div>
+
+          
+          <Modal isOpen={isOpen} handleClose={() => handlOpenModal(false)}>
+            <ModalContent>
+              <div style={{ display: "flex", alignItems: "center", paddingLeft: "4%", paddingRight: "4%", justifyContent: "center" }}>
+                
+                <div style={{ flexBasis: "90%" }}>
+                   <img src={ images[modalContentId] } style={{ maxWidth: "100%"}}/>
+                </div>
+                
+              
+                <div>
+                  <h1 style={{ paddingLeft: "20px", textAlign: "center", lineHeight: "20px", fontSize: "22px" }}> { OverlayContents[modalContentId] } </h1>
+                </div>
+              </div>
+
+            </ModalContent>
+          </Modal>
+
         <section className={style.course__section}>
           <div className={style.courselist}>
+
             {courses.map((course, i) => (
+              
               <CourseItem
                 key={"course-" + i}
                 title={course.title}
@@ -89,10 +160,11 @@ const Home = ({ carouselItems, map }) => {
         </section>
         <h3 id="about" className={style.about__header}>
           Pourquoi choisir l'académie des élites ?
-        </h3>
+        </h3>      
+
         <section className={style.about__container}>
           {renderOverlayComponent(overlayIndex)}
-          <button id="1" onClick={handleClick} className={style.about__box}>
+          <button id="1" onClick={() => handlOpenModal(true, 0)} className={style.about__box}>
             <StaticImage
               alt="mentor"
               id="image-1"
@@ -104,7 +176,8 @@ const Home = ({ carouselItems, map }) => {
               Mentors de niveau international
             </p>
           </button>
-          <button id="2" onClick={handleClick} className={style.about__box}>
+
+          <button id="2" onClick={() => handlOpenModal(true, 1)} className={style.about__box}>
             <StaticImage
               alt="mentor"
               id="image-2"
@@ -114,7 +187,7 @@ const Home = ({ carouselItems, map }) => {
             />
             <p className={style.about__title}>Coach Qualifiés et pratiquants</p>
           </button>
-          <button id="3" onClick={handleClick} className={style.about__box}>
+          <button id="3" onClick={() => handlOpenModal(true, 2)} className={style.about__box}>
             <StaticImage
               alt="mentor"
               id="image-3"
@@ -124,7 +197,7 @@ const Home = ({ carouselItems, map }) => {
             />
             <p className={style.about__title}>Lab Creative (Canada)</p>
           </button>
-          <button id="4" onClick={handleClick} className={style.about__box}>
+          <button id="4" onClick={() => handlOpenModal(true, 3)} className={style.about__box}>
             <StaticImage
               alt="mentor"
               id="image-4"
@@ -134,7 +207,7 @@ const Home = ({ carouselItems, map }) => {
             />
             <p className={style.about__title}>Methode Harkness (USA)</p>
           </button>
-          <button id="5" onClick={handleClick} className={style.about__box}>
+          <button id="5" onClick={() => handlOpenModal(true, 4)} className={style.about__box}>
             <StaticImage
               alt="mentor"
               id="image-5"
@@ -146,7 +219,7 @@ const Home = ({ carouselItems, map }) => {
               Environnement Professionnel et Sérieux
             </p>
           </button>
-          <button id="6" onClick={handleClick} className={style.about__box}>
+          <button id="6" onClick={() => handlOpenModal(true, 5)} className={style.about__box}>
             <StaticImage
               alt="mentor"
               id="image-6"

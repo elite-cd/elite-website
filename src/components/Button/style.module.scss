@@ -16,6 +16,19 @@
   z-index: 900;
 }
 
+.button__outlined span {
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.button__primary .text {
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .button__rounded {
   padding: 0.8rem 1rem;
   background-color: #e9ab3e;
@@ -39,6 +52,13 @@
   cursor: pointer;
 }
 
+.button__rounded .text {
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .icon {
   margin-bottom: 3px;
 }
@@ -50,7 +70,8 @@
 }
 
 .text {
-  margin: 0 0.3rem;
+  //margin: 0 0.3rem;
+  margin: 5px;
 }
 
 .button__outlined:hover {
