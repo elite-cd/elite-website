@@ -3,6 +3,8 @@ import T from "prop-types";
 import * as React from "react";
 import { ButtonLink } from "../../../Button";
 import * as style from "./CourseItem.module.scss";
+import { Link } from "gatsby";
+
 const CourseItem = ({
   title,
   timeline,
@@ -19,15 +21,17 @@ const CourseItem = ({
   return (
 
     <div className={style.wrapper}>
-      <GatsbyImage
-        fluid={image.childImageSharp.fluid}
-        objectFit={"contain"}
-        alt={`${title} image`}
-        className={style.item__image}
-        image={getImage(image)}
-      />
-      <div className={style["item" + classNameVariation]}>
-        
+      <div>
+        <GatsbyImage
+          fluid={image.childImageSharp.fluid}
+          objectFit={"contain"}
+          alt={`${title} image`}
+          className={style.item__image}
+          image={getImage(image)}
+        />
+      </div>
+      
+      <div className={style["item" + classNameVariation]} style={{ width: '100%' }}>      
         <div className={style.header}>
           <h3 className={style["headertitle" + classNameVariation]}>{title}</h3>
         </div>
@@ -65,6 +69,8 @@ const CourseItem = ({
             />
           )}
         </div>
+
+
       </div>
     </div>
   );
