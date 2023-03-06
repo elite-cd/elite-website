@@ -13,7 +13,7 @@ const Overlay = styled(motion.div)`
 `;
 const ModalContainer = styled(motion.div)`
   width: 45%;
-  height: 35%;
+  height: 30%;
   background-color: white;
   position: absolute;
   top: 50%;
@@ -55,6 +55,7 @@ const Modal = ({ handleClose, children, isOpen }) => {
               onClick={handleClose}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20.39 20.39"
+              
             >
               <title>close</title>
               <line
@@ -63,7 +64,7 @@ const Modal = ({ handleClose, children, isOpen }) => {
                 x2="1"
                 y2="1"
                 fill="none"
-                stroke="#5c3aff"
+                stroke="#046059"
                 strokeLinecap="round"
                 strokeMiterlimit="10"
                 strokeWidth="2"
@@ -74,7 +75,7 @@ const Modal = ({ handleClose, children, isOpen }) => {
                 x2="19.39"
                 y2="1"
                 fill="none"
-                stroke="#5c3aff"
+                stroke="#046059"
                 strokeLinecap="round"
                 strokeMiterlimit="10"
                 strokeWidth="2"
