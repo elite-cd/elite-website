@@ -30,8 +30,8 @@ const CourseItem = ({
           image={getImage(image)}
         />
       </div>
-      <div className={style["item" + classNameVariation]} style={{ width: '100%' }}>
-        
+      
+      <div className={style["item" + classNameVariation]} style={{ width: '100%' }}>      
         <div className={style.header}>
           <h3 className={style["headertitle" + classNameVariation]}>{title}</h3>
         </div>
