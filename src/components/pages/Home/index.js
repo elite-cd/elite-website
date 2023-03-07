@@ -27,7 +27,6 @@ import {
   faLocationPin,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import { color } from "framer-motion";
 
 const OverlayContents = [
   "Les programmes offerts sont soigneusement préparés par des mentors congolais qui ont bénéficié d’une éducation internationale au Canada et aux USA. et évoluent dans des entreprises de renom dans le domaine de la technologie telles que Microsoft (USA) et Rhetorik (Canada).",
