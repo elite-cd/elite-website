@@ -64,6 +64,14 @@
   }
 }
 
+.overflow_hidden{
+  overflow: hidden;
+}
+
+.overflow_auto{
+  overflow: auto;
+}
+
 .courselist {
   display: flex;
   flex-direction: row;
@@ -340,5 +348,30 @@
     width: 15px;
     margin: 0;
     margin-right: 0.6rem;
+  }
+}
+
+.modalContentText{
+  text-align: justify;
+  line-height: 0.8rem !important;
+  font-family: "GothamRegular";
+  font-size: 15px
+}
+
+.modalContentTextWrapper {
+  padding-top: 10%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .modalContentText{
+    font-size: 12px; 
+  } 
+  .overlayTitle {
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+  }
+  .modalContentTextWrapper {
+    padding-top: 0;
   }
 }

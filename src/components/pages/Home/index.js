@@ -103,8 +103,9 @@ const Home = ({ carouselItems, map }) => {
 
         const images = [img1, img2, img3, img4, img5, img6]
 
-        const body = document.querySelector("body");
-        
+        //const body = document.querySelector("body");
+        //let containerBody = React.useRef(null);
+
         const [isOpen, toggle] = useState(false);
 
         function handlOpenModal(open, id) {
@@ -112,18 +113,12 @@ const Home = ({ carouselItems, map }) => {
           
           setModalContentId(id)
 
-          if(open === true) {
-            body.style.overflow = "hidden";
-          }
-          else {
-            body.style.overflow = "auto";
-          }
-          
+          //open === true ? (body.style.overflow = "hidden") :  (body.style.overflow = "auto");
           toggle(open);
         }
 
   const InternalPage = ({ courses }) => {
-  
+    
     return (
       <React.Fragment>
         <Carousel items={carouselItems} />
@@ -152,9 +147,10 @@ const Home = ({ carouselItems, map }) => {
                             style={{ justifyContent: "center", marginTop: "12%"}} />
                   </div>
 
-                <div class="pt-6 md:p-8 text-center bg-gray md:text-left space-y-4" style={{ height: "100%", width: "100%", backgroundColor: "rgb(236, 238, 242)" }}>
-                  <blockquote style={{ marginTop: "12%" }}>
-                    <p class="text-lg font-semibold" style={{ textAlign: "justify", lineHeight: "0.8rem !important", fontFamily: "GothamRegular", fontSize: "15px" }}>
+                <div class="pt-6 md:p-8 text-center bg-gray md:text-left space-y-3" style={{ height: "100%", width: "100%", backgroundColor: "rgb(236, 238, 242)", paddingTop: "-20%" }}>
+                  <blockquote className={ style.modalContentTextWrapper }>
+
+                    <p class="text-lg font-semibold" className={ style.modalContentText }>
                       { (OverlayContents[modalContentId] != undefined) ? (OverlayContents[modalContentId].split('.')[0]) : ""  }
                         <p style={{ paddingTop: "1%" }}>
                           { (OverlayContents[modalContentId] != undefined) ? (OverlayContents[modalContentId].split('.')[1]) : "" }
@@ -165,7 +161,7 @@ const Home = ({ carouselItems, map }) => {
                     </p>
                   </blockquote>
                   <figcaption className="font-medium">
-                    <div className="text-cyan-600" style={{ color: "#046059", fontWeight: 'bold' }}>
+                    <div className={ style.overlayTitle } style={{ color: "#046059", fontWeight: 'bold' }}>
                       { OverlayTitles[modalContentId] }
                     </div>
                     <div className="text-gray-500">
