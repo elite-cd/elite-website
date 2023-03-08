@@ -204,3 +204,9 @@
     margin-left: 0.5rem;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .menu {
+    margin-left: 80px;
+  }
+}

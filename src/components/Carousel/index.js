@@ -70,13 +70,13 @@ const Carousel = ({ items }) => {
                         
                       <div style={{ height: "40%", display: "inline-flex" }}>
                         <span>Démarrez Votre formation</span> &nbsp;
-                        <FontAwesomeIcon icon={  faCircleChevronRight  } />
+                        <span style={{ marginTop: "1%" }}><FontAwesomeIcon icon={  faCircleChevronRight  } /></span>
                       </div>
 
                       <div style={{ height: "30%" }}></div>
                     </div>
                 </Link>
-                
+
                 <p className={style.desc}>
                   {intl.formatMessage({ id: item.desc })}
                 </p>
