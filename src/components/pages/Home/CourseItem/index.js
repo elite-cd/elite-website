@@ -21,15 +21,25 @@ const CourseItem = ({
   return (
 
     <div className={style.wrapper}>
-      <div>
-        <GatsbyImage
-          fluid={image.childImageSharp.fluid}
-          objectFit={"contain"}
-          alt={`${title} image`}
-          className={style.item__image}
-          image={getImage(image)}
-        />
+      
+      <div className={ style.ImgCard }>
+        <div className={ style.leftImgCard }>
+        </div>
+
+        <div className={ style.centerImgCard }>
+          <GatsbyImage
+            fluid={image.childImageSharp.fluid}
+            objectFit={"contain"}
+            alt={`${title} image`}
+            className={style.item__image}
+            image={getImage(image)}
+          />
+        </div>
+          
+        <div className={ style.rightImgCard }>
+        </div>
       </div>
+
       <div className={style["item" + classNameVariation]} style={{ width: '100%' }}>
         
         <div className={style.header}>

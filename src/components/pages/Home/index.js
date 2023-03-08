@@ -122,7 +122,7 @@ const Home = ({ carouselItems, map }) => {
       <React.Fragment>
         <Carousel items={carouselItems} />
         <div className={style.row__center}>
-          <h3 className={style.typography3}>
+          <h3 className={style.typography3} style={{ marginTop: "3%" }}>
             {intl.formatMessage({ id: "content.homepage.elite.title" })}
             <span className={style.sitename}>
               {intl.formatMessage({ id: "content.homepage.elite.suffix" })}
@@ -206,7 +206,7 @@ const Home = ({ carouselItems, map }) => {
               className={style.about__image}
               src={"../../../assets/images/mentor.png"}
             />
-            <p className={style.about__title}>
+            <p className={style.about__title} style={{ marginTop: "8%" }}>
               Mentors de niveau international
             </p>
           </button>
@@ -219,7 +219,7 @@ const Home = ({ carouselItems, map }) => {
               className={style.about__image}
               src={"../../../assets/images/qualify.png"}
             />
-            <p className={style.about__title}>Coach Qualifiés et pratiquants</p>
+            <p className={style.about__title} style={{ marginTop: "8%" }}>Coach Qualifiés et pratiquants</p>
           </button>
           <button id="3" onClick={() => handlOpenModal(true, 2)} className={style.about__box}>
             <StaticImage
@@ -229,7 +229,7 @@ const Home = ({ carouselItems, map }) => {
               className={style.about__image}
               src={"../../../assets/images/computer.png"}
             />
-            <p className={style.about__title}>Lab Creative (Canada)</p>
+            <p className={style.about__title} style={{ marginTop: "8%" }}>Lab Creative (Canada)</p>
           </button>
           <button id="4" onClick={() => handlOpenModal(true, 3)} className={style.about__box}>
             <StaticImage
@@ -239,7 +239,7 @@ const Home = ({ carouselItems, map }) => {
               className={style.about__image}
               src={"../../../assets/images/pedagogie.png"}
             />
-            <p className={style.about__title}>Methode Harkness (USA)</p>
+            <p className={style.about__title} style={{ marginTop: "8%" }}>Methode Harkness (USA)</p>
           </button>
           <button id="5" onClick={() => handlOpenModal(true, 4)} className={style.about__box}>
             <StaticImage
@@ -249,7 +249,7 @@ const Home = ({ carouselItems, map }) => {
               className={style.about__image}
               src={"../../../assets/images/professional.png"}
             />
-            <p className={style.about__title}>
+            <p className={style.about__title} style={{ marginTop: "8%" }}>
               Environnement Professionnel et Sérieux
             </p>
           </button>
@@ -261,7 +261,7 @@ const Home = ({ carouselItems, map }) => {
               className={style.about__image}
               src={"../../../assets/images/certificat.png"}
             />
-            <p className={style.about__title}>Certificat</p>
+            <p className={style.about__title} style={{ marginTop: "8%" }}>Certificat</p>
           </button>
         </section>
         <section className={style.signup__container}>
