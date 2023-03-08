@@ -97,6 +97,7 @@
   color: #fff;
   font-family: "GothamRegular";
   width: 90%;
+  margin-top: 4%;
 }
 
 .count {
@@ -187,4 +188,30 @@
     width: 100%;
     padding: 0 1.2rem;
   }
+}
+
+.customRoundedBtn {
+  //padding: 0.8rem 1rem;
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: #e9ab3e;
+  color: #fff;
+  font-family: "GothamMedium";
+  font-size: medium;
+  border: 2px solid #fff;
+  font-weight: 700;
+  width: fit-content;
+  border-radius: 3em;
+  display: inline-block;
+  line-height: 1;
+  box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
+  height: 48px;
+  margin-bottom: 30px;
+}
+.customRoundedBtn:hover {
+  //padding: 0.8rem 1rem;
+  background-color: #fff;
+  color: #e9ab3e;
+  border: 2px solid #e9ab3e;
+  cursor: pointer;
 }

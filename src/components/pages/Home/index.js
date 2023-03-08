@@ -11,6 +11,7 @@ import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
 import GoogleMapFrame from "../../GooglMap";
 import { useState } from "react";
+import { Link } from "gatsby";
 
 import styled from "styled-components";
 import "./styles.css";
@@ -274,10 +275,19 @@ const Home = ({ carouselItems, map }) => {
             Inscrivez-vous à l'un des nos programmes offerts et devenez le
             meilleur !
           </p>
-          <ButtonRounded
-            url={ROUTES.SIGNUP}
-            text={"Démarrez votre formation aujourd'hui!"}
-          />
+          
+          <Link to={ROUTES.SIGNUP} className={ style.customRoundedBtn }>
+                    <div style={{ height: "100%", width: "100%" }}>
+                      <div style={{ height: "30%" }}></div>
+                        
+                      <div style={{ height: "40%", display: "inline-flex" }}>
+                        <span>Démarrez votre formation aujourd'hui !</span>
+                      </div>
+
+                      <div style={{ height: "30%" }}></div>
+                    </div>
+          </Link>
+
         </section>
         <section className={style.contact__container}>
           <div className={style.contact__map}>

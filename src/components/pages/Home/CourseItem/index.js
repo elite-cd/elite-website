@@ -66,18 +66,31 @@ const CourseItem = ({
         
         <div className={style.btn_container}>
           {outlined ? (
-            <ButtonLink
-              url={`/courses/${slug}`}
-              className={"button__primary"}
-              text={"En savoir plus"}
-            />
-          ) : (
-            <ButtonLink
-              url={`/courses/${slug}`}
-              className={"button__outlined"}
-              text={"En savoir plus"}
-            />
-          )}
+            <Link to={ `/courses/${slug}` } className={  style.customPrimaryBtn }>       
+            <div style={{ height: "100%", width: "100%" }}>
+                    <div style={{ height: "30%" }}></div>
+                      
+                    <div className="" style={{ paddingLeft: "20%", height: "40%", display: "inline-flex"  }}>
+                      <span>En savoir plus</span>
+                    </div>
+
+                    <div style={{ height: "30%" }}></div>
+            </div>
+          </Link>
+
+        ) : (
+          <Link to={ `/courses/${slug}` } className={  style.customOutlinedBtn }>       
+            <div style={{ height: "100%", width: "100%" }}>
+                    <div style={{ height: "30%" }}></div>
+                      
+                    <div className="" style={{ paddingLeft: "20%", height: "40%", display: "inline-flex"  }}>
+                      <span>En savoir plus</span>
+                    </div>
+
+                    <div style={{ height: "30%" }}></div>
+            </div>
+          </Link>
+        )}
         </div>
 
 
