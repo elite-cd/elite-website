@@ -378,12 +378,11 @@
 }
 
 .customRoundedBtn {
-  //padding: 0.8rem 1rem;
   padding-left: 2%;
   padding-right: 2%;
   background-color: #e9ab3e;
   color: #fff;
-  font-family: "GothamMedium";
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: medium;
   border: 2px solid #fff;
   font-weight: 700;
@@ -401,8 +400,4 @@
   color: #e9ab3e;
   border: 2px solid #e9ab3e;
   cursor: pointer;
-}
-
-.mac_btnTxt {
-  margin-top: 2%;
 }
