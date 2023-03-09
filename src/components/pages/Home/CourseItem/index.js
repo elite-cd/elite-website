@@ -17,12 +17,12 @@ const CourseItem = ({
   const classNameVariation = outlined ? "__outlined" : "";
 
   return (
-    <div className={style.wrapper}>
+    <div className="flex flex-col">
       <GatsbyImage
         fluid={image.childImageSharp.fluid}
         objectFit={"contain"}
         alt={`${title} image`}
-        className={style.item__image}
+        className="w-48 h-32 object-cover self-center -mb-8 z-50"
         image={getImage(image)}
       />
       <div className={style["item" + classNameVariation]}>
@@ -39,17 +39,17 @@ const CourseItem = ({
             Prix: <span className={style.text_regular}>{price}$/mois</span>
           </p>
         </div>
-        <div className={style.btn_container}>
+        <div className="item">
           {outlined ? (
             <ButtonLink
               url={`/courses/${slug}`}
-              className={"button__primary"}
+              className="button__primary"
               text={"En savoir plus"}
             />
           ) : (
             <ButtonLink
               url={`/courses/${slug}`}
-              className={"button__outlined"}
+              className="button__outlined"
               text={"En savoir plus"}
             />
           )}

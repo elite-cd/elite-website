@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: `https://www.elite.cd`,
   },
   plugins: [
+    "gatsby-plugin-postcss",
     "gatsby-plugin-netlify-cms",
     "gatsby-transformer-json",
     {

@@ -1,3 +1,5 @@
+import("./src/assets/styles/global.css");
+
 exports.onClientEntry = () => {
   if (process.env.NODE_ENV === "development") return;
   if (
