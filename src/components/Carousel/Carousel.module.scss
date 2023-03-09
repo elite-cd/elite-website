@@ -47,14 +47,14 @@
 
 .item .overlay {
   position: absolute;
-  top: 0rem;
+  top: -1rem;
   left: 0rem;
   display: flex;
   flex-direction: column;
   padding: 0 4rem;
   justify-content: center;
   height: 80%;
-  width: 50%;
+  width: 60%;
 }
 
 .title {
@@ -97,7 +97,7 @@
   color: #fff;
   font-family: "GothamRegular";
   width: 90%;
-  margin-top: 4%;
+  margin-top: -15px;
 }
 
 .count {
@@ -191,6 +191,7 @@
 }
 
 .customRoundedBtn {
+  //padding: 0.8rem 1rem;
   padding-left: 2%;
   padding-right: 2%;
   background-color: #e9ab3e;
@@ -208,8 +209,21 @@
   margin-bottom: 30px;
 }
 .customRoundedBtn:hover {
+  //padding: 0.8rem 1rem;
   background-color: #fff;
   color: #e9ab3e;
   border: 2px solid #e9ab3e;
   cursor: pointer;
+}
+
+.mac_desc {
+  font-size: 18px;
+  line-height: 1.6rem !important;
+  color: #fff;
+  font-family: "GothamRegular";
+  width: 90%;
+  margin-top: 12px;
+}
+.mac_btnTxt {
+  margin-top: 2%;
 }

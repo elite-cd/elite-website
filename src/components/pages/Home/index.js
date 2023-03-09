@@ -117,6 +117,30 @@ const Home = ({ carouselItems, map }) => {
           toggle(open);
         }
 
+        const osFeatures = {
+          osName : "",
+          osBrowser: ""
+        }
+
+  const osfunction = () => {
+    let os = navigator.userAgent;
+    let finalOs="";
+    if (os.search('Windows')!==-1){
+        finalOs="Windows"; 
+    }
+    else if (os.search('Mac')!==-1){
+        finalOs="MacOS";
+    }
+    else if (os.search('X11')!==-1 && !(os.search('Linux')!==-1)){
+        finalOs="UNIX";
+    }
+    else if (os.search('Linux')!==-1 && os.search('X11')!==-1){
+        finalOs="Linux";
+    }
+        osFeatures.osName = finalOs;
+  }
+  osfunction();
+
   const InternalPage = ({ courses }) => {
     
     return (
@@ -281,7 +305,7 @@ const Home = ({ carouselItems, map }) => {
                       <div style={{ height: "30%" }}></div>
                         
                       <div style={{ height: "40%", display: "inline-flex" }}>
-                        <span>Démarrez votre formation aujourd'hui !</span>
+                        <span className={ osFeatures.osName === "MacOS" ? style.mac_btnTxt : "" }>Démarrez votre formation aujourd'hui !</span>
                       </div>
 
                       <div style={{ height: "30%" }}></div>
