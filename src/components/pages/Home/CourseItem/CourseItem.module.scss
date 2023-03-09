@@ -242,7 +242,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 0;
-  font-family: "GothamMedium";
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   z-index: 900;
   height: 45px;
 }
@@ -267,7 +267,6 @@
   cursor: pointer;
 }
 
-
 .customOutlinedBtn span {
   text-align: center;
   justify-content: center;
@@ -286,7 +285,4 @@
   border: 2px solid #fff;
   color: #fff;
   cursor: pointer;
-}
-.mac_btnTxt {
-  margin-top: 2%;
 }

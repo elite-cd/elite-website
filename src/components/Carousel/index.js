@@ -27,31 +27,6 @@ const Carousel = ({ items }) => {
     className: style["slides__container"],
   };
 
-  const osFeatures = {
-    osName : "",
-    osBrowser: ""
-  }
-
-  const osfunction = () =>
-  {
-    let os = navigator.userAgent;
-    let finalOs="";
-    if (os.search('Windows')!==-1){
-        finalOs="Windows"; 
-    }
-    else if (os.search('Mac')!==-1){
-        finalOs="MacOS";
-    }
-    else if (os.search('X11')!==-1 && !(os.search('Linux')!==-1)){
-        finalOs="UNIX";
-    }
-    else if (os.search('Linux')!==-1 && os.search('X11')!==-1){
-        finalOs="Linux";
-    }
-        osFeatures.osName = finalOs;
-  }
-  osfunction();
-
   return (
     <section>
       <Slider {...settings}>
@@ -94,8 +69,7 @@ const Carousel = ({ items }) => {
                       <div style={{ height: "30%" }}></div>
                         
                       <div style={{ height: "40%", display: "inline-flex" }}>
-                        <span className={ osFeatures.osName === "MacOS" ? style.mac_btnTxt : "" }>Démarrez Votre formation &nbsp;
-                        </span>
+                        <span>Démarrez Votre formation</span> &nbsp;
                         <span style={{ marginTop: "1%" }}><FontAwesomeIcon icon={  faCircleChevronRight  } /></span>
                       </div>
 
@@ -103,7 +77,7 @@ const Carousel = ({ items }) => {
                     </div>
                 </Link>
 
-                <p className={ osFeatures.osName === "MacOS" ? style.mac_desc : style.desc}>
+                <p className={style.desc}>
                   {intl.formatMessage({ id: item.desc })}
                 </p>
                 <h3 className={style.count}>
