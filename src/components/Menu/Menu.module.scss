@@ -10,6 +10,7 @@
 
 .logo {
   height: 2rem;
+  margin-left: 15px;
   @media (max-width: 798px) {
     height: 1.7rem;
     margin-left: -0.7rem;
@@ -202,4 +203,12 @@
   .menu__logo {
     margin-left: 0.5rem;
   }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .menu {
+    margin-left: 60px;
+  }
+
 }

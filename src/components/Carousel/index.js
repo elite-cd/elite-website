@@ -6,6 +6,9 @@ import * as React from "react";
 import ButtonRounded from "../Button/button-rounded";
 import * as style from "./Carousel.module.scss";
 import Slider from "react-slick";
+import { Link } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Carousel = ({ items }) => {
   const intl = useIntl();
 
@@ -60,11 +63,20 @@ const Carousel = ({ items }) => {
                   <br />
                   <span className={style.count__title}>apprenants</span>
                 </h3>
-                <ButtonRounded
-                  url={item.buttonUrl}
-                  rightIcon={faCircleChevronRight}
-                  text={"Démarrez votre formation"}
-                />
+                
+                <Link to={item.buttonUrl} className={ style.customRoundedBtn }>
+                    <div style={{ height: "100%", width: "100%" }}>
+                      <div style={{ height: "30%" }}></div>
+                        
+                      <div style={{ height: "40%", display: "inline-flex" }}>
+                        <span>Démarrez Votre formation</span> &nbsp;
+                        <span style={{ marginTop: "1%" }}><FontAwesomeIcon icon={  faCircleChevronRight  } /></span>
+                      </div>
+
+                      <div style={{ height: "30%" }}></div>
+                    </div>
+                </Link>
+
                 <p className={style.desc}>
                   {intl.formatMessage({ id: item.desc })}
                 </p>
