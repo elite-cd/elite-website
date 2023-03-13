@@ -17,18 +17,15 @@ const CoursePage = ({ course, otherCourses }) => {
   const renderCoursePage = () => (
     <React.Fragment>
       <div className={style.container}>
-        <div className={style.header}>
-
-        </div>
+        <div className={style.header}></div>
         <section className={style.hero}>
           <StaticImage
             className={style.hero__image}
-            src={"../../../assets/images/banner01.png"}
+            src={"../../../assets/images/banner.jpg"}
             objectFit={"cover"}
           />
           <div className={style.hero__overlay}>
             <div className={style.overlay_left}>
-              <p className={style.course__title}>{`${course.title}`}</p>
               <p className={style.course__desc}>{course.shortDescription}</p>
               <ButtonRounded
                 url={ROUTES.SIGNUP}
@@ -80,7 +77,7 @@ const CoursePage = ({ course, otherCourses }) => {
           <div className={style.course__detail}>
             <StaticImage
               className={style.course__preview}
-              src={"../../../assets/images/img-aside.png"}
+              src={"../../../assets/images/img-student.jpg"}
               objectFit={"cover"}
             />
             <p className={style.preview__title}>Overview</p>
