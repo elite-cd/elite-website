@@ -54,7 +54,7 @@ const CoursePage = ({ course, otherCourses }) => {
         <div className={style.header}></div>
         <section className={style.hero}>
           <img
-            image={imgList.img2}
+            src={imgList.img2}
             className={style.hero__image}
             alt="Image 2 Loading failed"
           />
