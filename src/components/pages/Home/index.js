@@ -161,10 +161,10 @@ const Home = ({ carouselItems, map }) => {
                     </p>
                   </blockquote>
                   <figcaption className="font-medium">
-                    <div className={ style.overlayTitle } style={{ color: "#046059", fontWeight: 'bold' }}>
+                    <div className={ style.overlayTitle } style={{ color: "#046059", fontWeight: 'bold', textAlign: "center" }}>
                       { OverlayTitles[modalContentId] }
                     </div>
-                    <div className="text-gray-500">
+                    <div className="text-gray-500" style={{ textAlign: "center" }}>
                       { OverlayCountry[modalContentId] }
                     </div>
                   </figcaption>
