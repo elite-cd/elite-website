@@ -53,11 +53,10 @@ const CoursePage = ({ course, otherCourses }) => {
       <div className={style.container}>
         <div className={style.header}></div>
         <section className={style.hero}>
-          <GatsbyImage
-            objectFit={"cover"}
-            alt="Image 2 Loading failed"
-            className={style.hero__image}
+          <img
             image={imgList.img2}
+            className={style.hero__image}
+            alt="Image 2 Loading failed"
           />
 
           <div className={style.hero__overlay}>
@@ -130,11 +129,11 @@ const CoursePage = ({ course, otherCourses }) => {
             })}
           </div>
           <div className={style.course__detail}>
-            <GatsbyImage
-              objectFit={"cover"}
+            <img
               alt="Image 1 Loading failed"
+              src={imgList.img1}
               className={style.course__preview}
-              image={imgList.img1}
+              style={{ objectFit: "cover" }}
             />
 
             <p className={style.preview__title}>Overview</p>
