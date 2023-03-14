@@ -28,6 +28,26 @@ const CoursePage = ({ course, otherCourses }) => {
     img2: "",
   };
 
+  switch (course.slug) {
+    case "immersion-en-entreprise":
+      imgList.img1 = img1_immersion;
+      imgList.img2 = img2_immersion;
+      break;
+
+    case "base-programmation":
+      imgList.img1 = img1_base_programmation;
+      imgList.img2 = img2_base_programmation;
+      break;
+
+    case "alphabetisation-numerique":
+      imgList.img1 = img2_aplhabetisation_num;
+      imgList.img2 = img1_aplhabetisation_num;
+      break;
+
+    default:
+      break;
+  }
+
   const renderCoursePage = () => (
     <React.Fragment>
       <div className={style.container}>
@@ -37,7 +57,7 @@ const CoursePage = ({ course, otherCourses }) => {
             objectFit={"cover"}
             alt="Image 2 Loading failed"
             className={style.hero__image}
-            image={img1_aplhabetisation_num}
+            image={imgList.img2}
           />
 
           <div className={style.hero__overlay}>
@@ -114,7 +134,7 @@ const CoursePage = ({ course, otherCourses }) => {
               objectFit={"cover"}
               alt="Image 1 Loading failed"
               className={style.course__preview}
-              image={img2_aplhabetisation_num}
+              image={imgList.img1}
             />
 
             <p className={style.preview__title}>Overview</p>
