@@ -14,11 +14,11 @@ import * as style from "./CoursePage.module.scss";
 import img1_base_programmation from "../../../assets/images/pexels-katerina-holmes-5905700.jpg";
 import img2_base_programmation from "../../../assets/images/pexels-anna-tarazevich-14751274.jpg";
 
-import img1_aplhabetisation_num from "../../../assets/images/img_2_b.jpg";
+import img1_aplhabetisation_num from "../../../assets/images/pexels-rodolfo-quirós-2330137.jpg";
 import img2_aplhabetisation_num from "../../../assets/images/pexels-mart-production-7550542.jpg";
 
 import img1_immersion from "../../../assets/images/pexels-mart-production-7550298.jpg";
-import img2_immersion from "../../../assets/images/pexels-cottonbro-studio-5076519.jpg";
+import img2_immersion from "../../../assets/images/img-student.jpg";
 
 const CoursePage = ({ course, otherCourses }) => {
   const outcomesList = course.outcomes.split(",");
@@ -57,6 +57,7 @@ const CoursePage = ({ course, otherCourses }) => {
             src={imgList.img2}
             className={style.hero__image}
             alt="Image 2 Loading failed"
+            style={{ objectFit: "cover" }}
           />
 
           <div className={style.hero__overlay}>
