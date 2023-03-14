@@ -5,5 +5,4 @@ export const ROUTES = {
   ACADEMY: "/academie",
   CONTACT: "/contact",
   ABOUT: "/about",
-  MAGAZINE: "/magazine"
 };
