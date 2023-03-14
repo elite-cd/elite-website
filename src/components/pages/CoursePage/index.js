@@ -51,15 +51,12 @@ const CoursePage = ({ course, otherCourses }) => {
   const renderCoursePage = () => (
     <React.Fragment>
       <div className={style.container}>
-        <div className={style.header}>
-
-        </div>
+        <div className={style.header}></div>
         <section className={style.hero}>
           
           <StaticImage
             className={style.hero__image}
             src={ imgList.img2 }
-            objectFit={"cover"}
           />
 
           <div className={style.hero__overlay}>
@@ -77,7 +74,6 @@ const CoursePage = ({ course, otherCourses }) => {
                       <div style={{ height: "30%" }}></div>
                     </div>
               </Link>
-
             </div>
             <div className={style.overlay_right}>
               <p className={style.course__title_module}>{`Modules`}</p>
@@ -130,6 +126,7 @@ const CoursePage = ({ course, otherCourses }) => {
             <StaticImage
               className={style.course__preview}
               src={ imgList.img1 }
+
               objectFit={"cover"}
             />
             <p className={style.preview__title}>Overview</p>
