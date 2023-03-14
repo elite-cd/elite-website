@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: `https://www.elite.cd`,
   },
   plugins: [
+    "gatsby-plugin-postcss",
     "gatsby-plugin-netlify-cms",
     "gatsby-transformer-json",
     {
@@ -18,14 +19,15 @@ module.exports = {
         cssLoaderOptions: {
           camelCase: false,
         },
-        additionalData: `@import "${__dirname}/src/assets/styles/main.scss";`,
+        additionalData: `@import "./src/assets/styles/main.scss";`,
+        //additionalData: `@import "${__dirname}/src/assets/styles/main.scss";`,
       },
     },
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/assets/images/logo.png",
+        icon: `./src/assets/images/logo.png`,
       },
     },
     "gatsby-transformer-remark",
@@ -35,7 +37,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/assets/images/",
+        path: `./src/assets/images/`,
       },
       __key: "images",
     },
@@ -43,7 +45,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: `./src/pages/`,
       },
       __key: "pages",
     },
@@ -51,7 +53,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-intl",
       options: {
-        path: `${__dirname}/src/locales`,
+        //path: `${__dirname}/src/locales`,
+        path: `./src/locales`,
         languages: ["fr"],
         defaultLanguage: "fr",
         redirect: false,
@@ -60,7 +63,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/data/pages/home`,
+        path: `./data/pages/home`,
+        //path: `${__dirname}/data/pages/home`,
         name: "carousel",
       },
     },
@@ -68,7 +72,8 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "courses",
-        path: `${__dirname}/data/courses`,
+        //path: `${__dirname}/data/courses`,
+        path: `./data/courses`,
       },
     },
     {
