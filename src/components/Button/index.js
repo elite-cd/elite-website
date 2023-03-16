@@ -10,7 +10,7 @@ const Button = ({ text, className, leftIcon, rightIcon }) => {
   return (
     <button className={style[className ? className : "button__primary"]}>
       {leftIcon && <FontAwesomeIcon className={style.icon} icon={leftIcon} />}
-      <span className="inline-block align-middle">{text}</span>
+      <span className={style.text}>{text}</span>
       {rightIcon && <FontAwesomeIcon icon={rightIcon} />}
     </button>
   );

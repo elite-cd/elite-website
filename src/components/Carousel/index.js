@@ -63,23 +63,23 @@ const Carousel = ({ items }) => {
                   <br />
                   <span className={style.count__title}>apprenants</span>
                 </h3>
-                
-                <Link to={item.buttonUrl} className={ style.customRoundedBtn }>
-                    <div style={{ height: "100%", width: "100%" }}>
-                      <div style={{ height: "30%" }}></div>
-                        
-                      <div style={{ height: "40%", display: "inline-flex" }}>
-                        <span>Démarrez Votre formation</span> &nbsp;
-                        <span style={{ marginTop: "1%" }}><FontAwesomeIcon icon={  faCircleChevronRight  } /></span>
-                      </div>
 
-                      <div style={{ height: "30%" }}></div>
+                <Link to={item.buttonUrl} className={style.customRoundedBtn}>
+                  <div style={{ height: "100%", width: "100%" }}>
+                    <div style={{ height: "30%" }}></div>
+
+                    <div style={{ height: "40%", display: "inline-flex" }}>
+                      <span>Démarrez Votre formation &nbsp;</span>
+                      <span style={{ marginTop: "1%" }}>
+                        <FontAwesomeIcon icon={faCircleChevronRight} />
+                      </span>
                     </div>
+
+                    <div style={{ height: "30%" }}></div>
+                  </div>
                 </Link>
 
-                <p className={style.desc}>
-                  {intl.formatMessage({ id: item.desc })}
-                </p>
+                <p>{intl.formatMessage({ id: item.desc })}</p>
                 <h3 className={style.count}>
                   +{item.students}
                   <br />

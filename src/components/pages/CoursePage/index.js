@@ -4,60 +4,37 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { ROUTES } from "../../../common/constants";
 import { ButtonRounded } from "../../Button";
 import Page from "../../PageTemplate";
 import * as style from "./CoursePage.module.scss";
 
-import img1_base_programmation from "../../../assets/images/pexels-katerina-holmes-5905700.jpg";
-import img2_base_programmation from "../../../assets/images/pexels-anna-tarazevich-14751274.jpg";
-
-import img1_aplhabetisation_num from "../../../assets/images/pexels-rodolfo-quirós-2330137.jpg";
-import img2_aplhabetisation_num from "../../../assets/images/pexels-mart-production-7550542.jpg";
-
-import img1_immersion from "../../../assets/images/pexels-mart-production-7550298.jpg";
-import img2_immersion from "../../../assets/images/img-student.jpg";
-
 const CoursePage = ({ course, otherCourses }) => {
   const outcomesList = course.outcomes.split(",");
 
-  const imgList = {
-    img1: "",
-    img2: "",
+  const getGraphSqIcon = (item) => {
+    let images = null;
+
+    if (item === 0) {
+      images = getImage(course.icon1);
+    } else if (item === 1) {
+      images = getImage(course.icon2);
+    }
+    return images;
   };
-
-  switch (course.slug) {
-    case "immersion-en-entreprise":
-      imgList.img1 = img1_immersion;
-      imgList.img2 = img2_immersion;
-      break;
-
-    case "base-programmation":
-      imgList.img1 = img1_base_programmation;
-      imgList.img2 = img2_base_programmation;
-      break;
-
-    case "alphabetisation-numerique":
-      imgList.img1 = img2_aplhabetisation_num;
-      imgList.img2 = img1_aplhabetisation_num;
-      break;
-
-    default:
-      break;
-  }
 
   const renderCoursePage = () => (
     <React.Fragment>
       <div className={style.container}>
         <div className={style.header}></div>
         <section className={style.hero}>
-          <img
-            src={imgList.img2}
-            className={style.hero__image}
+          <GatsbyImage
+            objectFit={"cover"}
             alt="Image 2 Loading failed"
-            style={{ objectFit: "cover" }}
+            className={style.hero__image}
+            image={getImage(course.image)}
           />
 
           <div className={style.hero__overlay}>
@@ -100,6 +77,7 @@ const CoursePage = ({ course, otherCourses }) => {
           <div className={style.courses__section}>
             {otherCourses.map((item, i) => {
               const courseLink = `/courses/${item.slug}`;
+
               return (
                 <div className={style.other__item}>
                   <Link to={courseLink}>
@@ -114,7 +92,7 @@ const CoursePage = ({ course, otherCourses }) => {
                         objectFit={"contain"}
                         alt={`${item.title} image`}
                         className={style.other__image}
-                        image={getImage(item.image)}
+                        image={getGraphSqIcon(i)}
                       />
                     </div>
 
@@ -130,11 +108,11 @@ const CoursePage = ({ course, otherCourses }) => {
             })}
           </div>
           <div className={style.course__detail}>
-            <img
+            <GatsbyImage
+              objectFit={"cover"}
               alt="Image 1 Loading failed"
-              src={imgList.img1}
               className={style.course__preview}
-              style={{ objectFit: "cover" }}
+              image={getImage(course.img2)}
             />
 
             <p className={style.preview__title}>Aperçu</p>
