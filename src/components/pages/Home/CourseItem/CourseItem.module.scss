@@ -72,7 +72,7 @@
 
 .ImgCard {
   width: 100%;
-  display: inline-flex;
+  display:inline-flex;
 }
 .leftImgCard {
   width: 30%;
@@ -88,7 +88,6 @@
   height: 7rem;
   bottom: -2rem;
   width: 100%;
-  display: block;
   z-index: 2;
   @media only screen and (max-width: 768px) {
     display: none !important;
@@ -124,7 +123,7 @@
 
 .bodytitle {
   font-family: "GothamMedium";
-  font-size: medium;
+  font-size:medium;
   text-align: center;
   line-height: 1rem !important;
   @media only screen and (max-width: 768px) {
@@ -190,11 +189,14 @@
   height: 75%;
   margin: center;
   text-align: center;
-  display: block;
+  display:block;
+  
 }
 
 @media only screen and (max-width: 1200px) {
-  .body .sup_body .outcomes {
+ 
+  .body .sup_body .outcomes {   
+
     font-family: "GothamRegular";
     font-size: 8pt;
     text-align: center;
