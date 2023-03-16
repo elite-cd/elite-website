@@ -79,7 +79,9 @@ const Carousel = ({ items }) => {
                   </div>
                 </Link>
 
-                <p>{intl.formatMessage({ id: item.desc })}</p>
+                <p className={style.desc}>
+                  {intl.formatMessage({ id: item.desc })}
+                </p>
                 <h3 className={style.count}>
                   +{item.students}
                   <br />
