@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import * as style from "./modal.css";
 
 const Overlay = styled(motion.div)`
   position: fixed;
@@ -33,12 +34,12 @@ const CloseButton = styled.svg`
 const modalVariant = {
   initial: { opacity: 0 },
   isOpen: { opacity: 1 },
-  exit: { opacity: 0 }
+  exit: { opacity: 0 },
 };
 const containerVariant = {
   initial: { top: "-50%", transition: { type: "spring" } },
   isOpen: { top: "50%" },
-  exit: { top: "-50%" }
+  exit: { top: "-50%" },
 };
 const Modal = ({ handleClose, children, isOpen }) => {
   return (
@@ -55,7 +56,6 @@ const Modal = ({ handleClose, children, isOpen }) => {
               onClick={handleClose}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20.39 20.39"
-              
             >
               <title>close</title>
               <line

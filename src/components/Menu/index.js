@@ -18,8 +18,7 @@ const Menu = ({ activeRoute, courses }) => {
   return (
     <div className={style.container}>
       <nav className={style.navbar}>
-
-        <Link to={ ROUTES.INDEX }>
+        <Link to={ROUTES.INDEX}>
           <Logo className={style.logo} />
         </Link>
 

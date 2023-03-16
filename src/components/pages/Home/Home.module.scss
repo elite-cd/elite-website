@@ -64,11 +64,11 @@
   }
 }
 
-.overflow_hidden{
+.overflow_hidden {
   overflow: hidden;
 }
 
-.overflow_auto{
+.overflow_auto {
   overflow: auto;
 }
 
@@ -82,7 +82,7 @@
   padding-right: 10%;
   padding-top: 2%;
   padding-bottom: 2%;
-  
+
   column-gap: 5rem;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -352,11 +352,11 @@
   }
 }
 
-.modalContentText{
+.modalContentText {
   text-align: center;
   line-height: 1rem !important;
   font-family: "GothamRegular";
-  font-size: 15px
+  font-size: 15px;
 }
 
 .modalContentTextWrapper {
@@ -364,9 +364,9 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .modalContentText{
-    font-size: 12px; 
-  } 
+  .modalContentText {
+    font-size: 12px;
+  }
   .overlayTitle {
     font-size: 14px;
     align-items: center;
@@ -378,11 +378,12 @@
 }
 
 .customRoundedBtn {
+  //padding: 0.8rem 1rem;
   padding-left: 2%;
   padding-right: 2%;
   background-color: #e9ab3e;
   color: #fff;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: medium;
   border: 2px solid #fff;
   font-weight: 700;
@@ -400,4 +401,67 @@
   color: #e9ab3e;
   border: 2px solid #e9ab3e;
   cursor: pointer;
+}
+.mac_btnTxt {
+  margin-top: 2%;
+}
+
+.modal figure {
+  height: 280px;
+}
+
+.modalImgContainer {
+  height: 100%;
+  width: 100%;
+  background-color: #046059;
+}
+.modalContentBloc {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(236, 238, 242);
+  padding-top: -20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .about__container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  .modal {
+    width: 300px;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .modal figure {
+    height: 60px;
+  }
+  .modal figure img {
+    height: 180px;
+    padding-top: 20px;
+  }
+
+  .modalImgContainer {
+    height: 202px;
+    width: 40%;
+    margin-top: -48%;
+    margin-left: -14%;
+  }
+  .modalContentBloc {
+    width: 70%;
+    float: right;
+    background-color: transparent;
+  }
+  .modalContentTextWrapper {
+    margin-top: -190px;
+  }
+  .modalParagraphe2,
+  .modalParagraphe3 {
+    display: none;
+  }
 }
