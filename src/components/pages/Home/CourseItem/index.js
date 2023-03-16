@@ -26,7 +26,6 @@ const CourseItem = ({
 
         <div className={style.centerImgCard}>
           <GatsbyImage
-            fluid={icon1.childImageSharp.fluid}
             objectFit={"contain"}
             alt={`${title} image`}
             className={style.item__image}
