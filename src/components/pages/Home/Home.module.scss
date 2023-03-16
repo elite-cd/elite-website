@@ -439,26 +439,26 @@
     transform: translate(-50%, -50%);
   }
   .modal figure {
-    height: 60px;
+    height: 0px;
   }
   .modal figure img {
-    height: 180px;
-    padding-top: 20px;
+    height: 100px;
+    display: none;
   }
 
   .modalImgContainer {
     height: 202px;
-    width: 40%;
-    margin-top: -48%;
+    width: 30%;
+    margin-top: -43%;
     margin-left: -14%;
   }
   .modalContentBloc {
-    width: 70%;
+    width: 80%;
     float: right;
     background-color: transparent;
   }
   .modalContentTextWrapper {
-    margin-top: -190px;
+    margin-top: -180px;
   }
   .modalParagraphe2,
   .modalParagraphe3 {
