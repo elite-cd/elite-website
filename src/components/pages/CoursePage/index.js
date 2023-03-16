@@ -114,7 +114,7 @@ const CoursePage = ({ course, otherCourses }) => {
               image={getImage(course.img2)}
             />
 
-            <p className={style.preview__title}>Overview</p>
+            <p className={style.preview__title}>Aperçu</p>
             <p className={style.preview__description}>{course.description}</p>
           </div>
         </section>
