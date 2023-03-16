@@ -30,6 +30,22 @@ const Page = ({ children, activeRoute }) => {
                   )
                 }
               }
+              icon1 {
+                childImageSharp {
+                  gatsbyImageData(
+                    placeholder: DOMINANT_COLOR
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
+              icon2 {
+                childImageSharp {
+                  gatsbyImageData(
+                    placeholder: DOMINANT_COLOR
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
+              }
             }
           }
         }

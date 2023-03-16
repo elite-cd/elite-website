@@ -378,6 +378,7 @@
 }
 
 .customRoundedBtn {
+  //padding: 0.8rem 1rem;
   padding-left: 2%;
   padding-right: 2%;
   background-color: #e9ab3e;
@@ -400,6 +401,9 @@
   color: #e9ab3e;
   border: 2px solid #e9ab3e;
   cursor: pointer;
+}
+.mac_btnTxt {
+  margin-top: 2%;
 }
 
 .modal figure {
@@ -441,7 +445,6 @@
     height: 180px;
     padding-top: 20px;
   }
-
   .modalImgContainer {
     height: 202px;
     width: 40%;

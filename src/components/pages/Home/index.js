@@ -212,6 +212,7 @@ const Home = ({ carouselItems, map }) => {
                 descTitle={course.shortDescription}
                 outcomes={[]}
                 image={course.image}
+                icon1={course.icon1}
               />
             ))}
           </div>
