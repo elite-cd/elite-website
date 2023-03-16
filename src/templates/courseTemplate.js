@@ -11,9 +11,6 @@ const courseMarkdownRemark = ({ frontmatter }) => ({
   outcomes: frontmatter.outcomes,
   slug: frontmatter.slug,
   image: frontmatter.image ? frontmatter.image.childImageSharp : null,
-  img2: frontmatter.img2 ? frontmatter.img2.childImageSharp : null,
-  icon1: frontmatter.icon1 ? frontmatter.icon1.childImageSharp : null,
-  icon2: frontmatter.icon2 ? frontmatter.icon2.childImageSharp : null,
   path: frontmatter.path,
   price: frontmatter.price,
 });
@@ -56,30 +53,6 @@ export const pageQuery = graphql`
             )
           }
         }
-        img2 {
-          childImageSharp {
-            gatsbyImageData(
-              placeholder: DOMINANT_COLOR
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-        icon1 {
-          childImageSharp {
-            gatsbyImageData(
-              placeholder: DOMINANT_COLOR
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-        icon2 {
-          childImageSharp {
-            gatsbyImageData(
-              placeholder: DOMINANT_COLOR
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
       }
     }
     allMarkdownRemark(
@@ -106,30 +79,6 @@ export const pageQuery = graphql`
             price
             slug
             image {
-              childImageSharp {
-                gatsbyImageData(
-                  placeholder: DOMINANT_COLOR
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
-            }
-            img2 {
-              childImageSharp {
-                gatsbyImageData(
-                  placeholder: DOMINANT_COLOR
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
-            }
-            icon1 {
-              childImageSharp {
-                gatsbyImageData(
-                  placeholder: DOMINANT_COLOR
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
-            }
-            icon2 {
               childImageSharp {
                 gatsbyImageData(
                   placeholder: DOMINANT_COLOR

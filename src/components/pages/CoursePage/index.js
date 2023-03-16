@@ -11,30 +11,53 @@ import { ButtonRounded } from "../../Button";
 import Page from "../../PageTemplate";
 import * as style from "./CoursePage.module.scss";
 
+import img1_base_programmation from "../../../assets/images/pexels-katerina-holmes-5905700.jpg";
+import img2_base_programmation from "../../../assets/images/pexels-anna-tarazevich-14751274.jpg";
+
+import img1_aplhabetisation_num from "../../../assets/images/pexels-rodolfo-quirós-2330137.jpg";
+import img2_aplhabetisation_num from "../../../assets/images/pexels-mart-production-7550542.jpg";
+
+import img1_immersion from "../../../assets/images/pexels-mart-production-7550298.jpg";
+import img2_immersion from "../../../assets/images/img-student.jpg";
+
 const CoursePage = ({ course, otherCourses }) => {
   const outcomesList = course.outcomes.split(",");
 
-  const getGraphQlIcon = (item) => {
-    let images = null;
-
-    if (item === 0) {
-      images = getImage(course.icon1);
-    } else if (item === 1) {
-      images = getImage(course.icon2);
-    }
-    return images;
+  const imgList = {
+    img1: "",
+    img2: "",
   };
+
+  switch (course.slug) {
+    case "immersion-en-entreprise":
+      imgList.img1 = img1_immersion;
+      imgList.img2 = img2_immersion;
+      break;
+
+    case "base-programmation":
+      imgList.img1 = img1_base_programmation;
+      imgList.img2 = img2_base_programmation;
+      break;
+
+    case "alphabetisation-numerique":
+      imgList.img1 = img2_aplhabetisation_num;
+      imgList.img2 = img1_aplhabetisation_num;
+      break;
+
+    default:
+      break;
+  }
 
   const renderCoursePage = () => (
     <React.Fragment>
       <div className={style.container}>
         <div className={style.header}></div>
         <section className={style.hero}>
-          <GatsbyImage
-            objectFit={"cover"}
-            alt="Image 2 Loading failed"
+          <img
+            src={imgList.img2}
             className={style.hero__image}
-            image={getImage(course.image)}
+            alt="Image 2 Loading failed"
+            style={{ objectFit: "cover" }}
           />
 
           <div className={style.hero__overlay}>
@@ -91,7 +114,7 @@ const CoursePage = ({ course, otherCourses }) => {
                         objectFit={"contain"}
                         alt={`${item.title} image`}
                         className={style.other__image}
-                        image={getGraphQlIcon(i)}
+                        image={getImage(item.image)}
                       />
                     </div>
 
@@ -107,11 +130,11 @@ const CoursePage = ({ course, otherCourses }) => {
             })}
           </div>
           <div className={style.course__detail}>
-            <GatsbyImage
-              objectFit={"cover"}
+            <img
               alt="Image 1 Loading failed"
+              src={imgList.img1}
               className={style.course__preview}
-              image={getImage(course.img2)}
+              style={{ objectFit: "cover" }}
             />
 
             <p className={style.preview__title}>Overview</p>
