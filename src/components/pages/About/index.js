@@ -2,13 +2,13 @@ import React from "react";
 import { ROUTES } from "../../../common/constants";
 import Page from "../../PageTemplate";
 import * as style from "./About.module.scss";
-import { StaticImage, getImage, GatsbyImage } from "gatsby-plugin-image";
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
 const About = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allFile(filter: { id: { eq: "11bdf77e-b224-5082-95a0-01fb8de26fa5" } }) {
+      allFile(filter: { relativePath: { eq: "acad01.png" } }) {
         nodes {
           childImageSharp {
             gatsbyImageData
