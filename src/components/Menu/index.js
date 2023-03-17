@@ -48,10 +48,12 @@ const Menu = ({ activeRoute, courses }) => {
             />
 
             <MenuItem
+              isActive={ROUTES.ABOUT === activeRoute}
               url={ROUTES.ABOUT}
               text={intl.formatMessage({ id: "menu-item.label.about" })}
             />
             <MenuItem
+              isActive={ROUTES.CONTACT === activeRoute}
               url={ROUTES.CONTACT}
               text={intl.formatMessage({ id: "menu-item.label.contacts" })}
             />

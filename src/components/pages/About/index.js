@@ -2,12 +2,36 @@ import React from "react";
 import { ROUTES } from "../../../common/constants";
 import Page from "../../PageTemplate";
 import * as style from "./About.module.scss";
+import { StaticImage, getImage, GatsbyImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
 
 const About = () => {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allFile(filter: { id: { eq: "11bdf77e-b224-5082-95a0-01fb8de26fa5" } }) {
+        nodes {
+          childImageSharp {
+            gatsbyImageData
+          }
+          id
+        }
+      }
+    }
+  `);
+  const aboutImg = data.allFile.nodes[0].childImageSharp;
+
   const renderPage = () => {
     return (
       <div className={style.container}>
-        <div className={style.container__image}></div>
+        <div className={style.container__image}>
+          <GatsbyImage
+            alt="About image failed"
+            objectFit="contain"
+            className=""
+            image={getImage(aboutImg)}
+          />
+        </div>
+
         <div className={style.container__desc}>
           <h1>A PROPOS DE NOUS</h1>
           <p>
