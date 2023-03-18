@@ -1,23 +1,22 @@
-import * as React from 'react';
-import ButtonPrimary from '../../Button/button-primary';
-import Page from '../../PageTemplate';
-import RadioGroup from '../../RadioGroup';
-import RadioInput from '../../RadioInput';
-import TextInput from '../../TextInput';
-import * as style from './Signup.module.scss';
+import * as React from "react";
+import ButtonPrimary from "../../Button/button-primary";
+import Page from "../../PageTemplate";
+import RadioGroup from "../../RadioGroup";
+import RadioInput from "../../RadioInput";
+import TextInput from "../../TextInput";
+import * as style from "./Signup.module.scss";
 const Enregistrement = () => {
   const renderSignupPage = () => {
     return (
       <React.Fragment>
         <div className={style.container}>
           <p className={style.navigation}>
-            {'Accueil > Contact >'}
-            <span className={style['navigation__selected']}>
+            {"Accueil > Contact >"}
+            <span className={style["navigation__selected"]}>
               Enregistrement
             </span>
           </p>
-          <h3 className={style['page__title']}>Contact</h3>
-          <div className={style['page__header']}>
+          <div className={style["page__header"]}>
             <h3 className={style.title}>Enregistrement</h3>
             <p className={style.subtitle}>
               Débutez votre cursus de formation avec Elite !
@@ -26,90 +25,67 @@ const Enregistrement = () => {
 
           <form id="signupform" className={style.form}>
             <TextInput
-              label={'Nom complet'}
+              label={"Nom complet"}
               required
-              placeholder={'Entrer nom'}
-              name={'nom'}
+              placeholder={"Entrer nom"}
+              name={"nom"}
             />
             <TextInput
-              label={'Age'}
+              label={"Email"}
               required
-              placeholder={'Entrer votre age'}
-              name={'age'}
+              placeholder={"Quel Courrier (email) utiliser pour écrire ?"}
+              name={"age"}
             />
             <TextInput
-              label={'Profession'}
+              label={"Numéro Whatsapp"}
               required
-              placeholder={'Entrer votre profession'}
-              name={'profession'}
+              type={"tel"}
+              placeholder={
+                "Quel numéro de cellulaire utiliser pour vous contacter ?"
+              }
+              name={"phone"}
             />
             <TextInput
-              label={'Email'}
+              label={"Adresse physique"}
               required
-              type={'email'}
-              placeholder={'Entrer votre email'}
-              name={'profession'}
+              type={"text"}
+              placeholder={"Votre adresse"}
+              name={"address"}
             />
-            <TextInput
-              label={'Numéro Whatsapp'}
-              required
-              type={'tel'}
-              placeholder={'Votre numéro de téléphone Whatsapp'}
-              name={'phone'}
-            />
-            <TextInput
-              label={'Adresse physique'}
-              required
-              type={'text'}
-              placeholder={'Votre adresse'}
-              name={'address'}
-            />
-            <RadioGroup label={'Quel  est votre niveau en programmation?'}>
-              <RadioInput
-                name={'experience'}
-                label={"J'ai des notions d'alphabétisation numérique"}
-              />
-              <RadioInput name={'experience'} label={"Je n'ai aucun niveau"} />
-              <RadioInput
-                name={'experience'}
-                label={'Je suis développeur Pro'}
-              />
-              <RadioInput
-                name={'experience'}
-                label={"Je m'y connais en programme d'immersion en Entreprise"}
-              />
-            </RadioGroup>
             <RadioGroup
-              label={'Pour quel programme souhaitez-vous vous inscrire?'}
+              label={"Quels sont les programmes qui vous intéressent ?"}
             >
               <RadioInput
-                name={'experience'}
+                name={"experience"}
                 multichoice
-                label={'Alphabétisation Numérique'}
+                label={
+                  "Augmenter son intelligence avec le numérique (Alphabétisation Numérique)"
+                }
               />
               <RadioInput
-                name={'experience'}
+                name={"experience"}
                 multichoice
-                label={'Les bases de la programmation'}
+                label={
+                  "Apprendre à réfléchir comme un ingénieur logiciel (Bases de la programmation)"
+                }
               />
               <RadioInput
-                name={'experience'}
+                name={"experience"}
                 multichoice
-                label={"Programme d'immersion en Entreprise"}
+                label={
+                  "Programmer comme chez Microsoft (Immersion en entreprise)"
+                }
               />
             </RadioGroup>
-            <TextInput
-              label={'Pourquoi souhaitez-vous faire cette formation?'}
-              required
-              type={'text'}
-              placeholder={''}
-              name={'address'}
-            />
-            <RadioGroup label={'Avez-vous un Ordinateur portable?'}>
-              <RadioInput name={'experience'} label={'Oui'} />
-              <RadioInput name={'experience'} label={'Non'} />
+            <RadioGroup label={"Disposez-vous d'un laptop pour apprendre ?"}>
+              <RadioInput name={"experience"} label={"Oui"} />
+              <RadioInput name={"experience"} label={"Non"} />
             </RadioGroup>
-            <div className={style['button__section']}>
+            <RadioGroup label={"Êtes-vous l'étudiant ou tuteur de l'étudiant"}>
+              <RadioInput name={"experience"} label={"Je suis l'étudiant"} />
+              <RadioInput name={"experience"} label={"Je suis le tuteur"} />
+            </RadioGroup>
+            <div className={style["button__section"]}>
               <ButtonPrimary text={"S'INSCRIRE"} />
             </div>
           </form>

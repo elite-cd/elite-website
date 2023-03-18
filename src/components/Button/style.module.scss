@@ -1,6 +1,6 @@
 .button__outlined,
 .button__primary {
-  padding: 0.7rem 1rem;
+  padding: 0.9rem 1rem;
   font-weight: 700;
   width: 13rem;
   font-size: medium;
@@ -12,14 +12,29 @@
   justify-content: center;
   align-items: center;
   border-radius: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   z-index: 900;
+}
+
+.button__outlined span {
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.button__primary .text {
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .button__rounded {
   padding: 0.8rem 1rem;
   background-color: #e9ab3e;
   color: #fff;
-  font-family: "GothamMedium";
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: medium;
   border: 2px solid #fff;
   font-weight: 700;
@@ -38,6 +53,17 @@
   cursor: pointer;
 }
 
+.button__rounded .text {
+  text-align: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.icon {
+  margin-bottom: 3px;
+}
+
 .button__outlined {
   background-color: #fff;
   color: #046059;
@@ -45,7 +71,8 @@
 }
 
 .text {
-  margin: 0 0.3rem;
+  //margin: 0 0.3rem;
+  margin: 5px;
 }
 
 .button__outlined:hover {

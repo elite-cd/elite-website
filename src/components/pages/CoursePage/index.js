@@ -1,47 +1,63 @@
 import {
   faCircleArrowRight,
   faCircleCheck,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
-import React from 'react';
-import { ROUTES } from '../../../common/constants';
-import { ButtonRounded } from '../../Button';
-import Page from '../../PageTemplate';
-import * as style from './CoursePage.module.scss';
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "gatsby";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import React from "react";
+import { ROUTES } from "../../../common/constants";
+import { ButtonRounded } from "../../Button";
+import Page from "../../PageTemplate";
+import * as style from "./CoursePage.module.scss";
 
 const CoursePage = ({ course, otherCourses }) => {
-  const outcomesList = course.outcomes.split(',');
+  const outcomesList = course.outcomes.split(",");
+
+  const getGraphSqIcon = (item) => {
+    let images = null;
+
+    if (item === 0) {
+      images = getImage(course.icon1);
+    } else if (item === 1) {
+      images = getImage(course.icon2);
+    }
+    return images;
+  };
 
   const renderCoursePage = () => (
     <React.Fragment>
       <div className={style.container}>
-        <div className={style.header}>
-          <p>
-            {`Accueil >> Académie des élites >>`}
-            <span className={style.header__nav}>{course.title}</span>
-          </p>
-        </div>
+        <div className={style.header}></div>
         <section className={style.hero}>
-          <StaticImage
+          <GatsbyImage
+            objectFit={"cover"}
+            alt="Image 2 Loading failed"
             className={style.hero__image}
-            src={'../../../assets/images/banner01.png'}
-            objectFit={'cover'}
+            image={getImage(course.image)}
           />
+
           <div className={style.hero__overlay}>
             <div className={style.overlay_left}>
-              <p
-                className={style.course__title}
-              >{`Cours de ${course.title}`}</p>
-              <p className={style.course__desc}>{course.shortDescription}</p>
-              <ButtonRounded
-                url={ROUTES.SIGNUP}
-                text={'Démarez votre formation'}
-                rightIcon={faCircleArrowRight}
-              />
+              <Link to={ROUTES.SIGNUP} className={style.customRoundedBtn}>
+                <div style={{ height: "100%", width: "100%" }}>
+                  <div style={{ height: "30%" }}></div>
+
+                  <div style={{ height: "40%", display: "inline-flex" }}>
+                    Démarez votre formation &nbsp;
+                    <span style={{ marginTop: "1%" }}>
+                      <FontAwesomeIcon icon={faCircleArrowRight} />
+                    </span>
+                  </div>
+
+                  <div style={{ height: "30%" }}></div>
+                </div>
+              </Link>
             </div>
             <div className={style.overlay_right}>
-              <p className={style.course__title}>{`Modules`}</p>
+              <p className={style.course__title_module}>{`Modules`}</p>
+              <br />
+
               <ul className={style.course__outcomes_list}>
                 {outcomesList.map((item, i) => {
                   return (
@@ -60,38 +76,53 @@ const CoursePage = ({ course, otherCourses }) => {
         <section className={style.details}>
           <div className={style.courses__section}>
             {otherCourses.map((item, i) => {
+              const courseLink = `/courses/${item.slug}`;
+
               return (
                 <div className={style.other__item}>
-                  <GatsbyImage
-                    objectFit={'contain'}
-                    alt={`${item.title} image`}
-                    className={style.other__image}
-                    image={getImage(item.image)}
-                  />
-                  <p className={style.other__title}> {item.title} </p>
-                  <p className={style.other__timeline}>{item.timeline}</p>
-                  <hr className={style.other__divider} />
-                  <p className={style.other__description}>
-                    {item.shortDescription}
-                  </p>
+                  <Link to={courseLink}>
+                    <div
+                      style={{
+                        width: "50%",
+                        marginRight: "auto",
+                        marginLeft: "auto",
+                      }}
+                    >
+                      <GatsbyImage
+                        objectFit={"contain"}
+                        alt={`${item.title} image`}
+                        className={style.other__image}
+                        image={getGraphSqIcon(i)}
+                      />
+                    </div>
+
+                    <p className={style.other__title}> {item.title} </p>
+                    <p className={style.other__timeline}>{item.timeline}</p>
+                    <hr className={style.other__divider} />
+                    <p className={style.other__description}>
+                      {item.shortDescription}
+                    </p>
+                  </Link>
                 </div>
               );
             })}
           </div>
           <div className={style.course__detail}>
-            <StaticImage
+            <GatsbyImage
+              objectFit={"cover"}
+              alt="Image 1 Loading failed"
               className={style.course__preview}
-              src={'../../../assets/images/img-aside.png'}
-              objectFit={'cover'}
+              image={getImage(course.img2)}
             />
-            <p className={style.preview__title}>Overview</p>
+
+            <p className={style.preview__title}>Aperçu</p>
             <p className={style.preview__description}>{course.description}</p>
           </div>
         </section>
       </div>
     </React.Fragment>
   );
-  return <Page activeRoute={ROUTES.ACADEMY} >{renderCoursePage}</Page>;
+  return <Page activeRoute={ROUTES.ACADEMY}>{renderCoursePage}</Page>;
 };
 
 export default CoursePage;

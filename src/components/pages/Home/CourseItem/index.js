@@ -1,54 +1,106 @@
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import T from 'prop-types';
-import * as React from 'react';
-import ButtonOutlined from '../../../Button/button-outlined';
-import ButtonPrimary from '../../../Button/button-primary';
-import * as style from './CourseItem.module.scss';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import T from "prop-types";
+import * as React from "react";
+import { ButtonLink } from "../../../Button";
+import * as style from "./CourseItem.module.scss";
+import { Link } from "gatsby";
+
 const CourseItem = ({
   title,
   timeline,
+  price,
   descTitle,
+  description,
+  slug,
   outcomes,
   outlined,
   image,
+  icon1,
 }) => {
-  const classNameVariation = outlined ? '__outlined' : '';
+  const classNameVariation = outlined ? "__outlined" : "";
+
   return (
     <div className={style.wrapper}>
-      <GatsbyImage
-        fluid={image.childImageSharp.fluid}
-        objectFit={'contain'}
-        alt={`${title} image`}
-        className={style.item__image}
-        image={getImage(image)}
-      />
-      <div className={style['item' + classNameVariation]}>
+      <div className={style.ImgCard}>
+        <div className={style.leftImgCard}></div>
+
+        <div className={style.centerImgCard}>
+          <GatsbyImage
+            objectFit={"contain"}
+            alt={`${title} image`}
+            className={style.item__image}
+            image={getImage(icon1)}
+          />
+        </div>
+
+        <div className={style.rightImgCard}></div>
+      </div>
+
+      <div
+        className={style["item" + classNameVariation]}
+        style={{ width: "100%" }}
+      >
         <div className={style.header}>
-          <h3 className={style['headertitle' + classNameVariation]}>{title}</h3>
-          <p className={style.header__timeline}>{timeline}</p>
+          <h3 className={style["headertitle" + classNameVariation]}>{title}</h3>
         </div>
-        <hr className={style.hr} />
+
         <div className={style.body}>
-          <h3 className={style.bodytitle}>{descTitle}</h3>
-          <ul className={style.bodylist}>
-            {outcomes &&
-              outcomes.map((outcome, index) => {
-                return (
-                  <li
-                    className={style.bodylist__item}
-                    key={`outcome__${index}`}
-                  >
-                    {outcome}
-                  </li>
-                );
-              })}
-          </ul>
+          <div className={style.sup_body}>
+            <h3 className={style.bodytitle}>{descTitle}</h3>
+            <p className={style.outcomes}>{description}</p>
+          </div>
+
+          <div className={style.sub_body}>
+            <p className={style.text_bold}>
+              Durée: <span className={style.text_regular}>{timeline}</span>
+            </p>
+            <p className={style.text_bold}>
+              Prix: <span className={style.text_regular}>{price}$/mois</span>
+            </p>
+          </div>
         </div>
-        {outlined ? (
-          <ButtonPrimary text={'En savoir plus'} />
-        ) : (
-          <ButtonOutlined text={'En savoir plus'} />
-        )}
+
+        <div className={style.btn_container}>
+          {outlined ? (
+            <Link to={`/courses/${slug}`} className={style.customPrimaryBtn}>
+              <div style={{ height: "100%", width: "100%" }}>
+                <div style={{ height: "30%" }}></div>
+
+                <div
+                  className=""
+                  style={{
+                    paddingLeft: "20%",
+                    height: "40%",
+                    display: "inline-flex",
+                  }}
+                >
+                  <span>En savoir plus</span>
+                </div>
+
+                <div style={{ height: "30%" }}></div>
+              </div>
+            </Link>
+          ) : (
+            <Link to={`/courses/${slug}`} className={style.customOutlinedBtn}>
+              <div style={{ height: "100%", width: "100%" }}>
+                <div style={{ height: "30%" }}></div>
+
+                <div
+                  className=""
+                  style={{
+                    paddingLeft: "20%",
+                    height: "40%",
+                    display: "inline-flex",
+                  }}
+                >
+                  <span>En savoir plus</span>
+                </div>
+
+                <div style={{ height: "30%" }}></div>
+              </div>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

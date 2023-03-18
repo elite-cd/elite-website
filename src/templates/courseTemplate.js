@@ -11,7 +11,11 @@ const courseMarkdownRemark = ({ frontmatter }) => ({
   outcomes: frontmatter.outcomes,
   slug: frontmatter.slug,
   image: frontmatter.image ? frontmatter.image.childImageSharp : null,
+  img2: frontmatter.img2 ? frontmatter.img2.childImageSharp : null,
+  icon1: frontmatter.icon1 ? frontmatter.icon1.childImageSharp : null,
+  icon2: frontmatter.icon2 ? frontmatter.icon2.childImageSharp : null,
   path: frontmatter.path,
+  price: frontmatter.price,
 });
 
 const CourseTemplate = ({ data }) => {
@@ -24,7 +28,7 @@ const CourseTemplate = ({ data }) => {
     );
     return <CoursePage course={course} otherCourses={allCourses} />;
   }
-  return <NotFoundPage />  
+  return <NotFoundPage />;
 };
 
 export default CourseTemplate;
@@ -41,9 +45,34 @@ export const pageQuery = graphql`
         description
         outcomes
         slug
+        price
         videoUrl
         shortDescription
         image {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: DOMINANT_COLOR
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+        img2 {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: DOMINANT_COLOR
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+        icon1 {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: DOMINANT_COLOR
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+        icon2 {
           childImageSharp {
             gatsbyImageData(
               placeholder: DOMINANT_COLOR
@@ -74,8 +103,33 @@ export const pageQuery = graphql`
             description
             shortDescription
             outcomes
+            price
             slug
             image {
+              childImageSharp {
+                gatsbyImageData(
+                  placeholder: DOMINANT_COLOR
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+            img2 {
+              childImageSharp {
+                gatsbyImageData(
+                  placeholder: DOMINANT_COLOR
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+            icon1 {
+              childImageSharp {
+                gatsbyImageData(
+                  placeholder: DOMINANT_COLOR
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+            icon2 {
               childImageSharp {
                 gatsbyImageData(
                   placeholder: DOMINANT_COLOR

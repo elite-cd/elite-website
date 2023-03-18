@@ -1,7 +1,7 @@
-import { Link } from 'gatsby';
-import T from 'prop-types';
-import * as React from 'react';
-import * as style from './MenuItem.module.scss';
+import { Link } from "gatsby";
+import T from "prop-types";
+import * as React from "react";
+import * as style from "./MenuItem.module.scss";
 
 const MenuItem = ({ isActive, text, url }) => {
   return (

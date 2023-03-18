@@ -1,68 +1,9 @@
 .footer {
-  background-color: #046059;
-  padding: 1rem 2rem;
-  display: grid;
-  column-gap: 1.5rem;
-  grid-template-columns: repeat(4, 1fr);
-  @media only screen and (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  border-radius: 2rem 2rem 0rem 0rem;
-  bottom: 0;
-  color: #fff;
-  font-size: small;
-}
-
-.footer__title {
-  font-size: 18px;
-  font-style: oblique;
-}
-
-.footer__certification {
-  font-size: 18px;
-}
-
-.footer li:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.footer li {
-  margin: 0.3rem 0;
-}
-
-.footer__partner ul,
-.footer__elite ul {
-  padding: 0;
-  font-size: 12px;
-  font-family: "GothamLight";
-}
-.footer__desc {
-  font-size: 12px;
-  text-align: left;
-  word-spacing: 3px;
-  font-family: "GothamLight";
-}
-
-.footer__section {
-  font-weight: bold;
-  margin: 0.6rem 0;
-}
-
-.footer__contact p {
-  font-family: "GothamLight";
-}
-
-.footer__contact__text {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "GothamMedium";
-}
-
-.logo_app {
-  width: 60px;
-  height: 100%;
-  margin: 0 0.1rem;
-}
-
-.footer__logo_wrapper {
-  margin: 0;
+  background-color: #046059;
+  color: #fff;
 }

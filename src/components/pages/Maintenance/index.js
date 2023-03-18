@@ -14,7 +14,9 @@ const MantenancePage = () => {
         />
         <h1 className={style.heading}>Site en construction</h1>
         <div className={style.content}>
-          <p className={style.paragraph}>Revenez plus tard</p>
+          <p className={style.paragraph}>
+            Désolé le site est en construction, revenez plus tard
+          </p>
         </div>
       </div>
       <div className={style.maintenance_gif}>

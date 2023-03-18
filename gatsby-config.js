@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: `https://www.elite.cd`,
   },
   plugins: [
+    "gatsby-plugin-postcss",
     "gatsby-plugin-netlify-cms",
     "gatsby-transformer-json",
     {
@@ -25,7 +26,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/assets/images/logo.png",
+        icon: `./src/assets/images/logo.png`,
       },
     },
     "gatsby-transformer-remark",
@@ -35,7 +36,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/assets/images/",
+        path: `./src/assets/images/`,
       },
       __key: "images",
     },
@@ -43,7 +44,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: `./src/pages/`,
       },
       __key: "pages",
     },
@@ -69,6 +70,13 @@ module.exports = {
       options: {
         name: "courses",
         path: `${__dirname}/data/courses`,
+      },
+    },
+    {
+      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
+      options: {
+        key: `dkjhsdjh`,
+        center: `-4.345037,15.289549`,
       },
     },
   ],
