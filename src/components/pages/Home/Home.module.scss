@@ -487,3 +487,9 @@
     display: block;
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  .modalContentText {
+    font-size: 11px;
+  }
+}
