@@ -11,7 +11,7 @@ outcomes: "Site Internet, Application mobile et web, Programmation interfaces d'
 students: "189"
 price: 300
 image: images/pexels-tranmautritam-245032.jpg
-img2: images/pexels-mart-production-7550298.jpg
+img2: images/pexels-mart-production-7550542.jpg
 icon1: images/backend.png
 icon2: images/dev-web.png
 videoUrl: https://www.youtube.com/watch?v=r7HlR2oFNuI

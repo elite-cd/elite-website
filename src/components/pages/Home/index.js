@@ -197,25 +197,30 @@ const Home = ({ carouselItems, map }) => {
         </Modal>
 
         <div
-          id="hs-slide-up-animation-modal"
+          id="hs-vertically-centered-modal"
           class="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto"
         >
-          <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-100 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+          <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
+            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-300 dark:border-gray-700 dark:shadow-slate-700/[.7]">
               <div
                 class="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700"
                 style={{ borderBlockEndColor: "#046059" }}
               >
                 <h3
-                  class="font-bold"
-                  style={{ color: "black", textAlign: "center" }}
+                  class="font-bold text-gray-800 dark:text-white"
+                  style={{
+                    color: "black",
+                    textAlign: "center",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                  }}
                 >
                   {OverlayTitles[modalContentId]}
                 </h3>
                 <button
                   type="button"
-                  class="hs-dropup-toggle inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition-all text-sm dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800"
-                  data-hs-overlay="#hs-slide-up-animation-modal"
+                  class="hs-dropdown-toggle inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition-all text-sm dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800"
+                  data-hs-overlay="#hs-vertically-centered-modal"
                 >
                   <span class="sr-only">Close</span>
                   <svg
@@ -235,16 +240,15 @@ const Home = ({ carouselItems, map }) => {
               </div>
               <div class="p-4 overflow-y-auto">
                 <p
-                  class="mt-1 text-gray-800 dark:text-gray-800"
-                  style={{ textAlign: "center" }}
+                  class={style.mobileModalText}
+                  style={{ textAlign: "center", lineHeight: "25px !important" }}
                 >
                   {OverlayContents[modalContentId]}
                 </p>
               </div>
-
               <div
-                class="flex justify-between items-center py-3 px-4 border-b border-t dark:border-gray-700"
                 style={{ borderBlockStartColor: "#046059" }}
+                class="flex justify-between items-center py-3 px-4 border-b border-t dark:border-gray-700"
               >
                 <strong style={{ color: "#046059" }}>
                   {OverlayCountry[modalContentId]}
@@ -261,6 +265,7 @@ const Home = ({ carouselItems, map }) => {
             </div>
           </div>
         </div>
+
         <section className={style.course__section}>
           <div className={style.courselist}>
             {courses.map((course, i) => (
@@ -387,7 +392,7 @@ const Home = ({ carouselItems, map }) => {
         <section className={style.about__container_mobile}>
           {renderOverlayComponent(overlayIndex)}
           <button
-            data-hs-overlay="#hs-slide-up-animation-modal"
+            data-hs-overlay="#hs-vertically-centered-modal"
             id="1"
             onClick={() => handlMobilePopup(0)}
             className={style.about__box}
@@ -405,7 +410,7 @@ const Home = ({ carouselItems, map }) => {
           </button>
 
           <button
-            data-hs-overlay="#hs-slide-up-animation-modal"
+            data-hs-overlay="#hs-vertically-centered-modal"
             id="2"
             onClick={() => handlMobilePopup(1)}
             className={style.about__box}
@@ -422,7 +427,7 @@ const Home = ({ carouselItems, map }) => {
             </p>
           </button>
           <button
-            data-hs-overlay="#hs-slide-up-animation-modal"
+            data-hs-overlay="#hs-vertically-centered-modal"
             id="3"
             onClick={() => handlMobilePopup(2)}
             className={style.about__box}
@@ -439,7 +444,7 @@ const Home = ({ carouselItems, map }) => {
             </p>
           </button>
           <button
-            data-hs-overlay="#hs-slide-up-animation-modal"
+            data-hs-overlay="#hs-vertically-centered-modal"
             id="4"
             onClick={() => handlMobilePopup(3)}
             className={style.about__box}
@@ -456,7 +461,7 @@ const Home = ({ carouselItems, map }) => {
             </p>
           </button>
           <button
-            data-hs-overlay="#hs-slide-up-animation-modal"
+            data-hs-overlay="#hs-vertically-centered-modal"
             id="5"
             onClick={() => handlMobilePopup(4)}
             className={style.about__box}
@@ -473,7 +478,7 @@ const Home = ({ carouselItems, map }) => {
             </p>
           </button>
           <button
-            data-hs-overlay="#hs-slide-up-animation-modal"
+            data-hs-overlay="#hs-vertically-centered-modal"
             id="6"
             onClick={() => handlMobilePopup(5)}
             className={style.about__box}

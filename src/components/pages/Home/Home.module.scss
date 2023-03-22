@@ -26,18 +26,19 @@
       margin: 0;
       width: 100%;
       line-height: 1.5rem !important;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
   }
 }
 
 .typography3 {
   font-family: "GothamMedium";
-  font-size: 50px;
+  font-size: 40px;
   line-height: 3rem !important;
 }
 
 .typography6 {
-  font-family: "GothamRegular";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
   text-align: center;
   width: 60%;
@@ -205,8 +206,9 @@
     height: auto;
   }
   &__title {
-    font-family: "GothamMedium";
-    font-size: 12px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
     text-align: center;
     @media only screen and (max-width: 768px) {
       font-size: 14px;
@@ -295,11 +297,11 @@
     font-size: 20px;
     width: 90%;
     line-height: 1.6rem !important;
-    font-family: "GothamRegular";
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   &__text {
     color: #046059;
-    font-family: "GothamMedium";
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 24px;
   }
 }
@@ -332,7 +334,7 @@
       margin: 0;
     }
     div {
-      font-family: "GothamRegular";
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 16px;
       display: flex;
       flex-direction: row;
@@ -492,4 +494,9 @@
   .modalContentText {
     font-size: 11px;
   }
+}
+
+.mobileModalText {
+  line-height: 1.2rem !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

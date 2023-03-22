@@ -11,7 +11,7 @@ outcomes: "Site Internet, Application mobile et web, Programmation interfaces d'
 students: "200"
 price: 200
 image: images/pexels-rodolfo-quirós-2330137.jpg
-img2: images/pexels-mart-production-7550542.jpg
+img2: images/pexels-august-de-richelieu-4261790.jpg
 icon1: images/data_science.png
 icon2: images/dev-web.png
 videoUrl: https://www.youtube.com/watch?v=r7HlR2oFNuI

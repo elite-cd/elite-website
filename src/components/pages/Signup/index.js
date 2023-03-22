@@ -6,7 +6,7 @@ const Enregistrement = () => {
     return (
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSc8Jrp_vrE1oIp_7JG-RmqNSWYnebBifhJLDnVN9VnQVWThrw/viewform?embedded=true"
-        height="1000"
+        height="1300"
         frameborder="0"
         marginheight="0"
         marginwidth="0"
