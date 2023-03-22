@@ -61,7 +61,14 @@ const CoursePage = ({ course, otherCourses }) => {
               <ul className={style.course__outcomes_list}>
                 {outcomesList.map((item, i) => {
                   return (
-                    <li className={style.course__outomes} key={`outcome-${i}`}>
+                    <li
+                      className={
+                        course.slug === "immersion-en-entreprise"
+                          ? style.white_course__outomes
+                          : style.course__outomes
+                      }
+                      key={`outcome-${i}`}
+                    >
                       <span className={style.course__outomes_icon}>
                         <FontAwesomeIcon icon={faCircleCheck} />
                       </span>
