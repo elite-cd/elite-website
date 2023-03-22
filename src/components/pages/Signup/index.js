@@ -5,7 +5,7 @@ const Enregistrement = () => {
   const renderSignupPage = () => {
     return (
       <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSc8Jrp_vrE1oIp_7JG-RmqNSWYnebBifhJLDnVN9VnQVWThrw/viewform?embedded=true"
+        src="https://docs.google.com/forms/d/1S076Us-aImpLgJ4q48oKrB2PidA6Nfmpkai7U2r2xJk/viewform?chromeless=1&edit_requested=true"
         height="1300"
         frameborder="0"
         marginheight="0"
