@@ -27,7 +27,7 @@ const CloseButton = styled.svg`
   height: 15px;
   position: absolute;
   right: 11px;
-  top: -8%;
+  top: -5%;
   cursor: pointer;
 `;
 

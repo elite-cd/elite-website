@@ -4,9 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require('path');
+const path = require("path");
 const CONTENT_TYPE = {
-  COURSE: 'course',
+  COURSE: "course",
 };
 
 const showDraft = process.env.SHOW_DRAFT;
@@ -14,27 +14,27 @@ const showDraft = process.env.SHOW_DRAFT;
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === 'MarkdownRemark') {
+  if (node.internal.type === "MarkdownRemark") {
     const fileNode = getNode(node.parent);
     createNodeField({
       node,
-      name: 'draft',
+      name: "draft",
       value: showDraft ? false : Boolean(node.frontmatter.draft),
     });
 
     if (
-      fileNode.dir.indexOf('courses') !== -1 &&
+      fileNode.dir.indexOf("courses") !== -1 &&
       node.frontmatter &&
       node.frontmatter.slug
     ) {
       createNodeField({
         node,
-        name: 'path',
+        name: "path",
         value: `/courses/${node.frontmatter.slug}/`,
       });
       createNodeField({
         node,
-        name: 'type',
+        name: "type",
         value: CONTENT_TYPE.COURSE,
       });
     }
@@ -58,7 +58,7 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
   const pageMapping = {
-    [CONTENT_TYPE.COURSE]: path.resolve('src/templates/courseTemplate.js'),
+    [CONTENT_TYPE.COURSE]: path.resolve("src/templates/courseTemplate.js"),
   };
 
   return graphql(`
@@ -94,4 +94,19 @@ exports.createPages = ({ actions, graphql }) => {
       });
     });
   });
+};
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /preline/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    });
+  }
 };
