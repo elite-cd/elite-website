@@ -1,7 +1,7 @@
 .header {
   padding: 0.3rem 0;
   font-size: small;
-  font-family: "GothamLight";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
 
@@ -66,13 +66,15 @@
 .course__title {
   font-size: small;
   color: #000;
-  font-family: "GothamLight";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 0.4rem;
   background-color: #fff;
   width: fit-content;
 }
 
 .course__title_module {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   @extend .course__title;
   @media only screen and (max-width: 768px) {
     display: none !important;
@@ -86,10 +88,12 @@
 }
 
 .course__outomes {
-  font-size: small;
-  font-family: "GothamMedium";
+  font-size: medium;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
+  padding-top: 2%;
 }
+
 .white_course__outomes {
   font-size: medium;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -104,20 +108,21 @@
 .course__outcomes_list {
   padding: 0;
   margin: 0 0 0.5rem 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   @media only screen and (max-width: 768px) {
     display: none !important;
   }
 }
 
 .other__title {
-  font-size: small;
-  font-family: "GothamMedium";
+  font-size: medium;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
 
 .other__description {
-  font-size: x-small;
-  font-family: "GothamLight";
+  font-size: small;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
 
@@ -132,8 +137,9 @@
 
 .other__timeline {
   text-align: center;
-  font-size: x-small;
-  color: rgb(0 0 0 / 35%);
+  font-size: small;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(0 0 0 / 65%);
 }
 
 .courses__section {
@@ -175,14 +181,14 @@
 }
 
 .preview__title {
-  font-family: "GothamMedium";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: x-large;
   margin: 0;
-  margin: 1rem 0 0.5rem 0;
+  margin: 1rem 0 1.2rem 0;
 }
 
 .preview__description {
-  font-family: "GothamLight";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
 }
 

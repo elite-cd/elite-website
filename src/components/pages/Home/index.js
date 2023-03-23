@@ -10,7 +10,7 @@ import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
 import GoogleMapFrame from "../../GooglMap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import "preline";
 
@@ -96,16 +96,12 @@ const Home = ({ carouselItems, map }) => {
 
   const images = [img1, img2, img3, img4, img5, img6];
 
-  //const body = document.querySelector("body");
-  //let containerBody = React.useRef(null);
-
   const [isOpen, toggle] = useState(false);
 
   function handlOpenModal(open, id) {
     console.log("close modal");
 
     setModalContentId(id);
-
     //open === true ? (body.style.overflow = "hidden") :  (body.style.overflow = "auto");
     toggle(open);
   }
@@ -113,6 +109,14 @@ const Home = ({ carouselItems, map }) => {
   function handlMobilePopup(id) {
     setModalContentId(id);
   }
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    isOpen === true
+      ? (body.style.overflow = "hidden")
+      : (body.style.overflow = "auto");
+  }, [isOpen]);
+
   const InternalPage = ({ courses }) => {
     return (
       <React.Fragment>
