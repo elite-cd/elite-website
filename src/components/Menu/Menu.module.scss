@@ -1,6 +1,6 @@
 .container {
   height: 3rem;
-  font-family: "GothamRegular", sans-serif !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
   box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
   width: 100%;
   @media (max-width: 798px) {
@@ -206,9 +206,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-
   .menu {
     margin-left: 60px;
   }
-
 }
