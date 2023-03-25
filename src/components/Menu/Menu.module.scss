@@ -1,6 +1,6 @@
 .container {
   height: 3rem;
-  font-family: "GothamRegular", sans-serif !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
   box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
   width: 100%;
   @media (max-width: 798px) {
@@ -88,16 +88,19 @@
   display: none;
   top: 1.5rem;
   z-index: 2;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .dropdown li + li {
   margin-top: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .dropdown li {
   padding: 0.5em 1em;
   width: 10em;
   text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .dropdown li:hover {
@@ -206,9 +209,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-
   .menu {
     margin-left: 60px;
   }
-
 }

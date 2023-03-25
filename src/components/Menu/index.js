@@ -6,6 +6,7 @@ import Logo from "../Logo";
 import DropdownItem from "./DropdownItem";
 import * as style from "./Menu.module.scss";
 import MenuItem from "./MenuItem";
+import { Link } from "gatsby";
 
 const Menu = ({ activeRoute, courses }) => {
   const intl = useIntl();
@@ -17,7 +18,10 @@ const Menu = ({ activeRoute, courses }) => {
   return (
     <div className={style.container}>
       <nav className={style.navbar}>
-        <Logo className={style.logo} />
+        <Link to={ROUTES.INDEX}>
+          <Logo className={style.logo} />
+        </Link>
+
         <ul className={style["navlinks"]}>
           <input
             className={style.checkbox}
@@ -36,11 +40,20 @@ const Menu = ({ activeRoute, courses }) => {
               text={intl.formatMessage({ id: "menu-item.label.home" })}
             />
 
+            <DropdownItem
+              isActive={ROUTES.ACADEMY === activeRoute}
+              url={"#"}
+              text={intl.formatMessage({ id: "menu-item.label.academy" })}
+              links={ACADEMY_COURSES}
+            />
+
             <MenuItem
+              isActive={ROUTES.ABOUT === activeRoute}
               url={ROUTES.ABOUT}
               text={intl.formatMessage({ id: "menu-item.label.about" })}
             />
             <MenuItem
+              isActive={ROUTES.CONTACT === activeRoute}
               url={ROUTES.CONTACT}
               text={intl.formatMessage({ id: "menu-item.label.contacts" })}
             />

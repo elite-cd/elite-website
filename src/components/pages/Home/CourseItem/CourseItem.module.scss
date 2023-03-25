@@ -31,11 +31,11 @@
 }
 
 .outcomes {
-  font-family: "GothamRegular";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 15px;
   text-align: center;
   justify-content: center;
-  line-height: 1.3rem !important;
+  line-height: 20px !important;
   margin-top: 5%;
   @media only screen and (max-width: 768px) {
     text-align: justify;
@@ -72,7 +72,7 @@
 
 .ImgCard {
   width: 100%;
-  display:inline-flex;
+  display: inline-flex;
 }
 .leftImgCard {
   width: 30%;
@@ -88,10 +88,10 @@
   height: 7rem;
   bottom: -2rem;
   width: 100%;
-  display:block;
+  display: block;
   //background-position: center;
   //margin-left: auto;
-  //margin-right: auto;  
+  //margin-right: auto;
   z-index: 2;
   @media only screen and (max-width: 768px) {
     display: none !important;
@@ -127,7 +127,7 @@
 
 .bodytitle {
   font-family: "GothamMedium";
-  font-size:medium;
+  font-size: medium;
   text-align: center;
   line-height: 1rem !important;
   @media only screen and (max-width: 768px) {
@@ -193,14 +193,11 @@
   height: 75%;
   margin: center;
   text-align: center;
-  display:block;
-  
+  display: block;
 }
 
 @media only screen and (max-width: 1200px) {
- 
-  .body .sup_body .outcomes {   
-
+  .body .sup_body .outcomes {
     font-family: "GothamRegular";
     font-size: 8pt;
     text-align: center;
@@ -242,7 +239,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 0;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  //font-family: "GothamMedium";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   z-index: 900;
   height: 45px;
 }
@@ -285,4 +283,32 @@
   border: 2px solid #fff;
   color: #fff;
   cursor: pointer;
+}
+
+.mac_btnTxt {
+  margin-top: 2%;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    height: fit-content;
+  }
+
+  .body .sup_body .outcomes {
+    font-size: 14px;
+  }
+  .bodytitle {
+    font-size: 14px;
+  }
+
+  .customOutlinedBtn {
+    height: 40px;
+    // margin-top: 3%;
+  }
+  .customPrimaryBtn {
+    height: 40px;
+    margin-top: -3%;
+  }
 }

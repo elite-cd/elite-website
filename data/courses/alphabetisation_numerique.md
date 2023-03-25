@@ -10,5 +10,8 @@ description: "Ce programme vise à acquérir les compétences nécessaires pour 
 outcomes: "Site Internet, Application mobile et web, Programmation interfaces d'application, Python applications, Django web framework, Java and Spring framework, Dotnet and .NET Core"
 students: "200"
 price: 200
-image: images/backend.png
+image: images/pexels-rodolfo-quirós-2330137.jpg
+img2: images/pexels-august-de-richelieu-4261790.jpg
+icon1: images/data_science.png
+icon2: images/dev-web.png
 videoUrl: https://www.youtube.com/watch?v=r7HlR2oFNuI
