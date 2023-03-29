@@ -1,0 +1,46 @@
+.activeBtn {
+  height: 43px;
+}
+.activeBtn:active {
+  border-bottom-color: #00A19A;
+  border-width: 3px;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.activeBtn:focus {
+  border-bottom-color: #00A19A;
+  border-width: 3px;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.activeBtn::before {
+  border-bottom-color: #00A19A;
+  border-width: 3px;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.activeBtn::after {
+  border-bottom-color: #00A19A;
+  border-width: 3px;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.activeIndex {
+  border-bottom-color: #00A19A;
+  border-width: 3px;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
