@@ -20,31 +20,26 @@ const CourseItem = ({
   const classNameVariation = outlined ? "__outlined" : "";
 
   return (
-    <div className={style.wrapper}>
-      <div className={style.ImgCard}>
-        <div className={style.leftImgCard}></div>
 
-        <div className={style.centerImgCard}>
-          <GatsbyImage
-            objectFit={"contain"}
-            alt={`${title} image`}
-            className={style.item__image}
-            image={getImage(icon1)}
-          />
+    <div className={style.wrapper}>
+     
+      <div className={ style.ImgCard }>        
+        <div className={ style.leftImgCard }>
         </div>
 
-        <div className={style.rightImgCard}></div>
+          
+        <div className={ style.rightImgCard }>
+        </div>
       </div>
 
-      <div
-        className={style["item" + classNameVariation]}
-        style={{ width: "100%" }}
-      >
+      <div className={style["item" + classNameVariation]} style={{ width: '100%' }}>
+        
         <div className={style.header}>
           <h3 className={style["headertitle" + classNameVariation]}>{title}</h3>
         </div>
 
         <div className={style.body}>
+
           <div className={style.sup_body}>
             <h3 className={style.bodytitle}>{descTitle}</h3>
             <p className={style.outcomes}>{description}</p>
@@ -58,50 +53,32 @@ const CourseItem = ({
               Prix: <span className={style.text_regular}>{price}$/mois</span>
             </p>
           </div>
-        </div>
 
+        </div>
+        
         <div className={style.btn_container}>
           {outlined ? (
-            <Link to={`/courses/${slug}`} className={style.customPrimaryBtn}>
-              <div style={{ height: "100%", width: "100%" }}>
-                <div style={{ height: "30%" }}></div>
 
-                <div
-                  className=""
-                  style={{
-                    paddingLeft: "20%",
-                    height: "40%",
-                    display: "inline-flex",
-                  }}
-                >
-                  <span>En savoir plus</span>
-                </div>
+              <button
+                        style={{  borderRadius: "10px", textTransform: "initial", color: "white", height: "40px", backgroundColor: "#00A19A"  }}
+                        type="button"
+                        class="inline-block px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#046059] transition duration-150 ease-in-out hover:bg-yellow-500">
+                        En savoir plus
+              </button>
 
-                <div style={{ height: "30%" }}></div>
-              </div>
-            </Link>
           ) : (
-            <Link to={`/courses/${slug}`} className={style.customOutlinedBtn}>
-              <div style={{ height: "100%", width: "100%" }}>
-                <div style={{ height: "30%" }}></div>
-
-                <div
-                  className=""
-                  style={{
-                    paddingLeft: "20%",
-                    height: "40%",
-                    display: "inline-flex",
-                  }}
-                >
-                  <span>En savoir plus</span>
-                </div>
-
-                <div style={{ height: "30%" }}></div>
-              </div>
-            </Link>
+            <button
+              style={{  borderRadius: "10px", textTransform: "initial", color: "#00A19A", height: "40px", backgroundColor: "white"  }}
+              type="button"
+              class="inline-block bg-white px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_#046059] transition duration-150 ease-in-out hover:bg-teal-500">
+              En savoir plus
+            </button>
           )}
         </div>
+
+
       </div>
+
     </div>
   );
 };

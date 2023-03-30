@@ -1,15 +1,11 @@
-import { StaticImage } from "gatsby-plugin-image";
-import T from "prop-types";
-import * as React from "react";
+import { StaticImage } from 'gatsby-plugin-image';
+import T from 'prop-types';
+import * as React from 'react';
+import logo from "../../assets/images/logo.png"
 
 const Logo = ({ className }) => {
   return (
-    <StaticImage
-      className={className}
-      objectFit={"contain"}
-      src={"../../assets/images/logo.png"}
-      alt={"Logo elite"}
-    />
+    <img src={ logo } className={className} style={{ objectFit: "contain" }}/>
   );
 };
 

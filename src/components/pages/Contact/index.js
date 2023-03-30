@@ -1,6 +1,9 @@
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
+import ButtonPrimary from "../../Button/button-primary";
 import Page from "../../PageTemplate";
+import TextArea from "../../TextArea";
+import TextInput from "../../TextInput";
 import * as style from "./Contact.module.scss";
 const Contact = () => {
   const renderContactForm = () => {

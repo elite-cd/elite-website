@@ -7,30 +7,30 @@ import { graphql, useStaticQuery } from "gatsby";
 
 const About = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
-      allFile(filter: { relativePath: { eq: "acad01.png" } }) {
-        nodes {
-          childImageSharp {
-            gatsbyImageData
-          }
-          id
+  query MyQuery {
+    allFile(filter: {relativePath: {eq: "acad01.png"}}) {
+      nodes {
+        childImageSharp {
+          gatsbyImageData
         }
+        id
       }
     }
-  `);
-  const aboutImg = data.allFile.nodes[0].childImageSharp;
+  }
+`)
+const aboutImg = data.allFile.nodes[0].childImageSharp;
 
   const renderPage = () => {
     return (
       <div className={style.container}>
         <div className={style.container__image}>
           <GatsbyImage
-            alt="About image failed"
-            objectFit="contain"
-            className=""
-            image={getImage(aboutImg)}
-          />
-        </div>
+                alt="About image failed"
+                objectFit="contain"
+                className=""
+                image={getImage(aboutImg)}
+           />
+          </div>
 
         <div className={style.container__desc}>
           <h1>A PROPOS DE NOUS</h1>
@@ -39,17 +39,17 @@ const About = () => {
             Afrique de competir avec ceux formés ailleurs ?
           </p>
           <p>
-            C’est la question qu’Aristote, lauréat aux Examens d’Etat 2010 en
-            République Democratique du Congo s’est posée à son arrivée d’abord
+            C'est la question qu'Aristote, lauréat aux Examens d'Etat 2010 en
+            République Democratique du Congo s'est posée à son arrivée d'abord
             en Inde ensuite au Canada pour poursuivre ses études universitaires.
-            C’est le constat que font plusieurs autres congolais et africains
-            lorsqu’ils arrivent pour travailler au niveau international.
+            C'est le constat que font plusieurs autres congolais et africains
+            lorsqu'ils arrivent pour travailler au niveau international.
           </p>
           <p>
-            Après des années d’études en Inde, Canada, États-Unis et Brésil,
-            Aristote et ses associés ont réalisé que le problème n’était pas
+            Après des années d'études en Inde, Canada, États-Unis et Brésil,
+            Aristote et ses associés ont réalisé que le problème n'était pas
             nécessairement ce qui était enseigné mais la manière dont
-            l’enseignement est dispensé.
+            l'enseignement est dispensé.
           </p>
           <p>
             Alors que dans les pays avancés, on apprend aux étudiants à exercer
