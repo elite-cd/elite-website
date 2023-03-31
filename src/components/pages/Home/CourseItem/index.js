@@ -54,9 +54,6 @@ const CourseItem = ({
             <p className={style.text_bold}>
               Durée: <span className={style.text_regular}>{timeline}</span>
             </p>
-            <p className={style.text_bold}>
-              Prix: <span className={style.text_regular}>{price}$/mois</span>
-            </p>
           </div>
         </div>
 
