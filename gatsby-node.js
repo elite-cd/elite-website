@@ -95,18 +95,3 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 };
-
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === "build-html") {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /preline/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    })
-  }
-}

@@ -59,7 +59,7 @@
 .course__section {
   margin-top: 1.8rem;
   background-image: url("../../../assets/images/pexels-rodolfo-quirós-2330137.jpg");
-  background-size:100%;
+  background-size:cover;
   //padding: 4rem 0;
   width: 100%;
   @media only screen and (max-width: 768px) {
@@ -436,7 +436,7 @@
   .about__container {
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 100%;
     display: none;
 }
 .about__container_mobile {
@@ -569,4 +569,108 @@ filter: invert(25%) sepia(58%) saturate(1131%) hue-rotate(136deg) brightness(94%
 .contact_btn:hover {
   background-color: #78a6a2;
   color: white;
+}
+
+.parent2{
+  width:100%;
+  height:512px;
+  position:absolute;
+  z-index:0;
+}
+.parent2 > img {
+  height: 100%;
+  width: 100%;
+}
+
+.inner2{
+  position:absolute;
+  z-index:1;
+  bottom:0;
+  right:0;
+  height: 100%;
+  width: 100%;
+}
+
+.inner2 > img {
+  height: 100%;
+  width: 100%;
+  opacity: 99%;
+}
+
+.contact_content2{
+  position:absolute;
+  z-index:1;
+  bottom:0;
+  right:0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  padding-top: 7%;
+
+}
+
+.courseCard {
+  height: 240px;
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px 5px rgba(215, 205, 205, 0.3);
+  border-radius: 20px;
+}
+
+.courseCard h5 img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.courseCard p {
+  line-height: 1.2rem !important;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
+
+.cardback {
+  transform: rotateY(180deg);
+}
+
+.courseCard .longCardText {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .courseCard {
+    height: 200px;
+    width: 270px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 2px rgba(215, 205, 205, 0.3);
+    border-radius: 20px;
+  }
+  .courseCard .longCardText {
+    font-size: 13px;
+    margin-top: -12%;
+  }
+}
+
+.mobile_courseCard {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  
+  .mobile_courseCard{
+    display: block;
+  } 
+
+  .mobile_courseCard .courseCard {
+    display: block;
+    box-shadow: 0px 0px 35px 10px rgba(215, 205, 205, 0.3);
+    margin-top: 15px;
+    margin-bottom: 15px;
+  } 
+
 }

@@ -14,7 +14,6 @@ import * as style from "./Home.module.scss";
 import GoogleMapFrame from "../../GooglMap";
 import { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import "preline"
 
 import styled from "styled-components";
 import "./styles.css";
@@ -31,6 +30,9 @@ import contactImg2 from "../../../assets/images/Rectangle 37.png"
 import contactIcon1 from "../../../assets/images/Marker_100px.png"
 import contactIcon2 from "../../../assets/images/WhatsApp_100px.png"
 import contactIcon3 from "../../../assets/images/Message Filled_100px.png"
+
+import courseBg1 from "../../../assets/images/mimi-thian-vdXMSiX-n6M-unsplash 1.png"
+import courseBg2 from "../../../assets/images/Rectangle 24.png"
 
 import {
   faEnvelope,
@@ -149,43 +151,6 @@ const Home = ({ carouselItems, map }) => {
           </p>
         </div>
           
-          <Modal isOpen={isOpen} handleClose={() => handlOpenModal(false)}>
-            <ModalContent className={ style.modal + " bg-gray-100"} >
-
-                <figure className="md:flex bg-gray rounded-xl p-8 md:p-0">
-                  <div className={ style.modalImgContainer }>
-                      <img  className="md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" 
-                            src={ images[modalContentId] } 
-                            alt=""  
-                            style={{ justifyContent: "center", marginTop: "12%"}} />
-                  </div>
-
-                <div class={ style.modalContentBloc + " pt-6 md:p-8 text-center bg-gray md:text-left space-y-3"}>
-                  <blockquote className={ style.modalContentTextWrapper }>
-
-                    <p class="text-lg font-semibold" className={ style.modalContentText }>
-                      { (OverlayContents[modalContentId] != undefined) ? (OverlayContents[modalContentId].split('.')[0]) : ""  }
-                        <p style={{ paddingTop: "1%" }} className={ style.modalParagraphe2 }>
-                          { (OverlayContents[modalContentId] != undefined) ? (OverlayContents[modalContentId].split('.')[1]) : "" }
-                        </p>
-                        <p style={{ paddingTop: "1%" }} className={ style.modalParagraphe3 }>
-                          { (OverlayContents[modalContentId] != undefined) ? (OverlayContents[modalContentId].split('.')[2]) : "" }
-                        </p>
-                    </p>
-                  </blockquote>
-                  <figcaption className="font-medium">
-                    <div className={ style.overlayTitle } style={{ color: "#046059", fontWeight: 'bold', textAlign: "center" }}>
-                      { OverlayTitles[modalContentId] }
-                    </div>
-                    <div className="text-gray-500" style={{ textAlign: "center" }}>
-                      { OverlayCountry[modalContentId] }
-                    </div>
-                  </figcaption>
-                </div>
-              </figure>
-            </ModalContent>
-          </Modal>
-          
         <div id="hs-vertically-centered-modal" class="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto">
           <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
             <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-300 dark:border-gray-700 dark:shadow-slate-700/[.7]">
@@ -230,74 +195,215 @@ const Home = ({ carouselItems, map }) => {
             ))}
           </div>
         </section>
+
         <h3 id="about" className={style.about__header}>
           Pourquoi choisir l'académie des élites ?
         </h3>      
         <section className={style.about__container}>
           {renderOverlayComponent(overlayIndex)}
+          
 
-          <div class="grid grid-cols-3 gap-4">
+          <div class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1" style={{ width: "90%" }}>
             
-            <div>
-              <div class="flex justify-center">
+            <div class={ style.rubrique }>
+              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
                 <div
-                  class="block max-w-sm rounded-lg text-center" style={{ height: "200px", width: "270px", backgroundColor: "#FFFFFF", boxShadow: "0px 0px 25px 5px rgba(215, 205, 205, 0.3)", borderRadius: "20px" }}>
+                  class={"block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
                   </div>
                   <div class="p-6">
                     <h5
-                      class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                      Special title treatment
+                      class="mb-3 -mt-9">
+                      <img src={img1} style={{ height: "80px" }} />
                     </h5>
                     <p class="mb-4 text-base text-teal-800" style={{
                       fontSize: "20px",
                       fontWeight: "700",
                     }}>
-                      Méthode Harkness <br/><br/> (USA)
+                      Mentors de niveau international
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                  <div
+                    class="py-3 px-6">
+                    &nbsp;
+                  </div>
+                  <div class="p-4">
+                    <p class={"mb-4 text-base " + style.longCardText}>
+                      {OverlayContents[0]}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div>
-              <div class="flex justify-center">
+            <div class={ style.rubrique }>
+              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
                 <div
-                  class="block max-w-sm rounded-lg text-center" style={{ height: "200px", width: "270px", backgroundColor: "#FFFFFF", boxShadow: "0px 0px 25px 5px rgba(215, 205, 205, 0.3)", borderRadius: "20px" }}>
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
                   </div>
                   <div class="p-6">
                     <h5
-                      class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                      Special title treatment
+                      class="mb-3 -mt-9">
+                      <img src={img2} style={{ height: "80px" }} />
                     </h5>
                     <p class="mb-4 text-base text-teal-800" style={{
                       fontSize: "20px",
                       fontWeight: "700",
                     }}>
-                        Lab Creative <br/><br/> (Canada)
+                      Coachs qualifiés et pratiquants
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                  <div
+                    class="py-3 px-6">
+                    &nbsp;
+                  </div>
+                  <div class="p-4">
+                    <p class={"mb-4 text-base " + style.longCardText}>
+                      {OverlayContents[1]}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div>
-              <div class="flex justify-center">
+            <div class={ style.rubrique }>
+              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
                 <div
-                  class="block max-w-sm rounded-lg text-center" style={{ height: "200px", width: "270px", backgroundColor: "#FFFFFF", boxShadow: "0px 0px 25px 5px rgba(215, 205, 205, 0.3)", borderRadius: "20px" }}>
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
                   </div>
                   <div class="p-6">
                     <h5
-                      class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                      Special title treatment
+                      class="mb-3 -mt-9">
+                      <img src={img3} style={{ height: "80px" }} />
+                    </h5>
+                    <p class="mb-4 text-base text-teal-800" style={{
+                      fontSize: "20px",
+                      fontWeight: "700",
+                    }}>
+                      Lab Creative (Canada)
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                  <div
+                    class="py-3 px-6">
+                    &nbsp;
+                  </div>
+                  <div class="p-4">
+                    <p class={"mb-4 text-base " + style.longCardText}>
+                      {OverlayContents[2]}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="my-8">
+
+              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+                <div
+                  class={"block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                  <div
+                    class="py-3 px-6">
+                    &nbsp;
+                  </div>
+                  <div class="p-6">
+                    <h5
+                      class="mb-3 -mt-9">
+                      <img src={img4} style={{ height: "80px" }} />
+                    </h5>
+                    <p class="mb-4 text-base text-teal-800" style={{
+                      fontSize: "20px",
+                      fontWeight: "700",
+                    }}>
+                      Méthodes Harkness (USA)
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                  <div
+                    class="py-3 px-6">
+                    &nbsp;
+                  </div>
+                  <div class="p-4">
+                    <p class={"mb-4 text-base " + style.longCardText}>
+                      {OverlayContents[3]}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="my-8">
+              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+                <div
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                  <div
+                    class="py-3 px-6">
+                    &nbsp;
+                  </div>
+                  <div class="p-6">
+                    <h5
+                      class="mb-3 -mt-9">
+                      <img src={img5} style={{ height: "80px" }} />
+                    </h5>
+                    <p class="mb-4 text-base text-teal-800" style={{
+                      fontSize: "20px",
+                      fontWeight: "700",
+                    }}>
+                      Environnement Professionnel et Sérieux
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                  <div
+                    class="py-3 px-6">
+                    &nbsp;
+                  </div>
+                  <div class="p-4">
+                    <p class={"mb-4 text-base " + style.longCardText}>
+                      {OverlayContents[4]}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="my-8">
+              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+                <div
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                  <div
+                    class="py-3 px-6">
+                    &nbsp;
+                  </div>
+                  <div class="p-6">
+                    <h5
+                      class="mb-3 -mt-9">
+                        <img src={ img6 } style={{ height: "80px" }}/>
                     </h5>
                     <p class="mb-4 text-base text-teal-800" style={{
                       fontSize: "20px",
@@ -307,84 +413,340 @@ const Home = ({ carouselItems, map }) => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="my-8">
-              <div class="flex justify-center">
-                <div
-                  class="block max-w-sm rounded-lg text-center" style={{ height: "200px", width: "270px", backgroundColor: "#FFFFFF", boxShadow: "0px 0px 25px 5px rgba(215, 205, 205, 0.3)", borderRadius: "20px" }}>
+              <div
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " +style.cardback}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
                   </div>
                   <div class="p-6">
-                    <h5
-                      class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                      Special title treatment
-                    </h5>
-                    <p class="mb-4 text-base text-teal-800" style={{
-                      fontSize: "20px",
-                      fontWeight: "700",
-                    }}>
-                      Méthode Harkness <br/><br/> (USA)
+                    <p class="mb-4 text-base" style={{ fontSize: "1rem"  }}>
+                    {OverlayContents[5]}
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="my-8">
-              <div class="flex justify-center">
-                <div
-                  class="block max-w-sm rounded-lg text-center" style={{ height: "200px", width: "270px", backgroundColor: "#FFFFFF", boxShadow: "0px 0px 25px 5px rgba(215, 205, 205, 0.3)", borderRadius: "20px" }}>
-                  <div
-                    class="py-3 px-6">
-                    &nbsp;
-                  </div>
-                  <div class="p-6">
-                    <h5
-                      class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                      Special title treatment
-                    </h5>
-                    <p class="mb-4 text-base text-teal-800" style={{
-                      fontSize: "20px",
-                      fontWeight: "700",
-                    }}>
-                        Lab Creative <br/><br/> (Canada)
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="my-8">
-              <div class="flex justify-center">
-                <div
-                  class="block max-w-sm rounded-lg text-center" style={{ height: "200px", width: "270px", backgroundColor: "#FFFFFF", boxShadow: "0px 0px 25px 5px rgba(215, 205, 205, 0.3)", borderRadius: "20px" }}>
-                  <div
-                    class="py-3 px-6">
-                    &nbsp;
-                  </div>
-                  <div class="p-6">
-                    <h5
-                      class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                      Special title treatment
-                    </h5>
-                    <p class="mb-4 text-base text-teal-800" style={{
-                      fontSize: "20px",
-                      fontWeight: "700",
-                    }}>
-                      Certificat
-                    </p>
-                  </div>
-                </div>
+              
               </div>
             </div>
             
         </div>
 
         </section>
+
+        <section class={ style.mobile_courseCard }>
+          <div
+            id="carouselExampleIndicators"
+            class="relative"
+            data-te-carousel-init
+            data-te-carousel-slide>
+
+            <div
+              class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+
+              <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item
+                data-te-carousel-active>
+
+                <div class={"block w-full flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+                  <div
+                    class={"block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                    <div
+                      class="py-3 px-6">
+                      &nbsp;
+                    </div>
+                    <div class="p-6">
+                      <h5
+                        class="mb-3 -mt-9">
+                        <img src={img1} style={{ height: "80px" }} />
+                      </h5>
+                      <p class="mb-4 text-base text-teal-800" style={{
+                        fontSize: "20px",
+                        fontWeight: "700",
+                      }}>
+                        Mentors de niveau international
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                    <div
+                      class="py-3 px-6">
+                      &nbsp;
+                    </div>
+                    <div class="p-4">
+                      <p class={"mb-4 text-base " + style.longCardText}>
+                        {OverlayContents[0]}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item>
+                <div class={style.rubrique}>
+                  <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+                    <div
+                      class={"block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                      <div
+                        class="py-3 px-6">
+                        &nbsp;
+                      </div>
+                      <div class="p-6">
+                        <h5
+                          class="mb-3 -mt-9">
+                          <img src={img2} style={{ height: "80px" }} />
+                        </h5>
+                        <p class="mb-4 text-base text-teal-800" style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                        }}>
+                          Coachs qualifiés et pratiquants
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                      <div
+                        class="py-3 px-6">
+                        &nbsp;
+                      </div>
+                      <div class="p-4">
+                        <p class={"mb-4 text-base " + style.longCardText}>
+                          {OverlayContents[0]}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div
+                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item>
+                <div class={style.rubrique}>
+                  <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+                    <div
+                      class={"block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                      <div
+                        class="py-3 px-6">
+                        &nbsp;
+                      </div>
+                      <div class="p-6">
+                        <h5
+                          class="mb-3 -mt-9">
+                          <img src={img3} style={{ height: "80px" }} />
+                        </h5>
+                        <p class="mb-4 text-base text-teal-800" style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                        }}>
+                          Lab Creative (Canada)
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                      <div
+                        class="py-3 px-6">
+                        &nbsp;
+                      </div>
+                      <div class="p-4">
+                        <p class={"mb-4 text-base " + style.longCardText}>
+                          {OverlayContents[2]}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div
+                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item>
+                <div class={style.rubrique}>
+                  <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+                    <div
+                      class={"block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                      <div
+                        class="py-3 px-6">
+                        &nbsp;
+                      </div>
+                      <div class="p-6">
+                        <h5
+                          class="mb-3 -mt-9">
+                          <img src={img4} style={{ height: "80px" }} />
+                        </h5>
+                        <p class="mb-4 text-base text-teal-800" style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                        }}>
+                          Méthodes Harkness (USA)
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                      <div
+                        class="py-3 px-6">
+                        &nbsp;
+                      </div>
+                      <div class="p-4">
+                        <p class={"mb-4 text-base " + style.longCardText}>
+                          {OverlayContents[3]}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div
+                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item>
+                <div class={style.rubrique}>
+                  <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+                    <div
+                      class={"block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                      <div
+                        class="py-3 px-6">
+                        &nbsp;
+                      </div>
+                      <div class="p-6">
+                        <h5
+                          class="mb-3 -mt-9">
+                          <img src={img5} style={{ height: "80px" }} />
+                        </h5>
+                        <p class="mb-4 text-base text-teal-800" style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                        }}>
+                          Environnement Professionnel Sérieux
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                      <div
+                        class="py-3 px-6">
+                        &nbsp;
+                      </div>
+                      <div class="p-4">
+                        <p class={"mb-4 text-base " + style.longCardText}>
+                          {OverlayContents[4]}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div
+                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                data-te-carousel-item>
+                <div class={style.rubrique}>
+                  <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+                    <div
+                      class={"block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                      <div
+                        class="py-3 px-6">
+                        &nbsp;
+                      </div>
+                      <div class="p-6">
+                        <h5
+                          class="mb-3 -mt-9">
+                          <img src={img6} style={{ height: "80px" }} />
+                        </h5>
+                        <p class="mb-4 text-base text-teal-800" style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                        }}>
+                          Certificat
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                      <div
+                        class="py-3 px-6">
+                        &nbsp;
+                      </div>
+                      <div class="p-4">
+                        <p class={"mb-4 text-base"}>
+                          {OverlayContents[5]}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+            <button
+              class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black focus:text-black motion-reduce:transition-none"
+              type="button"
+              data-te-target="#carouselExampleIndicators"
+              data-te-slide="prev">
+              <span class="inline-block h-8 w-8">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+              </span>
+              <span
+                class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+              >Previous</span
+              >
+            </button>
+            <button
+              class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black motion-reduce:transition-none"
+              type="button"
+              data-te-target="#carouselExampleIndicators"
+              data-te-slide="next">
+              <span class="inline-block h-8 w-8">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </span>
+              <span
+                class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+              >Next</span
+              >
+            </button>
+          </div>
+        </section>
+        
 
         <section className={style.signup__container}>
           

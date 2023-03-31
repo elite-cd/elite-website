@@ -27,7 +27,15 @@ const CourseItem = ({
         <div className={ style.leftImgCard }>
         </div>
 
-          
+        <div className={style.centerImgCard}>
+          <GatsbyImage
+            objectFit={"contain"}
+            alt={`${title} image`}
+            className={style.item__image}
+            image={getImage(icon1)}
+          />
+        </div>
+        
         <div className={ style.rightImgCard }>
         </div>
       </div>
@@ -42,15 +50,15 @@ const CourseItem = ({
 
           <div className={style.sup_body}>
             <h3 className={style.bodytitle}>{descTitle}</h3>
-            <p className={style.outcomes}>{description}</p>
+            <p className={style.outcomes} style={ classNameVariation ? ({color: "black"}): ({color: "white"}) }>{description}</p>
           </div>
 
           <div className={style.sub_body}>
             <p className={style.text_bold}>
-              Durée: <span className={style.text_regular}>{timeline}</span>
+              &nbsp;
             </p>
             <p className={style.text_bold}>
-              Prix: <span className={style.text_regular}>{price}$/mois</span>
+              Durée: <span className={style.text_regular}>{timeline}</span>
             </p>
           </div>
 
