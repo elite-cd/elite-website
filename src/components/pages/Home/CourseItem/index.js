@@ -73,7 +73,7 @@ const CourseItem = ({
 
         <div className={style.btn_container}>
           {outlined ? (
-            <button
+            <Link
               style={{
                 borderRadius: "10px",
                 textTransform: "initial",
@@ -81,13 +81,13 @@ const CourseItem = ({
                 height: "40px",
                 backgroundColor: "#00A19A",
               }}
-              type="button"
-              class="inline-block px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#046059] transition duration-150 ease-in-out hover:bg-yellow-500"
+              to={`/courses/${slug}`}
+              className="inline-block px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#046059] transition duration-150 ease-in-out hover:bg-yellow-500"
             >
               En savoir plus
-            </button>
+            </Link>
           ) : (
-            <button
+            <Link
               style={{
                 borderRadius: "10px",
                 textTransform: "initial",
@@ -95,11 +95,11 @@ const CourseItem = ({
                 height: "40px",
                 backgroundColor: "white",
               }}
-              type="button"
-              class="inline-block bg-white px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_#046059] transition duration-150 ease-in-out hover:bg-teal-500"
+              to={`/courses/${slug}`}
+              className="inline-block bg-white px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_#046059] transition duration-150 ease-in-out hover:bg-teal-500"
             >
               En savoir plus
-            </button>
+            </Link>
           )}
         </div>
       </div>
