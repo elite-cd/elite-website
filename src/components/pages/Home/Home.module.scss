@@ -27,13 +27,14 @@
       width: 100%;
       line-height: 1.5rem !important;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      text-transform: initial;
     }
   }
 }
 
 .typography3 {
   font-family: "GothamMedium";
-  font-size: 40px;
+  font-size: 30px;
   line-height: 3rem !important;
 }
 
@@ -56,7 +57,9 @@
 /* COURSE SECTION */
 
 .course__section {
-  background-color: #fafafa;
+  margin-top: 1.8rem;
+  background-image: url("../../../assets/images/pexels-rodolfo-quirós-2330137.jpg");
+  background-size: cover;
   //padding: 4rem 0;
   width: 100%;
   @media only screen and (max-width: 768px) {
@@ -78,13 +81,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  //margin-bottom: 2rem;
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 2%;
   padding-bottom: 2%;
 
-  column-gap: 5rem;
+  column-gap: 1rem;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
@@ -222,6 +223,10 @@
     width: 90%;
     margin: 2rem auto;
     color: #046059;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 1.3rem;
+    }
   }
 }
 
@@ -435,7 +440,7 @@
   .about__container {
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 100%;
     display: none;
   }
   .about__container_mobile {
@@ -497,4 +502,315 @@
 .mobileModalText {
   line-height: 1.2rem !important;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact_section {
+  margin-top: 1.8rem;
+  background-image: url("../../../assets/images/nous-contacter 1.png");
+  background-size: 100%;
+  width: 100%;
+  height: 400px;
+  //  background-color: #046059;
+  //  filter: sepia(100%) hue-rotate(190deg) saturate(900%);
+  //filter: invert(27%) sepia(60%) saturate(598%) hue-rotate(126deg) brightness(96%) contrast(99%);
+  //filter: invert(28%) sepia(24%) saturate(1703%) hue-rotate(128deg) brightness(95%) contrast(97%);
+  filter: invert(25%) sepia(58%) saturate(1131%) hue-rotate(136deg)
+    brightness(94%) contrast(97%);
+}
+
+.parent {
+  width: 100%;
+  height: 512px;
+  position: absolute;
+  z-index: 0;
+}
+.parent > img {
+  height: 100%;
+  width: 100%;
+}
+
+.inner {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.inner > img {
+  height: 100%;
+  width: 100%;
+  opacity: 70%;
+}
+
+.contact_content {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  padding-top: 7%;
+}
+.contact_btn {
+  height: 50px;
+  width: 418px;
+  color: #00a19a;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  transition: background-color 0.8s;
+}
+.contact_btn:hover {
+  background-color: #78a6a2;
+  color: white;
+}
+
+.parent2 {
+  width: 100%;
+  height: 512px;
+  position: absolute;
+  z-index: 0;
+}
+.parent2 > img {
+  height: 100%;
+  width: 100%;
+}
+
+.inner2 {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.inner2 > img {
+  height: 100%;
+  width: 100%;
+  opacity: 99%;
+}
+
+.contact_content2 {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  padding-top: 7%;
+}
+
+.courseCard {
+  height: 240px;
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px 5px rgba(215, 205, 205, 0.3);
+  border-radius: 20px;
+}
+
+.courseCard h5 img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.courseCard p {
+  line-height: 1.2rem !important;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
+
+.cardback {
+  transform: rotateY(180deg);
+}
+
+.courseCard .longCardText {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .courseCard {
+    height: 200px;
+    width: 270px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 2px rgba(215, 205, 205, 0.3);
+    border-radius: 20px;
+  }
+  .courseCard .longCardText {
+    font-size: 13px;
+    margin-top: -12%;
+  }
+}
+
+.mobile_courseCard {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile_courseCard {
+    display: block;
+  }
+
+  .mobile_courseCard .courseCard {
+    display: block;
+    box-shadow: 0px 0px 35px 10px rgba(215, 205, 205, 0.3);
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+.newsletter {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+    margin-top: 35%;
+    @media only screen and (max-width: 992px) {
+      width: 100%;
+      margin-top: 35rem;
+    }
+    @media only screen and (max-width: 1200px) {
+      width: 100%;
+      margin-top: 35rem;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 20px;
+    width: 90%;
+    line-height: 1.6rem !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
+    @media only screen and (max-width: 380px) {
+      font-size: 9px;
+    }
+  }
+
+  &__desc {
+    margin-top: 18px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.2rem !important;
+    width: 100%;
+    @media only screen and (max-width: 768px) {
+      width: 150%;
+      margin-left: -25%;
+    }
+  }
+  &__button:hover {
+    color: #d4d4d4;
+    cursor: pointer;
+  }
+
+  &__field {
+    width: 400px;
+    height: 50px;
+    border-radius: 25px 0px 0px 25px;
+    @media only screen and (max-width: 520px) {
+      width: 280px;
+    }
+    @media only screen and (max-width: 380px) {
+      width: 200px;
+    }
+  }
+}
+
+.help {
+  &__container {
+    @media only screen and (max-width: 640px) {
+      margin-left: -13rem;
+    }
+
+    @media only screen and (max-width: 440px) {
+      width: 100px;
+    }
+  }
+
+  &__title {
+    color: white;
+    font-weight: 600;
+    font-size: 35px;
+    @media only screen and (max-width: 362px) {
+      margin-left: 4.2rem;
+    }
+  }
+  &__desc {
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    @media only screen and (max-width: 362px) {
+      margin-left: 3.5rem;
+    }
+  }
+  &__form {
+    text-align: start;
+    color: white;
+    display: grid;
+    justify-content: center;
+
+    @media only screen and (max-width: 440px) {
+      margin-left: 2rem;
+    }
+    @media only screen and (max-width: 362px) {
+      margin-left: 3.5rem;
+    }
+  }
+  &__field {
+    padding-left: 30px;
+    padding-top: 30px;
+    background-color: rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    border-radius: 20px;
+    height: 148px;
+    width: 418px;
+
+    @media only screen and (max-width: 440px) {
+      width: 350px;
+    }
+    @media only screen and (max-width: 362px) {
+      width: 300px;
+    }
+  }
+
+  &__email {
+    padding-left: 30px;
+    background-color: rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    border-radius: 20px;
+    height: 46px;
+    width: 418px;
+    @media only screen and (max-width: 440px) {
+      width: 350px;
+    }
+    @media only screen and (max-width: 362px) {
+      width: 300px;
+    }
+  }
+  &__btn {
+    @media only screen and (max-width: 440px) {
+      width: 350px;
+    }
+    @media only screen and (max-width: 362px) {
+      width: 300px;
+    }
+  }
 }
