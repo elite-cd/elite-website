@@ -6,7 +6,6 @@ import * as React from "react";
 import { ROUTES } from "../../../common/constants";
 import ButtonRounded from "../../Button/button-rounded";
 import Carousel from "../../Carousel";
-import TwCaroussel from "../../TwCaroussel";
 
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
@@ -107,13 +106,6 @@ const Home = ({ carouselItems, map }) => {
   function handlMobilePopup(id) {
     setModalContentId(id);
   }
-
-  useEffect(() => {
-    const body = document.querySelector("body");
-    isOpen === true
-      ? (body.style.overflow = "hidden")
-      : (body.style.overflow = "auto");
-  }, [isOpen]);
 
   const InternalPage = ({ courses }) => {
     return (
