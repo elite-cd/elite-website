@@ -5,7 +5,7 @@ import T from "prop-types";
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
 import ButtonRounded from "../../Button/button-rounded";
-import TwCaroussel from "../../TwCaroussel";
+import Carousel from "../../Carousel";
 
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
@@ -146,7 +146,7 @@ const Home = ({ carouselItems, map }) => {
   const InternalPage = ({ courses }) => {
     return (
       <React.Fragment>
-        <TwCaroussel items={courses} />
+        <Carousel items={carouselItems} />
         <div className={style.row__center}>
           <h3
             style={{ textAlign: "center", marginTop: "30px" }}
