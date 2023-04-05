@@ -151,28 +151,6 @@ const Home = ({ carouselItems, map }) => {
           </p>
         </div>
           
-        <div id="hs-vertically-centered-modal" class="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto">
-          <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-300 dark:border-gray-700 dark:shadow-slate-700/[.7]">
-              <div class="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700" style={{ borderBlockEndColor: "#046059" }}>
-                <h3 class="font-bold text-gray-800 dark:text-white" style={{ color: "black", textAlign: "center", marginLeft: "auto", marginRight: "auto" }}>
-                { OverlayTitles[modalContentId] }
-                </h3>
-                <button type="button" class="hs-dropdown-toggle inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition-all text-sm dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800" data-hs-overlay="#hs-vertically-centered-modal">
-                  <span class="sr-only">Close</span>
-                  <svg class="w-3.5 h-3.5" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.258206 1.00652C0.351976 0.912791 0.479126 0.860131 0.611706 0.860131C0.744296 0.860131 0.871447 0.912791 0.965207 1.00652L3.61171 3.65302L6.25822 1.00652C6.30432 0.958771 6.35952 0.920671 6.42052 0.894471C6.48152 0.868271 6.54712 0.854471 6.61352 0.853901C6.67992 0.853321 6.74572 0.865971 6.80722 0.891111C6.86862 0.916251 6.92442 0.953381 6.97142 1.00032C7.01832 1.04727 7.05552 1.1031 7.08062 1.16454C7.10572 1.22599 7.11842 1.29183 7.11782 1.35822C7.11722 1.42461 7.10342 1.49022 7.07722 1.55122C7.05102 1.61222 7.01292 1.6674 6.96522 1.71352L4.31871 4.36002L6.96522 7.00648C7.05632 7.10078 7.10672 7.22708 7.10552 7.35818C7.10442 7.48928 7.05182 7.61468 6.95912 7.70738C6.86642 7.80018 6.74102 7.85268 6.60992 7.85388C6.47882 7.85498 6.35252 7.80458 6.25822 7.71348L3.61171 5.06702L0.965207 7.71348C0.870907 7.80458 0.744606 7.85498 0.613506 7.85388C0.482406 7.85268 0.357007 7.80018 0.264297 7.70738C0.171597 7.61468 0.119017 7.48928 0.117877 7.35818C0.116737 7.22708 0.167126 7.10078 0.258206 7.00648L2.90471 4.36002L0.258206 1.71352C0.164476 1.61976 0.111816 1.4926 0.111816 1.36002C0.111816 1.22744 0.164476 1.10028 0.258206 1.00652Z" fill="currentColor" />
-                  </svg>
-                </button>
-              </div>
-              <div class="p-4 overflow-y-auto">
-                <p class={ style.mobileModalText } style={{ textAlign: "center", lineHeight: "25px !important" }}>
-                  { OverlayContents[modalContentId] }
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <section className={style.course__section}>
           <div className={style.courselist}>
@@ -741,8 +719,7 @@ const Home = ({ carouselItems, map }) => {
               </span>
               <span
                 class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-              >Next</span
-              >
+              >Next</span>
             </button>
           </div>
         </section>
@@ -783,7 +760,7 @@ const Home = ({ carouselItems, map }) => {
               <div className={style.contact_content}>
                 <div class="grid grid-cols-2" style={{ width: "100%", }}>
                   <div>
-                    <div class="grid grid-rows-4 grid-flow-col">
+                    <div class="grid grid-rows-4 grid-flow-col max-sm:hidden">
                       <div style={{ color: "#FCCC25", fontWeight: "800", fontSize: "35px", marginRight: "auto" }}>Contactez-nous</div>
                       <div>
                         <ul style={{ textAlign: "start", color: "white", display: "grid" }}>
@@ -804,33 +781,34 @@ const Home = ({ carouselItems, map }) => {
                     </div>
                   </div>
 
-                  <div>
+                  <div className={  "max-sm:-ml-44 " + style.help__container }>
                     <div class="grid grid-rows-2 grid-flow-col">
                       <div>
-                       <span style={{ color: "white", fontWeight: "600", fontSize: "35px" }}>Besoin d'aide ?</span>
+                       <span className={  style.help__title  }>Besoin d'aide ?</span>
                       <br /><br />
-                      <p style={{ color: "white", fontWeight: "500", fontSize: "15px" }}>
+                      <p className={  style.help__desc  }>
                           Vous avez une question ? Notre équipe est là pour vous répondre du lundi au vendredi de 09h00 à 19h00 GTM
                       </p>
                       </div>
 
                       <div style={{ marginTop: "-15%" }}>
-                      <ul style={{ textAlign: "start", color: "white", display: "grid", justifyContent: "center" }}>
+                      <ul className={  style.help__form  }>
                           <li style={{ display: "inline-flex" }}>
 
                           <input  id="username" 
                                   type="text" 
                                   value="Adresse E-mail"
-                                  style={{ paddingLeft: "30px", backgroundColor: "rgba(255, 255, 255, 0.35)", color: "#ffffff", borderRadius: "20px", height: "46px", width: "418px" }} />
+                                  className={  style.help__email  }
+                                   />
                           </li>
 
                           <li style={{ paddingTop: "12px", display: "inline-flex" }}>
-                            <textarea style={{  paddingLeft: "30px", paddingTop: "30px", backgroundColor: "rgba(255, 255, 255, 0.35)", color: "#ffffff", borderRadius: "20px", height: "148px", width: "418px" }}>
+                            <textarea className={  style.help__field  }>
                                 Message
                             </textarea>
                           </li>
                           <li style={{ paddingTop: "12px", display: "inline-flex" }}>
-                              <button className={ style.contact_btn } style={{  }}>
+                              <button className={ style.contact_btn + " " + style.help__btn }>
                                   Envoyer
                               </button>
                           </li>
@@ -843,82 +821,37 @@ const Home = ({ carouselItems, map }) => {
             </div>
         </div>
 
-        <section className={style.contact__container}>
-          <div className={style.contact__map}>
-            <GoogleMapFrame mapUrl={map} />
+        <section className={style.newsletter__container}>
+          
+          <p className={style.newsletter__title} style={{ paddingBottom: "20px", marginTop: "20px", width: "50%" }}>
+            <span className={style.signup__text} style={{ fontSize: "32", fontWeight: "800",  }}>
+              Restez informé de nos nouveautés
+            </span>
+            <br />
+              <p className={ style.newsletter__desc }>
+                Inscrivez-vous à notre newsLetter pour recevoir
+                en avant-premier les dernières tendances du digital ainsi que toutes nos actualités
+              </p>
+          </p>
+        
+          <div class="relative mb-4 flex flex-wrap items-center justify-center">
+            <input
+              type="text"
+              class={style.newsletter__field + " relative m-0 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-gray-100 bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:text-neutral-700 focus:outline-none dark:border-teal-800 dark:text-neutral-200 dark:placeholder:text-neutral-400"}
+              placeholder="Adresse E-mail"
+              aria-label="Adresse E-mail"
+              aria-describedby="basic-addon2"
+              style={{  }} />
+            <span
+              class={"bg-teal-800 flex items-center whitespace-nowrap rounded-r border border-l-0 border-solid border-teal-800 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-white dark:border-teal-800 dark:text-white dark:placeholder:text-neutral-200 " + style.newsletter__button}
+              id="basic-addon2"
+              style={{ height: "50px", borderRadius: "0px 20px 20px 0px" }}
+              >S'inscrire</span>
           </div>
-          <div className={style.contact__information}>
-            <h1>Contact</h1>
-            <div>
-              <span className={style.contact__icon}>
-                <FontAwesomeIcon icon={faLocationPin} />
-              </span>
-              6, Tabora, Gombe, Kinshasa, RDC
-            </div>
-            <div>
-              <span className={style.contact__icon}>
-                <FontAwesomeIcon icon={faEnvelope} />
-              </span>
-              academie@elite.cd
-            </div>
-            <div>
-              <span className={style.contact__icon}>
-                <FontAwesomeIcon icon={faPhone} />
-              </span>
-              +243 999 084 177
-            </div>
 
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/linkedin.png"}
-              />
-              <p>
-                <a href="https://www.linkedin.com/company/academie-des-elites/">
-                  LinkedIn
-                </a>
-              </p>
-            </div>
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/instagram.png"}
-              />
-              <p>
-                <a href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h">
-                  Instagram
-                </a>
-              </p>
-            </div>
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/facebook.png"}
-              />
-              <p>
-                {" "}
-                <a href="https://www.facebook.com/elitescd/">Facebook</a>{" "}
-              </p>
-            </div>
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/twitter_icon.png"}
-              />
-              <p>
-                <a href="https://twitter.com/AcademieElites?s=09">Twitter</a>
-              </p>
-            </div>
-          </div>
         </section>
+
+
       </React.Fragment>
     );
   };
