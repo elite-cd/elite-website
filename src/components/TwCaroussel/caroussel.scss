@@ -1,0 +1,50 @@
+#activeBtn2 {
+  height: 43px;
+}
+#activeBtn2:active {
+  border-bottom-color: #00a19a;
+  border-width: 3px;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+#activeBtn2:focus {
+  border-bottom-color: #00a19a;
+  border-width: 3px;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+#activeBtn2::before {
+  border-bottom-color: #00a19a;
+  border-width: 3px;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+#activeBtn2::after {
+  border-bottom-color: #00a19a;
+  border-width: 3px;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.activeIndex {
+  border-bottom-color: #00a19a;
+  border-width: 3px;
+  background-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+#subMenu {
+  visibility: hidden;
+}
