@@ -2,14 +2,10 @@ import * as React from "react";
 import * as style from "./style.module.scss";
 import logo from "../../assets/images/Elite_Logo_PNG.png";
 
-const Footer = () => {
+
+const Footer = ({ courses }) => {
   return (
-    <footer
-      class={
-        "text-center text-neutral-600 dark:text-neutral-200 lg:text-left " +
-        style.footer
-      }
-    >
+    <footer class={"text-center text-white lg:text-left " + style.footer}>
       <div class="mx-9 py-10 text-center md:text-left max-sm:mx-4">
         <div class="grid-1 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <div class="">
@@ -26,55 +22,27 @@ const Footer = () => {
             <h6 class="mb-6 flex justify-center sm:font-bold xs:font-extrabold uppercase md:justify-start">
               Formations
             </h6>
-            <p class="mb-6">
-              <a
-                href="#!"
-                class="text-neutral-600 dark:text-neutral-200 hover:text-yellow-500"
-              >
-                Base de la programmation
-              </a>
-            </p>
-            <p class="mb-6">
-              <a
-                href="#!"
-                class="text-neutral-600 dark:text-neutral-200 hover:text-yellow-500"
-              >
-                Alphabétisation numérique
-              </a>
-            </p>
-            <p class="mb-6">
-              <a
-                href="#!"
-                class="text-neutral-600 dark:text-neutral-200 hover:text-yellow-500"
-              >
-                Programme d'immersion
-              </a>
-            </p>
+
+            {courses.map((course, i) => (
+              <p class="mb-6">
+                <a
+                  href={`/courses/${course.slug}`}
+                  class="text-white hover:text-yellow-500"
+                >
+                  {course.title}
+                </a>
+              </p>
+            ))}
+          
           </div>
           <div class="max-sm:hidden">
             <h6 class="mb-6 flex justify-center sm:font-bold xs:font-extrabold uppercase md:justify-start">
               Valeurs
             </h6>
-            <p class="mb-4">
-              <a href="#!" class="text-neutral-600 dark:text-neutral-200">
-                Mentors de niveau international
-              </a>
-            </p>
-            <p class="mb-4">
-              <a href="#!" class="text-neutral-600 dark:text-neutral-200">
-                Méthodes Harkness
-              </a>
-            </p>
-            <p class="mb-4">
-              <a href="#!" class="text-neutral-600 dark:text-neutral-200">
-                Coach qualifiés et pratiquants
-              </a>
-            </p>
-            <p>
-              <a href="#!" class="text-neutral-600 dark:text-neutral-200">
-                Certificat
-              </a>
-            </p>
+            <p class="mb-4">Mentors de niveau international</p>
+            <p class="mb-4">Méthodes Harkness</p>
+            <p class="mb-4">Coach qualifiés et pratiquants</p>
+            <p>Certificat</p>
           </div>
           <div>
             <h6 class="mb-6 flex justify-center sm:font-bold xs:font-extrabold uppercase md:justify-start">
@@ -127,7 +95,8 @@ const Footer = () => {
         <div class="flex justify-center">
           <a
             href="https://www.facebook.com/elitescd/"
-            class="hover:text-yellow-500 mr-6 text-neutral-600 dark:text-neutral-300"
+
+            class="hover:text-yellow-500 mr-6 text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +109,7 @@ const Footer = () => {
           </a>
           <a
             href="https://twitter.com/AcademieElites?s=09"
-            class="hover:text-yellow-500 mr-6 text-neutral-600 dark:text-neutral-300"
+            class="hover:text-yellow-500 mr-6 text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -151,10 +120,7 @@ const Footer = () => {
               <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
             </svg>
           </a>
-          <a
-            href="#!"
-            class="hover:text-yellow-500 mr-6 text-neutral-600 dark:text-neutral-300"
-          >
+          <a href="#!" class="hover:text-yellow-500 mr-6 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -170,7 +136,7 @@ const Footer = () => {
           </a>
           <a
             href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h"
-            class="hover:text-yellow-500 mr-6 text-neutral-600 dark:text-neutral-300"
+            class="hover:text-yellow-500 mr-6 text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +149,7 @@ const Footer = () => {
           </a>
           <a
             href="https://www.linkedin.com/company/academie-des-elites/"
-            class="hover:text-yellow-500 mr-6 text-neutral-600 dark:text-neutral-300"
+            class="hover:text-yellow-500 mr-6 text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -199,10 +165,7 @@ const Footer = () => {
 
       <div class="p-6 text-center">
         <span>© 2023 Copyright </span>
-        <a
-          class="font-semibold text-neutral-600 dark:text-neutral-300"
-          href="#"
-        >
+        <a class="font-semibold text-white" href="#">
           Elite
         </a>
       </div>
