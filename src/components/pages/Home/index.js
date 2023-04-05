@@ -16,6 +16,8 @@ import { Link } from "gatsby";
 
 import styled from "styled-components";
 import "./styles.css";
+import * as te from "tw-elements";
+
 import img1 from "../../../assets/images/mentor.png";
 import img2 from "../../../assets/images/qualify.png";
 import img3 from "../../../assets/images/computer.png";
@@ -94,6 +96,8 @@ const Home = ({ carouselItems, map }) => {
   const images = [img1, img2, img3, img4, img5, img6];
 
   const [isOpen, toggle] = useState(false);
+  const [carouselNext, swipeCarouselNext] = useState(false);
+  const [carouselPrev, swipeCarouselPrev] = useState(false);
 
   function handlOpenModal(open, id) {
     console.log("close modal");
@@ -106,6 +110,39 @@ const Home = ({ carouselItems, map }) => {
   function handlMobilePopup(id) {
     setModalContentId(id);
   }
+
+  useEffect(() => {
+    if (carouselNext === true) {
+      const myCarousel = new te.Carousel(
+        document.getElementById("carouselExampleIndicators")
+      );
+      myCarousel.next();
+    }
+  }, [carouselNext]);
+
+  useEffect(() => {
+    if (carouselPrev === true) {
+      const myCarousel = new te.Carousel(
+        document.getElementById("carouselExampleIndicators")
+      );
+      myCarousel.prev();
+    }
+  }, [carouselPrev]);
+
+  useEffect(() => {
+    const myCarousel = new te.Carousel(
+      document.getElementById("carouselExampleIndicators")
+    );
+    myCarousel.cycle();
+  }, []);
+
+  const swipeNextCarousel = () => {
+    swipeCarouselNext(true);
+  };
+
+  const swipePrevCarousel = () => {
+    swipeCarouselPrev(true);
+  };
 
   const InternalPage = ({ courses }) => {
     return (
@@ -449,6 +486,10 @@ const Home = ({ carouselItems, map }) => {
             class="relative"
             data-te-carousel-init
             data-te-carousel-slide
+            data-te-interval="2000"
+            data-te-pause="hover"
+            data-te-touch="true"
+            data-te-wrap="true"
           >
             <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
               <div
@@ -771,6 +812,7 @@ const Home = ({ carouselItems, map }) => {
               type="button"
               data-te-target="#carouselExampleIndicators"
               data-te-slide="prev"
+              onClick={(e) => swipePrevCarousel}
             >
               <span class="inline-block h-8 w-8">
                 <svg
@@ -797,6 +839,7 @@ const Home = ({ carouselItems, map }) => {
               type="button"
               data-te-target="#carouselExampleIndicators"
               data-te-slide="next"
+              onClick={(e) => swipeNextCarousel}
             >
               <span class="inline-block h-8 w-8">
                 <svg
