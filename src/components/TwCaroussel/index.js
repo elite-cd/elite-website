@@ -18,13 +18,6 @@ const TwCaroussel = ({ items }) => {
   const [isOpen, toggle] = useState(false);
 
   useEffect(() => {
-    const importTE = async () => {
-      await import("tw-elements");
-    };
-    importTE();
-  }, []);
-
-  useEffect(() => {
     const subMenu = document.getElementById("subMenu");
     isOpen === true
       ? (subMenu.style.visibility = "visible")

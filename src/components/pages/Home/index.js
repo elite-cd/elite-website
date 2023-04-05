@@ -129,11 +129,6 @@ const Home = ({ carouselItems, map }) => {
   }, [carouselPrev]);
 
   useEffect(() => {
-    const importTE = async () => {
-      await import("tw-elements");
-    };
-    importTE();
-
     const myCarousel = new te.Carousel(
       document.getElementById("carouselExampleIndicators")
     );
