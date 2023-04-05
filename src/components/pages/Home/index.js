@@ -16,7 +16,6 @@ import { Link } from "gatsby";
 
 import styled from "styled-components";
 import "./styles.css";
-import * as te from "tw-elements";
 
 import img1 from "../../../assets/images/mentor.png";
 import img2 from "../../../assets/images/qualify.png";
@@ -130,6 +129,11 @@ const Home = ({ carouselItems, map }) => {
   }, [carouselPrev]);
 
   useEffect(() => {
+    const importTE = async () => {
+      await import("tw-elements");
+    };
+    importTE();
+
     const myCarousel = new te.Carousel(
       document.getElementById("carouselExampleIndicators")
     );
