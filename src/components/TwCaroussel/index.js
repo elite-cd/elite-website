@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as style from "./caroussel.scss";
-import * as te from "tw-elements";
 import T from "prop-types";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import icon1 from "../../assets/images/Twitter_100px.png";
@@ -17,6 +16,13 @@ const TwCaroussel = ({ items }) => {
   console.log(mItem);
 
   const [isOpen, toggle] = useState(false);
+
+  useEffect(() => {
+    const importTE = async () => {
+      await import("tw-elements");
+    };
+    importTE();
+  }, []);
 
   useEffect(() => {
     const subMenu = document.getElementById("subMenu");
