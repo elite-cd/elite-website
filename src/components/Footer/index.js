@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as style from "./style.module.scss";
 import logo from "../../assets/images/Elite_Logo_PNG.png";
+import { ROUTES } from "../../common/constants";
 
 const Footer = ({ courses }) => {
   return (
@@ -18,12 +19,12 @@ const Footer = ({ courses }) => {
             </p>
           </div>
           <div class="">
-            <h6 class="mb-6 flex justify-center sm:font-bold xs:font-extrabold uppercase md:justify-start">
+            <h6 class="mb-6 flex justify-center sm:font-bold xs:font-extrabold uppercase md:justify-start text-white">
               Formations
             </h6>
 
             {courses.map((course, i) => (
-              <p class="mb-6">
+              <p class="mb-6 text-white">
                 <a
                   href={`/courses/${course.slug}`}
                   class="text-white hover:text-yellow-500"
@@ -37,16 +38,16 @@ const Footer = ({ courses }) => {
             <h6 class="mb-6 flex justify-center sm:font-bold xs:font-extrabold uppercase md:justify-start">
               Valeurs
             </h6>
-            <p class="mb-4">Mentors de niveau international</p>
-            <p class="mb-4">Méthodes Harkness</p>
-            <p class="mb-4">Coach qualifiés et pratiquants</p>
-            <p>Certificat</p>
+            <p class="mb-4 text-white">Mentors de niveau international</p>
+            <p class="mb-4 text-white">Méthodes Harkness</p>
+            <p class="mb-4 text-white">Coach qualifiés et pratiquants</p>
+            <p class="mb-4 text-white">Certificat</p>
           </div>
           <div>
-            <h6 class="mb-6 flex justify-center sm:font-bold xs:font-extrabold uppercase md:justify-start">
+            <h6 class="mb-6 flex justify-center sm:font-bold xs:font-extrabold uppercase md:justify-start text-white">
               Contact
             </h6>
-            <p class="mb-6 flex items-center justify-center md:justify-start">
+            <p class="mb-6 flex items-center justify-center md:justify-start text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -58,7 +59,7 @@ const Footer = ({ courses }) => {
               </svg>
               06, Av / Tabora, C/ Gombe, Kinshasa, RD Congo
             </p>
-            <p class="mb-6 flex items-center justify-center md:justify-start">
+            <p class="mb-6 flex items-center justify-center md:justify-start text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -70,7 +71,7 @@ const Footer = ({ courses }) => {
               </svg>
               academie@elite.cd
             </p>
-            <p class="mb-6 flex items-center justify-center md:justify-start">
+            <p class="mb-6 flex items-center justify-center md:justify-start text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -160,9 +161,9 @@ const Footer = ({ courses }) => {
         </div>
       </div>
 
-      <div class="p-6 text-center">
+      <div class="p-6 text-center text-white">
         <span>© 2023 Copyright </span>
-        <a class="font-semibold text-white" href="#">
+        <a class="font-semibold text-white" href={ROUTES.INDEX}>
           Elite
         </a>
       </div>
