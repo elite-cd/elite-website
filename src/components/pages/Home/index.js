@@ -12,8 +12,9 @@ import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
 import GoogleMapFrame from "../../GooglMap";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
+import emailjs from "@emailjs/browser";
 
 import styled from "styled-components";
 import "./styles.css";
@@ -158,6 +159,28 @@ const Home = ({ carouselItems, map }) => {
 
   const swipePrevCarousel = () => {
     swipeCarouselPrev(true);
+  };
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_zo9rk47",
+        "template_ljx9qhl",
+        form.current,
+        "AnOf892YduB4OgaT5"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   const InternalPage = ({ courses }) => {
@@ -943,82 +966,128 @@ const Home = ({ carouselItems, map }) => {
           </button>
         </section>
 
-        <section className={style.contact__container}>
-          <div className={style.contact__map}>
-            <GoogleMapFrame mapUrl={map} />
-          </div>
-          <div className={style.contact__information}>
-            <h1>Contact</h1>
-            <div>
-              <span className={style.contact__icon}>
-                <FontAwesomeIcon icon={faLocationPin} />
-              </span>
-              6, Tabora, Gombe, Kinshasa, RDC
-            </div>
-            <div>
-              <span className={style.contact__icon}>
-                <FontAwesomeIcon icon={faEnvelope} />
-              </span>
-              academie@elite.cd
-            </div>
-            <div>
-              <span className={style.contact__icon}>
-                <FontAwesomeIcon icon={faPhone} />
-              </span>
-              +243 999 084 177
-            </div>
+        <div className={style.parent}>
+          <img src={contactImg} />
+          <div className={style.inner}>
+            <img src={contactImg2} />
 
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/linkedin.png"}
-              />
-              <p>
-                <a href="https://www.linkedin.com/company/academie-des-elites/">
-                  LinkedIn
-                </a>
-              </p>
-            </div>
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/instagram.png"}
-              />
-              <p>
-                <a href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h">
-                  Instagram
-                </a>
-              </p>
-            </div>
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/facebook.png"}
-              />
-              <p>
-                {" "}
-                <a href="https://www.facebook.com/elitescd/">Facebook</a>{" "}
-              </p>
-            </div>
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/twitter_icon.png"}
-              />
-              <p>
-                <a href="https://twitter.com/AcademieElites?s=09">Twitter</a>
-              </p>
+            <div className={style.contact_content}>
+              <div class="grid grid-cols-2" style={{ width: "100%" }}>
+                <div>
+                  <div class="grid grid-rows-4 grid-flow-col max-sm:hidden">
+                    <div
+                      style={{
+                        color: "#FCCC25",
+                        fontWeight: "800",
+                        fontSize: "35px",
+                        marginRight: "auto",
+                      }}
+                    >
+                      Contactez-nous
+                    </div>
+                    <div>
+                      <ul
+                        style={{
+                          textAlign: "start",
+                          color: "white",
+                          display: "grid",
+                        }}
+                      >
+                        <li style={{ display: "inline-flex" }}>
+                          <img src={contactIcon1} style={{ height: "30px" }} />
+                          <span
+                            style={{ marginTop: "1.5%", marginLeft: "3px" }}
+                          >
+                            N°6 Tabora, Kinshasa/Gombe
+                          </span>
+                        </li>
+                        <li
+                          style={{ paddingTop: "12px", display: "inline-flex" }}
+                        >
+                          <img src={contactIcon2} style={{ height: "30px" }} />
+                          <span
+                            style={{ marginTop: "1.5%", marginLeft: "3px" }}
+                          >
+                            +243 999 084 177
+                          </span>
+                        </li>
+                        <li
+                          style={{ paddingTop: "12px", display: "inline-flex" }}
+                        >
+                          <img src={contactIcon3} style={{ height: "30px" }} />
+                          <span
+                            style={{ marginTop: "1.5%", marginLeft: "3px" }}
+                          >
+                            Academie@elite.com
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={"max-sm:-ml-44 " + style.help__container}>
+                  <div class="grid grid-rows-2 grid-flow-col">
+                    <div>
+                      <span className={style.help__title}>Besoin d'aide ?</span>
+                      <br />
+                      <br />
+                      <p className={style.help__desc}>
+                        Vous avez une question ? Notre équipe est là pour vous
+                        répondre du lundi au vendredi de 09h00 à 19h00 GTM
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: "-12%" }}>
+                      <form ref={form} onSubmit={sendEmail}>
+                        <ul className={style.help__form}>
+                          <li style={{ display: "inline-flex" }}>
+                            <input
+                              id="username"
+                              type="text"
+                              placeholder="Adresse E-mail"
+                              className={style.help__email}
+                              name="user_email"
+                            />
+                          </li>
+
+                          <li
+                            style={{
+                              paddingTop: "12px",
+                              display: "inline-flex",
+                            }}
+                          >
+                            <textarea
+                              className={style.help__field}
+                              name="message"
+                            >
+                              Message
+                            </textarea>
+                          </li>
+                          <li
+                            style={{
+                              paddingTop: "12px",
+                              display: "inline-flex",
+                            }}
+                          >
+                            <button
+                              type="submit"
+                              className={
+                                style.contact_btn + " " + style.help__btn
+                              }
+                            >
+                              Envoyer
+                            </button>
+                          </li>
+                        </ul>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
       </React.Fragment>
     );
   };
