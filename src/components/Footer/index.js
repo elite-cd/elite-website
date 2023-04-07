@@ -16,7 +16,7 @@ const Footer = ({ courses }) => {
             <p class={style.desciption}>
               L'académie des élites est un espace privilégié d'apprentissage, de
               connectivité, de partage des connaissances et de créativité et
-              d’innovation
+              d'innovation
             </p>
           </div>
           <div class="">

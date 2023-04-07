@@ -6,6 +6,7 @@ import * as React from "react";
 import { ROUTES } from "../../../common/constants";
 import ButtonRounded from "../../Button/button-rounded";
 import Carousel from "../../Carousel";
+import TwCaroussel from "../../TwCaroussel";
 
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
@@ -16,7 +17,6 @@ import { Link } from "gatsby";
 
 import styled from "styled-components";
 import "./styles.css";
-import * as te from "tw-elements";
 
 import img1 from "../../../assets/images/mentor.png";
 import img2 from "../../../assets/images/qualify.png";
@@ -99,6 +99,10 @@ const Home = ({ carouselItems, map }) => {
   const [carouselNext, swipeCarouselNext] = useState(false);
   const [carouselPrev, swipeCarouselPrev] = useState(false);
 
+  const twElement = {
+    te: null,
+  };
+
   function handlOpenModal(open, id) {
     console.log("close modal");
 
@@ -111,9 +115,28 @@ const Home = ({ carouselItems, map }) => {
     setModalContentId(id);
   }
 
+  useEffect(async () => {
+    //import * as te from "tw-elements";
+    twElement.te = await import("tw-elements");
+
+    setTimeout(() => {
+      const myCarousel = new twElement.te.Carousel(
+        document.getElementById("carouselExampleIndicators")
+      );
+      myCarousel.cycle();
+    }, 500);
+  }, []);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    isOpen === true
+      ? (body.style.overflow = "hidden")
+      : (body.style.overflow = "auto");
+  }, [isOpen]);
+
   useEffect(() => {
     if (carouselNext === true) {
-      const myCarousel = new te.Carousel(
+      const myCarousel = new twElement.te.Carousel(
         document.getElementById("carouselExampleIndicators")
       );
       myCarousel.next();
@@ -122,19 +145,12 @@ const Home = ({ carouselItems, map }) => {
 
   useEffect(() => {
     if (carouselPrev === true) {
-      const myCarousel = new te.Carousel(
+      const myCarousel = new twElement.te.Carousel(
         document.getElementById("carouselExampleIndicators")
       );
       myCarousel.prev();
     }
   }, [carouselPrev]);
-
-  useEffect(() => {
-    const myCarousel = new te.Carousel(
-      document.getElementById("carouselExampleIndicators")
-    );
-    myCarousel.cycle();
-  }, []);
 
   const swipeNextCarousel = () => {
     swipeCarouselNext(true);
@@ -147,16 +163,25 @@ const Home = ({ carouselItems, map }) => {
   const InternalPage = ({ courses }) => {
     return (
       <React.Fragment>
-        <Carousel items={carouselItems} />
+        <TwCaroussel items={courses} />
         <div className={style.row__center}>
-          <h3 className={style.typography3} style={{ marginTop: "3%" }}>
-            {intl.formatMessage({ id: "content.homepage.elite.title" })}
-            <span className={style.sitename}>
-              {intl.formatMessage({ id: "content.homepage.elite.suffix" })}
-            </span>
+          <h3
+            style={{ textAlign: "center", marginTop: "30px" }}
+            class="max-sm:w-full lg:w-9/12 font-sans text-xl font-bold text-justify"
+          >
+            Deviens un génie et libère ton esprit créatif en suivant la
+            meilleure des formations avec Elite
           </h3>
+
+          <h4
+            className={style.typography3}
+            style={{ marginTop: "3%", color: "#046059" }}
+          >
+            Choisissez un programme Elite
+          </h4>
           <p className={style.typography6} style={{ paddingTop: "20px" }}>
-            {intl.formatMessage({ id: "content.homepage.elite.decription" })}
+            Nous coachons, encadrons et encourageons des génies congolais à
+            libérer et exoloiter leur esprit créatif
           </p>
         </div>
 
@@ -865,28 +890,59 @@ const Home = ({ carouselItems, map }) => {
         </section>
 
         <section className={style.signup__container}>
-          <p className={style.signup__title} style={{ paddingBottom: "20px" }}>
-            <span className={style.signup__text}>
-              Nous serons plus que ravis de vous compter parmis nous et
-              contribuer à votre croissance numérique!
+          <div class="flex w-full flex-wrap items-center justify-between">
+            <div
+              class="items-center w-96 max-sm:w-32 ml-10"
+              style={{
+                borderBlockEndColor: "#0d9488",
+                borderBlockEndWidth: "2px",
+              }}
+            ></div>
+
+            <div
+              class="items-center w-96 max-sm:w-32 mr-10"
+              style={{
+                borderBlockEndColor: "#0d9488",
+                borderBlockEndWidth: "2px",
+              }}
+            ></div>
+          </div>
+
+          <p
+            className={style.signup__title}
+            style={{ paddingBottom: "20px", marginTop: "20px" }}
+          >
+            <span
+              className={style.signup__text}
+              style={{ fontSize: "32", fontWeight: "800" }}
+            >
+              Nous serons plus que ravis de vous compter parmis nous
             </span>
             <br />
-            Inscrivez-vous à l'un des nos programmes offerts et devenez le
-            meilleur !
+            <p style={{ marginTop: "20px" }}>
+              Contribuer à votre croissance numérique !
+              <p style={{ marginTop: "1%" }}>
+                inscrivant à l'une de nos programmes offertes et devenez le
+                meilleur
+              </p>
+            </p>
           </p>
 
-          <Link to={ROUTES.SIGNUP} className={style.customRoundedBtn}>
-            <div style={{ height: "100%", width: "100%" }}>
-              <div style={{ height: "30%" }}></div>
-
-              <div style={{ height: "40%", display: "inline-flex" }}>
-                <span>Démarrez votre formation aujourd'hui !</span>
-              </div>
-
-              <div style={{ height: "30%" }}></div>
-            </div>
-          </Link>
+          <button
+            style={{
+              borderRadius: "20px",
+              textTransform: "initial",
+              color: "black",
+              height: "45px",
+              fontWeight: "700",
+            }}
+            type="button"
+            class="inline-block bg-warning px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white  transition duration-150 ease-in-out hover:bg-yellow-500"
+          >
+            Démarrez votre formation
+          </button>
         </section>
+
         <section className={style.contact__container}>
           <div className={style.contact__map}>
             <GoogleMapFrame mapUrl={map} />
