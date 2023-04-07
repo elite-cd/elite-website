@@ -19,7 +19,8 @@ module.exports = {
         cssLoaderOptions: {
           camelCase: false,
         },
-        additionalData: `@import "${__dirname}/src/assets/styles/main.scss";`,
+        additionalData: `@import "./src/assets/styles/main.scss";`,
+        //additionalData: `@import "${__dirname}/src/assets/styles/main.scss";`,
       },
     },
     "gatsby-plugin-image",
@@ -52,7 +53,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-intl",
       options: {
-        path: `${__dirname}/src/locales`,
+        //path: `${__dirname}/src/locales`,
+        path: `./src/locales`,
         languages: ["fr"],
         defaultLanguage: "fr",
         redirect: false,
@@ -61,7 +63,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/data/pages/home`,
+        path: `./data/pages/home`,
+        //path: `${__dirname}/data/pages/home`,
         name: "carousel",
       },
     },
@@ -69,7 +72,8 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "courses",
-        path: `${__dirname}/data/courses`,
+        //path: `${__dirname}/data/courses`,
+        path: `./data/courses`,
       },
     },
     {

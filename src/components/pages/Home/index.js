@@ -17,7 +17,6 @@ import { Link } from "gatsby";
 
 import styled from "styled-components";
 import "./styles.css";
-import * as te from "tw-elements";
 
 import img1 from "../../../assets/images/mentor.png";
 import img2 from "../../../assets/images/qualify.png";
@@ -100,6 +99,10 @@ const Home = ({ carouselItems, map }) => {
   const [carouselNext, swipeCarouselNext] = useState(false);
   const [carouselPrev, swipeCarouselPrev] = useState(false);
 
+  const twElement = {
+    te: null,
+  };
+
   function handlOpenModal(open, id) {
     console.log("close modal");
 
@@ -112,6 +115,18 @@ const Home = ({ carouselItems, map }) => {
     setModalContentId(id);
   }
 
+  useEffect(async () => {
+    //import * as te from "tw-elements";
+    twElement.te = await import("tw-elements");
+
+    setTimeout(() => {
+      const myCarousel = new twElement.te.Carousel(
+        document.getElementById("carouselExampleIndicators")
+      );
+      myCarousel.cycle();
+    }, 500);
+  }, []);
+
   useEffect(() => {
     const body = document.querySelector("body");
     isOpen === true
@@ -121,7 +136,7 @@ const Home = ({ carouselItems, map }) => {
 
   useEffect(() => {
     if (carouselNext === true) {
-      const myCarousel = new te.Carousel(
+      const myCarousel = new twElement.te.Carousel(
         document.getElementById("carouselExampleIndicators")
       );
       myCarousel.next();
@@ -130,19 +145,12 @@ const Home = ({ carouselItems, map }) => {
 
   useEffect(() => {
     if (carouselPrev === true) {
-      const myCarousel = new te.Carousel(
+      const myCarousel = new twElement.te.Carousel(
         document.getElementById("carouselExampleIndicators")
       );
       myCarousel.prev();
     }
   }, [carouselPrev]);
-
-  useEffect(() => {
-    const myCarousel = new te.Carousel(
-      document.getElementById("carouselExampleIndicators")
-    );
-    myCarousel.cycle();
-  }, []);
 
   const swipeNextCarousel = () => {
     swipeCarouselNext(true);
