@@ -6,6 +6,7 @@ import * as React from "react";
 import { ROUTES } from "../../../common/constants";
 import ButtonRounded from "../../Button/button-rounded";
 import Carousel from "../../Carousel";
+import TwCaroussel from "../../TwCaroussel";
 
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
@@ -16,6 +17,7 @@ import { Link } from "gatsby";
 
 import styled from "styled-components";
 import "./styles.css";
+import * as te from "tw-elements";
 
 import img1 from "../../../assets/images/mentor.png";
 import img2 from "../../../assets/images/qualify.png";
@@ -111,6 +113,13 @@ const Home = ({ carouselItems, map }) => {
   }
 
   useEffect(() => {
+    const body = document.querySelector("body");
+    isOpen === true
+      ? (body.style.overflow = "hidden")
+      : (body.style.overflow = "auto");
+  }, [isOpen]);
+
+  useEffect(() => {
     if (carouselNext === true) {
       const myCarousel = new te.Carousel(
         document.getElementById("carouselExampleIndicators")
@@ -146,7 +155,7 @@ const Home = ({ carouselItems, map }) => {
   const InternalPage = ({ courses }) => {
     return (
       <React.Fragment>
-        <Carousel items={carouselItems} />
+        <TwCaroussel items={courses} />
         <div className={style.row__center}>
           <h3
             style={{ textAlign: "center", marginTop: "30px" }}
@@ -871,6 +880,7 @@ const Home = ({ carouselItems, map }) => {
             </button>
           </div>
         </section>
+
         <section className={style.signup__container}>
           <div class="flex w-full flex-wrap items-center justify-between">
             <div

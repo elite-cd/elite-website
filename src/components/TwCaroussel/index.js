@@ -2,11 +2,15 @@ import * as React from "react";
 import * as style from "./caroussel.scss";
 import T from "prop-types";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import img1 from "../../assets/images/formation-professionnelle.jpeg";
+import img2 from "../../assets/images/pexels-mart-production-7550542.jpg";
 import icon1 from "../../assets/images/Twitter_100px.png";
 import icon2 from "../../assets/images/LinkedIn_100px.png";
 import icon3 from "../../assets/images/Facebook_100px.png";
+import logo from "../../assets/images/logo.png";
 import { useEffect, useState } from "react";
 import { useIntl } from "gatsby-plugin-intl";
+import { ROUTES } from "../../common/constants";
 
 const TwCaroussel = ({ items }) => {
   const intl = useIntl();
@@ -16,13 +20,7 @@ const TwCaroussel = ({ items }) => {
   console.log(mItem);
 
   const [isOpen, toggle] = useState(false);
-
-  useEffect(() => {
-    const importTE = async () => {
-      await import("tw-elements");
-    };
-    importTE();
-  }, []);
+  const [isOpen2, toggle2] = useState(false);
 
   useEffect(() => {
     const subMenu = document.getElementById("subMenu");
@@ -31,8 +29,19 @@ const TwCaroussel = ({ items }) => {
       : (subMenu.style.visibility = "hidden");
   }, [isOpen]);
 
+  useEffect(() => {
+    const subMenu2 = document.getElementById("subMenu2");
+    isOpen2 === true
+      ? (subMenu2.style.visibility = "visible")
+      : (subMenu2.style.visibility = "hidden");
+  }, [isOpen2]);
+
   const getSubMenu = (val) => {
     toggle(val);
+  };
+
+  const getSubMenu2 = (val) => {
+    toggle2(val);
   };
 
   return (
@@ -97,18 +106,12 @@ const TwCaroussel = ({ items }) => {
               <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
                 <a
                   class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-                  href="#pablo"
+                  href={ROUTES.INDEX}
                 >
-                  <StaticImage
-                    alt={"Elite"}
-                    className="block h-8 w-auto lg:hidden"
-                    src={"../../assets/images/logo.png"}
-                  />
-
-                  <StaticImage
-                    alt={"Elite"}
-                    className="hidden h-14 w-auto lg:block"
-                    src={"../../assets/images/logo.png"}
+                  <img
+                    class="hidden h-12 w-auto lg:block"
+                    src={logo}
+                    alt="Elite"
                   />
                 </a>
                 <button
@@ -129,7 +132,7 @@ const TwCaroussel = ({ items }) => {
                                                     flex items-center text-xs uppercase 
                                                     font-bold leading-snug text-white
                                                     active:bg-teal-600 focus:outline-none focus:bg-teal-600"
-                      href="#pablo"
+                      href={ROUTES.INDEX}
                       aria-current="page"
                     >
                       Acceuil
@@ -171,33 +174,17 @@ const TwCaroussel = ({ items }) => {
                       onMouseLeave={() => getSubMenu(false)}
                       data-te-dropdown-menu-ref
                     >
-                      <li>
-                        <a
-                          class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-black dark:hover:bg-teal-600 dark:hover:text-white"
-                          href="#"
-                          data-te-dropdown-item-ref
-                        >
-                          Base de la programmation
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-black dark:hover:bg-teal-600 dark:hover:text-white"
-                          href="#"
-                          data-te-dropdown-item-ref
-                        >
-                          Alphabetisation numérique
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-black dark:hover:bg-teal-600 dark:hover:text-white"
-                          href="#"
-                          data-te-dropdown-item-ref
-                        >
-                          Programme d'immersion en entreprise
-                        </a>
-                      </li>
+                      {items.map((item, i) => (
+                        <li>
+                          <a
+                            class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-black dark:hover:bg-teal-600 dark:hover:text-white"
+                            href={`/courses/${item.slug}`}
+                            data-te-dropdown-item-ref
+                          >
+                            {item.title}
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </li>
                   <li class="nav-item">
@@ -206,7 +193,7 @@ const TwCaroussel = ({ items }) => {
                                                     rounded-md px-9 py-2 flex items-center 
                                                     text-xs uppercase font-bold leading-snug text-white
                                                     active:bg-teal-600 focus:outline-none focus:bg-teal-600"
-                      href="#pablo"
+                      href={ROUTES.ABOUT}
                     >
                       A propos
                     </a>
@@ -218,7 +205,7 @@ const TwCaroussel = ({ items }) => {
                                                 rounded-md px-9 py-2 flex items-center 
                                                 text-xs uppercase font-bold leading-snug text-white
                                                 active:bg-teal-600 focus:outline-none focus:bg-teal-600"
-                      href="#pablo"
+                      href={ROUTES.CONTACT}
                     >
                       Contacts
                     </a>
@@ -268,11 +255,13 @@ const TwCaroussel = ({ items }) => {
             }}
           >
             <div class="absoulte flex w-full flex-wrap items-center justify-between px-6">
-              <StaticImage
-                alt={"Elite"}
-                className="block h-16 w-auto lg:hidden py-2"
-                src={"../../assets/images/logo.png"}
-              />
+              <a href={ROUTES.INDEX}>
+                <img
+                  class="block h-14 w-auto lg:hidden py-2"
+                  src={logo}
+                  alt="Elite"
+                />
+              </a>
 
               <div class="absoulte items-center">
                 <button
@@ -403,13 +392,11 @@ const TwCaroussel = ({ items }) => {
               </div>
             </div>
           </nav>
-
-          <StaticImage
-            alt={"Img 1"}
-            objectFit={"cover"}
+          <img
+            src={img2}
             id="img1"
-            className="block w-full brightness-25"
-            src={"../../assets/images/pexels-mart-production-7550542.jpg"}
+            class="block w-full brightness-25"
+            alt="..."
           />
           <div class="absolute inset-x-[15%] bottom-5 py-9 text-center text-white md:block my-28 centerContent">
             <h1 class="text-xl" id="centerText">
@@ -419,13 +406,13 @@ const TwCaroussel = ({ items }) => {
             <br />
             <p>
               <div class="flex justify-center space-x-2">
-                <button
+                <a
                   id="centerBtn"
-                  type="button"
-                  class="hover:border-black-400 hover:ring-black-400 hover:ring-2 inline-block bg-warning px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-white hover:text-black hover:yellow-400"
+                  href={ROUTES.SIGNUP}
+                  class="hover:border-black-400 hover:ring-black-400 hover:ring-2 inline-block bg-warning px-7 pt-4 pb-2.5 text-sm font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-white hover:text-black hover:yellow-400"
                 >
                   Démarrez votre formation
-                </button>
+                </a>
               </div>
             </p>
           </div>
@@ -456,18 +443,12 @@ const TwCaroussel = ({ items }) => {
               <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
                 <a
                   class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-                  href="#pablo"
+                  href={ROUTES.INDEX}
                 >
-                  <StaticImage
-                    alt={"Elite"}
-                    className="block h-8 w-auto lg:hidden"
-                    src={"../../assets/images/logo.png"}
-                  />
-
-                  <StaticImage
-                    alt={"Elite"}
-                    className="hidden h-14 w-auto lg:block"
-                    src={"../../assets/images/logo.png"}
+                  <img
+                    class="hidden h-12 w-auto lg:block"
+                    src={logo}
+                    alt="Elite"
                   />
                 </a>
                 <button
@@ -488,7 +469,7 @@ const TwCaroussel = ({ items }) => {
                                                     flex items-center text-xs uppercase 
                                                     font-bold leading-snug text-white
                                                     active:bg-teal-600 focus:outline-none focus:bg-teal-600"
-                      href="#pablo"
+                      href={ROUTES.INDEX}
                       aria-current="page"
                     >
                       Acceuil
@@ -500,11 +481,11 @@ const TwCaroussel = ({ items }) => {
                                                     flex items-center text-xs uppercase 
                                                     font-bold leading-snug text-white"
                       href="#formations"
-                      id="dropdownMenuButton1"
+                      id="dropdownMenuButton2"
                       data-te-dropdown-toggle-ref
                       aria-expanded="false"
                       data-te-ripple-init
-                      onMouseOver={() => getSubMenu(true)}
+                      onMouseOver={() => getSubMenu2(true)}
                       data-te-ripple-color="light"
                     >
                       Formations
@@ -525,38 +506,22 @@ const TwCaroussel = ({ items }) => {
                     </a>
                     <ul
                       class="absolute z-[1000] float-left m-0 min-w-max list-none overflow-hidden border-none bg-white bg-clip-padding text-left shadow-lg dark:bg-white [&[data-te-dropdown-show]]:block"
-                      id="subMenu"
-                      aria-labelledby="dropdownMenuButton1"
-                      onMouseLeave={() => getSubMenu(false)}
+                      id="subMenu2"
+                      aria-labelledby="dropdownMenuButton2"
+                      onMouseLeave={() => getSubMenu2(false)}
                       data-te-dropdown-menu-ref
                     >
-                      <li>
-                        <a
-                          class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-black dark:hover:bg-teal-600 dark:hover:text-white"
-                          href="#"
-                          data-te-dropdown-item-ref
-                        >
-                          Base de la programmation
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-black dark:hover:bg-teal-600 dark:hover:text-white"
-                          href="#"
-                          data-te-dropdown-item-ref
-                        >
-                          Alphabetisation numérique
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-black dark:hover:bg-teal-600 dark:hover:text-white"
-                          href="#"
-                          data-te-dropdown-item-ref
-                        >
-                          Programme d'immersion en entreprise
-                        </a>
-                      </li>
+                      {items.map((item, i) => (
+                        <li>
+                          <a
+                            class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-black dark:hover:bg-teal-600 dark:hover:text-white"
+                            href={`/courses/${item.slug}`}
+                            data-te-dropdown-item-ref
+                          >
+                            {item.title}
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </li>
                   <li class="nav-item">
@@ -565,7 +530,7 @@ const TwCaroussel = ({ items }) => {
                                                     rounded-md px-9 py-2 flex items-center 
                                                     text-xs uppercase font-bold leading-snug text-white
                                                     active:bg-teal-600 focus:outline-none focus:bg-teal-600"
-                      href="#pablo"
+                      href={ROUTES.ABOUT}
                     >
                       A propos
                     </a>
@@ -577,7 +542,7 @@ const TwCaroussel = ({ items }) => {
                                                 rounded-md px-9 py-2 flex items-center 
                                                 text-xs uppercase font-bold leading-snug text-white
                                                 active:bg-teal-600 focus:outline-none focus:bg-teal-600"
-                      href="#pablo"
+                      href={ROUTES.CONTACT}
                     >
                       Contacts
                     </a>
@@ -627,11 +592,13 @@ const TwCaroussel = ({ items }) => {
             }}
           >
             <div class="absoulte flex w-full flex-wrap items-center justify-between px-6">
-              <StaticImage
-                alt={"Elite"}
-                className="block h-16 w-auto lg:hidden py-2"
-                src={"../../assets/images/logo.png"}
-              />
+              <a href={ROUTES.INDEX}>
+                <img
+                  class="block h-14 w-auto lg:hidden py-2"
+                  src={logo}
+                  alt="Elite"
+                />
+              </a>
 
               <div class="absoulte items-center">
                 <button
@@ -762,13 +729,11 @@ const TwCaroussel = ({ items }) => {
               </div>
             </div>
           </nav>
-
-          <StaticImage
-            alt={"Img 2"}
-            objectFit={"cover"}
-            id="img2"
-            className="block w-full brightness-25"
-            src={"../../assets/images/formation-professionnelle.jpeg"}
+          <img
+            src={img1}
+            id="img1"
+            class="block w-full brightness-25"
+            alt="..."
           />
 
           <div class="absolute inset-x-[15%] bottom-5 py-9 text-center text-white md:block my-28 centerContent">
@@ -779,13 +744,13 @@ const TwCaroussel = ({ items }) => {
             <br />
             <p>
               <div class="flex justify-center space-x-2">
-                <button
+                <a
                   id="centerBtn"
-                  type="button"
-                  class="hover:border-black-400 hover:ring-black-400 hover:ring-2 inline-block bg-warning px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-white hover:text-black hover:yellow-400"
+                  href={ROUTES.SIGNUP}
+                  class="hover:border-black-400 hover:ring-black-400 hover:ring-2 inline-block bg-warning px-7 pt-4 pb-2.5 text-sm font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-white hover:text-black hover:yellow-400"
                 >
                   Démarrez votre formation
-                </button>
+                </a>
               </div>
             </p>
           </div>
