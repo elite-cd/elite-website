@@ -91,7 +91,7 @@ const TwCaroussel = ({ items }) => {
           }}
         >
           <nav
-            class="lg:block xs:hidden relative flex flex-wrap items-center justify-between px-20 py-1 mb-2"
+            class="lg:block xs:hidden relative flex flex-wrap items-center justify-between px-20 py-3 mb-2"
             style={{
               backgroundColor: "transparent",
               position: "absolute",
@@ -428,7 +428,7 @@ const TwCaroussel = ({ items }) => {
           }}
         >
           <nav
-            class="lg:block xs:hidden relative flex flex-wrap items-center justify-between px-20 py-1 mb-2"
+            class="lg:block xs:hidden relative flex flex-wrap items-center justify-between px-20 py-3 mb-2"
             style={{
               backgroundColor: "transparent",
               position: "absolute",
