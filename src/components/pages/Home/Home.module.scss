@@ -223,10 +223,6 @@
     width: 90%;
     margin: 2rem auto;
     color: #046059;
-
-    @media only screen and (max-width: 768px) {
-      font-size: 1.3rem;
-    }
   }
 }
 
@@ -491,6 +487,10 @@
 }
 
 @media only screen and (max-width: 769px) {
+  .parent > img {
+    object-fit: cover;
+  }
+
   .about__container_mobile {
     width: 90%;
     margin: 20px auto;
@@ -742,6 +742,7 @@
 
     @media only screen and (max-width: 440px) {
       width: 100px;
+      margin-top: 5rem;
     }
   }
 
@@ -752,6 +753,9 @@
     @media only screen and (max-width: 362px) {
       margin-left: 4.2rem;
     }
+    @media only screen and (max-width: 440px) {
+      font-size: 28px;
+    }
   }
   &__desc {
     color: white;
@@ -759,6 +763,9 @@
     font-size: 15px;
     @media only screen and (max-width: 362px) {
       margin-left: 3.5rem;
+    }
+    @media only screen and (max-width: 440px) {
+      margin-left: 3.4rem;
     }
   }
   &__form {
@@ -785,6 +792,7 @@
 
     @media only screen and (max-width: 440px) {
       width: 350px;
+      height: 90px;
     }
     @media only screen and (max-width: 362px) {
       width: 300px;
@@ -800,6 +808,7 @@
     width: 418px;
     @media only screen and (max-width: 440px) {
       width: 350px;
+      height: 40px;
     }
     @media only screen and (max-width: 362px) {
       width: 300px;
