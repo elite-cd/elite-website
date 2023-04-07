@@ -17,7 +17,8 @@ import { Link } from "gatsby";
 
 import styled from "styled-components";
 import "./styles.css";
-import Modal from "./Modal";
+import * as te from "tw-elements";
+
 import img1 from "../../../assets/images/mentor.png"
 import img2 from "../../../assets/images/qualify.png"
 import img3 from "../../../assets/images/computer.png"
@@ -115,6 +116,8 @@ const Home = ({ carouselItems, map }) => {
         const images = [img1, img2, img3, img4, img5, img6]
 
         const [isOpen, toggle] = useState(false);
+        const [carouselNext, swipeCarouselNext] = useState(false);
+        const [carouselPrev, swipeCarouselPrev] = useState(false);
 
         function handlOpenModal(open, id) {
           console.log("close modal");
@@ -133,14 +136,41 @@ const Home = ({ carouselItems, map }) => {
           isOpen === true ? (body.style.overflow = "hidden") : body.style.overflow = "auto"
         }, [isOpen]);
 
+        useEffect(() => {
+            if(carouselNext === true) {
+              const myCarousel = new te.Carousel(document.getElementById("carouselExampleIndicators"));
+              myCarousel.next();
+            }          
+        }, [carouselNext]);
+
+        useEffect(() => { 
+          if(carouselPrev === true) {
+            const myCarousel = new te.Carousel(document.getElementById("carouselExampleIndicators"));
+            myCarousel.prev();
+          }         
+        }, [carouselPrev]);
+
+        useEffect(() => {
+          const myCarousel = new te.Carousel(document.getElementById("carouselExampleIndicators"));
+          myCarousel.cycle();
+        }, []);        
+
+        const swipeNextCarousel = () => {
+          swipeCarouselNext(true)
+        }
+
+        const swipePrevCarousel = () => {
+          swipeCarouselPrev(true)
+        }
+
   const InternalPage = ({ courses }) => {
 
     return (
       <React.Fragment>
-        <TwCaroussel items={carouselItems}/>
+        <TwCaroussel items={courses}/>
         <div className={style.row__center}>
 
-          <h3 style={{ width: "60%", textAlign: "center", marginTop: "30px" }} class="font-sans text-xl font-bold text-justify">
+          <h3 style={{ textAlign: "center", marginTop: "30px" }} class="max-sm:w-full lg:w-9/12 font-sans text-xl font-bold text-justify">
             Deviens un génie et libère ton esprit créatif en suivant la meilleure des formations avec Elite</h3>
 
           <h4 className={style.typography3} style={{ marginTop: "3%", color: "#046059" }}>
@@ -409,7 +439,7 @@ const Home = ({ carouselItems, map }) => {
               </div>
             </div>
             
-        </div>
+          </div>
 
         </section>
 
@@ -418,7 +448,12 @@ const Home = ({ carouselItems, map }) => {
             id="carouselExampleIndicators"
             class="relative"
             data-te-carousel-init
-            data-te-carousel-slide>
+            data-te-carousel-slide
+            data-te-interval="2000"
+            data-te-pause="hover"
+            data-te-touch="true"
+            data-te-wrap="true"
+            >
 
             <div
               class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
@@ -678,7 +713,8 @@ const Home = ({ carouselItems, map }) => {
               class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black focus:text-black motion-reduce:transition-none"
               type="button"
               data-te-target="#carouselExampleIndicators"
-              data-te-slide="prev">
+              data-te-slide="prev"
+              onClick={(e) => swipePrevCarousel}>
               <span class="inline-block h-8 w-8">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -702,7 +738,8 @@ const Home = ({ carouselItems, map }) => {
               class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black motion-reduce:transition-none"
               type="button"
               data-te-target="#carouselExampleIndicators"
-              data-te-slide="next">
+              data-te-slide="next"
+              onClick={(e) => swipeNextCarousel}>
               <span class="inline-block h-8 w-8">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -727,10 +764,17 @@ const Home = ({ carouselItems, map }) => {
 
         <section className={style.signup__container}>
           
-          <div class="grid grid-cols-6 gap-4">
-            <div class="col-start-1 col-end-3 w-80 ml-32" style={{ borderBlockEndColor: "#0d9488", borderBlockEndWidth: "2px",}}></div>
-            <div class="col-end-7 col-span-3 w-80 mr-32" style={{ borderBlockEndColor: "#0d9488", borderBlockEndWidth: "2px",}}></div>
-          </div>
+
+                      <div class="flex w-full flex-wrap items-center justify-between">
+                          
+                          <div class="items-center w-96 max-sm:w-32 ml-10" style={{ borderBlockEndColor: "#0d9488", borderBlockEndWidth: "2px",}}>
+                          </div>
+
+                          <div class="items-center w-96 max-sm:w-32 mr-10" style={{ borderBlockEndColor: "#0d9488", borderBlockEndWidth: "2px",}}>
+                          </div>
+
+                      </div>
+
 
           <p className={style.signup__title} style={{ paddingBottom: "20px", marginTop: "20px" }}>
             <span className={style.signup__text} style={{ fontSize: "32", fontWeight: "800",  }}>

@@ -57,7 +57,7 @@ const Page = ({ children, activeRoute }) => {
   return (
     <div className={style.page}>
       {typeof children === "function" ? children(courses) : children}
-      <Footer />
+      <Footer courses = {courses} />
     </div>
   );
 };
