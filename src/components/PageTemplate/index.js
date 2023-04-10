@@ -3,8 +3,9 @@ import T from "prop-types";
 import * as React from "react";
 import Footer from "../Footer";
 import Menu from "../Menu";
-import TwCaroussel from "../TwCaroussel";
 import * as style from "./style.module.scss";
+import TwMenu from "../TwMenu";
+
 const Page = ({ children, activeRoute }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -54,8 +55,11 @@ const Page = ({ children, activeRoute }) => {
     }
   `);
   const courses = data.courses.edges.map((edge) => edge.node.frontmatter);
+  
   return (
     <div className={style.page}>
+      { activeRoute !== "/" && (<TwMenu courses={courses} activeRoute={activeRoute} />) }
+
       {typeof children === "function" ? children(courses) : children}
       <Footer courses = {courses} />
     </div>

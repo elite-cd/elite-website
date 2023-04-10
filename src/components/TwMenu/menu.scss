@@ -1,0 +1,145 @@
+.container {
+    width: 80%;
+  }
+  
+  #centerMenu ul li a{
+    font-size: 14px;
+  }
+  #centerText {
+    font-size: 40px;
+  }
+  
+  #centerBtn {
+    border-radius: 30px; 
+    font-weight: 600; 
+    text-transform: initial; 
+    height: 55px;
+    width: 300px;
+  }
+  
+  #img1 {
+    z-index: 999;
+    height: 650px;
+    object-fit:cover;
+  }
+  
+  .container2 {
+    width: 80%;
+  }
+  
+  #centerMenu2 ul li a{
+    font-size: 14px;
+  }
+  #centerText2 {
+    font-size: 40px;
+  }
+  
+  #centerBtn2 {
+    border-radius: 30px; 
+    font-weight: 600; 
+    text-transform: initial; 
+    height: 55px;
+    width: 300px;
+  }
+  
+  #img2 {
+    z-index: 999;
+    height: 650px;
+    object-fit:cover;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .container {
+      width: 100%;
+    }
+  
+    #centerMenu ul li a{
+      font-size: 12px;
+    }
+  
+    #centerText {
+      font-size: 34px;
+    }
+    
+  
+    .container2 {
+      width: 100%;
+    }
+  
+    #centerMenu2 ul li a{
+      font-size: 12px;
+    }
+  
+    #centerText2 {
+      font-size: 34px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    #centerText {
+      font-size: 30px;
+      line-height: 2rem !important;
+    }
+    #img1 {
+      height: 500px;
+    }
+    .centerContent {
+      top: 80px;
+    }
+  }
+  
+  .menuItems {
+    color: green;
+    background-color: green;
+  }
+  
+  #activeBtn2 {
+    height: 43px;
+  }
+  #activeBtn2:active {
+    border-bottom-color: #00A19A;
+    border-width: 3px;
+    background-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+  
+  #activeBtn2:focus {
+    border-bottom-color: #00A19A;
+    border-width: 3px;
+    background-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+  #activeBtn2::before {
+    border-bottom-color: #00A19A;
+    border-width: 3px;
+    background-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+  
+  #activeBtn2::after {
+    border-bottom-color: #00A19A;
+    border-width: 3px;
+    background-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+  
+  .activeIndex {
+    border-bottom-color: #00A19A;
+    border-width: 3px;
+    background-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+  
+  #subMenu {
+    visibility: hidden;
+  }

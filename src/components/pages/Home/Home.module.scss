@@ -489,6 +489,11 @@
 }
 
 @media only screen and (max-width: 769px) {
+
+  .parent > img {
+    object-fit: cover;
+  }
+
   .about__container_mobile {
 
     width: 90%;
@@ -745,6 +750,7 @@ filter: invert(25%) sepia(58%) saturate(1131%) hue-rotate(136deg) brightness(94%
 
     @media only screen and (max-width: 440px) {
       width: 100px;
+      margin-top: 5rem;
     }
   }
 
@@ -755,6 +761,9 @@ filter: invert(25%) sepia(58%) saturate(1131%) hue-rotate(136deg) brightness(94%
     @media only screen and (max-width: 362px) {
       margin-left: 4.2rem;
     }
+    @media only screen and (max-width: 440px) {
+      font-size: 28px;
+    }
   }
   &__desc {
     color: white; 
@@ -762,6 +771,9 @@ filter: invert(25%) sepia(58%) saturate(1131%) hue-rotate(136deg) brightness(94%
     font-size: 15px;
     @media only screen and (max-width: 362px) {
       margin-left: 3.5rem;
+    }
+    @media only screen and (max-width: 440px) {
+      margin-left: 3.4rem;
     }
   }
   &__form {
@@ -788,6 +800,7 @@ filter: invert(25%) sepia(58%) saturate(1131%) hue-rotate(136deg) brightness(94%
 
     @media only screen and (max-width: 440px) {
       width: 350px;
+      height: 90px;
     }
     @media only screen and (max-width: 362px) {
       width: 300px;
@@ -803,6 +816,7 @@ filter: invert(25%) sepia(58%) saturate(1131%) hue-rotate(136deg) brightness(94%
     width: 418px;
     @media only screen and (max-width: 440px) {
       width: 350px;
+      height: 40px;
     }
     @media only screen and (max-width: 362px) {
       width: 300px;
@@ -814,6 +828,18 @@ filter: invert(25%) sepia(58%) saturate(1131%) hue-rotate(136deg) brightness(94%
     }
     @media only screen and (max-width: 362px) {
       width: 300px;
+    }
+  }
+
+  &__btn:hover {
+    svg {
+      color: white;
+    }
+  }
+
+  &__btn:focus {
+    svg {
+      color: white;
     }
   }
 }

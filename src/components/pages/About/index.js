@@ -20,7 +20,7 @@ const About = () => {
 `)
 const aboutImg = data.allFile.nodes[0].childImageSharp;
 
-  const renderPage = () => {
+const renderPage = () => {
     return (
       <div className={style.container}>
         <div className={style.container__image}>
