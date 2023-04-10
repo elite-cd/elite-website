@@ -12,8 +12,9 @@ import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
 import GoogleMapFrame from "../../GooglMap";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
+import emailjs from "@emailjs/browser";
 
 import styled from "styled-components";
 import "./styles.css";
@@ -98,6 +99,7 @@ const Home = ({ carouselItems, map }) => {
   const [isOpen, toggle] = useState(false);
   const [carouselNext, swipeCarouselNext] = useState(false);
   const [carouselPrev, swipeCarouselPrev] = useState(false);
+  const [msgSender, setMsgSender] = useState(false);
 
   const twElement = {
     te: null,
@@ -158,6 +160,33 @@ const Home = ({ carouselItems, map }) => {
 
   const swipePrevCarousel = () => {
     swipeCarouselPrev(true);
+  };
+
+  const form = useRef();
+
+  useEffect(() => {
+    msgSender === true && document.getElementById("popupBtn").click();
+  }, [msgSender]);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_zo9rk47",
+        "template_ljx9qhl",
+        form.current,
+        "AnOf892YduB4OgaT5"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setMsgSender(true);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   const InternalPage = ({ courses }) => {
@@ -943,81 +972,249 @@ const Home = ({ carouselItems, map }) => {
           </button>
         </section>
 
-        <section className={style.contact__container}>
-          <div className={style.contact__map}>
-            <GoogleMapFrame mapUrl={map} />
-          </div>
-          <div className={style.contact__information}>
-            <h1>Contact</h1>
-            <div>
-              <span className={style.contact__icon}>
-                <FontAwesomeIcon icon={faLocationPin} />
-              </span>
-              6, Tabora, Gombe, Kinshasa, RDC
-            </div>
-            <div>
-              <span className={style.contact__icon}>
-                <FontAwesomeIcon icon={faEnvelope} />
-              </span>
-              academie@elite.cd
-            </div>
-            <div>
-              <span className={style.contact__icon}>
-                <FontAwesomeIcon icon={faPhone} />
-              </span>
-              +243 999 084 177
-            </div>
+        <div className={style.parent}>
+          <img src={contactImg} />
+          <div className={style.inner}>
+            <img src={contactImg2} />
 
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/linkedin.png"}
-              />
-              <p>
-                <a href="https://www.linkedin.com/company/academie-des-elites/">
-                  LinkedIn
-                </a>
-              </p>
-            </div>
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/instagram.png"}
-              />
-              <p>
-                <a href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h">
-                  Instagram
-                </a>
-              </p>
-            </div>
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/facebook.png"}
-              />
-              <p>
-                {" "}
-                <a href="https://www.facebook.com/elitescd/">Facebook</a>{" "}
-              </p>
-            </div>
-            <div>
-              <StaticImage
-                alt={"brands"}
-                objectFit={"contain"}
-                className={style.contact__image}
-                src={"../../../assets/images/twitter_icon.png"}
-              />
-              <p>
-                <a href="https://twitter.com/AcademieElites?s=09">Twitter</a>
-              </p>
+            <div className={style.contact_content}>
+              <div class="grid grid-cols-2" style={{ width: "100%" }}>
+                <div>
+                  <div class="grid grid-rows-4 grid-flow-col max-sm:hidden">
+                    <div
+                      style={{
+                        color: "#FCCC25",
+                        fontWeight: "800",
+                        fontSize: "35px",
+                        marginRight: "auto",
+                      }}
+                    >
+                      Contactez-nous
+                    </div>
+                    <div>
+                      <ul
+                        style={{
+                          textAlign: "start",
+                          color: "white",
+                          display: "grid",
+                        }}
+                      >
+                        <li style={{ display: "inline-flex" }}>
+                          <img src={contactIcon1} style={{ height: "30px" }} />
+                          <span
+                            style={{ marginTop: "1.5%", marginLeft: "3px" }}
+                          >
+                            N°6 Tabora, Kinshasa/Gombe
+                          </span>
+                        </li>
+                        <li
+                          style={{ paddingTop: "12px", display: "inline-flex" }}
+                        >
+                          <img src={contactIcon2} style={{ height: "30px" }} />
+                          <span
+                            style={{ marginTop: "1.5%", marginLeft: "3px" }}
+                          >
+                            +243 999 084 177
+                          </span>
+                        </li>
+                        <li
+                          style={{ paddingTop: "12px", display: "inline-flex" }}
+                        >
+                          <img src={contactIcon3} style={{ height: "30px" }} />
+                          <span
+                            style={{ marginTop: "1.5%", marginLeft: "3px" }}
+                          >
+                            Academie@elite.com
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={"max-sm:-ml-44 " + style.help__container}>
+                  <div class="grid grid-rows-2 grid-flow-col">
+                    <div>
+                      <span className={style.help__title}>Besoin d'aide ?</span>
+                      <br />
+                      <br />
+                      <p className={style.help__desc}>
+                        Vous avez une question ? Notre équipe est là pour vous
+                        répondre du lundi au vendredi de 09h00 à 19h00 GTM
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: "-14%" }}>
+                      <form ref={form} onSubmit={sendEmail}>
+                        <ul className={style.help__form}>
+                          <li style={{ display: "inline-flex" }}>
+                            <input
+                              id="username"
+                              type="text"
+                              placeholder="Adresse E-mail"
+                              className={style.help__email}
+                              name="user_email"
+                            />
+                          </li>
+
+                          <li
+                            style={{
+                              paddingTop: "12px",
+                              display: "inline-flex",
+                            }}
+                          >
+                            <textarea
+                              className={style.help__field}
+                              name="message"
+                            >
+                              Message
+                            </textarea>
+                          </li>
+                          <li
+                            style={{
+                              paddingTop: "12px",
+                              display: "inline-flex",
+                            }}
+                          >
+                            <button
+                              type="submit"
+                              className={
+                                style.contact_btn + " " + style.help__btn
+                              }
+                            >
+                              Envoyer
+                            </button>
+                          </li>
+                        </ul>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+
+        <section className={style.newsletter__container}>
+          <p
+            className={style.newsletter__title}
+            style={{ paddingBottom: "20px", marginTop: "20px", width: "50%" }}
+          >
+            <span
+              className={style.signup__text}
+              style={{ fontSize: "32", fontWeight: "800" }}
+            >
+              Restez informé de nos nouveautés
+            </span>
+            <br />
+            <p className={style.newsletter__desc}>
+              Inscrivez-vous à notre newsLetter pour recevoir en avant-premier
+              les dernières tendances du digital ainsi que toutes nos actualités
+            </p>
+          </p>
+
+          <div
+            data-te-modal-init
+            class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+            id="rightBottomModal"
+            tabindex="-1"
+            aria-labelledby="rightBottomModalLabel"
+            aria-hidden="true"
+          >
+            <div
+              data-te-modal-dialog-ref
+              class="pointer-events-none absolute bottom-7 right-7 h-auto w-full translate-x-[100%] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]"
+            >
+              <div class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
+                <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+                  <h5
+                    class="text-xl font-medium leading-normal text-neutral-800"
+                    id="exampleModalLabel"
+                  >
+                    Notification
+                  </h5>
+                  <button
+                    type="button"
+                    class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                    data-te-modal-dismiss
+                    aria-label="Close"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="h-6 w-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="relative flex-auto p-4" data-te-modal-body-ref>
+                  Votre message a été envoyé avec succès ! Nous vous répondrons
+                  dans le bref délai.
+                </div>
+
+                <div class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4">
+                  <button
+                    type="button"
+                    class="inline-block rounded bg-teal-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out active:bg-primary-accent-200"
+                    data-te-modal-dismiss
+                    data-te-ripple-init
+                    data-te-ripple-color="light"
+                  >
+                    Ok
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="hidden inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+            data-te-toggle="modal"
+            data-te-target="#rightBottomModal"
+            data-te-ripple-init
+            data-te-ripple-color="light"
+            id="popupBtn"
+          >
+            Bottom right
+          </button>
+
+          <form ref={form}>
+            <div class="relative mb-4 flex flex-wrap items-center justify-center">
+              <input
+                type="text"
+                class={
+                  style.newsletter__field +
+                  " relative m-0 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-gray-100 bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:text-neutral-700 focus:outline-none dark:border-teal-800 dark:text-neutral-200 dark:placeholder:text-neutral-400"
+                }
+                placeholder="Adresse E-mail"
+                aria-label="Adresse E-mail"
+                aria-describedby="basic-addon2"
+                style={{}}
+                name="user_email"
+              />
+              <span
+                class={
+                  "bg-teal-800 flex items-center whitespace-nowrap rounded-r border border-l-0 border-solid border-teal-800 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-white dark:border-teal-800 dark:text-white dark:placeholder:text-neutral-200 " +
+                  style.newsletter__button
+                }
+                id="basic-addon2"
+                style={{ height: "50px", borderRadius: "0px 20px 20px 0px" }}
+                onClick={(e) => sendEmail(e)}
+              >
+                S'inscrire
+              </span>
+            </div>
+          </form>
         </section>
       </React.Fragment>
     );
