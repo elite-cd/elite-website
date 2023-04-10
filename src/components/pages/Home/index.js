@@ -99,6 +99,7 @@ const Home = ({ carouselItems, map }) => {
   const [isOpen, toggle] = useState(false);
   const [carouselNext, swipeCarouselNext] = useState(false);
   const [carouselPrev, swipeCarouselPrev] = useState(false);
+  const [msgSender, setMsgSender] = useState(false);
 
   const twElement = {
     te: null,
@@ -163,6 +164,10 @@ const Home = ({ carouselItems, map }) => {
 
   const form = useRef();
 
+  useEffect(() => {
+    msgSender === true && document.getElementById("popupBtn").click();
+  }, [msgSender]);
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -176,6 +181,7 @@ const Home = ({ carouselItems, map }) => {
       .then(
         (result) => {
           console.log(result.text);
+          setMsgSender(true);
         },
         (error) => {
           console.log(error.text);
@@ -1038,7 +1044,7 @@ const Home = ({ carouselItems, map }) => {
                       </p>
                     </div>
 
-                    <div style={{ marginTop: "-12%" }}>
+                    <div style={{ marginTop: "-14%" }}>
                       <form ref={form} onSubmit={sendEmail}>
                         <ul className={style.help__form}>
                           <li style={{ display: "inline-flex" }}>
@@ -1088,6 +1094,53 @@ const Home = ({ carouselItems, map }) => {
             </div>
           </div>
         </div>
+
+        <section className={style.newsletter__container}>
+          <p
+            className={style.newsletter__title}
+            style={{ paddingBottom: "20px", marginTop: "20px", width: "50%" }}
+          >
+            <span
+              className={style.signup__text}
+              style={{ fontSize: "32", fontWeight: "800" }}
+            >
+              Restez informé de nos nouveautés
+            </span>
+            <br />
+            <p className={style.newsletter__desc}>
+              Inscrivez-vous à notre newsLetter pour recevoir en avant-premier
+              les dernières tendances du digital ainsi que toutes nos actualités
+            </p>
+          </p>
+
+          <form ref={form}>
+            <div class="relative mb-4 flex flex-wrap items-center justify-center">
+              <input
+                type="text"
+                class={
+                  style.newsletter__field +
+                  " relative m-0 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-gray-100 bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:text-neutral-700 focus:outline-none dark:border-teal-800 dark:text-neutral-200 dark:placeholder:text-neutral-400"
+                }
+                placeholder="Adresse E-mail"
+                aria-label="Adresse E-mail"
+                aria-describedby="basic-addon2"
+                style={{}}
+                name="user_email"
+              />
+              <span
+                class={
+                  "bg-teal-800 flex items-center whitespace-nowrap rounded-r border border-l-0 border-solid border-teal-800 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-white dark:border-teal-800 dark:text-white dark:placeholder:text-neutral-200 " +
+                  style.newsletter__button
+                }
+                id="basic-addon2"
+                style={{ height: "50px", borderRadius: "0px 20px 20px 0px" }}
+                onClick={(e) => sendEmail(e)}
+              >
+                S'inscrire
+              </span>
+            </div>
+          </form>
+        </section>
       </React.Fragment>
     );
   };
