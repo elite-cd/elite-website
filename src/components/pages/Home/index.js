@@ -4,36 +4,14 @@ import { useIntl } from "gatsby-plugin-intl";
 import T from "prop-types";
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
-import ButtonRounded from "../../Button/button-rounded";
-import Carousel from "../../Carousel";
 import TwCaroussel from "../../TwCaroussel";
-
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
-import GoogleMapFrame from "../../GooglMap";
 import { useState, useEffect, useRef } from "react";
-import { Link } from "gatsby";
+import * as te from "tw-elements";
+
 import emailjs from "@emailjs/browser";
-
-import styled from "styled-components";
-import "./styles.css";
-
-import img1 from "../../../assets/images/mentor.png";
-import img2 from "../../../assets/images/qualify.png";
-import img3 from "../../../assets/images/computer.png";
-import img4 from "../../../assets/images/pedagogie.png";
-import img5 from "../../../assets/images/professional.png";
-import img6 from "../../../assets/images/certificat.png";
-
-import contactImg from "../../../assets/images/nous-contacter 1.png";
-import contactImg2 from "../../../assets/images/Rectangle 37.png";
-import contactIcon1 from "../../../assets/images/Marker_100px.png";
-import contactIcon2 from "../../../assets/images/WhatsApp_100px.png";
-import contactIcon3 from "../../../assets/images/Message Filled_100px.png";
-
-import courseBg1 from "../../../assets/images/mimi-thian-vdXMSiX-n6M-unsplash 1.png";
-import courseBg2 from "../../../assets/images/Rectangle 24.png";
 
 import {
   faEnvelope,
@@ -63,7 +41,6 @@ const OverlayCountry = ["", "", "Canada", "USA", "", ""];
 
 const Home = ({ carouselItems, map }) => {
   const [modalContentId, setModalContentId] = useState(0);
-  const [img, setImg] = useState("");
 
   const intl = useIntl();
   const [overlayOpen, setOverlayOpen] = React.useState(false);
@@ -94,51 +71,18 @@ const Home = ({ carouselItems, map }) => {
     );
   };
 
-  const images = [img1, img2, img3, img4, img5, img6];
-
-  const [isOpen, toggle] = useState(false);
   const [carouselNext, swipeCarouselNext] = useState(false);
   const [carouselPrev, swipeCarouselPrev] = useState(false);
   const [msgSender, setMsgSender] = useState(false);
-
-  const twElement = {
-    te: null,
-  };
-
-  function handlOpenModal(open, id) {
-    console.log("close modal");
-
-    setModalContentId(id);
-    //open === true ? (body.style.overflow = "hidden") :  (body.style.overflow = "auto");
-    toggle(open);
-  }
+  const [loader, setLoader] = useState(false);
 
   function handlMobilePopup(id) {
     setModalContentId(id);
   }
 
-  useEffect(async () => {
-    //import * as te from "tw-elements";
-    twElement.te = await import("tw-elements");
-
-    setTimeout(() => {
-      const myCarousel = new twElement.te.Carousel(
-        document.getElementById("carouselExampleIndicators")
-      );
-      myCarousel.cycle();
-    }, 500);
-  }, []);
-
-  useEffect(() => {
-    const body = document.querySelector("body");
-    isOpen === true
-      ? (body.style.overflow = "hidden")
-      : (body.style.overflow = "auto");
-  }, [isOpen]);
-
   useEffect(() => {
     if (carouselNext === true) {
-      const myCarousel = new twElement.te.Carousel(
+      const myCarousel = new te.Carousel(
         document.getElementById("carouselExampleIndicators")
       );
       myCarousel.next();
@@ -147,12 +91,19 @@ const Home = ({ carouselItems, map }) => {
 
   useEffect(() => {
     if (carouselPrev === true) {
-      const myCarousel = new twElement.te.Carousel(
+      const myCarousel = new te.Carousel(
         document.getElementById("carouselExampleIndicators")
       );
       myCarousel.prev();
     }
   }, [carouselPrev]);
+
+  useEffect(() => {
+    const myCarousel = new te.Carousel(
+      document.getElementById("carouselExampleIndicators")
+    );
+    myCarousel.cycle();
+  }, []);
 
   const swipeNextCarousel = () => {
     swipeCarouselNext(true);
@@ -163,12 +114,19 @@ const Home = ({ carouselItems, map }) => {
   };
 
   const form = useRef();
+  const newsLetterForm = useRef();
 
   useEffect(() => {
     msgSender === true && document.getElementById("popupBtn").click();
   }, [msgSender]);
 
+  useEffect(() => {
+    loader === true &&
+      document.getElementById("loader").classList.remove("hidden");
+  }, [loader]);
+
   const sendEmail = (e) => {
+    setMsgSender(true);
     e.preventDefault();
 
     emailjs
@@ -176,6 +134,29 @@ const Home = ({ carouselItems, map }) => {
         "service_zo9rk47",
         "template_ljx9qhl",
         form.current,
+        "AnOf892YduB4OgaT5"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setMsgSender(true);
+          setLoader(false);
+        },
+        (error) => {
+          console.log(error.text);
+          setLoader(false);
+        }
+      );
+  };
+
+  const sendNewsLetter = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_zo9rk47",
+        "template_ljx9qhl",
+        newsLetterForm.current,
         "AnOf892YduB4OgaT5"
       )
       .then(
@@ -206,11 +187,11 @@ const Home = ({ carouselItems, map }) => {
             className={style.typography3}
             style={{ marginTop: "3%", color: "#046059" }}
           >
-            Choisissez un programme Elite
+            Choisis un programme Elite
           </h4>
           <p className={style.typography6} style={{ paddingTop: "20px" }}>
             Nous coachons, encadrons et encourageons des génies congolais à
-            libérer et exoloiter leur esprit créatif
+            libérer et exploiter leur esprit créatif
           </p>
         </div>
 
@@ -260,7 +241,11 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img1} style={{ height: "80px" }} />
+                      <StaticImage
+                        alt={"Image 1"}
+                        src="../../../assets/images/mentor.png"
+                        style={{ height: "80px" }}
+                      />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -308,7 +293,11 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img2} style={{ height: "80px" }} />
+                      <StaticImage
+                        alt={"Image 1"}
+                        src="../../../assets/images/qualify.png"
+                        style={{ height: "80px" }}
+                      />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -356,7 +345,11 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img3} style={{ height: "80px" }} />
+                      <StaticImage
+                        alt={"Image 3"}
+                        src="../../../assets/images/computer.png"
+                        style={{ height: "80px" }}
+                      />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -404,7 +397,11 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img4} style={{ height: "80px" }} />
+                      <StaticImage
+                        alt={"Image 4"}
+                        src="../../../assets/images/pedagogie.png"
+                        style={{ height: "80px" }}
+                      />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -452,7 +449,11 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img5} style={{ height: "80px" }} />
+                      <StaticImage
+                        alt={"Image 1"}
+                        src="../../../assets/images/professional.png"
+                        style={{ height: "80px" }}
+                      />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -500,7 +501,11 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img6} style={{ height: "80px" }} />
+                      <StaticImage
+                        alt={"Image 1"}
+                        src="../../../assets/images/certificat.png"
+                        style={{ height: "80px" }}
+                      />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -566,7 +571,11 @@ const Home = ({ carouselItems, map }) => {
                     <div class="py-3 px-6">&nbsp;</div>
                     <div class="p-6">
                       <h5 class="mb-3 -mt-9">
-                        <img src={img1} style={{ height: "80px" }} />
+                        <StaticImage
+                          alt={"Image 1"}
+                          src="../../../assets/images/mentor.png"
+                          style={{ height: "80px" }}
+                        />
                       </h5>
                       <p
                         class="mb-4 text-base text-teal-800"
@@ -618,7 +627,11 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img2} style={{ height: "80px" }} />
+                          <StaticImage
+                            alt={"Image 1"}
+                            src="../../../assets/images/Rectangle 37.png"
+                            style={{ height: "80px" }}
+                          />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -671,7 +684,11 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img3} style={{ height: "80px" }} />
+                          <StaticImage
+                            alt={"Image 3"}
+                            src="../../../assets/images/computer.png"
+                            style={{ height: "80px" }}
+                          />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -724,7 +741,11 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img4} style={{ height: "80px" }} />
+                          <StaticImage
+                            alt={"Image 4"}
+                            src="../../../assets/images/pedagogie.png"
+                            style={{ height: "80px" }}
+                          />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -777,7 +798,11 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img5} style={{ height: "80px" }} />
+                          <StaticImage
+                            alt={"Image 1"}
+                            src="../../../assets/images/professional.png"
+                            style={{ height: "80px" }}
+                          />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -830,7 +855,11 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img6} style={{ height: "80px" }} />
+                          <StaticImage
+                            alt={"Image 1"}
+                            src="../../../assets/images/certificat.png"
+                            style={{ height: "80px" }}
+                          />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -945,14 +974,14 @@ const Home = ({ carouselItems, map }) => {
               className={style.signup__text}
               style={{ fontSize: "32", fontWeight: "800" }}
             >
-              Nous serons plus que ravis de vous compter parmis nous
+              Nous serons plus que fiers de faire de toi une élite !
             </span>
             <br />
             <p style={{ marginTop: "20px" }}>
-              Contribuer à votre croissance numérique !
+              Contribues à ta croissance numérique
               <p style={{ marginTop: "1%" }}>
-                inscrivant à l'une de nos programmes offertes et devenez le
-                meilleur
+                en t'inscrivant à l'une de nos formations offertes et deviens le
+                meilleur de ta génération!
               </p>
             </p>
           </p>
@@ -973,9 +1002,16 @@ const Home = ({ carouselItems, map }) => {
         </section>
 
         <div className={style.parent}>
-          <img src={contactImg} />
+          <StaticImage
+            alt={"Contact Image 2"}
+            src="../../../assets/images/nous-contacter 1.png"
+          />
+
           <div className={style.inner}>
-            <img src={contactImg2} />
+            <StaticImage
+              alt={"Contact Image 2"}
+              src="../../../assets/images/Rectangle 37.png"
+            />
 
             <div className={style.contact_content}>
               <div class="grid grid-cols-2" style={{ width: "100%" }}>
@@ -1000,7 +1036,11 @@ const Home = ({ carouselItems, map }) => {
                         }}
                       >
                         <li style={{ display: "inline-flex" }}>
-                          <img src={contactIcon1} style={{ height: "30px" }} />
+                          <StaticImage
+                            alt={"Icon 1 1"}
+                            src="../../../assets/images/Marker_100px.png"
+                            style={{ height: "30px" }}
+                          />
                           <span
                             style={{ marginTop: "1.5%", marginLeft: "3px" }}
                           >
@@ -1010,7 +1050,11 @@ const Home = ({ carouselItems, map }) => {
                         <li
                           style={{ paddingTop: "12px", display: "inline-flex" }}
                         >
-                          <img src={contactIcon2} style={{ height: "30px" }} />
+                          <StaticImage
+                            alt={"Image 1"}
+                            src="../../../assets/images/WhatsApp_100px.png"
+                            style={{ height: "30px" }}
+                          />
                           <span
                             style={{ marginTop: "1.5%", marginLeft: "3px" }}
                           >
@@ -1020,7 +1064,11 @@ const Home = ({ carouselItems, map }) => {
                         <li
                           style={{ paddingTop: "12px", display: "inline-flex" }}
                         >
-                          <img src={contactIcon3} style={{ height: "30px" }} />
+                          <StaticImage
+                            alt={"Image 1"}
+                            src="../../../assets/images/Message Filled_100px.png"
+                            style={{ height: "30px" }}
+                          />
                           <span
                             style={{ marginTop: "1.5%", marginLeft: "3px" }}
                           >
@@ -1082,6 +1130,24 @@ const Home = ({ carouselItems, map }) => {
                                 style.contact_btn + " " + style.help__btn
                               }
                             >
+                              <svg
+                                aria-hidden="true"
+                                id="loader"
+                                role="status"
+                                class="hidden inline mr-2 w-7 h-7 text-gray-200 animate-spin text-gray-400"
+                                viewBox="0 0 100 101"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                  fill="currentColor"
+                                ></path>
+                                <path
+                                  d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                  fill="#046059"
+                                ></path>
+                              </svg>
                               Envoyer
                             </button>
                           </li>
@@ -1108,8 +1174,8 @@ const Home = ({ carouselItems, map }) => {
             </span>
             <br />
             <p className={style.newsletter__desc}>
-              Inscrivez-vous à notre newsLetter pour recevoir en avant-premier
-              les dernières tendances du digital ainsi que toutes nos actualités
+              Inscris-toi à notre infolettre afin de rester connecter aux
+              nouveautés de l'univers Elite!
             </p>
           </p>
 
@@ -1126,51 +1192,9 @@ const Home = ({ carouselItems, map }) => {
               class="pointer-events-none absolute bottom-7 right-7 h-auto w-full translate-x-[100%] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]"
             >
               <div class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
-                <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
-                  <h5
-                    class="text-xl font-medium leading-normal text-neutral-800"
-                    id="exampleModalLabel"
-                  >
-                    Notification
-                  </h5>
-                  <button
-                    type="button"
-                    class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
-                    data-te-modal-dismiss
-                    aria-label="Close"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="h-6 w-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </button>
-                </div>
-
                 <div class="relative flex-auto p-4" data-te-modal-body-ref>
                   Votre message a été envoyé avec succès ! Nous vous répondrons
                   dans le bref délai.
-                </div>
-
-                <div class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4">
-                  <button
-                    type="button"
-                    class="inline-block rounded bg-teal-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out active:bg-primary-accent-200"
-                    data-te-modal-dismiss
-                    data-te-ripple-init
-                    data-te-ripple-color="light"
-                  >
-                    Ok
-                  </button>
                 </div>
               </div>
             </div>
@@ -1188,7 +1212,7 @@ const Home = ({ carouselItems, map }) => {
             Bottom right
           </button>
 
-          <form ref={form}>
+          <form ref={newsLetterForm}>
             <div class="relative mb-4 flex flex-wrap items-center justify-center">
               <input
                 type="text"
@@ -1209,7 +1233,7 @@ const Home = ({ carouselItems, map }) => {
                 }
                 id="basic-addon2"
                 style={{ height: "50px", borderRadius: "0px 20px 20px 0px" }}
-                onClick={(e) => sendEmail(e)}
+                onClick={(e) => sendNewsLetter(e)}
               >
                 S'inscrire
               </span>

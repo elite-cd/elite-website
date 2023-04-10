@@ -2,12 +2,10 @@ import * as React from "react";
 import * as style from "./caroussel.scss";
 import T from "prop-types";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
-import img1 from "../../assets/images/formation-professionnelle.jpeg";
-import img2 from "../../assets/images/pexels-mart-production-7550542.jpg";
+
 import icon1 from "../../assets/images/Twitter_100px.png";
 import icon2 from "../../assets/images/LinkedIn_100px.png";
 import icon3 from "../../assets/images/Facebook_100px.png";
-import logo from "../../assets/images/logo.png";
 import { useEffect, useState } from "react";
 import { useIntl } from "gatsby-plugin-intl";
 import { ROUTES } from "../../common/constants";
@@ -91,7 +89,7 @@ const TwCaroussel = ({ items }) => {
           }}
         >
           <nav
-            class="lg:block xs:hidden relative flex flex-wrap items-center justify-between px-20 py-3 mb-2"
+            class="lg:block xs:hidden relative flex flex-wrap items-center justify-between px-38 py-3 mb-2"
             style={{
               backgroundColor: "transparent",
               position: "absolute",
@@ -108,10 +106,10 @@ const TwCaroussel = ({ items }) => {
                   class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
                   href={ROUTES.INDEX}
                 >
-                  <img
+                  <StaticImage
+                    alt={"Elite"}
                     class="hidden h-12 w-auto lg:block"
-                    src={logo}
-                    alt="Elite"
+                    src="../../assets/images/logo.png"
                   />
                 </a>
                 <button
@@ -256,10 +254,10 @@ const TwCaroussel = ({ items }) => {
           >
             <div class="absoulte flex w-full flex-wrap items-center justify-between px-6">
               <a href={ROUTES.INDEX}>
-                <img
+                <StaticImage
+                  alt={"Elite"}
                   class="block h-14 w-auto lg:hidden py-2"
-                  src={logo}
-                  alt="Elite"
+                  src="../../assets/images/logo.png"
                 />
               </a>
 
@@ -392,12 +390,14 @@ const TwCaroussel = ({ items }) => {
               </div>
             </div>
           </nav>
-          <img
-            src={img2}
+
+          <StaticImage
+            alt={"Image 2"}
             id="img1"
             class="block w-full brightness-25"
-            alt="..."
+            src="../../assets/images/pexels-mart-production-7550542.jpg"
           />
+
           <div class="absolute inset-x-[15%] bottom-5 py-9 text-center text-white md:block my-28 centerContent">
             <h1 class="text-xl" id="centerText">
               Choisis d'être le meilleur !
@@ -428,7 +428,7 @@ const TwCaroussel = ({ items }) => {
           }}
         >
           <nav
-            class="lg:block xs:hidden relative flex flex-wrap items-center justify-between px-20 py-3 mb-2"
+            class="lg:block xs:hidden relative flex flex-wrap items-center justify-between px-38 py-3 mb-2"
             style={{
               backgroundColor: "transparent",
               position: "absolute",
@@ -445,10 +445,10 @@ const TwCaroussel = ({ items }) => {
                   class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
                   href={ROUTES.INDEX}
                 >
-                  <img
+                  <StaticImage
+                    alt={"Elite"}
                     class="hidden h-12 w-auto lg:block"
-                    src={logo}
-                    alt="Elite"
+                    src="../../assets/images/logo.png"
                   />
                 </a>
                 <button
@@ -593,10 +593,10 @@ const TwCaroussel = ({ items }) => {
           >
             <div class="absoulte flex w-full flex-wrap items-center justify-between px-6">
               <a href={ROUTES.INDEX}>
-                <img
+                <StaticImage
+                  alt={"Elite"}
                   class="block h-14 w-auto lg:hidden py-2"
-                  src={logo}
-                  alt="Elite"
+                  src="../../assets/images/logo.png"
                 />
               </a>
 
@@ -729,11 +729,11 @@ const TwCaroussel = ({ items }) => {
               </div>
             </div>
           </nav>
-          <img
-            src={img1}
+          <StaticImage
+            alt={"Image 1"}
             id="img1"
             class="block w-full brightness-25"
-            alt="..."
+            src="../../assets/images/formation-professionnelle.jpeg"
           />
 
           <div class="absolute inset-x-[15%] bottom-5 py-9 text-center text-white md:block my-28 centerContent">
