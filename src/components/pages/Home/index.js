@@ -16,6 +16,19 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import emailjs from "@emailjs/browser";
 
+import img1 from "../../../assets/images/mentor.png";
+import img2 from "../../../assets/images/qualify.png";
+import img3 from "../../../assets/images/computer.png";
+import img4 from "../../../assets/images/pedagogie.png";
+import img5 from "../../../assets/images/professional.png";
+import img6 from "../../../assets/images/certificat.png";
+
+import contactImg from "../../../assets/images/nous-contacter 1.png";
+import contactImg2 from "../../../assets/images/Rectangle 37.png";
+import contactIcon1 from "../../../assets/images/Marker_100px.png";
+import contactIcon2 from "../../../assets/images/WhatsApp_100px.png";
+import contactIcon3 from "../../../assets/images/Message Filled_100px.png";
+
 import styled from "styled-components";
 import "./styles.css";
 
@@ -275,7 +288,7 @@ const Home = ({ carouselItems, map }) => {
             class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1 flex justify-between"
             style={{ width: "90%" }}
           >
-            <div class="">
+            <div>
               <div
                 class={
                   "relative flex justify-center cursor-pointer transition-all duration-700 " +
