@@ -4,14 +4,36 @@ import { useIntl } from "gatsby-plugin-intl";
 import T from "prop-types";
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
+import ButtonRounded from "../../Button/button-rounded";
+import Carousel from "../../Carousel";
 import TwCaroussel from "../../TwCaroussel";
+
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
+import GoogleMapFrame from "../../GooglMap";
 import { useState, useEffect, useRef } from "react";
-import * as te from "tw-elements";
-
+import { Link } from "gatsby";
 import emailjs from "@emailjs/browser";
+
+import styled from "styled-components";
+import "./styles.css";
+
+import img1 from "../../../assets/images/mentor.png";
+import img2 from "../../../assets/images/qualify.png";
+import img3 from "../../../assets/images/computer.png";
+import img4 from "../../../assets/images/pedagogie.png";
+import img5 from "../../../assets/images/professional.png";
+import img6 from "../../../assets/images/certificat.png";
+
+import contactImg from "../../../assets/images/nous-contacter 1.png";
+import contactImg2 from "../../../assets/images/Rectangle 37.png";
+import contactIcon1 from "../../../assets/images/Marker_100px.png";
+import contactIcon2 from "../../../assets/images/WhatsApp_100px.png";
+import contactIcon3 from "../../../assets/images/Message Filled_100px.png";
+
+import courseBg1 from "../../../assets/images/mimi-thian-vdXMSiX-n6M-unsplash 1.png";
+import courseBg2 from "../../../assets/images/Rectangle 24.png";
 
 import {
   faEnvelope,
@@ -41,6 +63,7 @@ const OverlayCountry = ["", "", "Canada", "USA", "", ""];
 
 const Home = ({ carouselItems, map }) => {
   const [modalContentId, setModalContentId] = useState(0);
+  const [img, setImg] = useState("");
 
   const intl = useIntl();
   const [overlayOpen, setOverlayOpen] = React.useState(false);
@@ -71,18 +94,52 @@ const Home = ({ carouselItems, map }) => {
     );
   };
 
+  const images = [img1, img2, img3, img4, img5, img6];
+
+  const [isOpen, toggle] = useState(false);
   const [carouselNext, swipeCarouselNext] = useState(false);
   const [carouselPrev, swipeCarouselPrev] = useState(false);
   const [msgSender, setMsgSender] = useState(false);
   const [loader, setLoader] = useState(false);
 
+  const twElement = {
+    te: null,
+  };
+
+  function handlOpenModal(open, id) {
+    console.log("close modal");
+
+    setModalContentId(id);
+    //open === true ? (body.style.overflow = "hidden") :  (body.style.overflow = "auto");
+    toggle(open);
+  }
+
   function handlMobilePopup(id) {
     setModalContentId(id);
   }
 
+  useEffect(async () => {
+    //import * as te from "tw-elements";
+    twElement.te = await import("tw-elements");
+
+    setTimeout(() => {
+      const myCarousel = new twElement.te.Carousel(
+        document.getElementById("carouselExampleIndicators")
+      );
+      myCarousel.cycle();
+    }, 500);
+  }, []);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    isOpen === true
+      ? (body.style.overflow = "hidden")
+      : (body.style.overflow = "auto");
+  }, [isOpen]);
+
   useEffect(() => {
     if (carouselNext === true) {
-      const myCarousel = new te.Carousel(
+      const myCarousel = new twElement.te.Carousel(
         document.getElementById("carouselExampleIndicators")
       );
       myCarousel.next();
@@ -91,19 +148,12 @@ const Home = ({ carouselItems, map }) => {
 
   useEffect(() => {
     if (carouselPrev === true) {
-      const myCarousel = new te.Carousel(
+      const myCarousel = new twElement.te.Carousel(
         document.getElementById("carouselExampleIndicators")
       );
       myCarousel.prev();
     }
   }, [carouselPrev]);
-
-  useEffect(() => {
-    const myCarousel = new te.Carousel(
-      document.getElementById("carouselExampleIndicators")
-    );
-    myCarousel.cycle();
-  }, []);
 
   const swipeNextCarousel = () => {
     swipeCarouselNext(true);
@@ -126,7 +176,7 @@ const Home = ({ carouselItems, map }) => {
   }, [loader]);
 
   const sendEmail = (e) => {
-    setMsgSender(true);
+    setLoader(true);
     e.preventDefault();
 
     emailjs
@@ -222,10 +272,10 @@ const Home = ({ carouselItems, map }) => {
           {renderOverlayComponent(overlayIndex)}
 
           <div
-            class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1"
+            class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1 flex justify-between"
             style={{ width: "90%" }}
           >
-            <div class={style.rubrique}>
+            <div class="">
               <div
                 class={
                   "relative flex justify-center cursor-pointer transition-all duration-700 " +
@@ -241,11 +291,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <StaticImage
-                        alt={"Image 1"}
-                        src="../../../assets/images/mentor.png"
-                        style={{ height: "80px" }}
-                      />
+                      <img src={img1} style={{ height: "80px" }} />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -277,7 +323,7 @@ const Home = ({ carouselItems, map }) => {
               </div>
             </div>
 
-            <div class={style.rubrique}>
+            <div class="">
               <div
                 class={
                   "relative flex justify-center cursor-pointer transition-all duration-700 " +
@@ -293,11 +339,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <StaticImage
-                        alt={"Image 1"}
-                        src="../../../assets/images/qualify.png"
-                        style={{ height: "80px" }}
-                      />
+                      <img src={img2} style={{ height: "80px" }} />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -329,7 +371,7 @@ const Home = ({ carouselItems, map }) => {
               </div>
             </div>
 
-            <div class={style.rubrique}>
+            <div class="">
               <div
                 class={
                   "relative flex justify-center cursor-pointer transition-all duration-700 " +
@@ -345,11 +387,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <StaticImage
-                        alt={"Image 3"}
-                        src="../../../assets/images/computer.png"
-                        style={{ height: "80px" }}
-                      />
+                      <img src={img3} style={{ height: "80px" }} />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -397,11 +435,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <StaticImage
-                        alt={"Image 4"}
-                        src="../../../assets/images/pedagogie.png"
-                        style={{ height: "80px" }}
-                      />
+                      <img src={img4} style={{ height: "80px" }} />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -449,11 +483,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <StaticImage
-                        alt={"Image 1"}
-                        src="../../../assets/images/professional.png"
-                        style={{ height: "80px" }}
-                      />
+                      <img src={img5} style={{ height: "80px" }} />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -501,11 +531,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <StaticImage
-                        alt={"Image 1"}
-                        src="../../../assets/images/certificat.png"
-                        style={{ height: "80px" }}
-                      />
+                      <img src={img6} style={{ height: "80px" }} />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -571,11 +597,7 @@ const Home = ({ carouselItems, map }) => {
                     <div class="py-3 px-6">&nbsp;</div>
                     <div class="p-6">
                       <h5 class="mb-3 -mt-9">
-                        <StaticImage
-                          alt={"Image 1"}
-                          src="../../../assets/images/mentor.png"
-                          style={{ height: "80px" }}
-                        />
+                        <img src={img1} style={{ height: "80px" }} />
                       </h5>
                       <p
                         class="mb-4 text-base text-teal-800"
@@ -627,11 +649,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <StaticImage
-                            alt={"Image 1"}
-                            src="../../../assets/images/Rectangle 37.png"
-                            style={{ height: "80px" }}
-                          />
+                          <img src={img2} style={{ height: "80px" }} />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -684,11 +702,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <StaticImage
-                            alt={"Image 3"}
-                            src="../../../assets/images/computer.png"
-                            style={{ height: "80px" }}
-                          />
+                          <img src={img3} style={{ height: "80px" }} />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -741,11 +755,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <StaticImage
-                            alt={"Image 4"}
-                            src="../../../assets/images/pedagogie.png"
-                            style={{ height: "80px" }}
-                          />
+                          <img src={img4} style={{ height: "80px" }} />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -798,11 +808,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <StaticImage
-                            alt={"Image 1"}
-                            src="../../../assets/images/professional.png"
-                            style={{ height: "80px" }}
-                          />
+                          <img src={img5} style={{ height: "80px" }} />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -855,11 +861,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <StaticImage
-                            alt={"Image 1"}
-                            src="../../../assets/images/certificat.png"
-                            style={{ height: "80px" }}
-                          />
+                          <img src={img6} style={{ height: "80px" }} />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -1002,16 +1004,9 @@ const Home = ({ carouselItems, map }) => {
         </section>
 
         <div className={style.parent}>
-          <StaticImage
-            alt={"Contact Image 2"}
-            src="../../../assets/images/nous-contacter 1.png"
-          />
-
+          <img src={contactImg} />
           <div className={style.inner}>
-            <StaticImage
-              alt={"Contact Image 2"}
-              src="../../../assets/images/Rectangle 37.png"
-            />
+            <img src={contactImg2} />
 
             <div className={style.contact_content}>
               <div class="grid grid-cols-2" style={{ width: "100%" }}>
@@ -1036,11 +1031,7 @@ const Home = ({ carouselItems, map }) => {
                         }}
                       >
                         <li style={{ display: "inline-flex" }}>
-                          <StaticImage
-                            alt={"Icon 1 1"}
-                            src="../../../assets/images/Marker_100px.png"
-                            style={{ height: "30px" }}
-                          />
+                          <img src={contactIcon1} style={{ height: "30px" }} />
                           <span
                             style={{ marginTop: "1.5%", marginLeft: "3px" }}
                           >
@@ -1050,11 +1041,7 @@ const Home = ({ carouselItems, map }) => {
                         <li
                           style={{ paddingTop: "12px", display: "inline-flex" }}
                         >
-                          <StaticImage
-                            alt={"Image 1"}
-                            src="../../../assets/images/WhatsApp_100px.png"
-                            style={{ height: "30px" }}
-                          />
+                          <img src={contactIcon2} style={{ height: "30px" }} />
                           <span
                             style={{ marginTop: "1.5%", marginLeft: "3px" }}
                           >
@@ -1064,11 +1051,7 @@ const Home = ({ carouselItems, map }) => {
                         <li
                           style={{ paddingTop: "12px", display: "inline-flex" }}
                         >
-                          <StaticImage
-                            alt={"Image 1"}
-                            src="../../../assets/images/Message Filled_100px.png"
-                            style={{ height: "30px" }}
-                          />
+                          <img src={contactIcon3} style={{ height: "30px" }} />
                           <span
                             style={{ marginTop: "1.5%", marginLeft: "3px" }}
                           >
