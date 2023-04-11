@@ -1,10 +1,7 @@
 .container {
-  height: 86vh;
   width: 100%;
   font-family: "GothamRegular";
-  display: flex;
   overflow: hidden;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 768px) {
@@ -14,13 +11,7 @@
   }
   &__image,
   &__desc {
-    width: fit-content;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 1rem;
+    padding: 3rem;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
@@ -57,8 +48,336 @@
       margin-bottom: 10px;
       margin-right: 10px;
       @media only screen and (max-width: 1200px) {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
       }
     }
+  }
+}
+
+.parent {
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  margin-top: -10%;
+}
+
+.parent > img {
+  height: 100%;
+  width: 100%;
+}
+
+.inner {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.inner > img {
+  height: 100%;
+  width: 100%;
+  opacity: 70%;
+}
+
+.inner > .question {
+  height: 32%;
+  width: 12%;
+  opacity: 200%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+}
+
+.contact_content {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  padding-top: 15%;
+}
+.contact_btn {
+  height: 50px;
+  width: 418px;
+  color: #00a19a;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  transition: background-color 0.8s;
+}
+.contact_btn:hover {
+  background-color: #78a6a2;
+  color: white;
+}
+
+.parent2 {
+  width: 100%;
+  height: 512px;
+  position: absolute;
+  z-index: 0;
+}
+.parent2 > img {
+  height: 100%;
+  width: 100%;
+}
+
+.inner2 {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.inner2 > img {
+  height: 100%;
+  width: 100%;
+  opacity: 99%;
+}
+
+.contact_content2 {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  padding-top: 7%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .parent {
+    margin-top: -4%;
+  }
+
+  .inner > .question {
+    margin-top: 15%;
+  }
+  .contact_content {
+    padding-top: 10%;
+  }
+}
+.about__container_mobile {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  .about__container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: none;
+  }
+  .about__container_mobile {
+    width: 90%;
+    margin: 0 auto;
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 2rem;
+  }
+}
+
+.about {
+  &__container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 2rem;
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 0rem;
+      width: 100%;
+      column-gap: 0;
+      padding: 0;
+    }
+  }
+
+  &__desc {
+    font-family: "GothamRegular";
+    font-size: 14px;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.1);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+  }
+
+  &__overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    @media only screen and (max-width: 768px) {
+      width: 70%;
+    }
+    .close {
+      position: relative;
+      margin: 0;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .close:hover {
+      color: #046059;
+    }
+    .content {
+      max-height: 30%;
+      overflow: auto;
+    }
+  }
+
+  &__box:target {
+    .about__box > .about__overlay {
+      visibility: visible;
+    }
+  }
+
+  &__box:hover {
+    transform: scale(1.2);
+    @media only screen and (max-width: 768px) {
+      transform: none;
+    }
+    border: 1px solid #046059;
+    .about__title {
+      color: #046059;
+    }
+  }
+
+  &__box {
+    width: 15rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+      border-radius: 0;
+      border: 0;
+      border-bottom: 1px solid #4f4f4f !important;
+      height: 16rem;
+    }
+  }
+  &__image {
+    width: 5rem;
+    height: auto;
+  }
+  &__title {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+  &__header {
+    font-family: "GothamMedium";
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2rem !important;
+    width: 90%;
+    margin: 2rem auto;
+    color: #046059;
+  }
+}
+
+.courseCard {
+  height: 240px;
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px 5px rgba(215, 205, 205, 0.3);
+  border-radius: 20px;
+}
+
+.courseCard h5 img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.courseCard p {
+  line-height: 1.2rem !important;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
+
+.cardback {
+  transform: rotateY(180deg);
+}
+
+.courseCard .longCardText {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .courseCard {
+    height: 200px;
+    width: 270px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 2px rgba(215, 205, 205, 0.3);
+    border-radius: 20px;
+  }
+  .courseCard .longCardText {
+    font-size: 13px;
+    margin-top: -12%;
+  }
+}
+
+.mobile_courseCard {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile_courseCard {
+    display: block;
+  }
+
+  .mobile_courseCard .courseCard {
+    display: block;
+    box-shadow: 0px 0px 35px 10px rgba(215, 205, 205, 0.3);
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 }

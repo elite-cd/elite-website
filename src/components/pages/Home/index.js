@@ -152,12 +152,13 @@ const Home = ({ carouselItems, map }) => {
   }, [msgSender]);
 
   useEffect(() => {
-    loader === true &&
-      document.getElementById("loader").classList.remove("hidden");
+    loader === true
+      ? document.getElementById("loader").classList.remove("hidden")
+      : document.getElementById("loader").classList.add("hidden");
   }, [loader]);
 
   const sendEmail = (e) => {
-    setMsgSender(true);
+    setLoader(true);
     e.preventDefault();
 
     setTimeout(() => {
@@ -171,8 +172,8 @@ const Home = ({ carouselItems, map }) => {
         .then(
           (result) => {
             console.log(result.text);
-            setMsgSender(true);
             setLoader(false);
+            setMsgSender(true);
           },
           (error) => {
             console.log(error.text);
