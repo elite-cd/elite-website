@@ -4,18 +4,15 @@ import { useIntl } from "gatsby-plugin-intl";
 import T from "prop-types";
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
-import ButtonRounded from "../../Button/button-rounded";
-import Carousel from "../../Carousel";
+import TwCaroussel from "../../TwCaroussel";
 
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
-import GoogleMapFrame from "../../GooglMap";
-import { useState, useEffect } from "react";
-import { Link } from "gatsby";
+import { useState, useEffect, useRef } from "react";
 
-import styled from "styled-components";
-import "./styles.css";
+import * as te from "tw-elements";
+
 import img1 from "../../../assets/images/mentor.png";
 import img2 from "../../../assets/images/qualify.png";
 import img3 from "../../../assets/images/computer.png";
@@ -28,9 +25,7 @@ import contactImg2 from "../../../assets/images/Rectangle 37.png";
 import contactIcon1 from "../../../assets/images/Marker_100px.png";
 import contactIcon2 from "../../../assets/images/WhatsApp_100px.png";
 import contactIcon3 from "../../../assets/images/Message Filled_100px.png";
-
-import courseBg1 from "../../../assets/images/mimi-thian-vdXMSiX-n6M-unsplash 1.png";
-import courseBg2 from "../../../assets/images/Rectangle 24.png";
+import emailjs from "@emailjs/browser";
 
 import {
   faEnvelope,
@@ -110,7 +105,7 @@ const Home = ({ carouselItems, map }) => {
   const InternalPage = ({ courses }) => {
     return (
       <React.Fragment>
-        <Carousel items={carouselItems} />
+        <TwCaroussel items={courses} />
         <div className={style.row__center}>
           <h3 className={style.typography3} style={{ marginTop: "3%" }}>
             {intl.formatMessage({ id: "content.homepage.elite.title" })}
