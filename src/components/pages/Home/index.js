@@ -4,17 +4,12 @@ import { useIntl } from "gatsby-plugin-intl";
 import T from "prop-types";
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
-import ButtonRounded from "../../Button/button-rounded";
-import Carousel from "../../Carousel";
 import TwCaroussel from "../../TwCaroussel";
 
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
-import GoogleMapFrame from "../../GooglMap";
 import { useState, useEffect, useRef } from "react";
-import { Link } from "gatsby";
-import emailjs from "@emailjs/browser";
 
 import img1 from "../../../assets/images/mentor.png";
 import img2 from "../../../assets/images/qualify.png";
@@ -28,9 +23,7 @@ import contactImg2 from "../../../assets/images/Rectangle 37.png";
 import contactIcon1 from "../../../assets/images/Marker_100px.png";
 import contactIcon2 from "../../../assets/images/WhatsApp_100px.png";
 import contactIcon3 from "../../../assets/images/Message Filled_100px.png";
-
-import styled from "styled-components";
-import "./styles.css";
+import emailjs from "@emailjs/browser";
 
 import {
   faEnvelope,
@@ -91,29 +84,16 @@ const Home = ({ carouselItems, map }) => {
     );
   };
 
-  const images = [img1, img2, img3, img4, img5, img6];
-
-  const [isOpen, toggle] = useState(false);
-  const [carouselNext, swipeCarouselNext] = useState(false);
-  const [carouselPrev, swipeCarouselPrev] = useState(false);
-  const [msgSender, setMsgSender] = useState(false);
-  const [loader, setLoader] = useState(false);
-
   const twElement = {
     te: null,
   };
 
-  function handlOpenModal(open, id) {
-    console.log("close modal");
+  const images = [img1, img2, img3, img4, img5, img6];
 
-    setModalContentId(id);
-    //open === true ? (body.style.overflow = "hidden") :  (body.style.overflow = "auto");
-    toggle(open);
-  }
-
-  function handlMobilePopup(id) {
-    setModalContentId(id);
-  }
+  const [carouselNext, swipeCarouselNext] = useState(false);
+  const [carouselPrev, swipeCarouselPrev] = useState(false);
+  const [msgSender, setMsgSender] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   useEffect(async () => {
     //import * as te from "tw-elements";
@@ -126,13 +106,6 @@ const Home = ({ carouselItems, map }) => {
       myCarousel.cycle();
     }, 500);
   }, []);
-
-  useEffect(() => {
-    const body = document.querySelector("body");
-    isOpen === true
-      ? (body.style.overflow = "hidden")
-      : (body.style.overflow = "auto");
-  }, [isOpen]);
 
   useEffect(() => {
     if (carouselNext === true) {
@@ -151,6 +124,13 @@ const Home = ({ carouselItems, map }) => {
       myCarousel.prev();
     }
   }, [carouselPrev]);
+
+  useEffect(() => {
+    const myCarousel = new twElement.te.Carousel(
+      document.getElementById("carouselExampleIndicators")
+    );
+    myCarousel.cycle();
+  }, []);
 
   const swipeNextCarousel = () => {
     swipeCarouselNext(true);
@@ -173,7 +153,7 @@ const Home = ({ carouselItems, map }) => {
   }, [loader]);
 
   const sendEmail = (e) => {
-    setLoader(true);
+    setMsgSender(true);
     e.preventDefault();
 
     emailjs
