@@ -4,12 +4,20 @@ import { useIntl } from "gatsby-plugin-intl";
 import T from "prop-types";
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
+import ButtonRounded from "../../Button/button-rounded";
+import Carousel from "../../Carousel";
 import TwCaroussel from "../../TwCaroussel";
 
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
+import GoogleMapFrame from "../../GooglMap";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "gatsby";
+import emailjs from "@emailjs/browser";
+
+import styled from "styled-components";
+import "./styles.css";
 
 import img1 from "../../../assets/images/mentor.png";
 import img2 from "../../../assets/images/qualify.png";
@@ -23,7 +31,9 @@ import contactImg2 from "../../../assets/images/Rectangle 37.png";
 import contactIcon1 from "../../../assets/images/Marker_100px.png";
 import contactIcon2 from "../../../assets/images/WhatsApp_100px.png";
 import contactIcon3 from "../../../assets/images/Message Filled_100px.png";
-import emailjs from "@emailjs/browser";
+
+import courseBg1 from "../../../assets/images/mimi-thian-vdXMSiX-n6M-unsplash 1.png";
+import courseBg2 from "../../../assets/images/Rectangle 24.png";
 
 import {
   faEnvelope,
@@ -86,14 +96,22 @@ const Home = ({ carouselItems, map }) => {
 
   const images = [img1, img2, img3, img4, img5, img6];
 
+  const [isOpen, toggle] = useState(false);
   const [carouselNext, swipeCarouselNext] = useState(false);
   const [carouselPrev, swipeCarouselPrev] = useState(false);
   const [msgSender, setMsgSender] = useState(false);
-  const [loader, setLoader] = useState(false);
 
   const twElement = {
     te: null,
   };
+
+  function handlOpenModal(open, id) {
+    console.log("close modal");
+
+    setModalContentId(id);
+    //open === true ? (body.style.overflow = "hidden") :  (body.style.overflow = "auto");
+    toggle(open);
+  }
 
   function handlMobilePopup(id) {
     setModalContentId(id);
@@ -110,6 +128,13 @@ const Home = ({ carouselItems, map }) => {
       myCarousel.cycle();
     }, 500);
   }, []);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    isOpen === true
+      ? (body.style.overflow = "hidden")
+      : (body.style.overflow = "auto");
+  }, [isOpen]);
 
   useEffect(() => {
     if (carouselNext === true) {
@@ -129,13 +154,6 @@ const Home = ({ carouselItems, map }) => {
     }
   }, [carouselPrev]);
 
-  useEffect(() => {
-    const myCarousel = new twElement.te.Carousel(
-      document.getElementById("carouselExampleIndicators")
-    );
-    myCarousel.cycle();
-  }, []);
-
   const swipeNextCarousel = () => {
     swipeCarouselNext(true);
   };
@@ -145,19 +163,12 @@ const Home = ({ carouselItems, map }) => {
   };
 
   const form = useRef();
-  const newsLetterForm = useRef();
 
   useEffect(() => {
     msgSender === true && document.getElementById("popupBtn").click();
   }, [msgSender]);
 
-  useEffect(() => {
-    loader === true &&
-      document.getElementById("loader").classList.remove("hidden");
-  }, [loader]);
-
   const sendEmail = (e) => {
-    setMsgSender(true);
     e.preventDefault();
 
     emailjs
@@ -165,29 +176,6 @@ const Home = ({ carouselItems, map }) => {
         "service_zo9rk47",
         "template_ljx9qhl",
         form.current,
-        "AnOf892YduB4OgaT5"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setMsgSender(true);
-          setLoader(false);
-        },
-        (error) => {
-          console.log(error.text);
-          setLoader(false);
-        }
-      );
-  };
-
-  const sendNewsLetter = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_zo9rk47",
-        "template_ljx9qhl",
-        newsLetterForm.current,
         "AnOf892YduB4OgaT5"
       )
       .then(
@@ -218,11 +206,11 @@ const Home = ({ carouselItems, map }) => {
             className={style.typography3}
             style={{ marginTop: "3%", color: "#046059" }}
           >
-            Choisis un programme Elite
+            Choisissez un programme Elite
           </h4>
           <p className={style.typography6} style={{ paddingTop: "20px" }}>
             Nous coachons, encadrons et encourageons des génies congolais à
-            libérer et exploiter leur esprit créatif
+            libérer et exoloiter leur esprit créatif
           </p>
         </div>
 
@@ -253,10 +241,10 @@ const Home = ({ carouselItems, map }) => {
           {renderOverlayComponent(overlayIndex)}
 
           <div
-            class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1 flex justify-between"
+            class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1"
             style={{ width: "90%" }}
           >
-            <div>
+            <div class={style.rubrique}>
               <div
                 class={
                   "relative flex justify-center cursor-pointer transition-all duration-700 " +
@@ -304,7 +292,7 @@ const Home = ({ carouselItems, map }) => {
               </div>
             </div>
 
-            <div class="">
+            <div class={style.rubrique}>
               <div
                 class={
                   "relative flex justify-center cursor-pointer transition-all duration-700 " +
@@ -352,7 +340,7 @@ const Home = ({ carouselItems, map }) => {
               </div>
             </div>
 
-            <div class="">
+            <div class={style.rubrique}>
               <div
                 class={
                   "relative flex justify-center cursor-pointer transition-all duration-700 " +
@@ -957,14 +945,14 @@ const Home = ({ carouselItems, map }) => {
               className={style.signup__text}
               style={{ fontSize: "32", fontWeight: "800" }}
             >
-              Nous serons plus que fiers de faire de toi une élite !
+              Nous serons plus que ravis de vous compter parmis nous
             </span>
             <br />
             <p style={{ marginTop: "20px" }}>
-              Contribues à ta croissance numérique
+              Contribuer à votre croissance numérique !
               <p style={{ marginTop: "1%" }}>
-                en t'inscrivant à l'une de nos formations offertes et deviens le
-                meilleur de ta génération!
+                inscrivant à l'une de nos programmes offertes et devenez le
+                meilleur
               </p>
             </p>
           </p>
@@ -1094,24 +1082,6 @@ const Home = ({ carouselItems, map }) => {
                                 style.contact_btn + " " + style.help__btn
                               }
                             >
-                              <svg
-                                aria-hidden="true"
-                                id="loader"
-                                role="status"
-                                class="hidden inline mr-2 w-7 h-7 text-gray-200 animate-spin text-gray-400"
-                                viewBox="0 0 100 101"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                                  fill="currentColor"
-                                ></path>
-                                <path
-                                  d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                                  fill="#046059"
-                                ></path>
-                              </svg>
                               Envoyer
                             </button>
                           </li>
@@ -1138,8 +1108,8 @@ const Home = ({ carouselItems, map }) => {
             </span>
             <br />
             <p className={style.newsletter__desc}>
-              Inscris-toi à notre infolettre afin de rester connecter aux
-              nouveautés de l'univers Elite!
+              Inscrivez-vous à notre newsLetter pour recevoir en avant-premier
+              les dernières tendances du digital ainsi que toutes nos actualités
             </p>
           </p>
 
@@ -1156,9 +1126,51 @@ const Home = ({ carouselItems, map }) => {
               class="pointer-events-none absolute bottom-7 right-7 h-auto w-full translate-x-[100%] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]"
             >
               <div class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
+                <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+                  <h5
+                    class="text-xl font-medium leading-normal text-neutral-800"
+                    id="exampleModalLabel"
+                  >
+                    Notification
+                  </h5>
+                  <button
+                    type="button"
+                    class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                    data-te-modal-dismiss
+                    aria-label="Close"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="h-6 w-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
                 <div class="relative flex-auto p-4" data-te-modal-body-ref>
                   Votre message a été envoyé avec succès ! Nous vous répondrons
                   dans le bref délai.
+                </div>
+
+                <div class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4">
+                  <button
+                    type="button"
+                    class="inline-block rounded bg-teal-800 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out active:bg-primary-accent-200"
+                    data-te-modal-dismiss
+                    data-te-ripple-init
+                    data-te-ripple-color="light"
+                  >
+                    Ok
+                  </button>
                 </div>
               </div>
             </div>
@@ -1176,7 +1188,7 @@ const Home = ({ carouselItems, map }) => {
             Bottom right
           </button>
 
-          <form ref={newsLetterForm}>
+          <form ref={form}>
             <div class="relative mb-4 flex flex-wrap items-center justify-center">
               <input
                 type="text"
@@ -1197,7 +1209,7 @@ const Home = ({ carouselItems, map }) => {
                 }
                 id="basic-addon2"
                 style={{ height: "50px", borderRadius: "0px 20px 20px 0px" }}
-                onClick={(e) => sendNewsLetter(e)}
+                onClick={(e) => sendEmail(e)}
               >
                 S'inscrire
               </span>
