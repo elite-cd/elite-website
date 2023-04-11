@@ -4,6 +4,16 @@ import Page from "../../PageTemplate";
 import * as style from "./About.module.scss";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
+import contactImg from "../../../assets/images/pexels-kampus-production-7983612 1.png";
+import contactImg2 from "../../../assets/images/Rectangle 56.png";
+import contactImg3 from "../../../assets/images/question_mark.png";
+
+import contactIcon1 from "../../../assets/images/Marker_100px.png";
+import contactIcon2 from "../../../assets/images/WhatsApp_100px.png";
+import contactIcon3 from "../../../assets/images/Message Filled_100px.png";
+import img1 from "../../../assets/images/mentor.png";
+import img2 from "../../../assets/images/qualify.png";
+import img3 from "../../../assets/images/computer.png";
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -23,17 +33,35 @@ const About = () => {
   const renderPage = () => {
     return (
       <div className={style.container}>
-        <div className={style.container__image}>
-          <GatsbyImage
-            alt="About image failed"
-            objectFit="contain"
-            className=""
-            image={getImage(aboutImg)}
-          />
+        <div className={style.parent}>
+          <img src={contactImg} />
+          <div className={style.inner}>
+            <img src={contactImg2} />
+
+            <div className={style.inner}>
+              <img src={contactImg3} className={style.question} />
+
+              <div className={style.contact_content}>
+                <div
+                  style={{
+                    color: "#FFFFFF",
+                    fontWeight: "bolder",
+                    fontSize: "56px",
+                    marginRight: "auto",
+                    marginLeft: "auto",
+                    marginTop: "9rem",
+                  }}
+                >
+                  Qui sommes-nous
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className={style.container__desc}>
           <h1>A PROPOS DE NOUS</h1>
+
           <p>
             Pourquoi est-il difficile pour nous qui sommes formés au Congo ou en
             Afrique de competir avec ceux formés ailleurs ?
