@@ -822,4 +822,16 @@
       width: 300px;
     }
   }
+
+  &__btn:hover {
+    svg {
+      color: white;
+    }
+  }
+
+  &__btn:focus {
+    svg {
+      color: white;
+    }
+  }
 }
