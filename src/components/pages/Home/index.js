@@ -4,19 +4,13 @@ import { useIntl } from "gatsby-plugin-intl";
 import T from "prop-types";
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
-import ButtonRounded from "../../Button/button-rounded";
-import Carousel from "../../Carousel";
 import TwCaroussel from "../../TwCaroussel";
 
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
-import GoogleMapFrame from "../../GooglMap";
 import { useState, useEffect, useRef } from "react";
-import { Link } from "gatsby";
 
-import styled from "styled-components";
-import "./styles.css";
 import * as te from "tw-elements";
 
 import img1 from "../../../assets/images/mentor.png"
@@ -31,9 +25,6 @@ import contactImg2 from "../../../assets/images/Rectangle 37.png"
 import contactIcon1 from "../../../assets/images/Marker_100px.png"
 import contactIcon2 from "../../../assets/images/WhatsApp_100px.png"
 import contactIcon3 from "../../../assets/images/Message Filled_100px.png"
-
-import courseBg1 from "../../../assets/images/mimi-thian-vdXMSiX-n6M-unsplash 1.png"
-import courseBg2 from "../../../assets/images/Rectangle 24.png"
 import emailjs from '@emailjs/browser';
 
 import {
@@ -103,41 +94,16 @@ const Home = ({ carouselItems, map }) => {
     );
   };
 
-  const ModalContent = styled.div`
-          height: 100%;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          h1 {
-            color: #5c3aff;
-          }
-        `;
-
         const images = [img1, img2, img3, img4, img5, img6]
 
-        const [isOpen, toggle] = useState(false);
         const [carouselNext, swipeCarouselNext] = useState(false);
         const [carouselPrev, swipeCarouselPrev] = useState(false);
         const [msgSender, setMsgSender] = useState(false);
         const [loader, setLoader] = useState(false);
 
-        function handlOpenModal(open, id) {
-          console.log("close modal");
-          
-          setModalContentId(id)
-          //open === true ? (body.style.overflow = "hidden") :  (body.style.overflow = "auto");
-          toggle(open);
-        }
-
         function handlMobilePopup(id) {
           setModalContentId(id)
         }
-
-        useEffect(() => {
-          const body = document.querySelector("body");
-          isOpen === true ? (body.style.overflow = "hidden") : body.style.overflow = "auto"
-        }, [isOpen]);
 
         useEffect(() => {
             if(carouselNext === true) {
@@ -181,7 +147,7 @@ const Home = ({ carouselItems, map }) => {
 
           setMsgSender(true);
           e.preventDefault();
-  /*
+ 
           emailjs.sendForm('service_zo9rk47', 'template_ljx9qhl', form.current, 'AnOf892YduB4OgaT5')
             .then((result) => {
                 console.log(result.text);
@@ -191,7 +157,6 @@ const Home = ({ carouselItems, map }) => {
                 console.log(error.text);
                 setLoader(false);
             });
-            */
         };
 
         const sendNewsLetter = (e) => {
@@ -219,7 +184,7 @@ const Home = ({ carouselItems, map }) => {
             Deviens un génie et libère ton esprit créatif en suivant la meilleure des formations avec Elite</h3>
 
           <h4 className={style.typography3} style={{ marginTop: "3%", color: "#046059" }}>
-            Choisissez un programme Elite
+            Choisis un programme Elite
           </h4>
           <p className={style.typography6} style={{ paddingTop: "20px" }}>
             Nous coachons, encadrons et encourageons des génies congolais à libérer et exploiter leur esprit créatif
@@ -256,9 +221,9 @@ const Home = ({ carouselItems, map }) => {
           {renderOverlayComponent(overlayIndex)}
           
 
-          <div class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1" style={{ width: "90%" }}>
+          <div class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1 flex justify-between" style={{ width: "90%" }}>
             
-            <div class={ style.rubrique }>
+            <div>
               <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
                 <div
                   class={"block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
@@ -295,7 +260,7 @@ const Home = ({ carouselItems, map }) => {
               </div>
             </div>
 
-            <div class={ style.rubrique }>
+            <div class="">
               <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
                 <div
                   class={"absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
@@ -332,7 +297,7 @@ const Home = ({ carouselItems, map }) => {
               </div>
             </div>
 
-            <div class={ style.rubrique }>
+            <div class="">
               <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
                 <div
                   class={"absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
@@ -809,7 +774,6 @@ const Home = ({ carouselItems, map }) => {
 
         <section className={style.signup__container}>
           
-
                       <div class="flex w-full flex-wrap items-center justify-between">
                           
                           <div class="items-center w-96 max-sm:w-32 ml-10" style={{ borderBlockEndColor: "#0d9488", borderBlockEndWidth: "2px",}}>
@@ -823,12 +787,12 @@ const Home = ({ carouselItems, map }) => {
 
           <p className={style.signup__title} style={{ paddingBottom: "20px", marginTop: "20px" }}>
             <span className={style.signup__text} style={{ fontSize: "32", fontWeight: "800",  }}>
-              Nous serons plus que ravis de vous compter parmis nous
+            Nous serons plus que fiers de faire de toi une élite !
             </span>
             <br />
               <p style={{ marginTop: "20px"}}>
-              Contribuer à votre croissance numérique !
-              <p style={{ marginTop: "1%" }}>inscrivant à l'une de nos programmes offertes et devenez le meilleur</p>
+              Contribues à ta croissance numérique
+              <p style={{ marginTop: "1%" }}>en t'inscrivant à l'une de nos formations offertes et deviens le meilleur de ta génération!</p>
               </p>
           </p>
         
@@ -926,25 +890,23 @@ const Home = ({ carouselItems, map }) => {
             </span>
             <br />
               <p className={ style.newsletter__desc }>
-                Inscrivez-vous à notre newsLetter pour recevoir
-                en avant-premier les dernières tendances du digital ainsi que toutes nos actualités
+              Inscris-toi à notre infolettre afin de rester connecter aux nouveautés de l'univers Elite!
               </p>
           </p>
 
           <div
             data-te-modal-init
-            class=" fixed left-0 top-0 z-[1055] hidden h-full w-full outline-none"
+            class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
             id="rightBottomModal"
             tabindex="-1"
             aria-labelledby="rightBottomModalLabel"
-            aria-hidden="false">
+            aria-hidden="true">
             <div
               data-te-modal-dialog-ref
-              class="max-sm:left-3 pointer-events-none absolute bottom-7 right-7 h-auto w-full translate-x-[100%] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-2 min-[576px]:max-w-[500px]">
+              class="pointer-events-none absolute bottom-7 right-7 h-auto w-full translate-x-[100%] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]">
               <div
                 class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
-                  
-                  {/* Body */}
+                
                 <div class="relative flex-auto p-4" data-te-modal-body-ref>
                   Votre message a été envoyé avec succès ! Nous vous répondrons dans le bref délai.
                 </div>
