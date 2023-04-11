@@ -11,8 +11,6 @@ import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
 import { useState, useEffect, useRef } from "react";
 
-import * as te from "tw-elements";
-
 import img1 from "../../../assets/images/mentor.png";
 import img2 from "../../../assets/images/qualify.png";
 import img3 from "../../../assets/images/computer.png";
