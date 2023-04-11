@@ -824,18 +824,6 @@ const Home = ({ carouselItems, map }) => {
             Inscrivez-vous à l'un des nos programmes offerts et devenez le
             meilleur !
           </p>
-
-          <Link to={ROUTES.SIGNUP} className={style.customRoundedBtn}>
-            <div style={{ height: "100%", width: "100%" }}>
-              <div style={{ height: "30%" }}></div>
-
-              <div style={{ height: "40%", display: "inline-flex" }}>
-                <span>Démarrez votre formation aujourd'hui !</span>
-              </div>
-
-              <div style={{ height: "30%" }}></div>
-            </div>
-          </Link>
         </section>
         <section className={style.contact__container}>
           <div className={style.contact__map}>
