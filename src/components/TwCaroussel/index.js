@@ -377,7 +377,7 @@ const TwCaroussel = ({ items }) => {
           }}
         >
           <StaticImage
-            id={"img1"}
+            id="img1"
             class="block w-full brightness-25"
             src={"../../assets/images/pexels-mart-production-7550542.jpg"}
             alt={"Elite"}
@@ -413,7 +413,7 @@ const TwCaroussel = ({ items }) => {
           }}
         >
           <StaticImage
-            id={"img1"}
+            id="img2"
             class="block w-full brightness-25"
             src={"../../assets/images/formation-professionnelle.jpeg"}
             alt={"Elite"}
@@ -449,7 +449,7 @@ const TwCaroussel = ({ items }) => {
           }}
         >
           <StaticImage
-            id={"img1"}
+            id="img3"
             class="block w-full brightness-25"
             src={"../../assets/images/pexels-cottonbro-studio-7014766.jpg"}
             alt={"Elite"}

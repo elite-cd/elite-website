@@ -29,12 +29,21 @@ const About = () => {
               "../../../assets/images/pexels-kampus-production-7983612 1.png"
             }
             alt={"Image 1"}
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
           />
 
           <div className={style.inner}>
             <StaticImage
               src={"../../../assets/images/Rectangle 56.png"}
               alt={"Image 2"}
+              style={{
+                height: "100%",
+                width: "100%",
+                opacity: "70%",
+              }}
             />
 
             <div className={style.inner}>
@@ -43,6 +52,11 @@ const About = () => {
                 objectFit={"contain"}
                 src={"../../../assets/images/question_mark.png"}
                 alt={"Image 3"}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  opacity: "70%",
+                }}
               />
 
               <div className={style.contact_content}>

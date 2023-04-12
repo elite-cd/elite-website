@@ -23,6 +23,18 @@
   object-fit: cover;
 }
 
+#img2 {
+  z-index: 999;
+  height: 650px;
+  object-fit: cover;
+}
+
+#img3 {
+  z-index: 999;
+  height: 650px;
+  object-fit: cover;
+}
+
 .container2 {
   width: 80%;
 }
@@ -80,6 +92,12 @@
     line-height: 2rem !important;
   }
   #img1 {
+    height: 500px;
+  }
+  #img2 {
+    height: 500px;
+  }
+  #img3 {
     height: 500px;
   }
   .centerContent {
