@@ -119,6 +119,7 @@ const Home = ({ carouselItems, map }) => {
           }         
         }, [carouselPrev]);
 
+        // Attention
         useEffect(() => {
           const myCarousel = new te.Carousel(document.getElementById("carouselExampleIndicators"));
           myCarousel.cycle();
@@ -140,15 +141,17 @@ const Home = ({ carouselItems, map }) => {
         }, [msgSender]);
 
         useEffect(() => {
-          (loader === true) && (document.getElementById("loader").classList.remove("hidden"))
+          (loader === true) ? (document.getElementById("loader").classList.remove("hidden")) : (document.getElementById("loader").classList.add("hidden"))
         }, [loader]);
 
         const sendEmail = (e) => {
 
-          setMsgSender(true);
+          setLoader(true);
           e.preventDefault();
  
-          emailjs.sendForm('service_zo9rk47', 'template_ljx9qhl', form.current, 'AnOf892YduB4OgaT5')
+          setTimeout(() => {
+            
+            emailjs.sendForm('service_zo9rk47', 'template_ljx9qhl', form.current, 'AnOf892YduB4OgaT5')
             .then((result) => {
                 console.log(result.text);
                 setMsgSender(true)
@@ -157,6 +160,8 @@ const Home = ({ carouselItems, map }) => {
                 console.log(error.text);
                 setLoader(false);
             });
+
+          }, 3000);
         };
 
         const sendNewsLetter = (e) => {
