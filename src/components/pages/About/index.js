@@ -25,7 +25,6 @@ const About = () => {
       <div className={style.container}>
         <div className={style.parent}>
           <StaticImage
-            className={"img"}
             src={
               "../../../assets/images/pexels-kampus-production-7983612 1.png"
             }
@@ -34,7 +33,6 @@ const About = () => {
 
           <div className={style.inner}>
             <StaticImage
-              className={"img"}
               src={"../../../assets/images/Rectangle 56.png"}
               alt={"Image 2"}
             />
