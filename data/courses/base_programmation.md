@@ -12,6 +12,6 @@ students: "254"
 price: 200
 image: images/pexels-cottonbro-studio-7014766.jpg
 img2: images/pexels-katerina-holmes-5905700.jpg
-icon1: images/backend.png
+icon1: images/dev-web.png
 icon2: images/data_science.png
 videoUrl: https://www.youtube.com/watch?v=r7HlR2oFNuI

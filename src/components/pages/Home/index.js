@@ -180,7 +180,7 @@ const Home = ({ carouselItems, map }) => {
             setLoader(false);
           }
         );
-    }, 2000);
+    }, 1000);
   };
 
   const sendNewsLetter = (e) => {
@@ -256,7 +256,7 @@ const Home = ({ carouselItems, map }) => {
           {renderOverlayComponent(overlayIndex)}
 
           <div
-            class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1 flex justify-between"
+            class="grid grid-cols-3 gap-7 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 flex justify-between"
             style={{ width: "90%" }}
           >
             <div>
@@ -995,17 +995,13 @@ const Home = ({ carouselItems, map }) => {
             <div className={style.contact_content}>
               <div class="grid grid-cols-2" style={{ width: "100%" }}>
                 <div>
-                  <div class="grid grid-rows-4 grid-flow-col max-sm:hidden">
-                    <div
-                      style={{
-                        color: "#FCCC25",
-                        fontWeight: "800",
-                        fontSize: "35px",
-                        marginRight: "auto",
-                      }}
-                    >
-                      Contactez-nous
-                    </div>
+                  <div
+                    class={
+                      "grid grid-rows-4 grid-flow-col max-sm:hidden " +
+                      style.contactUs
+                    }
+                  >
+                    <div class={style.contactTile}>Contactez-nous</div>
                     <div>
                       <ul
                         style={{
@@ -1064,7 +1060,7 @@ const Home = ({ carouselItems, map }) => {
                         <ul className={style.help__form}>
                           <li style={{ display: "inline-flex" }}>
                             <input
-                              id="username"
+                              id="user_email"
                               type="text"
                               placeholder="Adresse E-mail"
                               className={style.help__email}
@@ -1133,11 +1129,8 @@ const Home = ({ carouselItems, map }) => {
             className={style.newsletter__title}
             style={{ paddingBottom: "20px", marginTop: "20px", width: "50%" }}
           >
-            <span
-              className={style.signup__text}
-              style={{ fontSize: "32", fontWeight: "800" }}
-            >
-              Restez informé de nos nouveautés
+            <span className={style.signup__text} style={{ fontWeight: "800" }}>
+              Restes connecté à l'univers Elite
             </span>
             <br />
             <p className={style.newsletter__desc}>
