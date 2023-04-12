@@ -2,9 +2,13 @@ import * as React from "react";
 import * as style from "./caroussel.scss";
 import T from "prop-types";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import img1 from "../../assets/images/formation-professionnelle.jpeg";
+import img2 from "../../assets/images/pexels-mart-production-7550542.jpg";
+import img3 from "../../assets/images/pexels-cottonbro-studio-7014766.jpg";
 import icon1 from "../../assets/images/Twitter_100px.png";
 import icon2 from "../../assets/images/LinkedIn_100px.png";
 import icon3 from "../../assets/images/Facebook_100px.png";
+import logo from "../../assets/images/logo.png";
 import { useEffect, useState } from "react";
 import { useIntl } from "gatsby-plugin-intl";
 import { ROUTES } from "../../common/constants";
@@ -231,10 +235,10 @@ const TwCaroussel = ({ items }) => {
       >
         <div class="absoulte flex w-full flex-wrap items-center justify-between px-6">
           <a href={ROUTES.INDEX}>
-            <StaticImage
+            <img
               class="block h-14 w-auto lg:hidden py-2"
-              src={"../../assets/images/logo.png"}
-              alt={"Elite"}
+              src={logo}
+              alt="Elite"
             />
           </a>
 
@@ -376,11 +380,46 @@ const TwCaroussel = ({ items }) => {
             zIndex: "1",
           }}
         >
-          <StaticImage
+          <img
+            src={img2}
             id="img1"
             class="block w-full brightness-25"
-            src={"../../assets/images/pexels-mart-production-7550542.jpg"}
-            alt={"Elite"}
+            alt="..."
+          />
+          <div class="absolute inset-x-[15%] bottom-5 py-9 text-center text-white md:block my-28 centerContent">
+            <h1 class="text-xl" id="centerText">
+              Choisis d'être le meilleur !
+            </h1>
+            <br />
+            <br />
+            <p>
+              <div class="flex justify-center space-x-2">
+                <a
+                  id="centerBtn"
+                  href={ROUTES.SIGNUP}
+                  class="hover:border-black-400 hover:ring-black-400 hover:ring-2 inline-block bg-warning px-7 pt-4 pb-2.5 text-sm font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-white hover:text-black hover:yellow-400"
+                >
+                  Démarrez votre formation
+                </a>
+              </div>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+          data-te-carousel-item
+          style={{
+            backfaceVisibility: "hidden",
+            position: "relative",
+            zIndex: "1",
+          }}
+        >
+          <img
+            src={img1}
+            id="img1"
+            class="block w-full brightness-25"
+            alt="..."
           />
 
           <div class="absolute inset-x-[15%] bottom-5 py-9 text-center text-white md:block my-28 centerContent">
@@ -412,47 +451,11 @@ const TwCaroussel = ({ items }) => {
             zIndex: "1",
           }}
         >
-          <StaticImage
-            id="img2"
+          <img
+            src={img3}
+            id="img1"
             class="block w-full brightness-25"
-            src={"../../assets/images/formation-professionnelle.jpeg"}
-            alt={"Elite"}
-          />
-
-          <div class="absolute inset-x-[15%] bottom-5 py-9 text-center text-white md:block my-28 centerContent">
-            <h1 class="text-xl" id="centerText">
-              Choisis d'être le meilleur !
-            </h1>
-            <br />
-            <br />
-            <p>
-              <div class="flex justify-center space-x-2">
-                <a
-                  id="centerBtn"
-                  href={ROUTES.SIGNUP}
-                  class="hover:border-black-400 hover:ring-black-400 hover:ring-2 inline-block bg-warning px-7 pt-4 pb-2.5 text-sm font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-white hover:text-black hover:yellow-400"
-                >
-                  Démarrez votre formation
-                </a>
-              </div>
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-          data-te-carousel-item
-          style={{
-            backfaceVisibility: "hidden",
-            position: "relative",
-            zIndex: "1",
-          }}
-        >
-          <StaticImage
-            id="img3"
-            class="block w-full brightness-25"
-            src={"../../assets/images/pexels-cottonbro-studio-7014766.jpg"}
-            alt={"Elite"}
+            alt="..."
           />
 
           <div class="absolute inset-x-[15%] bottom-5 py-9 text-center text-white md:block my-28 centerContent">

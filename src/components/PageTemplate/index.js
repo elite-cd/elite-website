@@ -57,7 +57,7 @@ const Page = ({ children, activeRoute }) => {
   const courses = data.courses.edges.map((edge) => edge.node.frontmatter);
   return (
     <div className={style.page}>
-      {activeRoute !== "/" && (
+      {activeRoute !== "/" && activeRoute !== "/academie" && (
         <TwMenu courses={courses} activeRoute={activeRoute} />
       )}
 
