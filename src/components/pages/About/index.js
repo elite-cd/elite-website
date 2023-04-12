@@ -2,18 +2,8 @@ import React from "react";
 import { ROUTES } from "../../../common/constants";
 import Page from "../../PageTemplate";
 import * as style from "./About.module.scss";
-import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
-import contactImg from "../../../assets/images/pexels-kampus-production-7983612 1.png";
-import contactImg2 from "../../../assets/images/Rectangle 56.png";
-import contactImg3 from "../../../assets/images/question_mark.png";
-
-import contactIcon1 from "../../../assets/images/Marker_100px.png";
-import contactIcon2 from "../../../assets/images/WhatsApp_100px.png";
-import contactIcon3 from "../../../assets/images/Message Filled_100px.png";
-import img1 from "../../../assets/images/mentor.png";
-import img2 from "../../../assets/images/qualify.png";
-import img3 from "../../../assets/images/computer.png";
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -34,12 +24,28 @@ const About = () => {
     return (
       <div className={style.container}>
         <div className={style.parent}>
-          <img src={contactImg} />
+          <StaticImage
+            className={"img"}
+            src={
+              "../../../assets/images/pexels-kampus-production-7983612 1.png"
+            }
+            alt={"Image 1"}
+          />
+
           <div className={style.inner}>
-            <img src={contactImg2} />
+            <StaticImage
+              className={"img"}
+              src={"../../../assets/images/Rectangle 56.png"}
+              alt={"Image 2"}
+            />
 
             <div className={style.inner}>
-              <img src={contactImg3} className={style.question} />
+              <StaticImage
+                className={style.question}
+                objectFit={"contain"}
+                src={"../../../assets/images/question_mark.png"}
+                alt={"Image 3"}
+              />
 
               <div className={style.contact_content}>
                 <div
