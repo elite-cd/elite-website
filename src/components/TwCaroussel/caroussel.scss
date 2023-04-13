@@ -2,7 +2,7 @@
   width: 80%;
 }
 
-#centerMenu ul li a{
+#centerMenu ul li a {
   font-size: 14px;
 }
 #centerText {
@@ -10,9 +10,9 @@
 }
 
 #centerBtn {
-  border-radius: 30px; 
-  font-weight: 600; 
-  text-transform: initial; 
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: initial;
   height: 55px;
   width: 300px;
 }
@@ -20,14 +20,26 @@
 #img1 {
   z-index: 999;
   height: 650px;
-  object-fit:cover;
+  object-fit: cover;
+}
+
+#img2 {
+  z-index: 999;
+  height: 650px;
+  object-fit: cover;
+}
+
+#img3 {
+  z-index: 999;
+  height: 650px;
+  object-fit: cover;
 }
 
 .container2 {
   width: 80%;
 }
 
-#centerMenu2 ul li a{
+#centerMenu2 ul li a {
   font-size: 14px;
 }
 #centerText2 {
@@ -35,9 +47,9 @@
 }
 
 #centerBtn2 {
-  border-radius: 30px; 
-  font-weight: 600; 
-  text-transform: initial; 
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: initial;
   height: 55px;
   width: 300px;
 }
@@ -45,7 +57,7 @@
 #img2 {
   z-index: 999;
   height: 650px;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -53,20 +65,19 @@
     width: 100%;
   }
 
-  #centerMenu ul li a{
+  #centerMenu ul li a {
     font-size: 12px;
   }
 
   #centerText {
     font-size: 34px;
   }
-  
 
   .container2 {
     width: 100%;
   }
 
-  #centerMenu2 ul li a{
+  #centerMenu2 ul li a {
     font-size: 12px;
   }
 
@@ -83,6 +94,12 @@
   #img1 {
     height: 500px;
   }
+  #img2 {
+    height: 500px;
+  }
+  #img3 {
+    height: 500px;
+  }
   .centerContent {
     top: 80px;
   }
@@ -97,7 +114,7 @@
   height: 43px;
 }
 #activeBtn2:active {
-  border-bottom-color: #00A19A;
+  border-bottom-color: #00a19a;
   border-width: 3px;
   background-color: transparent;
   border-top-color: transparent;
@@ -106,7 +123,7 @@
 }
 
 #activeBtn2:focus {
-  border-bottom-color: #00A19A;
+  border-bottom-color: #00a19a;
   border-width: 3px;
   background-color: transparent;
   border-top-color: transparent;
@@ -114,7 +131,7 @@
   border-right-color: transparent;
 }
 #activeBtn2::before {
-  border-bottom-color: #00A19A;
+  border-bottom-color: #00a19a;
   border-width: 3px;
   background-color: transparent;
   border-top-color: transparent;
@@ -123,7 +140,7 @@
 }
 
 #activeBtn2::after {
-  border-bottom-color: #00A19A;
+  border-bottom-color: #00a19a;
   border-width: 3px;
   background-color: transparent;
   border-top-color: transparent;
@@ -132,7 +149,7 @@
 }
 
 .activeIndex {
-  border-bottom-color: #00A19A;
+  border-bottom-color: #00a19a;
   border-width: 3px;
   background-color: transparent;
   border-top-color: transparent;
