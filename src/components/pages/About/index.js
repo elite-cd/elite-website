@@ -2,7 +2,7 @@ import React from "react";
 import { ROUTES } from "../../../common/constants";
 import Page from "../../PageTemplate";
 import * as style from "./About.module.scss";
-import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import contactImg from "../../../assets/images/pexels-kampus-production-7983612 1.png";
 import contactImg2 from "../../../assets/images/Rectangle 56.png";
