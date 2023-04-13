@@ -53,9 +53,12 @@ const About = () => {
                 src={"../../../assets/images/question_mark.png"}
                 alt={"Image 3"}
                 style={{
-                  height: "100%",
-                  width: "100%",
-                  opacity: "70%",
+                  height: "32%",
+                  width: "12%",
+                  opacity: "200%",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  marginTop: "15%",
                 }}
               />
 

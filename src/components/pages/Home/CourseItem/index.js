@@ -3,7 +3,6 @@ import T from "prop-types";
 import * as React from "react";
 import { ButtonLink } from "../../../Button";
 import * as style from "./CourseItem.module.scss";
-import { Link } from "gatsby";
 
 const CourseItem = ({
   title,
@@ -73,7 +72,7 @@ const CourseItem = ({
 
         <div className={style.btn_container}>
           {outlined ? (
-            <Link
+            <a
               style={{
                 borderRadius: "10px",
                 textTransform: "initial",
@@ -81,13 +80,13 @@ const CourseItem = ({
                 height: "40px",
                 backgroundColor: "#00A19A",
               }}
-              to={`/courses/${slug}`}
+              href={`/courses/${slug}`}
               className="inline-block px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#046059] transition duration-150 ease-in-out hover:bg-yellow-500"
             >
               En savoir plus
-            </Link>
+            </a>
           ) : (
-            <Link
+            <a
               style={{
                 borderRadius: "10px",
                 textTransform: "initial",
@@ -95,11 +94,11 @@ const CourseItem = ({
                 height: "40px",
                 backgroundColor: "white",
               }}
-              to={`/courses/${slug}`}
+              href={`/courses/${slug}`}
               className="inline-block bg-white px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_#046059] transition duration-150 ease-in-out hover:bg-teal-500"
             >
               En savoir plus
-            </Link>
+            </a>
           )}
         </div>
       </div>
