@@ -4,8 +4,6 @@ import { useIntl } from "gatsby-plugin-intl";
 import T from "prop-types";
 import * as React from "react";
 import { ROUTES } from "../../../common/constants";
-import ButtonRounded from "../../Button/button-rounded";
-import Carousel from "../../Carousel";
 import TwCaroussel from "../../TwCaroussel";
 
 import Page from "../../PageTemplate";
