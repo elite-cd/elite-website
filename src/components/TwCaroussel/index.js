@@ -184,7 +184,7 @@ const TwCaroussel = ({ items }) => {
                                                 rounded-md px-9 py-2 flex items-center 
                                                 text-xs uppercase font-bold leading-snug text-white
                                                 active:bg-teal-600 focus:outline-none focus:bg-teal-600"
-                  href={ROUTES.CONTACT}
+                  href={ROUTES.INDEX + "#contact_section"}
                 >
                   Contacts
                 </a>
@@ -310,7 +310,7 @@ const TwCaroussel = ({ items }) => {
                 <li class="p-2" data-te-nav-item-ref>
                   <a
                     class="text-teal-400 disabled:text-black/30 lg:px-2 [&.active]:text-black/90"
-                    href="#"
+                    href={ROUTES.INDEX}
                     data-te-nav-link-ref
                   >
                     <span style={{ fontSize: "18px", fontWeight: "bold" }}>
@@ -374,7 +374,7 @@ const TwCaroussel = ({ items }) => {
                 <li class="p-2" data-te-nav-item-ref>
                   <a
                     class="p-0 text-white hover:text-teal-400 focus:text-teal-400 disabled:text-black/30 lg:px-2 [&.active]:text-black/90"
-                    href="#"
+                    href={ROUTES.ABOUT}
                     data-te-nav-link-ref
                   >
                     {intl.formatMessage({ id: "menu-item.label.about" })}
@@ -384,7 +384,7 @@ const TwCaroussel = ({ items }) => {
                 <li class="p-2" data-te-nav-item-ref>
                   <a
                     class="p-0 text-white hover:text-teal-400 focus:text-teal-400 disabled:text-black/30 lg:px-2 [&.active]:text-black/90"
-                    href="#"
+                    href={ROUTES.CONTACT + "#contact_section"}
                     data-te-nav-link-ref
                   >
                     {intl.formatMessage({ id: "menu-item.label.contacts" })}

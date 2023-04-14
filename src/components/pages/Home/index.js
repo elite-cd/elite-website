@@ -19,12 +19,12 @@ import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import "./styles.css";
 
-import img1 from "../../../assets/images/mentor.png";
-import img2 from "../../../assets/images/qualify.png";
-import img3 from "../../../assets/images/computer.png";
-import img4 from "../../../assets/images/pedagogie.png";
-import img5 from "../../../assets/images/professional.png";
-import img6 from "../../../assets/images/certificat.png";
+import img1 from "../../../assets/images/to-learn-gb120f4a96_1920.jpg";
+import img2 from "../../../assets/images/education-g0a1924b6c_1920.png";
+import img3 from "../../../assets/images/coding-g486fa6d97_1280.png";
+import img4 from "../../../assets/images/graduate-g37719b1cc_1280.png";
+import img5 from "../../../assets/images/man-g5ae25b970_1920.jpg";
+import img6 from "../../../assets/images/education-gef2a32113_1280.png";
 
 import contactImg from "../../../assets/images/nous-contacter 1.png";
 import contactImg2 from "../../../assets/images/Rectangle 37.png";
@@ -987,7 +987,7 @@ const Home = ({ carouselItems, map }) => {
           </button>
         </section>
 
-        <div className={style.parent}>
+        <div className={style.parent} id="contact_section">
           <img src={contactImg} />
           <div className={style.inner}>
             <img src={contactImg2} />
@@ -1151,10 +1151,67 @@ const Home = ({ carouselItems, map }) => {
               data-te-modal-dialog-ref
               class="pointer-events-none absolute bottom-7 right-7 h-auto w-full translate-x-[100%] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]"
             >
-              <div class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
-                <div class="relative flex-auto p-4" data-te-modal-body-ref>
-                  Votre message a été envoyé avec succès ! Nous vous répondrons
-                  dans le bref délai.
+              <div
+                class="pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-success-100 bg-clip-padding text-sm text-success-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
+                id="static-example"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+                data-te-autohide="true"
+                data-te-toast-init
+                data-te-toast-show
+              >
+                <div class="flex items-center justify-between rounded-t-lg border-b-2 border-success/20 bg-success-100 bg-clip-padding px-4 pb-2 pt-2.5">
+                  <p class="flex items-center font-bold text-success-700">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="check-circle"
+                      class="mr-2 h-4 w-4 fill-current"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                      ></path>
+                    </svg>
+                    Message envoyé
+                  </p>
+                  <div class="flex items-center">
+                    <p class="text-xs text-success-700">
+                      Il y a {new Date().getSeconds()} secondes
+                    </p>
+                    <button
+                      type="button"
+                      class="ml-2 box-content rounded-none border-none opacity-80 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                      data-te-modal-dismiss
+                      aria-label="Close"
+                    >
+                      <span class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="h-6 w-6"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+                <div class="break-words rounded-b-lg bg-success-100 px-4 py-4 text-success-700">
+                  Merci de nous écrire, nous vous recontactons dans un bref
+                  délai
                 </div>
               </div>
             </div>

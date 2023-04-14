@@ -25,8 +25,8 @@
     line-height: 2.5rem !important;
 
     @media only screen and (max-width: 768px) {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       padding-top: 3rem;
       padding-bottom: 3rem;
     }
@@ -96,6 +96,7 @@
 .parent > img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 .inner {
@@ -451,7 +452,7 @@
   }
 
   .who {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-left: -10px;
     margin-right: -10px;
   }
