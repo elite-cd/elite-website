@@ -4,7 +4,7 @@ import Page from "../../PageTemplate";
 import * as style from "./About.module.scss";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
-import contactImg from "../../../assets/images/pexels-kampus-production-7983612 1.png"
+import contactImg from "../../../assets/images/pexels-fauxels-31843981-black.png"
 import contactImg2 from "../../../assets/images/Rectangle 56.png"
 import contactImg3 from "../../../assets/images/question_mark.png"
 import { useState, useEffect } from "react";
