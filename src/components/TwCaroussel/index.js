@@ -4,7 +4,7 @@ import T from "prop-types";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import img1 from "../../assets/images/formation-professionnelle.jpeg";
 import img2 from "../../assets/images/pexels-mart-production-7550542.jpg";
-import img3 from "../../assets/images/pexels-cottonbro-studio-7014766.jpg";
+import img3 from "../../assets/images/o-que-e-rh-tech-1.jpg";
 import icon1 from "../../assets/images/Twitter_100px.png";
 import icon2 from "../../assets/images/LinkedIn_100px.png";
 import icon3 from "../../assets/images/Facebook_100px.png";

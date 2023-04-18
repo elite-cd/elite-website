@@ -14,7 +14,9 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import emailjs from "@emailjs/browser";
 
-import styled from "styled-components";
+import "animate.css";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+
 import "./styles.css";
 
 import img1 from "../../../assets/images/to-learn-gb120f4a96_1920.jpg";
@@ -226,347 +228,43 @@ const Home = ({ carouselItems, map }) => {
             libérer et exploiter leur esprit créatif
           </p>
         </div>
-
-        <section className={style.course__section}>
-          <div className={style.courselist}>
-            {courses.map((course, i) => (
-              <CourseItem
-                key={"course-" + i}
-                title={course.title}
-                slug={course.slug}
-                description={course.description}
-                outlined={i % 2 === 0}
-                timeline={course.timeline}
-                price={course.price}
-                descTitle={course.shortDescription}
-                outcomes={[]}
-                image={course.image}
-                icon1={course.icon1}
-              />
-            ))}
-          </div>
-        </section>
+        <AnimationOnScroll animateIn="animate__fadeInUp">
+          <section className={style.course__section}>
+            <div className={style.courselist}>
+              {courses.map((course, i) => (
+                <CourseItem
+                  key={"course-" + i}
+                  title={course.title}
+                  slug={course.slug}
+                  description={course.description}
+                  outlined={i % 2 === 0}
+                  timeline={course.timeline}
+                  price={course.price}
+                  descTitle={course.shortDescription}
+                  outcomes={[]}
+                  image={course.image}
+                  icon1={course.icon1}
+                />
+              ))}
+            </div>
+          </section>
+        </AnimationOnScroll>
 
         <h3 id="about" className={style.about__header}>
           Pourquoi choisir l'académie des élites ?
         </h3>
-        <section className={style.about__container}>
-          {renderOverlayComponent(overlayIndex)}
+        <AnimationOnScroll>
+          <section className={style.about__container}>
+            {renderOverlayComponent(overlayIndex)}
 
-          <div
-            class="grid grid-cols-3 gap-7 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 flex justify-between"
-            style={{ width: "90%" }}
-          >
-            <div>
-              <div
-                class={
-                  "relative flex justify-center cursor-pointer transition-all duration-700 " +
-                  style.card
-                }
-              >
+            <div
+              class="grid grid-cols-3 gap-7 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 flex justify-between"
+              style={{ width: "90%" }}
+            >
+              <div>
                 <div
                   class={
-                    "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
-                    style.courseCard
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-6">
-                    <h5 class="mb-3 -mt-9">
-                      <img src={img1} class="h-32 max-xl:h-20" />
-                    </h5>
-                    <p
-                      class="mb-4 text-base text-teal-800"
-                      style={{
-                        fontSize: "20px",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Mentors de niveau international
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class={
-                    "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
-                    style.courseCard +
-                    " " +
-                    style.cardback
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-4">
-                    <p class={"mb-4 text-base " + style.longCardText}>
-                      {OverlayContents[0]}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="">
-              <div
-                class={
-                  "relative flex justify-center cursor-pointer transition-all duration-700 " +
-                  style.card
-                }
-              >
-                <div
-                  class={
-                    "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
-                    style.courseCard
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-6">
-                    <h5 class="mb-3 -mt-9">
-                      <img src={img2} class="h-32 max-xl:h-20" />
-                    </h5>
-                    <p
-                      class="mb-4 text-base text-teal-800"
-                      style={{
-                        fontSize: "20px",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Coachs qualifiés et pratiquants
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class={
-                    "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
-                    style.courseCard +
-                    " " +
-                    style.cardback
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-4">
-                    <p class={"mb-4 text-base " + style.longCardText}>
-                      {OverlayContents[1]}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="">
-              <div
-                class={
-                  "relative flex justify-center cursor-pointer transition-all duration-700 " +
-                  style.card
-                }
-              >
-                <div
-                  class={
-                    "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
-                    style.courseCard
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-6">
-                    <h5 class="mb-3 -mt-9">
-                      <img src={img3} class="h-32 max-xl:h-20" />
-                    </h5>
-                    <p
-                      class="mb-4 text-base text-teal-800"
-                      style={{
-                        fontSize: "20px",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Lab Creative (Canada)
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class={
-                    "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
-                    style.courseCard +
-                    " " +
-                    style.cardback
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-4">
-                    <p class={"mb-4 text-base " + style.longCardText}>
-                      {OverlayContents[2]}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="my-8">
-              <div
-                class={
-                  "relative flex justify-center cursor-pointer transition-all duration-700 " +
-                  style.card
-                }
-              >
-                <div
-                  class={
-                    "block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
-                    style.courseCard
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-6">
-                    <h5 class="mb-3 -mt-9">
-                      <img src={img4} class="h-32 max-xl:h-20" />
-                    </h5>
-                    <p
-                      class="mb-4 text-base text-teal-800"
-                      style={{
-                        fontSize: "20px",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Méthodes Harkness (USA)
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class={
-                    "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
-                    style.courseCard +
-                    " " +
-                    style.cardback
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-4">
-                    <p class={"mb-4 text-base " + style.longCardText}>
-                      {OverlayContents[3]}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="my-8">
-              <div
-                class={
-                  "relative flex justify-center cursor-pointer transition-all duration-700 " +
-                  style.card
-                }
-              >
-                <div
-                  class={
-                    "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
-                    style.courseCard
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-6">
-                    <h5 class="mb-3 -mt-9">
-                      <img src={img5} class="h-32 max-xl:h-20" />
-                    </h5>
-                    <p
-                      class="mb-4 text-base text-teal-800"
-                      style={{
-                        fontSize: "20px",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Environnement Professionnel et Sérieux
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class={
-                    "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
-                    style.courseCard +
-                    " " +
-                    style.cardback
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-4">
-                    <p class={"mb-4 text-base " + style.longCardText}>
-                      {OverlayContents[4]}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="my-8">
-              <div
-                class={
-                  "relative flex justify-center cursor-pointer transition-all duration-700 " +
-                  style.card
-                }
-              >
-                <div
-                  class={
-                    "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
-                    style.courseCard
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-6">
-                    <h5 class="mb-3 -mt-9">
-                      <img src={img6} class="h-32 max-xl:h-20" />
-                    </h5>
-                    <p
-                      class="mb-4 text-base text-teal-800"
-                      style={{
-                        fontSize: "20px",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Certificat
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class={
-                    "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
-                    style.courseCard +
-                    " " +
-                    style.cardback
-                  }
-                >
-                  <div class="py-3 px-6">&nbsp;</div>
-                  <div class="p-6">
-                    <p class="mb-4 text-base" style={{ fontSize: "1rem" }}>
-                      {OverlayContents[5]}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class={style.mobile_courseCard}>
-          <div
-            id="carouselExampleIndicators"
-            class="relative"
-            data-te-carousel-init
-            data-te-carousel-slide
-            data-te-interval="2000"
-            data-te-pause="hover"
-            data-te-touch="true"
-            data-te-wrap="true"
-          >
-            <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-              <div
-                class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                data-te-carousel-item
-                data-te-carousel-active
-              >
-                <div
-                  class={
-                    "block w-full flex justify-center cursor-pointer transition-all duration-700 " +
+                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
                     style.card
                   }
                 >
@@ -611,14 +309,270 @@ const Home = ({ carouselItems, map }) => {
                 </div>
               </div>
 
-              <div
-                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                data-te-carousel-item
-              >
-                <div class={style.rubrique}>
+              <div class="">
+                <div
+                  class={
+                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    style.card
+                  }
+                >
                   <div
                     class={
-                      "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                      "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      style.courseCard
+                    }
+                  >
+                    <div class="py-3 px-6">&nbsp;</div>
+                    <div class="p-6">
+                      <h5 class="mb-3 -mt-9">
+                        <img src={img2} class="h-32 max-xl:h-20" />
+                      </h5>
+                      <p
+                        class="mb-4 text-base text-teal-800"
+                        style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                        }}
+                      >
+                        Coachs qualifiés et pratiquants
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class={
+                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      style.courseCard +
+                      " " +
+                      style.cardback
+                    }
+                  >
+                    <div class="py-3 px-6">&nbsp;</div>
+                    <div class="p-4">
+                      <p class={"mb-4 text-base " + style.longCardText}>
+                        {OverlayContents[1]}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="">
+                <div
+                  class={
+                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    style.card
+                  }
+                >
+                  <div
+                    class={
+                      "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      style.courseCard
+                    }
+                  >
+                    <div class="py-3 px-6">&nbsp;</div>
+                    <div class="p-6">
+                      <h5 class="mb-3 -mt-9">
+                        <img src={img3} class="h-32 max-xl:h-20" />
+                      </h5>
+                      <p
+                        class="mb-4 text-base text-teal-800"
+                        style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                        }}
+                      >
+                        Lab Creative (Canada)
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class={
+                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      style.courseCard +
+                      " " +
+                      style.cardback
+                    }
+                  >
+                    <div class="py-3 px-6">&nbsp;</div>
+                    <div class="p-4">
+                      <p class={"mb-4 text-base " + style.longCardText}>
+                        {OverlayContents[2]}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="my-8">
+                <div
+                  class={
+                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    style.card
+                  }
+                >
+                  <div
+                    class={
+                      "block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      style.courseCard
+                    }
+                  >
+                    <div class="py-3 px-6">&nbsp;</div>
+                    <div class="p-6">
+                      <h5 class="mb-3 -mt-9">
+                        <img src={img4} class="h-32 max-xl:h-20" />
+                      </h5>
+                      <p
+                        class="mb-4 text-base text-teal-800"
+                        style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                        }}
+                      >
+                        Méthodes Harkness (USA)
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class={
+                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      style.courseCard +
+                      " " +
+                      style.cardback
+                    }
+                  >
+                    <div class="py-3 px-6">&nbsp;</div>
+                    <div class="p-4">
+                      <p class={"mb-4 text-base " + style.longCardText}>
+                        {OverlayContents[3]}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="my-8">
+                <div
+                  class={
+                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    style.card
+                  }
+                >
+                  <div
+                    class={
+                      "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      style.courseCard
+                    }
+                  >
+                    <div class="py-3 px-6">&nbsp;</div>
+                    <div class="p-6">
+                      <h5 class="mb-3 -mt-9">
+                        <img src={img5} class="h-32 max-xl:h-20" />
+                      </h5>
+                      <p
+                        class="mb-4 text-base text-teal-800"
+                        style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                        }}
+                      >
+                        Environnement Professionnel et Sérieux
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class={
+                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      style.courseCard +
+                      " " +
+                      style.cardback
+                    }
+                  >
+                    <div class="py-3 px-6">&nbsp;</div>
+                    <div class="p-4">
+                      <p class={"mb-4 text-base " + style.longCardText}>
+                        {OverlayContents[4]}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="my-8">
+                <div
+                  class={
+                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    style.card
+                  }
+                >
+                  <div
+                    class={
+                      "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      style.courseCard
+                    }
+                  >
+                    <div class="py-3 px-6">&nbsp;</div>
+                    <div class="p-6">
+                      <h5 class="mb-3 -mt-9">
+                        <img src={img6} class="h-32 max-xl:h-20" />
+                      </h5>
+                      <p
+                        class="mb-4 text-base text-teal-800"
+                        style={{
+                          fontSize: "20px",
+                          fontWeight: "700",
+                        }}
+                      >
+                        Certificat
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class={
+                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      style.courseCard +
+                      " " +
+                      style.cardback
+                    }
+                  >
+                    <div class="py-3 px-6">&nbsp;</div>
+                    <div class="p-6">
+                      <p class="mb-4 text-base" style={{ fontSize: "1rem" }}>
+                        {OverlayContents[5]}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </AnimationOnScroll>
+
+        <AnimationOnScroll>
+          <section class={style.mobile_courseCard}>
+            <div
+              id="carouselExampleIndicators"
+              class="relative"
+              data-te-carousel-init
+              data-te-carousel-slide
+              data-te-interval="2000"
+              data-te-pause="hover"
+              data-te-touch="true"
+              data-te-wrap="true"
+            >
+              <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+                <div
+                  class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                  data-te-carousel-item
+                  data-te-carousel-active
+                >
+                  <div
+                    class={
+                      "block w-full flex justify-center cursor-pointer transition-all duration-700 " +
                       style.card
                     }
                   >
@@ -631,7 +585,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img2} class="h-32 max-xl:h-20" />
+                          <img src={img1} class="h-32 max-xl:h-20" />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -640,7 +594,7 @@ const Home = ({ carouselItems, map }) => {
                             fontWeight: "700",
                           }}
                         >
-                          Coachs qualifiés et pratiquants
+                          Mentors de niveau international
                         </p>
                       </div>
                     </div>
@@ -662,274 +616,327 @@ const Home = ({ carouselItems, map }) => {
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div
-                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                data-te-carousel-item
-              >
-                <div class={style.rubrique}>
-                  <div
-                    class={
-                      "relative flex justify-center cursor-pointer transition-all duration-700 " +
-                      style.card
-                    }
-                  >
+                <div
+                  class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                  data-te-carousel-item
+                >
+                  <div class={style.rubrique}>
                     <div
                       class={
-                        "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
-                        style.courseCard
+                        "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                        style.card
                       }
                     >
-                      <div class="py-3 px-6">&nbsp;</div>
-                      <div class="p-6">
-                        <h5 class="mb-3 -mt-9">
-                          <img src={img3} class="h-32 max-xl:h-20" />
-                        </h5>
-                        <p
-                          class="mb-4 text-base text-teal-800"
-                          style={{
-                            fontSize: "20px",
-                            fontWeight: "700",
-                          }}
-                        >
-                          Lab Creative (Canada)
-                        </p>
+                      <div
+                        class={
+                          "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                          style.courseCard
+                        }
+                      >
+                        <div class="py-3 px-6">&nbsp;</div>
+                        <div class="p-6">
+                          <h5 class="mb-3 -mt-9">
+                            <img src={img2} class="h-32 max-xl:h-20" />
+                          </h5>
+                          <p
+                            class="mb-4 text-base text-teal-800"
+                            style={{
+                              fontSize: "20px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            Coachs qualifiés et pratiquants
+                          </p>
+                        </div>
+                      </div>
+
+                      <div
+                        class={
+                          "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                          style.courseCard +
+                          " " +
+                          style.cardback
+                        }
+                      >
+                        <div class="py-3 px-6">&nbsp;</div>
+                        <div class="p-4">
+                          <p class={"mb-4 text-base " + style.longCardText}>
+                            {OverlayContents[0]}
+                          </p>
+                        </div>
                       </div>
                     </div>
+                  </div>
+                </div>
 
+                <div
+                  class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                  data-te-carousel-item
+                >
+                  <div class={style.rubrique}>
                     <div
                       class={
-                        "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
-                        style.courseCard +
-                        " " +
-                        style.cardback
+                        "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                        style.card
                       }
                     >
-                      <div class="py-3 px-6">&nbsp;</div>
-                      <div class="p-4">
-                        <p class={"mb-4 text-base " + style.longCardText}>
-                          {OverlayContents[2]}
-                        </p>
+                      <div
+                        class={
+                          "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                          style.courseCard
+                        }
+                      >
+                        <div class="py-3 px-6">&nbsp;</div>
+                        <div class="p-6">
+                          <h5 class="mb-3 -mt-9">
+                            <img src={img3} class="h-32 max-xl:h-20" />
+                          </h5>
+                          <p
+                            class="mb-4 text-base text-teal-800"
+                            style={{
+                              fontSize: "20px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            Lab Creative (Canada)
+                          </p>
+                        </div>
+                      </div>
+
+                      <div
+                        class={
+                          "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                          style.courseCard +
+                          " " +
+                          style.cardback
+                        }
+                      >
+                        <div class="py-3 px-6">&nbsp;</div>
+                        <div class="p-4">
+                          <p class={"mb-4 text-base " + style.longCardText}>
+                            {OverlayContents[2]}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                  data-te-carousel-item
+                >
+                  <div class={style.rubrique}>
+                    <div
+                      class={
+                        "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                        style.card
+                      }
+                    >
+                      <div
+                        class={
+                          "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                          style.courseCard
+                        }
+                      >
+                        <div class="py-3 px-6">&nbsp;</div>
+                        <div class="p-6">
+                          <h5 class="mb-3 -mt-9">
+                            <img src={img4} class="h-32 max-xl:h-20" />
+                          </h5>
+                          <p
+                            class="mb-4 text-base text-teal-800"
+                            style={{
+                              fontSize: "20px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            Méthodes Harkness (USA)
+                          </p>
+                        </div>
+                      </div>
+
+                      <div
+                        class={
+                          "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                          style.courseCard +
+                          " " +
+                          style.cardback
+                        }
+                      >
+                        <div class="py-3 px-6">&nbsp;</div>
+                        <div class="p-4">
+                          <p class={"mb-4 text-base " + style.longCardText}>
+                            {OverlayContents[3]}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                  data-te-carousel-item
+                >
+                  <div class={style.rubrique}>
+                    <div
+                      class={
+                        "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                        style.card
+                      }
+                    >
+                      <div
+                        class={
+                          "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                          style.courseCard
+                        }
+                      >
+                        <div class="py-3 px-6">&nbsp;</div>
+                        <div class="p-6">
+                          <h5 class="mb-3 -mt-9">
+                            <img src={img5} class="h-32 max-xl:h-20" />
+                          </h5>
+                          <p
+                            class="mb-4 text-base text-teal-800"
+                            style={{
+                              fontSize: "20px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            Environnement Professionnel Sérieux
+                          </p>
+                        </div>
+                      </div>
+
+                      <div
+                        class={
+                          "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                          style.courseCard +
+                          " " +
+                          style.cardback
+                        }
+                      >
+                        <div class="py-3 px-6">&nbsp;</div>
+                        <div class="p-4">
+                          <p class={"mb-4 text-base " + style.longCardText}>
+                            {OverlayContents[4]}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                  data-te-carousel-item
+                >
+                  <div class={style.rubrique}>
+                    <div
+                      class={
+                        "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                        style.card
+                      }
+                    >
+                      <div
+                        class={
+                          "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                          style.courseCard
+                        }
+                      >
+                        <div class="py-3 px-6">&nbsp;</div>
+                        <div class="p-6">
+                          <h5 class="mb-3 -mt-9">
+                            <img src={img6} class="h-32 max-xl:h-20" />
+                          </h5>
+                          <p
+                            class="mb-4 text-base text-teal-800"
+                            style={{
+                              fontSize: "20px",
+                              fontWeight: "700",
+                            }}
+                          >
+                            Certificat
+                          </p>
+                        </div>
+                      </div>
+
+                      <div
+                        class={
+                          "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                          style.courseCard +
+                          " " +
+                          style.cardback
+                        }
+                      >
+                        <div class="py-3 px-6">&nbsp;</div>
+                        <div class="p-4">
+                          <p class={"mb-4 text-base"}>{OverlayContents[5]}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div
-                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                data-te-carousel-item
+              <button
+                class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black focus:text-black motion-reduce:transition-none"
+                type="button"
+                data-te-target="#carouselExampleIndicators"
+                data-te-slide="prev"
+                onClick={(e) => swipePrevCarousel}
               >
-                <div class={style.rubrique}>
-                  <div
-                    class={
-                      "relative flex justify-center cursor-pointer transition-all duration-700 " +
-                      style.card
-                    }
+                <span class="inline-block h-8 w-8">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-6 w-6"
                   >
-                    <div
-                      class={
-                        "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
-                        style.courseCard
-                      }
-                    >
-                      <div class="py-3 px-6">&nbsp;</div>
-                      <div class="p-6">
-                        <h5 class="mb-3 -mt-9">
-                          <img src={img4} class="h-32 max-xl:h-20" />
-                        </h5>
-                        <p
-                          class="mb-4 text-base text-teal-800"
-                          style={{
-                            fontSize: "20px",
-                            fontWeight: "700",
-                          }}
-                        >
-                          Méthodes Harkness (USA)
-                        </p>
-                      </div>
-                    </div>
-
-                    <div
-                      class={
-                        "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
-                        style.courseCard +
-                        " " +
-                        style.cardback
-                      }
-                    >
-                      <div class="py-3 px-6">&nbsp;</div>
-                      <div class="p-4">
-                        <p class={"mb-4 text-base " + style.longCardText}>
-                          {OverlayContents[3]}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                data-te-carousel-item
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 19.5L8.25 12l7.5-7.5"
+                    />
+                  </svg>
+                </span>
+                <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                  Previous
+                </span>
+              </button>
+              <button
+                class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black motion-reduce:transition-none"
+                type="button"
+                data-te-target="#carouselExampleIndicators"
+                data-te-slide="next"
+                onClick={(e) => swipeNextCarousel}
               >
-                <div class={style.rubrique}>
-                  <div
-                    class={
-                      "relative flex justify-center cursor-pointer transition-all duration-700 " +
-                      style.card
-                    }
+                <span class="inline-block h-8 w-8">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-6 w-6"
                   >
-                    <div
-                      class={
-                        "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
-                        style.courseCard
-                      }
-                    >
-                      <div class="py-3 px-6">&nbsp;</div>
-                      <div class="p-6">
-                        <h5 class="mb-3 -mt-9">
-                          <img src={img5} class="h-32 max-xl:h-20" />
-                        </h5>
-                        <p
-                          class="mb-4 text-base text-teal-800"
-                          style={{
-                            fontSize: "20px",
-                            fontWeight: "700",
-                          }}
-                        >
-                          Environnement Professionnel Sérieux
-                        </p>
-                      </div>
-                    </div>
-
-                    <div
-                      class={
-                        "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
-                        style.courseCard +
-                        " " +
-                        style.cardback
-                      }
-                    >
-                      <div class="py-3 px-6">&nbsp;</div>
-                      <div class="p-4">
-                        <p class={"mb-4 text-base " + style.longCardText}>
-                          {OverlayContents[4]}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                data-te-carousel-item
-              >
-                <div class={style.rubrique}>
-                  <div
-                    class={
-                      "relative flex justify-center cursor-pointer transition-all duration-700 " +
-                      style.card
-                    }
-                  >
-                    <div
-                      class={
-                        "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
-                        style.courseCard
-                      }
-                    >
-                      <div class="py-3 px-6">&nbsp;</div>
-                      <div class="p-6">
-                        <h5 class="mb-3 -mt-9">
-                          <img src={img6} class="h-32 max-xl:h-20" />
-                        </h5>
-                        <p
-                          class="mb-4 text-base text-teal-800"
-                          style={{
-                            fontSize: "20px",
-                            fontWeight: "700",
-                          }}
-                        >
-                          Certificat
-                        </p>
-                      </div>
-                    </div>
-
-                    <div
-                      class={
-                        "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
-                        style.courseCard +
-                        " " +
-                        style.cardback
-                      }
-                    >
-                      <div class="py-3 px-6">&nbsp;</div>
-                      <div class="p-4">
-                        <p class={"mb-4 text-base"}>{OverlayContents[5]}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </span>
+                <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                  Next
+                </span>
+              </button>
             </div>
-            <button
-              class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black focus:text-black motion-reduce:transition-none"
-              type="button"
-              data-te-target="#carouselExampleIndicators"
-              data-te-slide="prev"
-              onClick={(e) => swipePrevCarousel}
-            >
-              <span class="inline-block h-8 w-8">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15.75 19.5L8.25 12l7.5-7.5"
-                  />
-                </svg>
-              </span>
-              <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                Previous
-              </span>
-            </button>
-            <button
-              class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black motion-reduce:transition-none"
-              type="button"
-              data-te-target="#carouselExampleIndicators"
-              data-te-slide="next"
-              onClick={(e) => swipeNextCarousel}
-            >
-              <span class="inline-block h-8 w-8">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                  />
-                </svg>
-              </span>
-              <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                Next
-              </span>
-            </button>
-          </div>
-        </section>
+          </section>
+        </AnimationOnScroll>
 
         <section className={style.signup__container}>
           <div class="flex w-full flex-wrap items-center justify-between">

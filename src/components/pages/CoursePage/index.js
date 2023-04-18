@@ -12,6 +12,8 @@ import React from "react";
 import { ROUTES } from "../../../common/constants";
 import Page from "../../PageTemplate";
 import * as style from "./CoursePage.module.scss";
+import "animate.css";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const CoursePage = ({ course, otherCourses }) => {
   const outcomesList = course.outcomes.split(",");
@@ -74,7 +76,7 @@ const CoursePage = ({ course, otherCourses }) => {
       <div className={style.container}>
         <div class="px-1 py-24">
           <div class="relative block md:flex items-center">
-            <div class="w-full md:w-1/2 relative z-1 bg-gray-100 rounded shadow-lg overflow-hidden">
+            <div class="w-full md:w-2/4 relative z-1 bg-gray-100 rounded shadow-lg overflow-hidden h-[520px]">
               <div class="text-lg font-semibold text-teal-800 uppercase p-8 text-center border-b border-gray-200 tracking-wide">
                 {course.title}
               </div>
