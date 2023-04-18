@@ -273,7 +273,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img1} style={{ height: "80px" }} />
+                      <img src={img1} class="h-32 max-xl:h-20" />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -321,7 +321,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img2} style={{ height: "80px" }} />
+                      <img src={img2} class="h-32 max-xl:h-20" />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -369,7 +369,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img3} style={{ height: "80px" }} />
+                      <img src={img3} class="h-32 max-xl:h-20" />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -417,7 +417,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img4} style={{ height: "80px" }} />
+                      <img src={img4} class="h-32 max-xl:h-20" />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -465,7 +465,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img5} style={{ height: "80px" }} />
+                      <img src={img5} class="h-32 max-xl:h-20" />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -513,7 +513,7 @@ const Home = ({ carouselItems, map }) => {
                   <div class="py-3 px-6">&nbsp;</div>
                   <div class="p-6">
                     <h5 class="mb-3 -mt-9">
-                      <img src={img6} style={{ height: "80px" }} />
+                      <img src={img6} class="h-32 max-xl:h-20" />
                     </h5>
                     <p
                       class="mb-4 text-base text-teal-800"
@@ -579,7 +579,7 @@ const Home = ({ carouselItems, map }) => {
                     <div class="py-3 px-6">&nbsp;</div>
                     <div class="p-6">
                       <h5 class="mb-3 -mt-9">
-                        <img src={img1} style={{ height: "80px" }} />
+                        <img src={img1} class="h-32 max-xl:h-20" />
                       </h5>
                       <p
                         class="mb-4 text-base text-teal-800"
@@ -631,7 +631,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img2} style={{ height: "80px" }} />
+                          <img src={img2} class="h-32 max-xl:h-20" />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -684,7 +684,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img3} style={{ height: "80px" }} />
+                          <img src={img3} class="h-32 max-xl:h-20" />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -737,7 +737,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img4} style={{ height: "80px" }} />
+                          <img src={img4} class="h-32 max-xl:h-20" />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -790,7 +790,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img5} style={{ height: "80px" }} />
+                          <img src={img5} class="h-32 max-xl:h-20" />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -843,7 +843,7 @@ const Home = ({ carouselItems, map }) => {
                       <div class="py-3 px-6">&nbsp;</div>
                       <div class="p-6">
                         <h5 class="mb-3 -mt-9">
-                          <img src={img6} style={{ height: "80px" }} />
+                          <img src={img6} class="h-32 max-xl:h-20" />
                         </h5>
                         <p
                           class="mb-4 text-base text-teal-800"
@@ -1075,9 +1075,7 @@ const Home = ({ carouselItems, map }) => {
                             <textarea
                               className={style.help__field}
                               name="message"
-                            >
-                              Message
-                            </textarea>
+                            ></textarea>
                           </li>
                           <li
                             style={{
