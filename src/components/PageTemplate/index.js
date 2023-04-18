@@ -2,9 +2,9 @@ import { graphql, useStaticQuery } from "gatsby";
 import T from "prop-types";
 import * as React from "react";
 import Footer from "../Footer";
-import Menu from "../Menu";
 import * as style from "./style.module.scss";
 import TwMenu from "../TwMenu";
+import Menu from "../TwCaroussel/Menu";
 
 const Page = ({ children, activeRoute }) => {
   const data = useStaticQuery(graphql`
@@ -55,11 +55,14 @@ const Page = ({ children, activeRoute }) => {
     }
   `);
   const courses = data.courses.edges.map((edge) => edge.node.frontmatter);
+  const whiteMenu = activeRoute === "/" ? false : true;
+
   return (
     <div className={style.page}>
-      {activeRoute !== "/" && (
-        <TwMenu courses={courses} activeRoute={activeRoute} />
-      )}
+      <Menu activeRoute={activeRoute} items={courses} whiteMenu={whiteMenu} />
+      {activeRoute !== "/" ? (
+        <TwMenu items={courses} isWhiteMenu={whiteMenu} />
+      ) : null}
 
       {typeof children === "function" ? children(courses) : children}
       <Footer courses={courses} />
