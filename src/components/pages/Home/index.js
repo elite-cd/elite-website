@@ -253,7 +253,7 @@ const Home = ({ carouselItems, map }) => {
         <h3 id="about" className={style.about__header}>
           Pourquoi choisir l'académie des élites ?
         </h3>
-        <AnimationOnScroll>
+        <AnimationOnScroll animateIn="animate__fadeInUp">
           <section className={style.about__container}>
             {renderOverlayComponent(overlayIndex)}
 
@@ -552,7 +552,7 @@ const Home = ({ carouselItems, map }) => {
           </section>
         </AnimationOnScroll>
 
-        <AnimationOnScroll>
+        <AnimationOnScroll animateIn="animate__fadeInUp">
           <section class={style.mobile_courseCard}>
             <div
               id="carouselExampleIndicators"

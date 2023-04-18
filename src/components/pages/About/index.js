@@ -104,7 +104,7 @@ const About = () => {
       <div className={style.container}>
         <div className={style.parent}>
           <StaticImage
-            src={"../../../assets/images/pexels-fauxels-31843981-black.png"}
+            src={"../../../assets/images/iStock-1201798767-1 black.jpg"}
             alt={"Image 1"}
             style={{
               height: "100%",
