@@ -3,6 +3,7 @@ import * as style from "./style.module.scss";
 import logo from "../../assets/images/Elite_Logo_PNG.png";
 import { ROUTES } from "../../common/constants";
 
+
 const Footer = ({ courses }) => {
   return (
     <footer class={"text-center text-white lg:text-left " + style.footer}>
@@ -33,6 +34,7 @@ const Footer = ({ courses }) => {
                 </a>
               </p>
             ))}
+          
           </div>
           <div class="max-sm:hidden">
             <h6 class="mb-6 flex justify-center sm:font-bold xs:font-extrabold uppercase md:justify-start">
@@ -94,6 +96,7 @@ const Footer = ({ courses }) => {
         <div class="flex justify-center">
           <a
             href="https://www.facebook.com/elitescd/"
+
             class="hover:text-yellow-500 mr-6 text-white"
           >
             <svg
