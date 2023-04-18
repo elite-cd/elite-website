@@ -14,12 +14,13 @@ import contactIcon1 from "../../../assets/images/Marker_100px.png"
 import contactIcon2 from "../../../assets/images/WhatsApp_100px.png"
 import contactIcon3 from "../../../assets/images/Message Filled_100px.png"
 
-import img1 from "../../../assets/images/mentor.png"
-import img2 from "../../../assets/images/qualify.png"
-import img3 from "../../../assets/images/computer.png"
-import img4 from "../../../assets/images/pedagogie.png"
-import img5 from "../../../assets/images/professional.png"
-import img6 from "../../../assets/images/certificat.png"
+import img1 from "../../../assets/images/to-learn-gb120f4a96_1920.jpg"
+import img2 from "../../../assets/images/education-g0a1924b6c_1920.png"
+import img3 from "../../../assets/images/coding-g486fa6d97_1280.png"
+import img4 from "../../../assets/images/graduate-g37719b1cc_1280.png"
+import img5 from "../../../assets/images/man-g5ae25b970_1920.jpg"
+import img6 from "../../../assets/images/education-gef2a32113_1280.png"
+
 import team1 from "../../../assets/images/1605394670888.jpg"
 import team2 from "../../../assets/images/team2.jpeg"
 import team3 from "../../../assets/images/team3.jpg"
@@ -392,7 +393,7 @@ useEffect(() => {
 
             <div
               class={"relative block max-w-sm rounded-lg text-center " + style.courseCard}>
-              <div class="text-center">
+              <div class="text-center mt-3">
                 <img
                   src={team1}
                   class="mx-auto mb-4 w-40 rounded-full bg-gray-200"
@@ -421,7 +422,7 @@ useEffect(() => {
 
             <div
               class={"relative block max-w-sm rounded-lg text-center " + style.courseCard}>
-              <div class="text-center">
+              <div class="text-center mt-3">
                 <img
                   src={team3}
                   class="mx-auto mb-4 w-40 rounded-full bg-gray-200"
@@ -450,7 +451,7 @@ useEffect(() => {
 
             <div
               class={"relative block max-w-sm rounded-lg text-center " + style.courseCard}>
-              <div class="text-center">
+              <div class="text-center mt-3">
                 <img
                   src={team2}
                   class="mx-auto mb-4 w-40 h-40 rounded-full bg-gray-200"

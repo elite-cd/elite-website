@@ -8,7 +8,7 @@
 .container {
   width: 90%;
   margin: auto;
-  margin-bottom: 3rem;
+  margin-top: -4.5rem;
 }
 
 .hero {
@@ -225,4 +225,20 @@
   color: #e9ab3e;
   border: 2px solid #e9ab3e;
   cursor: pointer;
+}
+.description {
+  text-align: justify;
+  line-height: 1.2rem !important;
+  font-size: 18px;
+  @media only screen and (max-width: 768px) {
+    font-size: 16px;
+    text-align: justify;
+  }
+}
+
+.image {
+  height: 500px;
+  @media only screen and (max-width: 768px) {
+    height: 300px;  
+  }
 }
