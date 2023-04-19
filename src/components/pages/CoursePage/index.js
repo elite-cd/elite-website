@@ -19,47 +19,6 @@ const CoursePage = ({ course, otherCourses }) => {
   const outcomesList = course.outcomes.split(",");
   const srcImage = getSrc(course.image);
 
-  const modules = {
-    values: [],
-  };
-  switch (course.slug) {
-    case "base-programmation":
-      modules.values = [
-        "Création des sites web",
-        "Création des applications mobiles et web",
-        "Techniques de création des GUI",
-        "Formation complète python",
-        "Le web avec Python",
-        "Le web pour java",
-        "Découvrez le Microsoft.NET",
-      ];
-      break;
-
-    case "alphabetisation-numerique":
-      modules.values = [
-        "La NTIC pour tous",
-        "Découvrez le WWW",
-        "Les modes de télécommunication",
-        "L'air de travailler plus rapide",
-        "Remote Office",
-        "Découvrez la cyber sécurité en exclusivité",
-        "Les bonnes valuers sur le cyberespace",
-        "Faites vos propres contenus web",
-      ];
-      break;
-
-    case "immersion-en-entreprise":
-      modules.values = [
-        "Découvrez le monde de l'entreprise",
-        "Familiarisez-vous avec nos outils techniques",
-        "Une croissance graduelle",
-        "Gagnez en éfficacité",
-        "Vous faites partie de nos projets",
-        "Des tests d'évaluation",
-      ];
-      break;
-  }
-
   const getGraphSqIcon = (item) => {
     let images = null;
 
@@ -163,7 +122,6 @@ const CoursePage = ({ course, otherCourses }) => {
                           </div>
                           <div class="grow ml-4">
                             <p class="font-bold mb-1">{item.trim()}</p>
-                            <p class="text-gray-500">{modules.values[i]}</p>
                           </div>
                         </div>
                       </div>
