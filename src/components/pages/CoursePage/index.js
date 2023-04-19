@@ -11,56 +11,13 @@ import { ButtonRounded } from "../../Button";
 import Page from "../../PageTemplate";
 import * as style from "./CoursePage.module.scss";
 import img1 from "../../../assets/images/Globe_100px_black.png"
+import "animate.css"
+import {AnimationOnScroll} from "react-animation-on-scroll"
 
 const CoursePage = ({ course, otherCourses }) => {
   const outcomesList = course.outcomes.split(",");
-console.log('====================================');
-console.log(course);
-console.log('====================================');
 
   const srcImage = getSrc(course.image)
-
-  const modules = { 
-    values: []
-  }
-  switch (course.slug) {
-    case "base-programmation":
-        modules.values = [
-          "Création des sites web",
-          "Création des applications mobiles et web",
-          "Techniques de création des GUI",
-          "Formation complète python",
-          "Le web avec Python",
-          "Le web pour java",
-          "Découvrez le Microsoft.NET"
-        ] 
-    break;
-
-    case "alphabetisation-numerique":
-      modules.values = [
-        "La NTIC pour tous",
-        "Découvrez le WWW",
-        "Les modes de télécommunication",
-        "L'air de travailler plus rapide",
-        "Remote Office",
-        "Découvrez la cyber sécurité en exclusivité",
-        "Les bonnes valuers sur le cyberespace",
-        "Faites vos propres contenus web"
-      ]
-    break;
-
-    case "immersion-en-entreprise":
-      modules.values = [
-        "Découvrez le monde de l'entreprise",
-        "Familiarisez-vous avec nos outils techniques",
-        "Une croissance graduelle",
-        "Gagnez en éfficacité",
-        "Vous faites partie de nos projets",
-        "Des tests d'évaluation",
-      ]
-    break;
-
-  }
 
   const getGraphSqIcon = (item) => {
     let images = null;
@@ -80,7 +37,7 @@ console.log('====================================');
 
         <div class="px-1 py-24">
           <div class="relative block md:flex items-center">
-            <div class="w-full md:w-1/2 relative z-1 bg-gray-100 rounded shadow-lg overflow-hidden">
+            <div class="w-full md:w-2/4 relative z-1 bg-gray-100 rounded shadow-lg overflow-hidden h-[520px]">
               <div class="text-lg font-semibold text-teal-800 uppercase p-8 text-center border-b border-gray-200 tracking-wide">
                 { course.title }</div>
               <div class="block sm:flex md:block lg:flex items-center justify-center">
@@ -104,19 +61,21 @@ console.log('====================================');
                 { course.description }
               </div>
 
-              <a class="block flex items-center justify-center bg-yellow-600 hover:bg-yellow-800 p-8 text-md font-semibold text-white uppercase mt-16" href="#">
+              <a class="block flex items-center justify-center bg-yellow-600 hover:bg-yellow-800 p-8 text-md font-semibold text-white uppercase w-full" 
+                  style={{ position: "absolute",bottom: "0" }}
+                  href={ ROUTES.SIGNUP }>
                 <span>Demarrer votre formation</span>
                 <span class="font-medium text-white ml-2">➔</span>
               </a>
             </div>
-            <div class={"w-full md:w-1/2 relative z-0 px-8 md:px-0 md:py-16 " + style.image} style={{ backgroundImage: "url(" + srcImage + ")", backgroundSize: "cover" }}>
+            <div class={"w-full md:w-3/4 relative z-0 px-8 md:px-0 md:py-16 " + style.image} style={{ backgroundImage: "url(" + srcImage + ")", backgroundSize: "cover" }}>
               
             </div>
           </div>
 
 
         </div>
-
+        <AnimationOnScroll animateIn="animate__fadeInUp">     
         <div className="bg-slate-100">
           <div class="px-6 mx-auto">
 
@@ -146,7 +105,6 @@ console.log('====================================');
                   </div>
                   <div class="grow ml-4">
                     <p class="font-bold mb-1">{item.trim()}</p>
-                    <p class="text-gray-500">{ modules.values[i] }</p>
                   </div>
                 </div>
               </div>
@@ -159,41 +117,45 @@ console.log('====================================');
 
           </div>
         </div>
-        <div class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1 flex items-center justify-between mt-14">
-          
-        {otherCourses.map((item, i) => {
-              const courseLink = `/courses/${item.slug}`;
-              var courseImg = getSrc(item.image);
+        </AnimationOnScroll>
 
-              return (
-                <div class='w-full max-w-md  mx-auto bg-white rounded-xl shadow-xl overflow-hidden'>
-                <div class='max-w-md mx-auto'>
-                  <div class='h-[236px]' style={{
-                    backgroundImage: "url(" + courseImg + ")",
-                    backgroundSize: "cover", backgroundPosition: "center"
-                  }}>
-                  </div>
-                  <div class='p-4 sm:p-6'>
-                    <p class='font-bold text-gray-700 text-[22px] leading-7 mb-1'>{item.title}</p>
-                    <div class='flex flex-row mt-3'>
-                      <p class='text-[#3C3C4399] text-[17px] mr-2'>DUREE</p>
-                      <p class='text-[17px] font-bold text-[#0FB478]'>{ item.timeline }</p>
+        <AnimationOnScroll animateIn="animate__fadeInUp">     
+          <div class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1 flex items-center justify-between mt-14">
+            
+          {otherCourses.map((item, i) => {
+                const courseLink = `/courses/${item.slug}`;
+                var courseImg = getSrc(item.image);
+
+                return (
+                  <div class='w-full max-w-md  mx-auto bg-white rounded-xl shadow-xl overflow-hidden'>
+                  <div class='max-w-md mx-auto'>
+                    <div class='h-[236px]' style={{
+                      backgroundImage: "url(" + courseImg + ")",
+                      backgroundSize: "cover", backgroundPosition: "center"
+                    }}>
                     </div>
-                    <p class='text-[#7C7C80] font-[15px] mt-6'>
-                      { item.shortDescription }
-                    </p>
-    
-                    <a href={ courseLink } class='block mt-10 w-full px-4 py-3 text-white font-medium tracking-wide text-center capitalize transition-colors duration-300 transform bg-teal-800 rounded-[14px] hover:bg-teal-600 focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80'>
-                      En savoir plus
-                    </a>
+                    <div class='p-4 sm:p-6'>
+                      <p class='font-bold text-gray-700 text-[22px] leading-7 mb-1'>{item.title}</p>
+                      <div class='flex flex-row mt-3'>
+                        <p class='text-[#3C3C4399] text-[17px] mr-2'>DUREE</p>
+                        <p class='text-[17px] font-bold text-[#0FB478]'>{ item.timeline }</p>
+                      </div>
+                      <p class='text-[#7C7C80] font-[15px] mt-6'>
+                        { item.shortDescription }
+                      </p>
+      
+                      <a href={ courseLink } class='block mt-10 w-full px-4 py-3 text-white font-medium tracking-wide text-center capitalize transition-colors duration-300 transform bg-teal-800 rounded-[14px] hover:bg-teal-600 focus:outline-none focus:ring focus:ring-teal-300 focus:ring-opacity-80'>
+                        En savoir plus
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-                );
-              })}
+                
+                  );
+                })}
 
-        </div>
+          </div>
+        </AnimationOnScroll>
       </div>
     </React.Fragment>
   );

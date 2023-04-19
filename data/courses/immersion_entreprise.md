@@ -10,7 +10,7 @@ description: "Ce programme vous donne la possibilité d'acquérir votre premièr
 outcomes: "Introduction à l'entreprise et à l'équipe, Formation aux outils et aux technologies, Contribuer à des tâches simples, Travailler sur des fonctionnalités plus complexes, Travailler sur des projets indépendants, Révision et évaluation"
 students: "189"
 price: 300
-image: images/pexels-tranmautritam-245032.jpg
+image: images/Hitech-Card-1330x1270.jpg
 img2: images/pexels-mart-production-7550542.jpg
 icon1: images/backend.png
 icon2: images/dev-web.png

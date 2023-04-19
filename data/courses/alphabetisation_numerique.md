@@ -10,7 +10,7 @@ description: "Ce programme vise à acquérir les compétences nécessaires pour 
 outcomes: "Introduction aux technologies de l'information et de la communication, Navigation sur internet, Communication en ligne, Productivité numérique, Bureautique en ligne, Sécurité en ligne, Ethique en ligne,Création de contenu numériques"
 students: "200"
 price: 200
-image: images/pexels-rodolfo-quirós-2330137.jpg
+image: images/rhtech.jpg
 img2: images/pexels-august-de-richelieu-4261790.jpg
 icon1: images/data_science.png
 icon2: images/dev-web.png
