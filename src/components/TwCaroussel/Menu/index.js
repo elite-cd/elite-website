@@ -108,7 +108,7 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
               </span>
             </a>
             <ul
-              class="absolute z-[1000] float-left m-0 min-w-max list-none overflow-hidden border-none bg-white bg-clip-padding text-left shadow-lg dark:bg-white [&[data-te-dropdown-show]]:block"
+              class={"absolute z-[1000] float-left m-0 min-w-max list-none overflow-hidden border-none bg-clip-padding text-left shadow-lg [&[data-te-dropdown-show]]:block " + (whiteMenu ? "bg-white" : "")} 
               id="subMenu"
               aria-labelledby="dropdownMenuButton1"
               onMouseLeave={() => getSubMenu(false)}
@@ -117,7 +117,7 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
               {items.map((item, i) => (
                 <li>
                   <a
-                    class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-black dark:hover:bg-teal-600 dark:hover:text-white"
+                    class={"block w-full whitespace-nowrap bg-transparent py-4 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:hover:bg-teal-600 dark:hover:text-white " + (whiteMenu ? "text-black" : "text-white")}
                     href={`/courses/${item.slug}`}
                     data-te-dropdown-item-ref
                   >
