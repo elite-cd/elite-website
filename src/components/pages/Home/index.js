@@ -9,7 +9,6 @@ import TwCaroussel from "../../TwCaroussel";
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
-import GoogleMapFrame from "../../GooglMap";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import emailjs from "@emailjs/browser";
@@ -22,7 +21,7 @@ import "./styles.css";
 import img1 from "../../../assets/images/to-learn-gb120f4a96_1920.jpg";
 import img2 from "../../../assets/images/education-g0a1924b6c_1920.png";
 import img3 from "../../../assets/images/coding-g486fa6d97_1280.png";
-import img4 from "../../../assets/images/graduate-g37719b1cc_1280.png";
+import img4 from "../../../assets/images/discussion-based-teaching-1.png";
 import img5 from "../../../assets/images/man-g5ae25b970_1920.jpg";
 import img6 from "../../../assets/images/education-gef2a32113_1280.png";
 
@@ -277,8 +276,8 @@ const Home = ({ carouselItems, map }) => {
                   >
                     <div class="py-3 px-6">&nbsp;</div>
                     <div class="p-6">
-                      <h5 class="mb-3 -mt-9">
-                        <img src={img1} class="h-32 max-xl:h-20" />
+                      <h5 class="mb-5 -mt-9">
+                        <img src={img1} class="h-24 max-xl:h-20" />
                       </h5>
                       <p
                         class="mb-4 text-base text-teal-800"
@@ -325,8 +324,8 @@ const Home = ({ carouselItems, map }) => {
                   >
                     <div class="py-3 px-6">&nbsp;</div>
                     <div class="p-6">
-                      <h5 class="mb-3 -mt-9">
-                        <img src={img2} class="h-32 max-xl:h-20" />
+                      <h5 class="mb-5 -mt-9">
+                        <img src={img2} class="h-24 max-xl:h-20" />
                       </h5>
                       <p
                         class="mb-4 text-base text-teal-800"
@@ -373,8 +372,8 @@ const Home = ({ carouselItems, map }) => {
                   >
                     <div class="py-3 px-6">&nbsp;</div>
                     <div class="p-6">
-                      <h5 class="mb-3 -mt-9">
-                        <img src={img3} class="h-32 max-xl:h-20" />
+                      <h5 class="mb-5 -mt-9">
+                        <img src={img3} class="h-24 max-xl:h-20" />
                       </h5>
                       <p
                         class="mb-4 text-base text-teal-800"
@@ -421,8 +420,8 @@ const Home = ({ carouselItems, map }) => {
                   >
                     <div class="py-3 px-6">&nbsp;</div>
                     <div class="p-6">
-                      <h5 class="mb-3 -mt-9">
-                        <img src={img4} class="h-32 max-xl:h-20" />
+                      <h5 class="mb-1 -mt-9">
+                        <img src={img4} class="h-32 max-xl:h-24" />
                       </h5>
                       <p
                         class="mb-4 text-base text-teal-800"
@@ -469,8 +468,8 @@ const Home = ({ carouselItems, map }) => {
                   >
                     <div class="py-3 px-6">&nbsp;</div>
                     <div class="p-6">
-                      <h5 class="mb-3 -mt-9">
-                        <img src={img5} class="h-32 max-xl:h-20" />
+                      <h5 class="mb-5 -mt-9">
+                        <img src={img5} class="h-24 max-xl:h-20" />
                       </h5>
                       <p
                         class="mb-4 text-base text-teal-800"
@@ -517,8 +516,8 @@ const Home = ({ carouselItems, map }) => {
                   >
                     <div class="py-3 px-6">&nbsp;</div>
                     <div class="p-6">
-                      <h5 class="mb-3 -mt-9">
-                        <img src={img6} class="h-32 max-xl:h-20" />
+                      <h5 class="mb-5 -mt-9">
+                        <img src={img6} class="h-24 max-xl:h-20" />
                       </h5>
                       <p
                         class="mb-4 text-base text-teal-800"

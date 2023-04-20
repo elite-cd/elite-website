@@ -32,23 +32,23 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
     position: "absolute",
     zIndex: "3",
     width: "100%",
-    height: "80px",
+    height: "75px",
     borderBlockEndColor: "#0d9488",
     borderBlockEndWidth: "2px",
   };
 
   const whiteNavStyle = {
     width: "100%",
-    height: "80px",
+    height: "75px",
     borderBlockEndColor: "#0d9488",
     borderBlockEndWidth: "2px",
   };
   const activeitemClass =
     "bg-teal-600 hover:bg-teal-600 hover:text-white rounded-md px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white active:bg-teal-600 focus:outline-none focus:bg-teal-600";
   const defaultItemClass =
-    "hover:bg-teal-600 hover:text-white rounded-md px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white active:bg-teal-600 focus:outline-none focus:bg-teal-600";
+    "hover:text-teal-400 px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white active:bg-teal-600 focus:outline-none focus:bg-teal-600 focus:text-white h-[60px]";
   const whiteItemClass =
-    "text-teal-600 hover:bg-teal-600 hover:text-white rounded-md px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black active:bg-teal-600 focus:outline-none focus:bg-teal-600";
+    "text-teal-600 px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black active:bg-teal-600 focus:outline-none focus:bg-teal-600 focus:text-white h-[60px]";
   const defalutIconClass =
     "hover:bg-teal-600 hover:text-white rounded-md px-2 py-2 mx-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75";
   const whiteIconClass =
@@ -91,7 +91,10 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
                   (whiteMenu
                     ? "text-teal-600"
                     : "hover:text-teal-600 text-white") +
-                  " px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug"
+                  " px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug h-[60px]" +
+                  (ROUTES.ACADEMY === activeRoute
+                    ? " border-b-[5px] border-teal-600 text-teal-800"
+                    : "")
                 }
                 href="#formations"
                 id="dropdownMenuButton1"
@@ -131,7 +134,7 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
                   <li>
                     <a
                       class={
-                        "block w-full whitespace-nowrap bg-transparent py-4 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:hover:bg-teal-600 dark:hover:text-white " +
+                        "block w-full whitespace-nowrap bg-transparent py-4 px-4 text-sm font-normal hover:bg-teal-800 hover:text-white active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 " +
                         (whiteMenu ? "text-black" : "text-white")
                       }
                       href={`/courses/${item.slug}`}
