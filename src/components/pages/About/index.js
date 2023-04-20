@@ -176,7 +176,7 @@ const About = () => {
             <div class="grid grid-cols-2 gap-14 lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 min-sm:grid-cols-2 flex justify-between">
               <div
                 class={
-                  "flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " +
+                  "bg-teal-700 flex flex-col rounded-lg shadow-xl md:max-w-xl md:flex-row " +
                   style.values
                 }
               >
@@ -188,10 +188,10 @@ const About = () => {
                   />
                 </div>
                 <div class="flex flex-col justify-start p-6 w-2/3 max-xs:h-full">
-                  <h5 class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50 text-center font-normal">
+                  <h5 class="mb-2 text-xl font-bold text-white text-center font-normal">
                     {OverlayTitles[0]}
                   </h5>
-                  <p class="mb-4 text-base text-neutral-600 dark:text-gray-300 text-center max-xs:hidden">
+                  <p class="mb-4 text-base text-yellow-200 max-xs:hidden">
                     {OverlayCountry[0]}
                   </p>
                 </div>
@@ -199,7 +199,7 @@ const About = () => {
 
               <div
                 class={
-                  "flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " +
+                  "flex flex-col rounded-lg shadow-xl bg-teal-700 md:max-w-xl md:flex-row " +
                   style.values
                 }
               >
@@ -212,10 +212,10 @@ const About = () => {
                 </div>
 
                 <div class="flex flex-col justify-start p-6 w-2/3">
-                  <h5 class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50 text-center">
+                  <h5 class="mb-2 text-xl font-bold text-white text-center">
                     {OverlayTitles[1]}
                   </h5>
-                  <p class="mb-4 text-base text-neutral-600 dark:text-gray-300 text-center">
+                  <p class="mb-4 text-base text-yellow-200 text-center">
                     {OverlayCountry[1]}
                   </p>
                 </div>
@@ -223,7 +223,7 @@ const About = () => {
 
               <div
                 class={
-                  "flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " +
+                  "flex flex-col rounded-lg shadow-xl bg-teal-700 md:max-w-xl md:flex-row " +
                   style.values
                 }
               >
@@ -236,10 +236,10 @@ const About = () => {
                 </div>
 
                 <div class="flex flex-col justify-start p-6 w-2/3">
-                  <h5 class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50 text-center">
+                  <h5 class="mb-2 text-xl font-bold text-white text-center">
                     {OverlayTitles[2]}
                   </h5>
-                  <p class="mb-4 text-base text-neutral-600 dark:text-yellow-200 text-center">
+                  <p class="mb-4 text-base text-yellow-200 text-center">
                     {OverlayCountry[2]}
                   </p>
                 </div>
@@ -247,7 +247,7 @@ const About = () => {
 
               <div
                 class={
-                  "flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " +
+                  "flex flex-col rounded-lg shadow-xl bg-teal-700 md:max-w-xl md:flex-row " +
                   style.values
                 }
               >
@@ -259,10 +259,10 @@ const About = () => {
                   />
                 </div>
                 <div class="flex flex-col justify-start p-6 w-2/3">
-                  <h5 class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50 text-center">
+                  <h5 class="mb-2 text-xl font-bold text-white text-center">
                     {OverlayTitles[3]}
                   </h5>
-                  <p class="mb-4 text-base text-neutral-600 dark:text-yellow-200 text-center">
+                  <p class="mb-4 text-base text-yellow-200 text-center">
                     {OverlayCountry[3]}
                   </p>
                 </div>
@@ -270,7 +270,7 @@ const About = () => {
 
               <div
                 class={
-                  "flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " +
+                  "flex flex-col rounded-lg shadow-xl bg-teal-700 md:max-w-xl md:flex-row " +
                   style.values
                 }
               >
@@ -283,10 +283,10 @@ const About = () => {
                 </div>
 
                 <div class="flex flex-col justify-start p-6 w-2/3">
-                  <h5 class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50 text-center">
+                  <h5 class="mb-2 text-xl font-bold text-white text-center">
                     {OverlayTitles[4]}
                   </h5>
-                  <p class="mb-4 text-base text-neutral-600 dark:text-yellow-200 text-center">
+                  <p class="mb-4 text-base text-neutral-300 text-center">
                     {OverlayCountry[4]}
                   </p>
                 </div>
@@ -309,7 +309,7 @@ const About = () => {
                   <h5 class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50">
                     {OverlayTitles[5]}
                   </h5>
-                  <p class="mb-4 text-base text-neutral-600 dark:text-yellow-200 text-center">
+                  <p class="mb-4 text-base text-neutral-300 text-center">
                     {OverlayCountry[5]}
                   </p>
                 </div>
@@ -340,7 +340,7 @@ const About = () => {
                     alt="Avatar"
                   />
                   <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">
-                    Didia Aristoste Diasonama
+                    Aristoste Diasonama (Didia)
                   </h5>
                   <p class="text-neutral-500 dark:text-neutral-400">
                     <div class="flex space-x-4 mt-6 justify-center">
