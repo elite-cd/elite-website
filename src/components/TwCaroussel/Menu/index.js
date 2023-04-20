@@ -82,7 +82,14 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
               url={ROUTES.INDEX}
               text={"Acceuil"}
               isActive={activeRoute ? ROUTES.INDEX === activeRoute : true}
-              itemClass={whiteMenu ? whiteItemClass : defaultItemClass}
+              itemClass={
+                whiteMenu
+                  ? whiteItemClass + " text-teal-600"
+                  : defaultItemClass +
+                    (ROUTES.INDEX === activeRoute
+                      ? " text-teal-600"
+                      : " text-white")
+              }
             />
 
             <li class="nav-item" data-te-dropdown-ref>
@@ -150,12 +157,26 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
               url={ROUTES.ABOUT}
               text={"A propos"}
               isActive={ROUTES.ABOUT === activeRoute}
-              itemClass={whiteMenu ? whiteItemClass : defaultItemClass}
+              itemClass={
+                whiteMenu
+                  ? whiteItemClass + " text-teal-600"
+                  : defaultItemClass +
+                    (ROUTES.ABOUT === activeRoute
+                      ? " text-teal-600"
+                      : " text-white")
+              }
             />
             <MenuItem
               url={ROUTES.INDEX + "#contact_section"}
               text={"Contacts"}
-              itemClass={whiteMenu ? whiteItemClass : defaultItemClass}
+              itemClass={
+                whiteMenu
+                  ? whiteItemClass + " text-teal-600"
+                  : defaultItemClass +
+                    (ROUTES.CONTACT === activeRoute
+                      ? " text-teal-600"
+                      : " text-white")
+              }
             />
           </ul>
 
