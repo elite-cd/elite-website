@@ -4,9 +4,7 @@ import Home from "../components/pages/Home";
 
 const IndexPage = ({ data }) => {
   const carouselItems = data.allCarouselJson.edges.map((edge) => edge.node);
-  const GoogleMap = data.staticMap;
-  //console.log('courses: ', courses);
-  return <Home carouselItems={carouselItems} map={GoogleMap.mapUrl} />;
+  return <Home carouselItems={carouselItems} />;
 };
 
 export const pageQuery = graphql`
@@ -30,10 +28,6 @@ export const pageQuery = graphql`
           }
         }
       }
-    }
-
-    staticMap {
-      mapUrl
     }
   }
 `;

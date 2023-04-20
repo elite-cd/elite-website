@@ -61,7 +61,7 @@ const OverlayTitles = [
 
 const OverlayCountry = ["", "", "Canada", "USA", "", ""];
 
-const Home = ({ carouselItems, map }) => {
+const Home = ({ carouselItems }) => {
   const [modalContentId, setModalContentId] = useState(0);
   const [img, setImg] = useState("");
 
