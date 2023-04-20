@@ -318,7 +318,7 @@ const About = () => {
           </AnimationOnScroll>
         </section>
 
-        <h1 class={style.valueTitle} style={{ paddingBottom: "2.5rem" }}>
+        <h1 class={style.valueTitle} style={{ paddingBottom: "2.8rem" }}>
           <b>Notre équipe</b>
         </h1>
         <AnimationOnScroll animateIn="animate__fadeInUp">
