@@ -9,7 +9,6 @@ import TwCaroussel from "../../TwCaroussel";
 import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
-import GoogleMapFrame from "../../GooglMap";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import emailjs from "@emailjs/browser";
@@ -61,7 +60,7 @@ const OverlayTitles = [
 
 const OverlayCountry = ["", "", "Canada", "USA", "", ""];
 
-const Home = ({ carouselItems }) => {
+const Home = ({ carouselItems, map }) => {
   const [modalContentId, setModalContentId] = useState(0);
   const [img, setImg] = useState("");
 

@@ -122,8 +122,8 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
               </a>
               <ul
                 class={
-                  "block w-full whitespace-nowrap bg-transparent py-4 px-4 text-sm font-normal hover:bg-teal-800 text-teal-800 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 " +
-                  (whiteMenu ? "text-black" : "text-white")
+                  "absolute z-[1000] float-left m-0 min-w-max list-none overflow-hidden border-none bg-clip-padding text-left shadow-lg [&[data-te-dropdown-show]]:block " +
+                  (whiteMenu ? "bg-white" : "")
                 }
                 id="subMenu"
                 aria-labelledby="dropdownMenuButton1"
