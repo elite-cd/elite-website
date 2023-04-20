@@ -46,7 +46,7 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
   const activeitemClass =
     "bg-teal-600 hover:bg-teal-600 hover:text-white rounded-md px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white active:bg-teal-600 focus:outline-none focus:bg-teal-600";
   const defaultItemClass =
-    "hover:text-teal-400 px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white active:bg-teal-600 focus:outline-none focus:bg-teal-600 focus:text-white h-[60px]";
+    "hover:text-teal-400 px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug active:bg-teal-600 focus:outline-none focus:bg-teal-600 focus:text-white h-[60px]";
   const whiteItemClass =
     "text-teal-600 px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black active:bg-teal-600 focus:outline-none focus:bg-teal-600 focus:text-white h-[60px]";
   const defalutIconClass =
@@ -82,7 +82,14 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
               url={ROUTES.INDEX}
               text={"Acceuil"}
               isActive={activeRoute ? ROUTES.INDEX === activeRoute : true}
-              itemClass={whiteMenu ? whiteItemClass : defaultItemClass}
+              itemClass={
+                whiteMenu
+                  ? whiteItemClass + " text-teal-600"
+                  : defaultItemClass +
+                    (ROUTES.INDEX === activeRoute
+                      ? " text-teal-600"
+                      : " text-white")
+              }
             />
 
             <li class="nav-item" data-te-dropdown-ref>
@@ -150,12 +157,26 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
               url={ROUTES.ABOUT}
               text={"A propos"}
               isActive={ROUTES.ABOUT === activeRoute}
-              itemClass={whiteMenu ? whiteItemClass : defaultItemClass}
+              itemClass={
+                whiteMenu
+                  ? whiteItemClass + " text-teal-600"
+                  : defaultItemClass +
+                    (ROUTES.ABOUT === activeRoute
+                      ? " text-teal-600"
+                      : " text-white")
+              }
             />
             <MenuItem
               url={ROUTES.INDEX + "#contact_section"}
               text={"Contacts"}
-              itemClass={whiteMenu ? whiteItemClass : defaultItemClass}
+              itemClass={
+                whiteMenu
+                  ? whiteItemClass + " text-teal-600"
+                  : defaultItemClass +
+                    (ROUTES.CONTACT === activeRoute
+                      ? " text-teal-600"
+                      : " text-white")
+              }
             />
           </ul>
 
