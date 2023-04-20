@@ -46,7 +46,7 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
   const activeitemClass =
     "bg-teal-600 hover:bg-teal-600 hover:text-white rounded-md px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white active:bg-teal-600 focus:outline-none focus:bg-teal-600";
   const defaultItemClass =
-    "hover:text-teal-400 px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white active:bg-teal-600 focus:outline-none focus:bg-teal-600 focus:text-white h-[60px]";
+    "hover:text-teal-400 px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug active:bg-teal-600 focus:outline-none focus:bg-teal-600 focus:text-white h-[60px]";
   const whiteItemClass =
     "text-teal-600 px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black active:bg-teal-600 focus:outline-none focus:bg-teal-600 focus:text-white h-[60px]";
   const defalutIconClass =

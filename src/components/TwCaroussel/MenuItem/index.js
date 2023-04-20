@@ -4,11 +4,14 @@ import * as React from "react";
 import * as style from "./MenuItem.module.scss";
 
 const MenuItem = ({ isActive, text, url, itemClass }) => {
-  const activeClass = " border-b-[5px] border-teal-600 text-teal-800";
+  const activeClass = " border-b-[5px] border-teal-600 text-teal-600";
 
   return (
     <li class="nav-item">
-      <a class={itemClass + (isActive ? activeClass : "")} href={url}>
+      <a
+        class={itemClass + (isActive ? activeClass : " text-white")}
+        href={url}
+      >
         {text}
       </a>
     </li>
