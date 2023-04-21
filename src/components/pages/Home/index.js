@@ -229,7 +229,7 @@ const Home = ({ carouselItems, map }) => {
         </div>
 
         <section className={style.course__section}>
-          <AnimationOnScroll animateIn="animate__fadeInUp">
+          <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
             <div className={style.courselist}>
               {courses.map((course, i) => (
                 <CourseItem
@@ -552,7 +552,7 @@ const Home = ({ carouselItems, map }) => {
           </section>
         </AnimationOnScroll>
 
-        <AnimationOnScroll animateIn="animate__fadeInUp">
+        <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
           <section class={style.mobile_courseCard}>
             <div
               id="carouselExampleIndicators"
@@ -1047,7 +1047,10 @@ const Home = ({ carouselItems, map }) => {
                     </div>
                   </div>
                 </div>
-                <AnimationOnScroll animateIn="animate__fadeInUp">
+                <AnimationOnScroll
+                  animateIn="animate__fadeInUp"
+                  animateOnce={true}
+                >
                   <div className={"max-sm:-ml-44 " + style.help__container}>
                     <div class="grid grid-rows-2 grid-flow-col">
                       <div>
@@ -1136,7 +1139,7 @@ const Home = ({ carouselItems, map }) => {
             style={{ paddingBottom: "20px", marginTop: "20px", width: "50%" }}
           >
             <span className={style.signup__text} style={{ fontWeight: "800" }}>
-              Restes connecter à l'univers Elite
+              Reste connecté à l'univers Elite
             </span>
             <br />
             <p className={style.newsletter__desc}>
