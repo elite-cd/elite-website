@@ -290,7 +290,6 @@
     padding: 4rem 0;
     background-color: #f1f1f1;
     @media only screen and (max-width: 768px) {
-      background-color: #fff;
     }
   }
   &__title {
@@ -304,6 +303,9 @@
     color: #046059;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 24px;
+    @media only screen and (max-width: 768px) {
+      font-size: 17px;
+    }
   }
 }
 
@@ -439,6 +441,7 @@
     width: 100%;
     display: none;
   }
+
   .about__container_mobile {
     width: 90%;
     margin: 0 auto;
@@ -496,6 +499,33 @@
     margin: 20px auto;
     padding: 2rem 2rem;
     display: block;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .about__container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 7rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 2rem;
+  }
+
+  .about__container .courseCard {
+    height: 220px;
+    width: 100%;
+  }
+  .longCardText {
+    font-size: 0.7rem !important;
+    margin-top: -18% !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  .about__container .courseCard {
+    width: 100%;
   }
 }
 
@@ -669,6 +699,7 @@
     box-shadow: 0px 0px 35px 10px rgba(215, 205, 205, 0.3);
     margin-top: 15px;
     margin-bottom: 15px;
+    width: 70%;
   }
 }
 
@@ -678,8 +709,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5%;
-    margin-top: 35%;
+    margin-top: 33rem;
+    margin-bottom: 1.3rem;
     @media only screen and (max-width: 992px) {
       width: 100%;
       margin-top: 35rem;
@@ -687,6 +718,10 @@
     @media only screen and (max-width: 1200px) {
       width: 100%;
       margin-top: 35rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+      margin-top: 33rem;
     }
   }
 
@@ -744,6 +779,10 @@
       width: 100px;
       margin-top: 5rem;
     }
+
+    @media only screen and (min-width: 533px) and (max-width: 640px) {
+      margin-left: -15rem;
+    }
   }
 
   &__title {
@@ -797,6 +836,9 @@
     @media only screen and (max-width: 362px) {
       width: 300px;
     }
+    @media only screen and (min-width: 640px) and (max-width: 992px) {
+      width: 350px;
+    }
   }
 
   &__email {
@@ -813,6 +855,10 @@
     @media only screen and (max-width: 362px) {
       width: 300px;
     }
+
+    @media only screen and (min-width: 640px) and (max-width: 992px) {
+      width: 350px;
+    }
   }
   &__btn {
     @media only screen and (max-width: 440px) {
@@ -820,6 +866,9 @@
     }
     @media only screen and (max-width: 362px) {
       width: 300px;
+    }
+    @media only screen and (min-width: 640px) and (max-width: 992px) {
+      width: 350px;
     }
   }
 
@@ -833,5 +882,50 @@
     svg {
       color: white;
     }
+  }
+}
+
+.contactTile {
+  color: #fccc25;
+  font-weight: 800;
+  font-size: 35px;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 854px) {
+  .contact_content {
+    padding-left: 7%;
+    padding-right: 10%;
+  }
+  .contactTile {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 769px) {
+  .contact_content {
+    padding-left: 5%;
+    padding-right: 10%;
+  }
+  .contactTile {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 690px) {
+  .contact_content {
+    padding-left: 1%;
+  }
+  .contactTile {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 649px) {
+  .contactUs {
+    visibility: hidden;
+  }
+  .help__container {
+    margin-left: -16rem;
   }
 }
