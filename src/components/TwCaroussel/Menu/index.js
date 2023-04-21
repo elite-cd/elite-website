@@ -40,8 +40,10 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
   const whiteNavStyle = {
     width: "100%",
     height: "75px",
+    zIndex: "3",
     borderBlockEndColor: "#0d9488",
     borderBlockEndWidth: "2px",
+    backgroundColor: "white",
   };
   const activeitemClass =
     "bg-teal-600 hover:bg-teal-600 hover:text-white rounded-md px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white active:bg-teal-600 focus:outline-none focus:bg-teal-600";
@@ -56,7 +58,7 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
 
   return (
     <nav
-      class="lg:block xs:hidden relative flex flex-wrap items-center justify-between px-38 py-3 "
+      class="lg:block xs:hidden flex flex-wrap items-center justify-between px-38 py-3 sticky top-0"
       style={whiteMenu ? whiteNavStyle : navStyle}
     >
       <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">

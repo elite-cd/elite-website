@@ -89,7 +89,7 @@ const CoursePage = ({ course, otherCourses }) => {
             ></div>
           </div>
         </div>
-        <AnimationOnScroll animateIn="animate__fadeInUp">
+        <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
           <div className="bg-slate-100">
             <div class="px-6 mx-auto">
               <section class="mb-10 text-gray-800 py-6">
