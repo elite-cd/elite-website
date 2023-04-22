@@ -2,11 +2,6 @@ import * as React from "react";
 import * as style from "./menu.scss";
 import T from "prop-types";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
-import img1 from "../../assets/images/formation-professionnelle.jpeg";
-import img2 from "../../assets/images/pexels-mart-production-7550542.jpg";
-import icon1 from "../../assets/images/Twitter_100px_black.png";
-import icon2 from "../../assets/images/LinkedIn_100px_black.png";
-import icon3 from "../../assets/images/Facebook_100px_black.png";
 import logo from "../../assets/images/logo.png";
 import { useEffect, useState } from "react";
 import { useIntl } from "gatsby-plugin-intl";
@@ -38,6 +33,8 @@ const TwMenu = ({ items, isWhiteMenu }) => {
   };
   const whiteStyle = {
     borderBlockEndColor: "#0d9488",
+    zIndex: "3",
+    backgroundColor: "white",
     borderBlockEndWidth: "2px",
   };
   const defaultIndextText =
@@ -49,7 +46,7 @@ const TwMenu = ({ items, isWhiteMenu }) => {
 
   return (
     <nav
-      class="lg:hidden xs:block relative flex w-full flex-wrap items-center justify-between py-3 text-white shadow-lg lg:flex-wrap lg:justify-start"
+      class="lg:hidden xs:block flex w-full flex-wrap items-center justify-between py-3 text-white shadow-lg lg:flex-wrap lg:justify-start sticky top-0"
       data-te-navbar-ref
       style={isWhiteMenu ? whiteStyle : defaultMenu}
     >
