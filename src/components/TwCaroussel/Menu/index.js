@@ -32,26 +32,28 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
                       position: "absolute",
                       zIndex: "3",
                       width: "100%",
-                      height: "80px",
+                      height: "75px",
                       borderBlockEndColor: "#0d9488",
                       borderBlockEndWidth: "2px",
     }
 
     const whiteNavStyle = {
                       width: "100%",
-                      height: "80px",
+                      height: "75px",
+                      zIndex: "3",
                       borderBlockEndColor: "#0d9488",
                       borderBlockEndWidth: "2px",
+                      backgroundColor: "white"
     }
     const activeitemClass = "bg-teal-600 hover:bg-teal-600 hover:text-white rounded-md px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white active:bg-teal-600 focus:outline-none focus:bg-teal-600"
-    const defaultItemClass = "hover:bg-teal-600 hover:text-white rounded-md px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white active:bg-teal-600 focus:outline-none focus:bg-teal-600"
-    const whiteItemClass = "text-teal-600 hover:bg-teal-600 hover:text-white rounded-md px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black active:bg-teal-600 focus:outline-none focus:bg-teal-600"
+    const defaultItemClass = "hover:text-teal-400 px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug active:bg-teal-600 focus:outline-none focus:bg-teal-600 focus:text-white h-[60px]"
+    const whiteItemClass = "text-teal-600 px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black active:bg-teal-600 focus:outline-none focus:bg-teal-600 focus:text-white h-[60px]"
     const defalutIconClass = "hover:bg-teal-600 hover:text-white rounded-md px-2 py-2 mx-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
     const whiteIconClass = "hover:bg-teal-600 hover:text-white rounded-md px-2 py-2 mx-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75"
     
     return (
     <nav
-    class="lg:block xs:hidden relative flex flex-wrap items-center justify-between px-38 py-3 "
+    class="lg:block xs:hidden flex flex-wrap items-center justify-between px-38 py-3 sticky top-0"
     style={whiteMenu ? whiteNavStyle : navStyle}
   >
     <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
@@ -78,11 +80,15 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
       <div class="lg:flex flex-grow items-center " id="centerMenu">
         <ul class="flex flex-col lg:flex-row list-none ml-auto">
     
-          <MenuItem url={ ROUTES.INDEX } text={"Acceuil"} isActive={activeRoute ? ROUTES.INDEX === activeRoute : true} itemClass={whiteMenu ? whiteItemClass : defaultItemClass}/>
+          <MenuItem url={ ROUTES.INDEX } text={"Acceuil"} isActive={activeRoute ? ROUTES.INDEX === activeRoute : true} itemClass={(whiteMenu ? (whiteItemClass + " text-teal-600") : defaultItemClass + (ROUTES.INDEX === activeRoute ? " text-teal-600":" text-white"))}/>
 
           <li class="nav-item" data-te-dropdown-ref>
             <a
-              class= { (whiteMenu ? "text-teal-600" : "hover:text-teal-600 text-white")  + " px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug"}
+              class= { 
+                        (whiteMenu ? 
+                          "text-teal-600" : "hover:text-teal-600 text-white")  + 
+                          " px-9 py-2 flex items-center text-xs uppercase font-bold leading-snug h-[60px]" + (ROUTES.ACADEMY === activeRoute ? " border-b-[5px] border-teal-600 text-teal-800" : "")
+                        }
               href="#formations"
               id="dropdownMenuButton1"
               data-te-dropdown-toggle-ref
@@ -117,7 +123,7 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
               {items.map((item, i) => (
                 <li>
                   <a
-                    class={"block w-full whitespace-nowrap bg-transparent py-4 px-4 text-sm font-normal hover:bg-neutral-100 active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:hover:bg-teal-600 dark:hover:text-white " + (whiteMenu ? "text-black" : "text-white")}
+                    class={"block w-full whitespace-nowrap bg-transparent py-4 px-4 text-sm font-normal hover:bg-teal-800 hover:text-white active:text-teal-600 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 " + (whiteMenu ? "text-black" : "text-white")}
                     href={`/courses/${item.slug}`}
                     data-te-dropdown-item-ref
                   >
@@ -127,8 +133,8 @@ const Menu = ({ activeRoute, items, whiteMenu }) => {
               ))}
             </ul>
           </li>
-          <MenuItem url={ ROUTES.ABOUT } text={"A propos"} isActive={ROUTES.ABOUT === activeRoute} itemClass={whiteMenu ? whiteItemClass : defaultItemClass}/>
-          <MenuItem url={ ROUTES.INDEX + "#contact_section" } text={"Contacts"} itemClass={ whiteMenu ? whiteItemClass : defaultItemClass}/>
+          <MenuItem url={ ROUTES.ABOUT } text={"A propos"} isActive={ROUTES.ABOUT === activeRoute} itemClass={(whiteMenu ? (whiteItemClass + " text-teal-600") : defaultItemClass + (ROUTES.ABOUT === activeRoute ? " text-teal-600":" text-white"))}/>
+          <MenuItem url={ ROUTES.INDEX + "#contact_section" } text={"Contacts"} itemClass={(whiteMenu ? (whiteItemClass + " text-teal-600") : defaultItemClass + (ROUTES.CONTACT === activeRoute ? " text-teal-600":" text-white"))}/>
         </ul>
 
         <ul class="flex flex-col lg:flex-row list-none ml-auto">

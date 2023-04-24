@@ -4,11 +4,8 @@ import * as React from "react";
 import * as style from "./MenuItem.module.scss";
 
 const MenuItem = ({ isActive, text, url, itemClass }) => {
-  const activeClass = " bg-teal-600 text-white"
+  const activeClass = " border-b-[5px] border-teal-600"
 
-  console.log('====================================');
-  console.log(isActive);
-  console.log('====================================');
   return (
     
     <li class="nav-item">

@@ -4,7 +4,7 @@ import Page from "../../PageTemplate";
 import * as style from "./About.module.scss";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
-import contactImg from "../../../assets/images/iStock-1201798767-1 black.jpg"
+import contactImg from "../../../assets/images/aa.jpg"
 import contactImg2 from "../../../assets/images/Rectangle 56.png"
 import contactImg3 from "../../../assets/images/question_mark.png"
 import { useState, useEffect } from "react";
@@ -25,7 +25,7 @@ import team1 from "../../../assets/images/1605394670888.jpg"
 import team2 from "../../../assets/images/322279599_1240337903547695_2004677918904243901_n.jpg"
 import team3 from "../../../assets/images/team3.jpg"
 import "animate.css"
-import {AnimationOnScroll} from "react-animation-on-scroll"
+import { AnimationOnScroll } from "react-animation-on-scroll"
 
 import {
   faEnvelope,
@@ -81,18 +81,18 @@ const About = () => {
   const [carouselPrev, swipeCarouselPrev] = useState(false);
 
   useEffect(() => {
-    if(carouselNext === true) {
+    if (carouselNext === true) {
       const myCarousel = new te.Carousel(document.getElementById("carouselExampleIndicators"));
       myCarousel.next();
-    }          
-}, [carouselNext]);
+    }
+  }, [carouselNext]);
 
-useEffect(() => { 
-  if(carouselPrev === true) {
-    const myCarousel = new te.Carousel(document.getElementById("carouselExampleIndicators"));
-    myCarousel.prev();
-  }         
-}, [carouselPrev]);
+  useEffect(() => {
+    if (carouselPrev === true) {
+      const myCarousel = new te.Carousel(document.getElementById("carouselExampleIndicators"));
+      myCarousel.prev();
+    }
+  }, [carouselPrev]);
 
   const swipeNextCarousel = () => {
     swipeCarouselNext(true)
@@ -115,7 +115,7 @@ useEffect(() => {
               <img src={contactImg3} className={style.question} />
 
               <div className={style.contact_content}>
-                <div className={ style.who }>
+                <div className={style.who}>
                   Qui sommes-nous</div>
               </div>
 
@@ -125,50 +125,139 @@ useEffect(() => {
         </div>
 
         <div className={style.container__preface}>
-          <h1>A PROPOS DE NOUS</h1>
+          <h3
+            class="mb-6 ml-3 text-4xl max-sm:text-2xl text-center font-bold text-neutral-700">
+            Qui sommes-nous ?
+          </h3>
 
-          <p>
-            Pourquoi est-il difficile pour nous qui sommes formés au Congo ou en
-            Afrique de competir avec ceux formés ailleurs ?
-          
-            C’est la question qu’Aristote, lauréat aux Examens d’Etat 2010 en
-            République Democratique du Congo s’est posée à son arrivée d’abord
-            en Inde ensuite au Canada pour poursuivre ses études universitaires.
-            C’est le constat que font plusieurs autres congolais et africains
-            lorsqu’ils arrivent pour travailler au niveau international.
-          </p>
-          <p>
-            Après des années d’études en Inde, Canada, États-Unis et Brésil,
-            Aristote et ses associés ont réalisé que le problème n’était pas
-            nécessairement ce qui était enseigné mais la manière dont
-            l’enseignement est dispensé.
-          </p>
-          <p class="mt-5">
-            Alors que dans les pays avancés, on apprend aux étudiants à exercer
-            leur esprit critique et créatif, chez nous, on nous apprend plutôt à
-            répéter, des fois sans comprendre, ce qui est enseigné.
-          </p>
-          <p class="mt-2">
-            C’est dans cette optique qu'ils ont décidé de lancer l’Académie des
-            élites qui est un espace privilégié d'apprentissage, de
-            connectivité, d'innovation, de créativité et de partage des
-            connaissances et de professionnalisme aux normes internationales.
-            Elle s’est donnée pour missions de former les meilleurs
-            informaticiens, développeurs et programmeurs du pays, afin de
-            devenir des professionnels qualifiés dans leurs domaines respectifs
-            et de ramener l’expertise internationale en RDC.
-          </p>
+          <ol class="border-l-2 border-teal-100">
+            <li>
+              <div class="flex-start md:flex ">
+                <div
+                  class="-ml-[13px] flex h-[25px] w-[25px] items-center justify-center rounded-full bg-teal-100 text-teal-700">
+                 
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"
+                    class="h-6 w-6">
+                    <path 
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M407.6 64h-367C18.5 64 0 82.5 0 104.6v135.2C0 364.5 99.7 464 224.2 464c124 0 223.8-99.5 223.8-224.2V104.6c0-22.4-17.7-40.6-40.4-40.6zm-162 268.5c-12.4 11.8-31.4 11.1-42.4 0C89.5 223.6 88.3 227.4 88.3 209.3c0-16.9 13.8-30.7 30.7-30.7 17 0 16.1 3.8 105.2 89.3 90.6-86.9 88.6-89.3 105.5-89.3 16.9 0 30.7 13.8 30.7 30.7 0 17.8-2.9 15.7-114.8 123.2z"/>
+                  </svg>
+                </div>
+                <div
+                  class="mb-10 ml-6 block w-3/3 rounded-lg bg-slate-100 p-6 shadow-md shadow-black/5">
+                  <div class="mb-4 flex justify-between">
+                    <a
+                      href="#!"
+                      class="text-xl text-teal-600 transition duration-150 ease-in-out hover:text-teal-600 focus:text-teal-600 active:text-teal-700"
+                    >A propos</a
+                    >
+                  </div>
+                  <p class="mb-6 text-neutral-700">
+                    l'Académie des élites se veut être un espace privilégié d'apprentissage, de connectivité, d'innovation, de créativité et de partage des connaissances et de professionnalisme qui répond fidèlement aux  normes internationales.
+                    Elle s’est donnée pour missions de former les meilleurs! la meilleure main d'œuvre, les plus compétents,  afin de devenir des professionnels qualifiés dans leurs domaines respectifs et de ramener l’expertise internationale en RDC
+
+                    <p class="mt-5">
+                      Nous ne souhaitons pas seulement apporter une formation en informatique comme le font nos prédécesseurs dans le domaine. La particularité de ELITE réside dans la méthodologie moderne, l’espace et les outils d’apprentissage soigneusement copiés des modèles des écoles internationales ou ont été formés nos différents mentors.
+                    </p>
+                    <p class="mt-5">
+                      Nous recherchons des élites en devenir, des personnes brillantes, ouvertes d'esprit, passionnées par l'autonomisation personnelle et qui visent haut dans leurs carrières professionnelles.
+                    </p>
+                    <p class="mt-2">
+                      Chacun de nos modules est composé des matériels didactique d'actualité , des logiciels à la pointe de la technologie.
+                      À la fin de nos formations,  les apprenants n’auront rien à envier à ceux qui ont étudié en Europe ou en Amérique, ils seront suffisamment équipés et qualifiés en Informatique et/ou en programmation et seront en mesure de travailler dans les entreprises de Technologie de leur choix
+                    </p>
+
+                  </p>
+                  <a
+                    href="#team"
+                    type="button"
+                    class="inline-block rounded border-2 border-teal-600 px-4 pb-[3px] pt-[4px] text-xs font-medium uppercase leading-normal text-teal-600 transition duration-150 ease-in-out hover:border-teal-800 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-info-600 focus:border-info-600 focus:text-info-600 focus:outline-none focus:ring-0 active:border-info-700 active:text-info-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+                    data-te-ripple-init>
+                    Notre équipe
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="flex-start md:flex ">
+                <div
+                  class="-ml-[13px] flex h-[25px] w-[25px] items-center justify-center rounded-full bg-teal-100 text-teal-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"
+                    class="h-6 w-6">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M407.6 64h-367C18.5 64 0 82.5 0 104.6v135.2C0 364.5 99.7 464 224.2 464c124 0 223.8-99.5 223.8-224.2V104.6c0-22.4-17.7-40.6-40.4-40.6zm-162 268.5c-12.4 11.8-31.4 11.1-42.4 0C89.5 223.6 88.3 227.4 88.3 209.3c0-16.9 13.8-30.7 30.7-30.7 17 0 16.1 3.8 105.2 89.3 90.6-86.9 88.6-89.3 105.5-89.3 16.9 0 30.7 13.8 30.7 30.7 0 17.8-2.9 15.7-114.8 123.2z" />
+                  </svg>
+
+                </div>
+                <div
+                  class="mb-10 ml-6 block w-3/3 rounded-lg bg-neutral-50 p-6 shadow-md shadow-black/5">
+                  <div class="mb-4 flex justify-between">
+                    <a
+                      href="#!"
+                      class="text-xl text-teal-600 transition duration-150 ease-in-out hover:text-teal-600 focus:text-teal-600 active:text-teal-700"
+                    >Mission</a
+                    >
+                  </div>
+                  <p class="mb-6 text-neutral-700">
+                  Nous nous sommes donnés pour mission de coacher, encadrer et encourager des génies congolais à libérer et exploiter leur esprit créatif afin de se démarquer dans la société.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="flex-start md:flex ">
+                <div
+                  class="-ml-[13px] flex h-[25px] w-[25px] items-center justify-center rounded-full bg-teal-100 text-teal-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"
+                    class="h-6 w-6">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M407.6 64h-367C18.5 64 0 82.5 0 104.6v135.2C0 364.5 99.7 464 224.2 464c124 0 223.8-99.5 223.8-224.2V104.6c0-22.4-17.7-40.6-40.4-40.6zm-162 268.5c-12.4 11.8-31.4 11.1-42.4 0C89.5 223.6 88.3 227.4 88.3 209.3c0-16.9 13.8-30.7 30.7-30.7 17 0 16.1 3.8 105.2 89.3 90.6-86.9 88.6-89.3 105.5-89.3 16.9 0 30.7 13.8 30.7 30.7 0 17.8-2.9 15.7-114.8 123.2z" />
+                  </svg>
+
+                </div>
+                <div
+                  class="mb-10 ml-6 block w-3/3 rounded-lg bg-slate-100 p-6 shadow-md shadow-black/5">
+                  <div class="mb-4 flex justify-between">
+                    <a
+                      href="#!"
+                      class="text-xl text-teal-600 transition duration-150 ease-in-out hover:text-teal-600 focus:text-teal-600 active:text-teal-700"
+                    >Vision</a
+                    >
+                  </div>
+                  <p class="mb-6 text-neutral-700">
+                  
+                  Nous nous attendons à ce que : 
+                  
+                    Les élèves qui passeront chez nous puissent briller dans leur cursus scolaire de façon à être des candidats plus que qualifiés pour des études supérieures à l’étranger ou encore des bourses d'études
+;
+                    les demandeurs d’emplois aient des aptitudes et compétences qui feront d’eux plus des personnes qu'efficaces, meilleures et très compétitives
+;
+                    les libéraux et entrepreneurs soient suffisamment équipés et informés en ayant la connaissance et développant des compétences nécessaires afin de réussir dans leurs entreprises.
+
+                  </p>
+                </div>
+              </div>
+            </li>
+
+          </ol>
         </div>
 
-        <h1 class={ style.valueTitle }><b>Nos valeurs</b></h1>
+        <h1 class={style.valueTitle + " text-neutral-700"} ><b>Nos valeurs</b></h1>
 
         <section className={style.about__container}>
 
-        <AnimationOnScroll animateIn="animate__fadeInUp">
-          <div class="grid grid-cols-2 gap-14 lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 min-sm:grid-cols-2 flex justify-between" 
-          >
-            <div
-              class={"flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " + style.values}
+          <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce="animate__fadeInUp">
+            <div class="grid grid-cols-2 gap-14 lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 min-sm:grid-cols-2 flex justify-between"
+            >
+              <div
+                class={"bg-teal-700 flex flex-col rounded-lg shadow-xl md:max-w-xl md:flex-row " + style.values}
               >
 
                 <div class="md:h-auto w-1/3 md:rounded-none md:rounded-l-lg bg-white">
@@ -177,19 +266,19 @@ useEffect(() => {
                     src={img1}
                     alt="" />
                 </div>
-              <div class="flex flex-col justify-start p-6 w-2/3 max-xs:h-full">
-                <h5
-                  class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50 text-center font-normal">
-                  {OverlayTitles[0]}
-                </h5>
-                <p class="mb-4 text-base text-neutral-600 dark:text-gray-300 text-center max-xs:hidden">
-                {OverlayCountry[0]}
-                </p>
+                <div class="flex flex-col justify-start p-6 w-2/3 max-xs:h-full">
+                  <h5
+                    class="mb-2 text-xl font-bold text-white text-center font-normal">
+                    {OverlayTitles[0]}
+                  </h5>
+                  <p class="mb-4 text-base text-yellow-200 max-xs:hidden">
+                    {OverlayCountry[0]}
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div
-              class={"flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " + style.values}
+              <div
+                class={"flex flex-col rounded-lg shadow-xl bg-teal-700 md:max-w-xl md:flex-row " + style.values}
               >
 
                 <div class="md:h-auto w-1/3 md:rounded-none md:rounded-l-lg bg-white">
@@ -198,20 +287,20 @@ useEffect(() => {
                     src={img2}
                     alt="" />
                 </div>
-              
-              <div class="flex flex-col justify-start p-6 w-2/3">
-                <h5
-                  class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50 text-center">
-                  {OverlayTitles[1]}
-                </h5>
-                <p class="mb-4 text-base text-neutral-600 dark:text-gray-300 text-center">
-                {OverlayCountry[1]}
-                </p>
-              </div>
-            </div>
 
-            <div
-              class={"flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " + style.values}
+                <div class="flex flex-col justify-start p-6 w-2/3">
+                  <h5
+                    class="mb-2 text-xl font-bold text-white text-center">
+                    {OverlayTitles[1]}
+                  </h5>
+                  <p class="mb-4 text-base text-yellow-200 text-center">
+                    {OverlayCountry[1]}
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class={"flex flex-col rounded-lg shadow-xl bg-teal-700 md:max-w-xl md:flex-row " + style.values}
               >
 
                 <div class="md:h-auto w-1/3 md:rounded-none md:rounded-l-lg bg-white">
@@ -221,19 +310,19 @@ useEffect(() => {
                     alt="" />
                 </div>
 
-              <div class="flex flex-col justify-start p-6 w-2/3">
-                <h5
-                  class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50 text-center">
-                  {OverlayTitles[2]}
-                </h5>
-                <p class="mb-4 text-base text-neutral-600 dark:text-yellow-200 text-center">
-                {OverlayCountry[2]}
-                </p>
+                <div class="flex flex-col justify-start p-6 w-2/3">
+                  <h5
+                    class="mb-2 text-xl font-bold text-white text-center">
+                    {OverlayTitles[2]}
+                  </h5>
+                  <p class="mb-4 text-base text-yellow-200 text-center">
+                    {OverlayCountry[2]}
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div
-              class={"flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " + style.values}
+              <div
+                class={"flex flex-col rounded-lg shadow-xl bg-teal-700 md:max-w-xl md:flex-row " + style.values}
               >
 
                 <div class="md:h-auto w-1/3 md:rounded-none md:rounded-l-lg bg-white">
@@ -242,19 +331,19 @@ useEffect(() => {
                     src={img4}
                     alt="" />
                 </div>
-              <div class="flex flex-col justify-start p-6 w-2/3">
-                <h5
-                  class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50 text-center">
-                  {OverlayTitles[3]}
-                </h5>
-                <p class="mb-4 text-base text-neutral-600 dark:text-yellow-200 text-center">
-                {OverlayCountry[3]}
-                </p>
+                <div class="flex flex-col justify-start p-6 w-2/3">
+                  <h5
+                    class="mb-2 text-xl font-bold text-white text-center">
+                    {OverlayTitles[3]}
+                  </h5>
+                  <p class="mb-4 text-base text-yellow-200 text-center">
+                    {OverlayCountry[3]}
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div
-              class={"flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " + style.values}
+              <div
+                class={"flex flex-col rounded-lg shadow-xl bg-teal-700 md:max-w-xl md:flex-row " + style.values}
               >
 
                 <div class="md:h-auto w-1/3 md:rounded-none md:rounded-l-lg bg-white">
@@ -264,19 +353,19 @@ useEffect(() => {
                     alt="" />
                 </div>
 
-              <div class="flex flex-col justify-start p-6 w-2/3">
-                <h5
-                  class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50 text-center">
-                  {OverlayTitles[4]}
-                </h5>
-                <p class="mb-4 text-base text-neutral-600 dark:text-yellow-200 text-center">
-                {OverlayCountry[4]}
-                </p>
+                <div class="flex flex-col justify-start p-6 w-2/3">
+                  <h5
+                    class="mb-2 text-xl font-bold text-white text-center">
+                    {OverlayTitles[4]}
+                  </h5>
+                  <p class="mb-4 text-base text-neutral-300 text-center">
+                    {OverlayCountry[4]}
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div
-              class={"flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " + style.values}
+              <div
+                class={"flex flex-col rounded-lg bg-white shadow-xl dark:bg-teal-700 md:max-w-xl md:flex-row " + style.values}
               >
 
                 <div class="md:h-auto w-1/3 md:rounded-none md:rounded-l-lg bg-white">
@@ -285,24 +374,24 @@ useEffect(() => {
                     src={img6}
                     alt="" />
                 </div>
-              <div class="flex flex-col justify-start p-6 w-2/3">
-                <h5
-                  class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50">
-                  {OverlayTitles[5]}
-                </h5>
-                <p class="mb-4 text-base text-neutral-600 dark:text-yellow-200 text-center">
-                {OverlayCountry[5]}
-                </p>
+                <div class="flex flex-col justify-start p-6 w-2/3">
+                  <h5
+                    class="mb-2 text-xl font-bold text-neutral-800 dark:text-neutral-50">
+                    {OverlayTitles[5]}
+                  </h5>
+                  <p class="mb-4 text-base text-neutral-300 text-center">
+                    {OverlayCountry[5]}
+                  </p>
+                </div>
               </div>
-            </div>
 
-          </div>
-        </AnimationOnScroll>
+            </div>
+          </AnimationOnScroll>
 
         </section>
 
-        <h1 class={ style.valueTitle } style={{ paddingBottom: "2.5rem" }}><b>Notre équipe</b></h1>
-        <AnimationOnScroll animateIn="animate__fadeInUp">     
+        <h1 class={style.valueTitle + " text-neutral-700"} id="team"><b>Notre équipe</b></h1>
+        <AnimationOnScroll animateIn="animate__fadeInUp">
           <section className={style.about__container}>
             <div class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1 flex justify-center" style={{ width: "90%", marginBottom: "50px" }}>
 
@@ -314,10 +403,10 @@ useEffect(() => {
                     class="mx-auto mb-4 w-40 rounded-full bg-gray-200"
                     alt="Avatar"
                   />
-                  <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">Didia Aristoste Diasonama</h5>
+                  <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">Aristoste Diasonama (Didia)</h5>
                   <p class="text-neutral-500 dark:text-neutral-400">
 
-                  <div class="flex space-x-4 mt-6 justify-center">
+                    <div class="flex space-x-4 mt-6 justify-center">
                       <a href="https://www.facebook.com/elitescd/">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-8 bg-teal-800 rounded-lg text-white">
                           <path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
@@ -397,7 +486,7 @@ useEffect(() => {
                   <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">Josias Nteme</h5>
                   <p class="text-neutral-500 dark:text-neutral-400">
 
-                  <div class="flex space-x-4 mt-6 justify-center">
+                    <div class="flex space-x-4 mt-6 justify-center">
                       <a href="https://www.facebook.com/elitescd/">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-8 bg-teal-800 rounded-lg text-white">
                           <path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
