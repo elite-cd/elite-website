@@ -156,30 +156,36 @@ const Home = ({ carouselItems, map }) => {
       : document.getElementById("loader").classList.add("hidden");
   }, [loader]);
 
+  const contact_email = useRef();
+  const contact_message = useRef();
+
   const sendEmail = (e) => {
     setLoader(true);
     e.preventDefault();
 
-    setTimeout(() => {
-      emailjs
-        .sendForm(
-          "service_zo9rk47",
-          "template_ljx9qhl",
-          form.current,
-          "AnOf892YduB4OgaT5"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-            setLoader(false);
+    emailjs
+      .send(
+        "service_zo9rk47",
+        "template_ljx9qhl",
+        {
+          user_email: contact_email.current.value,
+          message: contact_message.current.value,
+        },
+        "AnOf892YduB4OgaT5"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setTimeout(() => {
             setMsgSender(true);
-          },
-          (error) => {
-            console.log(error.text);
             setLoader(false);
-          }
-        );
-    }, 1000);
+          }, 2500);
+        },
+        (error) => {
+          console.log(error.text);
+          setLoader(false);
+        }
+      );
   };
 
   const sendNewsLetter = (e) => {
@@ -264,13 +270,13 @@ const Home = ({ carouselItems, map }) => {
               <div>
                 <div
                   class={
-                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    "relative flex justify-center cursor-pointer transition-all ease-in duration-700 " +
                     style.card
                   }
                 >
                   <div
                     class={
-                      "block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      "block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " +
                       style.courseCard
                     }
                   >
@@ -293,7 +299,7 @@ const Home = ({ carouselItems, map }) => {
 
                   <div
                     class={
-                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      "absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " +
                       style.courseCard +
                       " " +
                       style.cardback
@@ -312,13 +318,13 @@ const Home = ({ carouselItems, map }) => {
               <div class="">
                 <div
                   class={
-                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    "relative flex justify-center cursor-pointer transition-all ease-in duration-700 " +
                     style.card
                   }
                 >
                   <div
                     class={
-                      "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      "block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " +
                       style.courseCard
                     }
                   >
@@ -341,7 +347,7 @@ const Home = ({ carouselItems, map }) => {
 
                   <div
                     class={
-                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      "absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " +
                       style.courseCard +
                       " " +
                       style.cardback
@@ -360,13 +366,13 @@ const Home = ({ carouselItems, map }) => {
               <div class="">
                 <div
                   class={
-                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    "relative flex justify-center cursor-pointer transition-all ease-in duration-700 " +
                     style.card
                   }
                 >
                   <div
                     class={
-                      "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      "block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " +
                       style.courseCard
                     }
                   >
@@ -389,7 +395,7 @@ const Home = ({ carouselItems, map }) => {
 
                   <div
                     class={
-                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      "absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " +
                       style.courseCard +
                       " " +
                       style.cardback
@@ -408,13 +414,13 @@ const Home = ({ carouselItems, map }) => {
               <div class="my-8">
                 <div
                   class={
-                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    "relative flex justify-center cursor-pointer transition-all ease-in duration-700 " +
                     style.card
                   }
                 >
                   <div
                     class={
-                      "block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      "block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " +
                       style.courseCard
                     }
                   >
@@ -437,7 +443,7 @@ const Home = ({ carouselItems, map }) => {
 
                   <div
                     class={
-                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      "absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " +
                       style.courseCard +
                       " " +
                       style.cardback
@@ -456,13 +462,13 @@ const Home = ({ carouselItems, map }) => {
               <div class="my-8">
                 <div
                   class={
-                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    "relative flex justify-center cursor-pointer transition-all ease-in duration-700 " +
                     style.card
                   }
                 >
                   <div
                     class={
-                      "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      "block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " +
                       style.courseCard
                     }
                   >
@@ -485,7 +491,7 @@ const Home = ({ carouselItems, map }) => {
 
                   <div
                     class={
-                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      "absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " +
                       style.courseCard +
                       " " +
                       style.cardback
@@ -504,13 +510,13 @@ const Home = ({ carouselItems, map }) => {
               <div class="my-8">
                 <div
                   class={
-                    "relative flex justify-center cursor-pointer transition-all duration-700 " +
+                    "relative flex justify-center cursor-pointer transition-all ease-in duration-700 " +
                     style.card
                   }
                 >
                   <div
                     class={
-                      "absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " +
+                      "block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " +
                       style.courseCard
                     }
                   >
@@ -533,7 +539,7 @@ const Home = ({ carouselItems, map }) => {
 
                   <div
                     class={
-                      "absolute block max-w-sm rounded-lg text-center transition-all z-10 " +
+                      "absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " +
                       style.courseCard +
                       " " +
                       style.cardback
@@ -1068,15 +1074,12 @@ const Home = ({ carouselItems, map }) => {
                       <div style={{ marginTop: "-14%" }}>
                         <form ref={form} onSubmit={sendEmail}>
                           <ul className={style.help__form}>
-                            <li style={{ display: "inline-flex" }}>
-                              <input
-                                id="user_email"
-                                type="text"
-                                placeholder="Adresse E-mail"
-                                className={style.help__email}
-                                name="user_email"
-                              />
-                            </li>
+                            <input
+                              type="email"
+                              className={style.help__email}
+                              name="user_email"
+                              ref={contact_email}
+                            />
 
                             <li
                               style={{
@@ -1085,9 +1088,10 @@ const Home = ({ carouselItems, map }) => {
                               }}
                             >
                               <textarea
+                                ref={contact_message}
                                 className={style.help__field}
                                 name="message"
-                              ></textarea>
+                              />
                             </li>
                             <li
                               style={{
