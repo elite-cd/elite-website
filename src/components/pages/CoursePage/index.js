@@ -134,7 +134,7 @@ const CoursePage = ({ course, otherCourses }) => {
         </AnimationOnScroll>
 
         <AnimationOnScroll animateIn="animate__fadeInUp">
-          <div class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1 flex items-center justify-between mt-14">
+          <div class="grid grid-cols-3 gap-7 md:grid-cols-3 xs:grid-cols-1 flex items-center justify-between mt-14 mb-14">
             {otherCourses.map((item, i) => {
               const courseLink = `/courses/${item.slug}`;
               var courseImg = getSrc(item.image);
@@ -151,12 +151,12 @@ const CoursePage = ({ course, otherCourses }) => {
                       }}
                     ></div>
                     <div class="p-4 sm:p-6">
-                      <p class="font-bold text-gray-700 text-[22px] leading-7 mb-1">
+                      <p class="font-bold text-gray-700 text-[22px] leading-7 mb-1 text-lg">
                         {item.title}
                       </p>
                       <div class="flex flex-row mt-3">
                         <p class="text-[#3C3C4399] text-[17px] mr-2">DUREE</p>
-                        <p class="text-[17px] font-bold text-[#0FB478]">
+                        <p class="text-[17px] font-bold text-[#0FB478] uppercase">
                           {item.timeline}
                         </p>
                       </div>
