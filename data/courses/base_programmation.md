@@ -6,7 +6,7 @@ slug: "base-programmation"
 title: "Les bases de la programmation"
 timeline: "3mois"
 shortDescription: "Apprendre à réfléchir comme un ingénieur logiciel"
-description: "Ce programme vise à acquérir les fondamentaux ainsi que les langages de programmation, la logique de la programmation mais aussi les différents types de programmation informatique."
+description: "Ce programme a pour objectif d’apprendre les bases nécessaires qui permettront aux apprenants de pouvoir exceller dans n’importe quel domaine de la programmation vers lequel ils veulent s’orienter.Il vise également à Utiliser l’informatique pour résoudre des problèmes, Améliorer leur créativité et leur pensée critique,mais aussi Améliorer leur capacité à travailler en équipe."
 outcomes: "Site Internet, Application mobile et web, Programmation interfaces d'application, Python applications, Django web framework, Java and Spring framework, Dotnet and .NET Core"
 students: "254"
 price: 200

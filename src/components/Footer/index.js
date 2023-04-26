@@ -34,19 +34,19 @@ const Footer = ({courses}) => {
                 <div class="max-sm:hidden" >
                   <h6
                     class="mb-6 flex justify-center sm:font-bold xs:font-extrabold uppercase md:justify-start">
-                    Valeurs
+                    Nos Valeurs
                   </h6>
                   <p class="mb-4 text-white">
-                    Mentors de niveau international
+                    Proactivité
                   </p>
                   <p class="mb-4 text-white">
-                    Méthodes Harkness
+                    Créativité
                   </p>
                   <p class="mb-4 text-white">
-                    Coach qualifiés et pratiquants
+                    Sens du travail
                   </p>
                   <p class="mb-4 text-white">
-                    Certificat
+                    Excellence
                   </p>
                 </div>
                 <div>

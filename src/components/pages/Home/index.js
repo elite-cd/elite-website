@@ -146,24 +146,29 @@ const Home = ({ carouselItems, map }) => {
           (loader === true) ? (document.getElementById("loader").classList.remove("hidden")) : (document.getElementById("loader").classList.add("hidden"))
         }, [loader]);
 
+        const contact_email = useRef();
+        const contact_message = useRef();
+
         const sendEmail = (e) => {
 
           setLoader(true);
           e.preventDefault();
  
-          setTimeout(() => {
-            
-            emailjs.sendForm('service_zo9rk47', 'template_ljx9qhl', form.current, 'AnOf892YduB4OgaT5')
-            .then((result) => {
+
+            emailjs.send("service_zo9rk47","template_ljx9qhl",{
+              user_email: contact_email.current.value,
+              message: contact_message.current.value,
+              }, "AnOf892YduB4OgaT5").then((result) => {
                 console.log(result.text);
-                setMsgSender(true)
-                setLoader(false);
+                setTimeout(() => {
+                  setMsgSender(true)
+                  setLoader(false);
+                }, 2500);
             }, (error) => {
                 console.log(error.text);
                 setLoader(false);
             });
 
-          }, 3000);
         };
 
         const sendNewsLetter = (e) => {
@@ -234,9 +239,9 @@ const Home = ({ carouselItems, map }) => {
           <div class="grid grid-cols-3 gap-7 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 flex justify-between" style={{ width: "90%" }}>
             
             <div>
-              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+              <div class={"relative flex justify-center cursor-pointer transition-all ease-in duration-700 " + style.card}>
                 <div
-                  class={"block rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                  class={"block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " + style.courseCard}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -256,7 +261,7 @@ const Home = ({ carouselItems, map }) => {
                 </div>
 
                 <div
-                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " + style.courseCard + " " + style.cardback}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -271,9 +276,9 @@ const Home = ({ carouselItems, map }) => {
             </div>
 
             <div class="">
-              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+            <div class={"relative flex justify-center cursor-pointer transition-all ease-in duration-700 " + style.card}>
                 <div
-                  class={"absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                  class={"block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " + style.courseCard}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -293,7 +298,7 @@ const Home = ({ carouselItems, map }) => {
                 </div>
 
                 <div
-                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " + style.courseCard + " " + style.cardback}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -308,9 +313,9 @@ const Home = ({ carouselItems, map }) => {
             </div>
 
             <div class="">
-              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+            <div class={"relative flex justify-center cursor-pointer transition-all ease-in duration-700 " + style.card}>
                 <div
-                  class={"absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                  class={"block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " + style.courseCard}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -330,7 +335,7 @@ const Home = ({ carouselItems, map }) => {
                 </div>
 
                 <div
-                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " + style.courseCard + " " + style.cardback}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -346,9 +351,9 @@ const Home = ({ carouselItems, map }) => {
 
             <div class="my-8">
 
-              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+            <div class={"relative flex justify-center cursor-pointer transition-all ease-in duration-700 " + style.card}>
                 <div
-                  class={"block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                  class={"block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " + style.courseCard}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -368,7 +373,7 @@ const Home = ({ carouselItems, map }) => {
                 </div>
 
                 <div
-                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " + style.courseCard + " " + style.cardback}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -384,9 +389,9 @@ const Home = ({ carouselItems, map }) => {
             </div>
 
             <div class="my-8">
-              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+            <div class={"relative flex justify-center cursor-pointer transition-all ease-in duration-700 " + style.card}>
                 <div
-                  class={"absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                  class={"block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " + style.courseCard}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -406,7 +411,7 @@ const Home = ({ carouselItems, map }) => {
                 </div>
 
                 <div
-                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " + style.cardback}>
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " + style.courseCard + " " + style.cardback}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -421,9 +426,9 @@ const Home = ({ carouselItems, map }) => {
             </div>
 
             <div class="my-8">
-              <div class={"relative flex justify-center cursor-pointer transition-all duration-700 " + style.card}>
+            <div class={"relative flex justify-center cursor-pointer transition-all ease-in duration-700 " + style.card}>
                 <div
-                  class={"absolute block max-w-sm rounded-lg text-center transition-all duration-100 delay-200 z-20 hover:opacity-0 " + style.courseCard}>
+                  class={"block rounded-lg text-center transition-all ease-in duration-700 delay-75 z-20 hover:opacity-0 " + style.courseCard}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -442,8 +447,8 @@ const Home = ({ carouselItems, map }) => {
                   </div>
                 </div>
 
-              <div
-                  class={"absolute block max-w-sm rounded-lg text-center transition-all z-10 " + style.courseCard + " " +style.cardback}>
+                <div
+                  class={"absolute block max-w-sm rounded-lg text-center transition-all ease-in delay-500 z-10 " + style.courseCard + " " + style.cardback}>
                   <div
                     class="py-3 px-6">
                     &nbsp;
@@ -844,7 +849,6 @@ const Home = ({ carouselItems, map }) => {
                         </div>
                       </div>
                     </div>
-                    <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true}>
                       <div className={  "max-sm:-ml-44 " + style.help__container }>
                         <div class="grid grid-rows-2 grid-flow-col">
                           <div>
@@ -856,38 +860,61 @@ const Home = ({ carouselItems, map }) => {
                           </div>
 
                           <div style={{ marginTop: "-14%" }}>
-                            <form ref={form} onSubmit={sendEmail}>
-                              <ul className={  style.help__form  }>
-                                <li style={{ display: "inline-flex" }}>
+                        <form ref={form} onSubmit={sendEmail}>
+                          <ul className={style.help__form}>
+                              <input
+                                type="email"
+                                className={style.help__email}
+                                name="user_email"
+                                ref={contact_email}
+                              />
 
-                                <input  id="user_email" 
-                                        type="text" 
-                                        placeholder="Adresse E-mail"
-                                        className={  style.help__email  }
-                                        name="user_email"
-                                        />
-                                </li>
-
-                                <li style={{ paddingTop: "12px", display: "inline-flex" }}>
-                                  <textarea className={  style.help__field  } name="message">
-                                  </textarea>
-                                </li>
-                                <li style={{ paddingTop: "12px", display: "inline-flex" }}>
-                                    <button type="submit" className={ style.contact_btn + " " + style.help__btn }>
-                                      
-                                    <svg aria-hidden="true" id="loader" role="status" class="hidden inline mr-2 w-7 h-7 text-gray-200 animate-spin text-gray-400" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"></path>
-                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="#046059"></path>
-                                    </svg>
-                                        Envoyer
-                                    </button>
-                                </li>
-                              </ul>
-                            </form>
+                            <li
+                              style={{
+                                paddingTop: "12px",
+                                display: "inline-flex",
+                              }}
+                            >
+                              <textarea ref={contact_message} className={style.help__field} name="message" />
+                            </li>
+                            <li
+                              style={{
+                                paddingTop: "12px",
+                                display: "inline-flex",
+                              }}
+                            >
+                              <button
+                                type="submit"
+                                className={
+                                  style.contact_btn + " " + style.help__btn
+                                }
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  id="loader"
+                                  role="status"
+                                  class="hidden inline mr-2 w-7 h-7 text-gray-200 animate-spin text-gray-400"
+                                  viewBox="0 0 100 101"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                    fill="currentColor"
+                                  ></path>
+                                  <path
+                                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                    fill="#046059"
+                                  ></path>
+                                </svg>
+                                Envoyer
+                              </button>
+                            </li>
+                          </ul>
+                        </form>
                           </div>
                         </div>
                       </div>
-                    </AnimationOnScroll>
                   </div>
                 </div>
               </div>
