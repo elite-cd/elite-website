@@ -101,6 +101,14 @@ const Home = ({ carouselItems, map }) => {
   const [msgSender, setMsgSender] = useState(false);
   const [loader, setLoader] = useState(false);
 
+  const [msgSender2, setMsgSender2] = useState(false);
+  const [loader2, setLoader2] = useState(false);
+
+  const [feedback, setFeddback] = useState({
+    title: "",
+    content: "",
+  });
+
   const twElement = {
     te: null,
   };
@@ -163,15 +171,21 @@ const Home = ({ carouselItems, map }) => {
     setLoader(true);
     e.preventDefault();
 
+    setFeddback({
+      title: "Message envoyé",
+      content:
+        "Merci de nous écrire, nous vous recontactons dans un bref délai",
+    });
+
     emailjs
       .send(
-        "service_zo9rk47",
-        "template_ljx9qhl",
+        "service_za2iwjw",
+        "template_jssc8rh",
         {
           user_email: contact_email.current.value,
           message: contact_message.current.value,
         },
-        "AnOf892YduB4OgaT5"
+        "3Tb3yY8PeY6KdgEbe"
       )
       .then(
         (result) => {
@@ -188,23 +202,48 @@ const Home = ({ carouselItems, map }) => {
       );
   };
 
+  useEffect(() => {
+    msgSender2 === true && document.getElementById("popupBtn").click();
+  }, [msgSender2]);
+
+  useEffect(() => {
+    loader2 === true
+      ? document.getElementById("loader2").classList.remove("hidden")
+      : document.getElementById("loader2").classList.add("hidden");
+  }, [loader2]);
+
+  const newsLetter_email = useRef();
+
   const sendNewsLetter = (e) => {
+    setLoader2(true);
     e.preventDefault();
 
+    setFeddback({
+      title: "Boîte à Letrre",
+      content: "Merci de souscrire à notre Boîte à lettre !",
+    });
+
     emailjs
-      .sendForm(
-        "service_zo9rk47",
-        "template_ljx9qhl",
-        newsLetterForm.current,
-        "AnOf892YduB4OgaT5"
+      .send(
+        "service_za2iwjw",
+        "template_s046kgs",
+        {
+          user_email: newsLetter_email.current.value,
+          message: newsLetter_email.current.value,
+        },
+        "3Tb3yY8PeY6KdgEbe"
       )
       .then(
         (result) => {
           console.log(result.text);
-          setMsgSender(true);
+          setTimeout(() => {
+            setMsgSender2(true);
+            setLoader2(false);
+          }, 2500);
         },
         (error) => {
           console.log(error.text);
+          setLoader2(false);
         }
       );
   };
@@ -1191,7 +1230,7 @@ const Home = ({ carouselItems, map }) => {
                         d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
                       ></path>
                     </svg>
-                    Message envoyé
+                    {feedback.title}
                   </p>
                   <div class="flex items-center">
                     <p class="text-xs text-success-700">
@@ -1223,8 +1262,7 @@ const Home = ({ carouselItems, map }) => {
                   </div>
                 </div>
                 <div class="break-words rounded-b-lg bg-success-100 px-4 py-4 text-success-700">
-                  Merci de nous écrire, nous vous recontactons dans un bref
-                  délai
+                  {feedback.content}
                 </div>
               </div>
             </div>
@@ -1254,7 +1292,7 @@ const Home = ({ carouselItems, map }) => {
                 aria-label="Adresse E-mail"
                 aria-describedby="basic-addon2"
                 style={{}}
-                name="user_email"
+                ref={newsLetter_email}
               />
               <span
                 class={
@@ -1265,6 +1303,24 @@ const Home = ({ carouselItems, map }) => {
                 style={{ height: "50px", borderRadius: "0px 20px 20px 0px" }}
                 onClick={(e) => sendNewsLetter(e)}
               >
+                <svg
+                  aria-hidden="true"
+                  id="loader2"
+                  role="status"
+                  class="hidden inline mr-2 w-7 h-7 text-gray-200 animate-spin text-gray-400"
+                  viewBox="0 0 100 101"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                    fill="currentColor"
+                  ></path>
+                  <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                    fill="#046059"
+                  ></path>
+                </svg>
                 S'inscrire
               </span>
             </div>
