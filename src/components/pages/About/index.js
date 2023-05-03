@@ -364,7 +364,21 @@ const About = () => {
                         aria-labelledby="headingTwo"
                         data-te-parent="#accordionExample">
                         <div class={"px-5 py-4 text-lg " + style.pacte}>
-                        Nous nous attendons à ce que : Les élèves qui passeront chez nous puissent briller dans leur cursus scolaire de façon à être des candidats plus que qualifiés pour des études supérieures à l’étranger ou encore des bourses d'études ; les demandeurs d’emplois aient des aptitudes et compétences qui feront d’eux plus des personnes qu'efficaces, meilleures et très compétitives ; les libéraux et entrepreneurs soient suffisamment équipés et informés en ayant la connaissance et développant des compétences nécessaires afin de réussir dans leurs entreprises.
+                        Nous nous attendons à ce que : 
+                        
+                          <ol class="mt-3">
+                              <li class="mb-3">
+                                ➔ Les élèves qui passeront chez nous puissent briller dans leur cursus scolaire de façon à être des candidats plus que qualifiés pour des études supérieures à l’étranger ou encore des bourses d'études.
+                              </li>
+
+                              <li class="mb-3">
+                                ➔ Les demandeurs d’emplois aient des aptitudes et compétences qui feront d’eux plus des personnes qu'efficaces, meilleures et très compétitives.
+                              </li>
+
+                              <li class="mb-3">
+                                ➔ Les libéraux et entrepreneurs soient suffisamment équipés et informés en ayant la connaissance et développant des compétences nécessaires afin de réussir dans leurs entreprises.
+                              </li>
+                            </ol>
                         </div>
                       </div>
                     </div>
@@ -381,7 +395,7 @@ const About = () => {
                           data-te-target="#collapseThree"
                           aria-expanded="false"
                           aria-controls="collapseThree">
-                            Développes ton PACTE
+                            Développes ton P.A.C.T.E
                           <span
                             class="-mr-1 ml-auto h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none">
                             <svg
