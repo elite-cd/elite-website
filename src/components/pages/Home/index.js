@@ -52,7 +52,7 @@ const OverlayContents = [
 const OverlayTitles = [
   "Mentors de niveau international",
   "Coach Qualifiés et pratiquants",
-  "Lab Creative",
+  "Labs Creative",
   "Methode Harkness",
   "Environnement Professionnel et Sérieux",
   "Certificat",
@@ -427,7 +427,7 @@ const Home = ({ carouselItems, map }) => {
                           fontWeight: "700",
                         }}
                       >
-                        Lab Creative (Canada)
+                        Labs Creative (Canada)
                       </p>
                     </div>
                   </div>
@@ -475,7 +475,7 @@ const Home = ({ carouselItems, map }) => {
                           fontWeight: "700",
                         }}
                       >
-                        Méthodes Harkness (USA)
+                        Méthode Harkness (USA)
                       </p>
                     </div>
                   </div>
@@ -744,7 +744,7 @@ const Home = ({ carouselItems, map }) => {
                               fontWeight: "700",
                             }}
                           >
-                            Lab Creative (Canada)
+                            Labs Creative (Canada)
                           </p>
                         </div>
                       </div>
@@ -797,7 +797,7 @@ const Home = ({ carouselItems, map }) => {
                               fontWeight: "700",
                             }}
                           >
-                            Méthodes Harkness (USA)
+                            Méthode Harkness (USA)
                           </p>
                         </div>
                       </div>
