@@ -14,6 +14,7 @@ import team4 from "../../../assets/images/DSC_0732.jpg";
 import team5 from "../../../assets/images/1594383944373.jpg";
 import team6 from "../../../assets/images/DSC_0687.jpg";
 import team7 from "../../../assets/images/nadia.jpeg";
+import didia from "../../../assets/images/didia.jpeg";
 
 import "animate.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
