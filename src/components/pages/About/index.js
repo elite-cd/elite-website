@@ -848,7 +848,6 @@ const About = () => {
                     src={team4}
                     class="mx-auto mb-4 w-40 h-40 rounded-full bg-gray-200"
                     alt="Avatar"
-                    style={{ objectFit: "fill" }}
                   />
                   <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">
                     Christian Kayembe
