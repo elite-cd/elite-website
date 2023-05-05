@@ -20,7 +20,7 @@
     padding-top: 5rem;
     padding-bottom: 5rem;
     text-align: justify;
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 2.5rem !important;
 
@@ -32,6 +32,12 @@
     }
   }
 
+  &__first_section_mobile {
+    visibility: hidden;
+    @media only screen and (max-width: 768px) {
+     visibility: visible;
+    }
+  }
   &__preface p {
     line-height: 1.5rem !important;
   }
@@ -90,13 +96,13 @@
   position: relative;
   z-index: 0;
   margin-top: -10%;
-  height: 700px;
+  height: 730px;
 }
 
 .parent > img {
   height: 100%;
   width: 100%;
-  object-fit:cover;
+  background-size: contain;
 }
 
 .inner {

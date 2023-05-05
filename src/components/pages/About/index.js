@@ -4,30 +4,19 @@ import Page from "../../PageTemplate";
 import * as style from "./About.module.scss";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
-import contactImg from "../../../assets/images/aa.jpg"
+import contactImg from "../../../assets/images/us.jpg"
 import contactImg2 from "../../../assets/images/Rectangle 56.png"
 import contactImg3 from "../../../assets/images/question_mark.png"
 import { useState, useEffect } from "react";
 import * as te from "tw-elements";
 
-import contactIcon1 from "../../../assets/images/Marker_100px.png"
-import contactIcon2 from "../../../assets/images/WhatsApp_100px.png"
-import contactIcon3 from "../../../assets/images/Message Filled_100px.png"
-
-import img1 from "../../../assets/images/to-learn-gb120f4a96_1920.jpg"
-import img2 from "../../../assets/images/education-g0a1924b6c_1920.png"
-import img3 from "../../../assets/images/coding-g486fa6d97_1280.png"
-import img4 from "../../../assets/images/graduate-g37719b1cc_1280.png"
-import img5 from "../../../assets/images/man-g5ae25b970_1920.jpg"
-import img6 from "../../../assets/images/education-gef2a32113_1280.png"
-
 import team1 from "../../../assets/images/1605394670888.jpg"
 import team2 from "../../../assets/images/322279599_1240337903547695_2004677918904243901_n.jpg"
 import team3 from "../../../assets/images/team3.jpg"
-import team4 from "../../../assets/images/team2.jpeg"
+import team4 from "../../../assets/images/DSC_0732.jpg"
 import team5 from "../../../assets/images/1594383944373.jpg"
-import team6 from "../../../assets/images/avatar.svg"
-
+import team6 from "../../../assets/images/DSC_0687.jpg"
+import team7 from "../../../assets/images/nadia.jpeg"
 import didia from "../../../assets/images/didia.jpeg"
 
 import "animate.css"
@@ -136,7 +125,7 @@ const About = () => {
             Qui sommes-nous ?
           </h3>
 
-          <ol class="border-l-2 border-teal-100">
+          <ol class="border-l-2 border-teal-100 max-sm:-mt-20">
 
           <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce="animate__fadeInUp">
             <li>
@@ -155,12 +144,6 @@ const About = () => {
                 <div
                   class="mb-10 ml-6 block w-3/3 rounded-lg bg-neutral-50 p-6 shadow-md shadow-black/5">
 
-                  <img
-                    src={didia}
-                    class="mx-auto mb-3 w-32 h-32 rounded-full bg-gray-200 -my-20"
-                    alt="Avatar"
-                  />
-
                   <div class="mb-4 flex justify-between">
                     <a
                       href="#!"
@@ -168,42 +151,105 @@ const About = () => {
                     >La Question d'Aristote</a
                     >
                   </div>
-                  <p class="mb-6 text-neutral-700">
 
-                    <p>
-                      Pourquoi est-il difficile pour nous qui sommes formés au Congo ou en
-                      Afrique de competir avec ceux formés ailleurs ?
-                    </p>
-                    <p class="py-4">
-                      C’est la question qu’Aristote, lauréat aux Examens d’Etat 2010 en
-                      République Democratique du Congo s’est posée à son arrivée d’abord
-                      en Inde ensuite au Canada pour poursuivre ses études universitaires.
-                      C’est le constat que font plusieurs autres congolais et africains
-                      lorsqu’ils arrivent pour travailler au niveau international.
-                    </p>
-                    <p class="py-4">
-                      Après des années d’études en Inde, Canada, États-Unis et Brésil,
-                      Aristote et ses associés ont réalisé que le problème n’était pas
-                      nécessairement ce qui était enseigné mais la manière dont
-                      l’enseignement est dispensé.
-                    </p>
-                    <p>
-                      Alors que dans les pays avancés, on apprend aux étudiants à exercer
-                      leur esprit critique et créatif, chez nous, on nous apprend plutôt à
-                      répéter, des fois sans comprendre, ce qui est enseigné.
-                    </p>
-                    <p>
-                      C’est dans cette optique qu'ils ont décidé de lancer l’Académie des
-                      élites qui est un espace privilégié d'apprentissage, de
-                      connectivité, d'innovation, de créativité et de partage des
-                      connaissances et de professionnalisme aux normes internationales.
-                      Elle s’est donnée pour missions de former les meilleurs
-                      informaticiens, développeurs et programmeurs du pays, afin de
-                      devenir des professionnels qualifiés dans leurs domaines respectifs
-                      et de ramener l’expertise internationale en RDC.
-                    </p>
+                  <div class="grid grid-cols-5 gap-6 max-sm:hidden">
+                        <div class="col-span-3">
+                          <p class="text-neutral-700">
 
-                  </p>
+                            <p class="text-teal-900">
+                              "Pourquoi est-il difficile pour nous qui sommes formés au Congo ou en
+                              Afrique de competir avec ceux formés ailleurs ?"
+                            </p>
+                            <p class="py-4">
+                              C’est la question qu’Aristote, lauréat aux Examens d’Etat 2010 en
+                              République Democratique du Congo s’est posée à son arrivée d’abord
+                              en Inde ensuite au Canada pour poursuivre ses études universitaires.
+                              C’est le constat que font plusieurs autres congolais et africains
+                              lorsqu’ils arrivent pour travailler au niveau international.
+                            </p>
+                            <p class="py-4">
+                              Après des années d’études en Inde, Canada, États-Unis et Brésil,
+                              Aristote et ses associés ont réalisé que le problème n’était pas
+                              nécessairement ce qui était enseigné mais la manière dont
+                              l’enseignement est dispensé.
+                            </p>
+                            <p>
+                              Alors que dans les pays avancés, on apprend aux étudiants à exercer
+                              leur esprit critique et créatif, chez nous, on nous apprend plutôt à
+                              répéter, des fois sans comprendre, ce qui est enseigné.
+                            </p>
+                            <p class="py-4">
+                              C’est dans cette optique qu'ils ont décidé de lancer l’Académie des
+                              élites qui est un espace privilégié d'apprentissage, de
+                              connectivité, d'innovation, de créativité et de partage des
+                              connaissances et de professionnalisme aux normes internationales.
+                              Elle s’est donnée pour missions de former les meilleurs
+                              informaticiens, développeurs et programmeurs du pays, afin de
+                              devenir des professionnels qualifiés dans leurs domaines respectifs
+                              et de ramener l’expertise internationale en RDC.
+                            </p>
+
+                          </p>
+                        </div>
+                        
+                        <div class="col-span-2">
+                          <img
+                            src={didia}
+                            class="w-full h-full rounded-lg bg-gray-200"
+                            alt="Avatar"
+                          />
+                        </div>
+                  </div>
+
+                    <div class="grid grid-rows-1 hidden max-sm:block">
+                      <div class="mb-4">
+                        <img
+                          src={didia}
+                          class="w-full h-[300px] rounded-lg bg-gray-200"
+                          alt="Avatar"
+                        />
+                      </div>
+                      
+                      <div>
+                        <p class="text-neutral-700">
+
+                          <p class="text-teal-900">
+                            "Pourquoi est-il difficile pour nous qui sommes formés au Congo ou en
+                            Afrique de competir avec ceux formés ailleurs ?"
+                          </p>
+                          <p class="py-4">
+                            C’est la question qu’Aristote, lauréat aux Examens d’Etat 2010 en
+                            République Democratique du Congo s’est posée à son arrivée d’abord
+                            en Inde ensuite au Canada pour poursuivre ses études universitaires.
+                            C’est le constat que font plusieurs autres congolais et africains
+                            lorsqu’ils arrivent pour travailler au niveau international.
+                          </p>
+                          <p class="py-4">
+                            Après des années d’études en Inde, Canada, États-Unis et Brésil,
+                            Aristote et ses associés ont réalisé que le problème n’était pas
+                            nécessairement ce qui était enseigné mais la manière dont
+                            l’enseignement est dispensé.
+                          </p>
+                          <p>
+                            Alors que dans les pays avancés, on apprend aux étudiants à exercer
+                            leur esprit critique et créatif, chez nous, on nous apprend plutôt à
+                            répéter, des fois sans comprendre, ce qui est enseigné.
+                          </p>
+                          <p class="py-4">
+                            C’est dans cette optique qu'ils ont décidé de lancer l’Académie des
+                            élites qui est un espace privilégié d'apprentissage, de
+                            connectivité, d'innovation, de créativité et de partage des
+                            connaissances et de professionnalisme aux normes internationales.
+                            Elle s’est donnée pour missions de former les meilleurs
+                            informaticiens, développeurs et programmeurs du pays, afin de
+                            devenir des professionnels qualifiés dans leurs domaines respectifs
+                            et de ramener l’expertise internationale en RDC.
+                          </p>
+
+                        </p>
+                      </div>
+                    </div>
+
                 </div>
               </div>
             </li>
@@ -470,16 +516,61 @@ const About = () => {
                         aria-labelledby="headingFour"
                         data-te-parent="#accordionExample">
                         <div class={"px-5 py-4 text-lg " + style.pacte}>
-                        Chez Elite, nous ne formons pas pour former, plus qu'un centre de formation, l'académie des élites est une école des génies! Nous nous sommes donné la mission de créer une classe des élites, des génies. Tous les génies ont en eux la capacité à résoudre des problèmes qui semblent difficiles aux autres et proposer des solutions peu communes. Nous avons resumer cela en P.A.C.T.E
 
-                        <p class="my-6"> 
-                        Nous avons tous un génie qui sommeille en nous quelque part. On ne sait le réperer
-                        ou le ressortir que lorsqu'on est face à un environnement propice qui pousse à le
-                        faire. Voilà ce qu’est l'académie des élites. Un espace qui vous permet de vous
-                        exprimer en toute liberté. Nous croyons en vos capacités, en vos rêves et en ce qui
-                        n’est que pure folie pour vous ! Laissez-nous faire de vous ce que vous ne
-                        soupçonnez pas être !
-                        </p>
+                            <div class="grid grid-cols-6 gap-6 max-sm:hidden">
+                              <div class="col-span-4">
+                                <p class="text-neutral-700">
+
+                                  Chez Elite, nous ne formons pas pour former, plus qu'un centre de formation, l'académie des élites est une école des génies! Nous nous sommes donné la mission de créer une classe des élites, des génies. Tous les génies ont en eux la capacité à résoudre des problèmes qui semblent difficiles aux autres et proposer des solutions peu communes. Nous avons resumer cela en P.A.C.T.E
+
+                                  <p class="my-6">
+                                    Nous avons tous un génie qui sommeille en nous quelque part. On ne sait le réperer
+                                    ou le ressortir que lorsqu'on est face à un environnement propice qui pousse à le
+                                    faire. Voilà ce qu’est l'académie des élites. Un espace qui vous permet de vous
+                                    exprimer en toute liberté. Nous croyons en vos capacités, en vos rêves et en ce qui
+                                    n’est que pure folie pour vous ! Laissez-nous faire de vous ce que vous ne
+                                    soupçonnez pas être !
+                                  </p>
+
+                                </p>
+                              </div>
+
+                              <div class="col-span-2">
+                                <img
+                                  src={team7}
+                                  class="w-full h-[300px] rounded-lg bg-gray-200"
+                                  alt="Avatar"
+                                />
+                              </div>
+                            </div>
+
+                            <div class="grid grid-rows-1 hidden max-sm:block">
+                              <div class="mb-4">
+                                <img
+                                  src={team7}
+                                  class="w-full h-[300px] rounded-lg bg-gray-200"
+                                  alt="Avatar"
+                                />
+                              </div>
+
+                              <div>
+                              <p class="text-neutral-700">
+
+                                  Chez Elite, nous ne formons pas pour former, plus qu'un centre de formation, l'académie des élites est une école des génies! Nous nous sommes donné la mission de créer une classe des élites, des génies. Tous les génies ont en eux la capacité à résoudre des problèmes qui semblent difficiles aux autres et proposer des solutions peu communes. Nous avons resumer cela en P.A.C.T.E
+
+                                  <p class="my-6">
+                                    Nous avons tous un génie qui sommeille en nous quelque part. On ne sait le réperer
+                                    ou le ressortir que lorsqu'on est face à un environnement propice qui pousse à le
+                                    faire. Voilà ce qu’est l'académie des élites. Un espace qui vous permet de vous
+                                    exprimer en toute liberté. Nous croyons en vos capacités, en vos rêves et en ce qui
+                                    n’est que pure folie pour vous ! Laissez-nous faire de vous ce que vous ne
+                                    soupçonnez pas être !
+                                  </p>
+
+                                </p>
+                              </div>
+                            </div>
+
                         </div>
                       </div>
                     </div>
