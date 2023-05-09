@@ -7,6 +7,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import contactImg3 from "../../../assets/images/question_mark.png";
 import { useState, useEffect } from "react";
 
+import contactImg from "../../../assets/images/DSC_0724_black.jpg";
 import team1 from "../../../assets/images/1605394670888.jpg";
 import team2 from "../../../assets/images/322279599_1240337903547695_2004677918904243901_n.jpg";
 import team3 from "../../../assets/images/team3.jpg";
@@ -100,15 +101,7 @@ const About = () => {
     return (
       <div className={style.container}>
         <div className={style.parent}>
-          <StaticImage
-            src={"../../../assets/images/DSC_0724_black.jpg"}
-            alt={"Image 1"}
-            style={{
-              height: "100%",
-              width: "100%",
-              objectFit: "fill",
-            }}
-          />
+          <img src={contactImg} />
 
           <div className={style.inner}>
             <StaticImage
