@@ -96,13 +96,13 @@
   position: relative;
   z-index: 0;
   margin-top: -10%;
-  height: 730px;
+  height: 780px;
 }
 
 .parent > img {
   height: 100%;
   width: 100%;
-  background-size: contain;
+  object-fit: fill;
 }
 
 .inner {
@@ -404,6 +404,12 @@
   .courseCard .longCardText {
     font-size: 13px;
     margin-top: -12%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .parent > img {
+    margin-top: 7%;
   }
 }
 
