@@ -4,25 +4,19 @@ import Page from "../../PageTemplate";
 import * as style from "./About.module.scss";
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
-import contactImg from "../../../assets/images/aa.jpg";
-import contactImg2 from "../../../assets/images/Rectangle 56.png";
 import contactImg3 from "../../../assets/images/question_mark.png";
 import { useState, useEffect } from "react";
 
-import img1 from "../../../assets/images/to-learn-gb120f4a96_1920.jpg";
-import img2 from "../../../assets/images/education-g0a1924b6c_1920.png";
-import img3 from "../../../assets/images/coding-g486fa6d97_1280.png";
-import img4 from "../../../assets/images/graduate-g37719b1cc_1280.png";
-import img5 from "../../../assets/images/man-g5ae25b970_1920.jpg";
-import img6 from "../../../assets/images/education-gef2a32113_1280.png";
-
+import contactImg from "../../../assets/images/DSC_0724_black.jpg";
 import team1 from "../../../assets/images/1605394670888.jpg";
 import team2 from "../../../assets/images/322279599_1240337903547695_2004677918904243901_n.jpg";
 import team3 from "../../../assets/images/team3.jpg";
-import team4 from "../../../assets/images/team2.jpeg";
+import team4 from "../../../assets/images/DSC_0732_copie.jpg";
 import team5 from "../../../assets/images/1594383944373.jpg";
-import team6 from "../../../assets/images/avatar.svg";
+import team6 from "../../../assets/images/DSC_0687_copie.jpg";
+import team7 from "../../../assets/images/nadia.jpeg";
 import didia from "../../../assets/images/didia.jpeg";
+
 import "animate.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
@@ -107,14 +101,7 @@ const About = () => {
     return (
       <div className={style.container}>
         <div className={style.parent}>
-          <StaticImage
-            src={"../../../assets/images/aa.jpg"}
-            alt={"Image 1"}
-            style={{
-              height: "100%",
-              width: "100%",
-            }}
-          />
+          <img src={contactImg} />
 
           <div className={style.inner}>
             <StaticImage
@@ -142,7 +129,7 @@ const About = () => {
             Qui sommes-nous ?
           </h3>
 
-          <ol class="border-l-2 border-teal-100">
+          <ol class="border-l-2 border-teal-100 max-sm:-mt-20">
             <AnimationOnScroll
               animateIn="animate__fadeInUp"
               animateOnce="animate__fadeInUp"
@@ -164,12 +151,6 @@ const About = () => {
                     </svg>
                   </div>
                   <div class="mb-10 ml-6 block w-3/3 rounded-lg bg-neutral-50 p-6 shadow-md shadow-black/5">
-                    <img
-                      src={didia}
-                      class="mx-auto mb-3 w-32 h-32 rounded-full bg-gray-200 -my-20"
-                      alt="Avatar"
-                    />
-
                     <div class="mb-4 flex justify-between">
                       <a
                         href="#!"
@@ -178,47 +159,114 @@ const About = () => {
                         La Question d'Aristote
                       </a>
                     </div>
-                    <p class="mb-6 text-neutral-700">
-                      <p>
-                        Pourquoi est-il difficile pour nous qui sommes formés au
-                        Congo ou en Afrique de competir avec ceux formés
-                        ailleurs ?
-                      </p>
-                      <p class="py-4">
-                        C’est la question qu’Aristote, lauréat aux Examens
-                        d’Etat 2010 en République Democratique du Congo s’est
-                        posée à son arrivée d’abord en Inde ensuite au Canada
-                        pour poursuivre ses études universitaires. C’est le
-                        constat que font plusieurs autres congolais et africains
-                        lorsqu’ils arrivent pour travailler au niveau
-                        international.
-                      </p>
-                      <p class="py-4">
-                        Après des années d’études en Inde, Canada, États-Unis et
-                        Brésil, Aristote et ses associés ont réalisé que le
-                        problème n’était pas nécessairement ce qui était
-                        enseigné mais la manière dont l’enseignement est
-                        dispensé.
-                      </p>
-                      <p>
-                        Alors que dans les pays avancés, on apprend aux
-                        étudiants à exercer leur esprit critique et créatif,
-                        chez nous, on nous apprend plutôt à répéter, des fois
-                        sans comprendre, ce qui est enseigné.
-                      </p>
-                      <p>
-                        C’est dans cette optique qu'ils ont décidé de lancer
-                        l’Académie des élites qui est un espace privilégié
-                        d'apprentissage, de connectivité, d'innovation, de
-                        créativité et de partage des connaissances et de
-                        professionnalisme aux normes internationales. Elle s’est
-                        donnée pour missions de former les meilleurs
-                        informaticiens, développeurs et programmeurs du pays,
-                        afin de devenir des professionnels qualifiés dans leurs
-                        domaines respectifs et de ramener l’expertise
-                        internationale en RDC.
-                      </p>
-                    </p>
+
+                    <div class="grid grid-cols-5 gap-6 max-sm:hidden">
+                      <div class="col-span-3">
+                        <p class="text-neutral-700">
+                          <p class="text-teal-900">
+                            "Pourquoi est-il difficile pour nous qui sommes
+                            formés au Congo ou en Afrique de competir avec ceux
+                            formés ailleurs ?"
+                          </p>
+                          <p class="py-4">
+                            C’est la question qu’Aristote, lauréat aux Examens
+                            d’Etat 2010 en République Democratique du Congo
+                            s’est posée à son arrivée d’abord en Inde ensuite au
+                            Canada pour poursuivre ses études universitaires.
+                            C’est le constat que font plusieurs autres congolais
+                            et africains lorsqu’ils arrivent pour travailler au
+                            niveau international.
+                          </p>
+                          <p class="py-4">
+                            Après des années d’études en Inde, Canada,
+                            États-Unis et Brésil, Aristote et ses associés ont
+                            réalisé que le problème n’était pas nécessairement
+                            ce qui était enseigné mais la manière dont
+                            l’enseignement est dispensé.
+                          </p>
+                          <p>
+                            Alors que dans les pays avancés, on apprend aux
+                            étudiants à exercer leur esprit critique et créatif,
+                            chez nous, on nous apprend plutôt à répéter, des
+                            fois sans comprendre, ce qui est enseigné.
+                          </p>
+                          <p class="py-4">
+                            C’est dans cette optique qu'ils ont décidé de lancer
+                            l’Académie des élites qui est un espace privilégié
+                            d'apprentissage, de connectivité, d'innovation, de
+                            créativité et de partage des connaissances et de
+                            professionnalisme aux normes internationales. Elle
+                            s’est donnée pour missions de former les meilleurs
+                            informaticiens, développeurs et programmeurs du
+                            pays, afin de devenir des professionnels qualifiés
+                            dans leurs domaines respectifs et de ramener
+                            l’expertise internationale en RDC.
+                          </p>
+                        </p>
+                      </div>
+
+                      <div class="col-span-2">
+                        <img
+                          src={didia}
+                          class="w-full h-full rounded-lg bg-gray-200"
+                          alt="Avatar"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="grid grid-rows-1 hidden max-sm:block">
+                      <div class="mb-4">
+                        <img
+                          src={didia}
+                          class="w-full h-[300px] rounded-lg bg-gray-200"
+                          alt="Avatar"
+                        />
+                      </div>
+
+                      <div>
+                        <p class="text-neutral-700">
+                          <p class="text-teal-900">
+                            "Pourquoi est-il difficile pour nous qui sommes
+                            formés au Congo ou en Afrique de competir avec ceux
+                            formés ailleurs ?"
+                          </p>
+                          <p class="py-4">
+                            C’est la question qu’Aristote, lauréat aux Examens
+                            d’Etat 2010 en République Democratique du Congo
+                            s’est posée à son arrivée d’abord en Inde ensuite au
+                            Canada pour poursuivre ses études universitaires.
+                            C’est le constat que font plusieurs autres congolais
+                            et africains lorsqu’ils arrivent pour travailler au
+                            niveau international.
+                          </p>
+                          <p class="py-4">
+                            Après des années d’études en Inde, Canada,
+                            États-Unis et Brésil, Aristote et ses associés ont
+                            réalisé que le problème n’était pas nécessairement
+                            ce qui était enseigné mais la manière dont
+                            l’enseignement est dispensé.
+                          </p>
+                          <p>
+                            Alors que dans les pays avancés, on apprend aux
+                            étudiants à exercer leur esprit critique et créatif,
+                            chez nous, on nous apprend plutôt à répéter, des
+                            fois sans comprendre, ce qui est enseigné.
+                          </p>
+                          <p class="py-4">
+                            C’est dans cette optique qu'ils ont décidé de lancer
+                            l’Académie des élites qui est un espace privilégié
+                            d'apprentissage, de connectivité, d'innovation, de
+                            créativité et de partage des connaissances et de
+                            professionnalisme aux normes internationales. Elle
+                            s’est donnée pour missions de former les meilleurs
+                            informaticiens, développeurs et programmeurs du
+                            pays, afin de devenir des professionnels qualifiés
+                            dans leurs domaines respectifs et de ramener
+                            l’expertise internationale en RDC.
+                          </p>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -418,18 +466,31 @@ const About = () => {
                           data-te-parent="#accordionExample"
                         >
                           <div class={"px-5 py-4 text-lg " + style.pacte}>
-                            Nous nous attendons à ce que : Les élèves qui
-                            passeront chez nous puissent briller dans leur
-                            cursus scolaire de façon à être des candidats plus
-                            que qualifiés pour des études supérieures à
-                            l’étranger ou encore des bourses d'études ; les
-                            demandeurs d’emplois aient des aptitudes et
-                            compétences qui feront d’eux plus des personnes
-                            qu'efficaces, meilleures et très compétitives ; les
-                            libéraux et entrepreneurs soient suffisamment
-                            équipés et informés en ayant la connaissance et
-                            développant des compétences nécessaires afin de
-                            réussir dans leurs entreprises.
+                            Nous nous attendons à ce que :
+                            <ol class="mt-3">
+                              <li class="mb-3">
+                                ➔ Les élèves qui passeront chez nous puissent
+                                briller dans leur cursus scolaire de façon à
+                                être des candidats plus que qualifiés pour des
+                                études supérieures à l’étranger ou encore des
+                                bourses d'études.
+                              </li>
+
+                              <li class="mb-3">
+                                ➔ Les demandeurs d’emplois aient des aptitudes
+                                et compétences qui feront d’eux plus des
+                                personnes qu'efficaces, meilleures et très
+                                compétitives.
+                              </li>
+
+                              <li class="mb-3">
+                                ➔ Les libéraux et entrepreneurs soient
+                                suffisamment équipés et informés en ayant la
+                                connaissance et développant des compétences
+                                nécessaires afin de réussir dans leurs
+                                entreprises.
+                              </li>
+                            </ol>
                           </div>
                         </div>
                       </div>
@@ -445,7 +506,7 @@ const About = () => {
                             aria-expanded="false"
                             aria-controls="collapseThree"
                           >
-                            Développes ton PACTE
+                            Développes ton P.A.C.T.E
                             <span class="-mr-1 ml-auto h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -535,26 +596,79 @@ const About = () => {
                           data-te-parent="#accordionExample"
                         >
                           <div class={"px-5 py-4 text-lg " + style.pacte}>
-                            Chez Elite, nous ne formons pas pour former, plus
-                            qu'un centre de formation, l'académie des élites est
-                            une école des génies! Nous nous sommes donné la
-                            mission de créer une classe des élites, des génies.
-                            Tous les génies ont en eux la capacité à résoudre
-                            des problèmes qui semblent difficiles aux autres et
-                            proposer des solutions peu communes. Nous avons
-                            resumer cela en P.A.C.T.E
-                            <p class="my-6">
-                              Nous avons tous un génie qui sommeille en nous
-                              quelque part. On ne sait le réperer ou le
-                              ressortir que lorsqu'on est face à un
-                              environnement propice qui pousse à le faire. Voilà
-                              ce qu’est l'académie des élites. Un espace qui
-                              vous permet de vous exprimer en toute liberté.
-                              Nous croyons en vos capacités, en vos rêves et en
-                              ce qui n’est que pure folie pour vous !
-                              Laissez-nous faire de vous ce que vous ne
-                              soupçonnez pas être !
-                            </p>
+                            <div class="grid grid-cols-6 gap-6 max-sm:hidden">
+                              <div class="col-span-4">
+                                <p class="text-neutral-700">
+                                  Chez Elite, nous ne formons pas pour former,
+                                  plus qu'un centre de formation, l'académie des
+                                  élites est une école des génies! Nous nous
+                                  sommes donné la mission de créer une classe
+                                  des élites, des génies. Tous les génies ont en
+                                  eux la capacité à résoudre des problèmes qui
+                                  semblent difficiles aux autres et proposer des
+                                  solutions peu communes. Nous avons resumer
+                                  cela en P.A.C.T.E
+                                  <p class="my-6">
+                                    Nous avons tous un génie qui sommeille en
+                                    nous quelque part. On ne sait le réperer ou
+                                    le ressortir que lorsqu'on est face à un
+                                    environnement propice qui pousse à le faire.
+                                    Voilà ce qu’est l'académie des élites. Un
+                                    espace qui vous permet de vous exprimer en
+                                    toute liberté. Nous croyons en vos
+                                    capacités, en vos rêves et en ce qui n’est
+                                    que pure folie pour vous ! Laissez-nous
+                                    faire de vous ce que vous ne soupçonnez pas
+                                    être !
+                                  </p>
+                                </p>
+                              </div>
+
+                              <div class="col-span-2">
+                                <img
+                                  src={team7}
+                                  class="w-full h-[300px] rounded-lg bg-gray-200"
+                                  alt="Avatar"
+                                />
+                              </div>
+                            </div>
+
+                            <div class="grid grid-rows-1 hidden max-sm:block">
+                              <div class="mb-4">
+                                <img
+                                  src={team7}
+                                  class="w-full h-[300px] rounded-lg bg-gray-200"
+                                  alt="Avatar"
+                                />
+                              </div>
+
+                              <div>
+                                <p class="text-neutral-700">
+                                  Chez Elite, nous ne formons pas pour former,
+                                  plus qu'un centre de formation, l'académie des
+                                  élites est une école des génies! Nous nous
+                                  sommes donné la mission de créer une classe
+                                  des élites, des génies. Tous les génies ont en
+                                  eux la capacité à résoudre des problèmes qui
+                                  semblent difficiles aux autres et proposer des
+                                  solutions peu communes. Nous avons resumer
+                                  cela en P.A.C.T.E
+                                  <p class="my-6">
+                                    Nous avons tous un génie qui sommeille en
+                                    nous quelque part. On ne sait le réperer ou
+                                    le ressortir que lorsqu'on est face à un
+                                    environnement propice qui pousse à le faire.
+                                    Voilà ce qu’est l'académie des élites. Un
+                                    espace qui vous permet de vous exprimer en
+                                    toute liberté. Nous croyons en vos
+                                    capacités, en vos rêves et en ce qui n’est
+                                    que pure folie pour vous ! Laissez-nous
+                                    faire de vous ce que vous ne soupçonnez pas
+                                    être !
+                                  </p>
+                                </p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -728,6 +842,7 @@ const About = () => {
                     src={team4}
                     class="mx-auto mb-4 w-40 h-40 rounded-full bg-gray-200"
                     alt="Avatar"
+                    style={{ objectFit: "fill" }}
                   />
                   <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">
                     Christian Kayembe
@@ -751,6 +866,52 @@ const About = () => {
                       </a>
 
                       <a href="https://www.instagram.com/christian_mutombo/">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-8 bg-teal-800 rounded-lg text-white"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class={
+                  "relative block max-w-sm rounded-lg text-center " +
+                  style.courseCard
+                }
+              >
+                <div class="text-center mt-2">
+                  <img
+                    src={team6}
+                    class="mx-auto mb-4 w-40 h-40 rounded-full bg-gray-200"
+                    alt="Avatar"
+                  />
+                  <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">
+                    Pierre Diwampovesa
+                  </h5>
+                  <p class="text-lg text-neutral-700">Directeur des études</p>
+                  <p class="text-neutral-500 dark:text-neutral-400">
+                    <div class="flex space-x-4 mt-4 justify-center">
+                      <a href="https://www.facebook.com/elitescd/">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                          class="h-8 w-8 text-teal-800"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                          />
+                        </svg>
+                      </a>
+
+                      <a href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           class="h-8 bg-teal-800 rounded-lg text-white"
