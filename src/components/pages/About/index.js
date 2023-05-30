@@ -704,52 +704,6 @@ const About = () => {
                     alt="Avatar"
                   />
                   <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">
-                    Aristoste Diasonama
-                  </h5>
-                  <p class="text-lg text-neutral-700">Mentor</p>
-                  <p class="text-neutral-500 dark:text-neutral-400">
-                    <div class="flex space-x-4 mt-4 justify-center">
-                      <a href="https://www.linkedin.com/in/diasonama">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 448 512"
-                          class="h-8 w-8 text-teal-800"
-                        >
-                          <path
-                            fill="currentColor"
-                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                          />
-                        </svg>
-                      </a>
-
-                      <a href="https://instagram.com/didia_aristote?igshid=YmMyMTA2M2Y=">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="h-8 bg-teal-800 rounded-lg text-white"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
-                      </a>
-                    </div>
-                  </p>
-                </div>
-              </div>
-
-              <div
-                class={
-                  "relative block max-w-sm rounded-lg text-center " +
-                  style.courseCard
-                }
-              >
-                <div class="text-center mt-2">
-                  <img
-                    src={team7}
-                    class="mx-auto mb-4 w-40 h-40 rounded-full bg-gray-200"
-                    alt="Avatar"
-                  />
-                  <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">
                     Nadia Nkuba
                   </h5>
                   <p class="text-lg text-neutral-700">Gérante</p>
@@ -791,8 +745,8 @@ const About = () => {
               >
                 <div class="text-center mt-2">
                   <img
-                    src={team3}
-                    class="mx-auto mb-4 w-40 rounded-full bg-gray-200"
+                    src={team7}
+                    class="mx-auto mb-4 w-40 h-40 rounded-full bg-gray-200"
                     alt="Avatar"
                   />
                   <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">
@@ -912,6 +866,52 @@ const About = () => {
                       </a>
 
                       <a href="https://www.instagram.com/invites/contact/?i=1m43wzwkzzm13&utm_content=qh7802h">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-8 bg-teal-800 rounded-lg text-white"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class={
+                  "relative block max-w-sm rounded-lg text-center " +
+                  style.courseCard
+                }
+              >
+                <div class="text-center mt-2">
+                  <img
+                    src={didia}
+                    class="mx-auto mb-3 w-40 h-40 rounded-full bg-gray-200"
+                    alt="Avatar"
+                  />
+                  <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">
+                    Aristoste Diasonama
+                  </h5>
+                  <p class="text-lg text-neutral-700">Mentor</p>
+                  <p class="text-neutral-500 dark:text-neutral-400">
+                    <div class="flex space-x-4 mt-4 justify-center">
+                      <a href="https://www.linkedin.com/in/diasonama">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                          class="h-8 w-8 text-teal-800"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                          />
+                        </svg>
+                      </a>
+
+                      <a href="https://instagram.com/didia_aristote?igshid=YmMyMTA2M2Y=">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           class="h-8 bg-teal-800 rounded-lg text-white"
