@@ -699,8 +699,8 @@ const About = () => {
               >
                 <div class="text-center mt-2">
                   <img
-                    src={didia}
-                    class="mx-auto mb-3 w-40 rounded-full bg-gray-200"
+                    src={team7}
+                    class="mx-auto mb-3 w-40 h-40 rounded-full bg-gray-200"
                     alt="Avatar"
                   />
                   <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">
@@ -745,7 +745,7 @@ const About = () => {
               >
                 <div class="text-center mt-2">
                   <img
-                    src={team7}
+                    src={team3}
                     class="mx-auto mb-4 w-40 h-40 rounded-full bg-gray-200"
                     alt="Avatar"
                   />
@@ -935,7 +935,7 @@ const About = () => {
                 <div class="text-center mt-2">
                   <img
                     src={team5}
-                    class="mx-auto mb-4 w-40 rounded-full bg-gray-200"
+                    class="mx-auto mb-4 w-40 h-40 rounded-full bg-gray-200"
                     alt="Avatar"
                   />
                   <h5 class="mb-2 text-xl font-medium leading-tight text-teal-800">
