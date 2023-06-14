@@ -1,15 +1,15 @@
-import T from 'prop-types';
-import * as React from 'react';
-import * as style from './SelectGroup.module.scss';
+import T from "prop-types";
+import * as React from "react";
+import * as style from "./SelectGroup.module.scss";
 const SelectGroup = ({ label, name, data, required }) => {
   return (
-    <div className={style['form__group']}>
-      <label className={style['form__label']}>
-        {label} {required && <span className={style['required']}>*</span>}
+    <div className={style["form__group"]}>
+      <label className={style["form__label"]}>
+        {label} {required && <span className={style["required"]}>*</span>}
       </label>
       <select
         required={required ? true : false}
-        className={style['form__control']}
+        className={style["form__control"]}
         name={name}
       >
         <option>-selectionner-</option>
