@@ -1,13 +1,13 @@
-import T from 'prop-types';
-import * as React from 'react';
-import { ButtonLink } from './index';
+import T from "prop-types";
+import * as React from "react";
+import { ButtonLink } from "./index";
 const ButtonRounded = ({ text, rightIcon, onClick, url }) => {
   return (
     <ButtonLink
       onClick={onClick}
       url={url}
       rightIcon={rightIcon}
-      className={'button__rounded'}
+      className={"button__rounded"}
       text={text}
     />
   );
