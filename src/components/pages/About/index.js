@@ -21,13 +21,6 @@ import didia from "../../../assets/images/didia.jpeg";
 import "animate.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
-import {
-  faEnvelope,
-  faLocationPin,
-  faPhone,
-  faFacebook,
-} from "@fortawesome/free-solid-svg-icons";
-
 const About = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
