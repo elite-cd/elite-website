@@ -1,8 +1,8 @@
-import * as React from 'react';
-import Button from './index';
+import * as React from "react";
+import Button from "./index";
 const ButtonOutlined = ({ text, leftIcon }) => {
   return (
-    <Button leftIcon={leftIcon} className={'button__outlined'} text={text} />
+    <Button leftIcon={leftIcon} className={"button__outlined"} text={text} />
   );
 };
 

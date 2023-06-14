@@ -15,17 +15,11 @@ import team4 from "../../../assets/images/DSC_0732_copie.jpg";
 import team5 from "../../../assets/images/1594383944373.jpg";
 import team6 from "../../../assets/images/DSC_0682.jpg";
 import team7 from "../../../assets/images/nadia.jpeg";
+import team8 from "../../../assets/images/DSC_0757.jpg";
 import didia from "../../../assets/images/didia.jpeg";
 
 import "animate.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-
-import {
-  faEnvelope,
-  faLocationPin,
-  faPhone,
-  faFacebook,
-} from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -542,7 +536,7 @@ const About = () => {
                             proposer des solutions peu communes. Nous avons
                             resumer cela en P.A.C.T.E
                             <p class="my-6">
-                              Chez ElITE, un apprentissage est jugé réussi
+                              Chez Elite, un apprentissage est jugé réussi
                               lorsque les apprenants arrivent à développer
                               intérieurement, extérieurement et de manière
                               efficace le P.A.C.T.E cad la Proactivité,
@@ -597,75 +591,51 @@ const About = () => {
                         >
                           <div class={"px-5 py-4 text-lg " + style.pacte}>
                             <div class="grid grid-cols-6 gap-6 max-sm:hidden">
-                              <div class="col-span-4">
-                                <p class="text-neutral-700">
-                                  Chez Elite, nous ne formons pas pour former,
-                                  plus qu'un centre de formation, l'académie des
-                                  élites est une école des génies! Nous nous
-                                  sommes donné la mission de créer une classe
-                                  des élites, des génies. Tous les génies ont en
-                                  eux la capacité à résoudre des problèmes qui
-                                  semblent difficiles aux autres et proposer des
-                                  solutions peu communes. Nous avons resumer
-                                  cela en P.A.C.T.E
-                                  <p class="my-6">
-                                    Nous avons tous un génie qui sommeille en
-                                    nous quelque part. On ne sait le réperer ou
-                                    le ressortir que lorsqu'on est face à un
-                                    environnement propice qui pousse à le faire.
-                                    Voilà ce qu’est l'académie des élites. Un
-                                    espace qui vous permet de vous exprimer en
-                                    toute liberté. Nous croyons en vos
-                                    capacités, en vos rêves et en ce qui n’est
-                                    que pure folie pour vous ! Laissez-nous
-                                    faire de vous ce que vous ne soupçonnez pas
-                                    être !
-                                  </p>
-                                </p>
-                              </div>
-
-                              <div class="col-span-2">
+                              <div class="col-span-1">
                                 <img
-                                  src={team7}
-                                  class="w-full h-[300px] rounded-lg bg-gray-200"
+                                  src={team8}
+                                  class="w-[200px] h-[200px] rounded-lg bg-gray-200"
                                   alt="Avatar"
                                 />
+                              </div>
+                              <div class="col-span-5">
+                                <p class="text-neutral-700">
+                                  Nous avons tous un génie qui sommeille en nous
+                                  quelque part. On ne sait le réperer ou le
+                                  ressortir que lorsqu'on est face à un
+                                  environnement propice qui pousse à le faire.
+                                  Voilà ce qu’est l'académie des élites. Un
+                                  espace qui vous permet de vous exprimer en
+                                  toute liberté. Nous croyons en vos capacités,
+                                  en vos rêves et en ce qui n’est que pure folie
+                                  pour vous ! Laissez-nous faire de vous ce que
+                                  vous ne soupçonnez pas être !
+                                  <p class="my-9">Nadia NKUBA</p>
+                                </p>
                               </div>
                             </div>
 
                             <div class="grid grid-rows-1 hidden max-sm:block">
                               <div class="mb-4">
                                 <img
-                                  src={team7}
-                                  class="w-full h-[300px] rounded-lg bg-gray-200"
+                                  src={team8}
+                                  class="w-full h-[250px] rounded-lg bg-gray-200"
                                   alt="Avatar"
                                 />
                               </div>
 
                               <div>
                                 <p class="text-neutral-700">
-                                  Chez Elite, nous ne formons pas pour former,
-                                  plus qu'un centre de formation, l'académie des
-                                  élites est une école des génies! Nous nous
-                                  sommes donné la mission de créer une classe
-                                  des élites, des génies. Tous les génies ont en
-                                  eux la capacité à résoudre des problèmes qui
-                                  semblent difficiles aux autres et proposer des
-                                  solutions peu communes. Nous avons resumer
-                                  cela en P.A.C.T.E
-                                  <p class="my-6">
-                                    Nous avons tous un génie qui sommeille en
-                                    nous quelque part. On ne sait le réperer ou
-                                    le ressortir que lorsqu'on est face à un
-                                    environnement propice qui pousse à le faire.
-                                    Voilà ce qu’est l'académie des élites. Un
-                                    espace qui vous permet de vous exprimer en
-                                    toute liberté. Nous croyons en vos
-                                    capacités, en vos rêves et en ce qui n’est
-                                    que pure folie pour vous ! Laissez-nous
-                                    faire de vous ce que vous ne soupçonnez pas
-                                    être !
-                                  </p>
+                                  Nous avons tous un génie qui sommeille en nous
+                                  quelque part. On ne sait le réperer ou le
+                                  ressortir que lorsqu'on est face à un
+                                  environnement propice qui pousse à le faire.
+                                  Voilà ce qu’est l'académie des élites. Un
+                                  espace qui vous permet de vous exprimer en
+                                  toute liberté. Nous croyons en vos capacités,
+                                  en vos rêves et en ce qui n’est que pure folie
+                                  pour vous ! Laissez-nous faire de vous ce que
+                                  vous ne soupçonnez pas être !
                                 </p>
                               </div>
                             </div>

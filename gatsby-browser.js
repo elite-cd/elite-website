@@ -1,4 +1,4 @@
-const globalCss = require('./src/styles/global.css')
+const globalCss = require("./src/styles/global.css");
 
 exports.onClientEntry = () => {
   if (process.env.NODE_ENV === "development") return;
